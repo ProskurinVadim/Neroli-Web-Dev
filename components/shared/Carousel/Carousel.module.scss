@@ -1,0 +1,11 @@
+.carousel {
+    overflow: hidden;
+
+    &_container {
+        display: flex;
+        transition: all 250ms linear;
+        overflow: visible;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}

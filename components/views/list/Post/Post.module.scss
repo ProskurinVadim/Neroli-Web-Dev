@@ -1,0 +1,125 @@
+@import "../../../../styles/varrible";
+@import "../../../../styles/mixin";
+
+.post {
+    &_image_item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_big_images {
+        width: 652px;
+        height: 492px;
+    }
+
+    &_small_images {
+        display: flex;
+        flex-wrap: wrap;
+        width: 692px;
+
+        img {
+            width: 306px;
+            height: 226px;
+            margin: 0 0 40px 40px;
+        }
+    }
+
+    &_information_list {
+        display: flex;
+        margin: 20px 0;
+
+        &_item {
+            display: flex;
+
+            svg {
+                margin-right: 12px;
+            }
+
+            @include medium-text;
+            font-weight: 700;
+            color: $color-primary;
+            margin-right: 40px;
+        }
+    }
+
+    & > .toggler {
+        margin: 40px 20px 0 0;
+    }
+
+    &_text_list {
+        margin: 30px 0;
+
+        li {
+            margin-top: 10px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:before {
+                content: "\2022";
+                color: $color-submit;
+                font-weight: bold;
+                display: inline-block;
+                width: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &_medium-text {
+        margin-bottom: 30px;
+    }
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+
+        .text_block {
+            width: 843px;
+        }
+
+        .person_card {
+            width: 380px;
+            border: 1px solid #E5E5E5;
+            border-radius: 24px;
+            padding: 40px;
+
+            .buttons_div {
+                margin: 28px 0;
+                display: flex;
+
+                button {
+                    margin-right: 16px;
+                }
+            }
+
+            &_item {
+                margin-top: 16px;
+                display: flex;
+
+                svg {
+                    margin-right: 16px;
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            .button {
+                margin-top: 28px;
+                width: 100%
+            }
+        }
+
+        .map {
+            margin: 24px 0 80px;
+
+            img {
+                width: 461px;
+                height: 263px;
+            }
+        }
+    }
+}

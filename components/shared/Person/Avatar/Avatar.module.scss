@@ -1,0 +1,26 @@
+@import "../../../../styles/varrible";
+@import "../../../../styles/mixin";
+
+.avatar {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+
+    &_image {
+        width: 67px;
+        height: 67px;
+        border-radius: 50%;
+        padding-right: 16px;
+    }
+
+    &_name {
+        @include medium-text;
+        font-weight: 700;
+        color: $color-primary
+    }
+
+    &_job {
+        @include small-text;
+        color: $color-additiona;
+    }
+}

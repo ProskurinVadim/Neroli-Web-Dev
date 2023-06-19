@@ -1,0 +1,43 @@
+@import "../../../styles/varrible";
+@import "../../../styles/mixin";
+
+.header {
+    padding: 10px 0px;
+    border-bottom: 1px solid $color-border;
+
+    &_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navbar {
+            display: flex;
+            align-items: center;
+
+            &_item {
+                padding-right: 48px;
+
+                a {
+                    color: $color-primary;
+                    @include button-text;
+                    text-decoration: none;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                    padding-left: 45px;
+                }
+
+                &.navbar_search {
+                    &:before {
+                        content: "";
+                        display: block;
+                        width: 1px;
+                        height: 100%;
+                        background: $color-border;
+                    }
+                }
+            }
+        }
+    }
+}

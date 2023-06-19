@@ -1,0 +1,59 @@
+@import "../../../styles/varrible";
+@import "../../../styles/mixin";
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 45px auto 83px;
+
+    &_item {
+        width: 10px;
+        height: 10px;
+        border: 2px solid $color-additiona;
+        border-radius: 100px;
+        margin: 0 16px;
+
+        &.active {
+            color: $color-light;
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+
+        &.arrow {
+            color: $color-additiona;
+            border: none;
+            line-height: 10px;
+
+            &:last-child {
+                margin-left: 2px;
+            }
+
+            &:first-child {
+                margin-right: 2px;
+            }
+        }
+    }
+
+    &.numerical {
+        border: 1px solid $color-border;
+        padding: 4px;
+        border-radius: 14px;
+
+        .pagination_item {
+            @include button-text;
+            margin: 0 2px;
+            padding: 9px 16px;
+            border-radius: 10px;
+            border-color: transparent;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

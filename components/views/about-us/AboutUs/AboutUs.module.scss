@@ -1,0 +1,32 @@
+@import "../../../../styles/varrible";
+
+
+.about_us {
+
+	&_image {
+		margin: 40px 0;
+		width: 1024px;
+		height: 372px;
+	}
+}
+
+
+.medium_text {
+	width: 843px;
+	margin: 0 auto;
+
+	&__aditional {
+		margin: 30px auto 0;
+		width: 750px;
+	}
+}
+
+
+.logo__colored {
+	margin-top: 80px;
+	display: block;
+
+	svg > path {
+		fill: $color-submit;
+	}
+}

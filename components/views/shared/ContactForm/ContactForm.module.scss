@@ -1,0 +1,24 @@
+@import "../../../../styles/varrible";
+@import "../../../../styles/mixin";
+
+.contact_form {
+    background-color: $color-primary;
+    height: 320px;
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .section_header {
+        margin-top: 90px;
+        text-align: left;
+    }
+
+    .medium_text {
+        margin-top: 20px;
+        width: 500px;
+        text-align: left;
+    }
+}

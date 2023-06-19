@@ -1,0 +1,60 @@
+@import "../../../styles/varrible";
+@import "../../../styles/mixin";
+
+.button {
+    height: auto;
+    border: 1px solid $color-primary;
+    padding: 13px 36px;
+    background: $color-primary;
+    color: $color-light;
+    border-radius: 100px;
+    @include button-text;
+
+    &:hover {
+        border: 1px solid $color-primary;
+    }
+
+    &_active {
+        background: $color-light;
+        color: $color-primary;
+
+
+        &:hover {
+            background: $color-primary;
+        }
+    }
+
+    &_submit {
+        background: $color-submit;
+        color: $color-primary;
+        border: 1px solid $color-submit;
+
+        &:hover {
+            background: $color-light;
+        }
+    }
+
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__transparent {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+    }
+
+    &__recall {
+        background: $color-border;
+        color: $color-primary;
+        display: flex;
+    }
+
+    &__whatsapp {
+        background: #4EAB15;
+        color: $color-light;
+        display: flex;
+    }
+}

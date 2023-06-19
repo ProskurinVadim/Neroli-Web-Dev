@@ -1,0 +1,74 @@
+@import "../../../styles/varrible";
+@import "../../../styles/mixin";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 306px;
+
+    &_text {
+        color: color-form-text;
+        margin-top: 16px;
+        width: 280px;
+        @include medium-text;
+    }
+
+    .button {
+        max-width: 306px;
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .form_inline {
+        flex-direction: row;
+        background: $color-light;
+        border-radius: 100px;
+    }
+
+    &__card {
+        padding: 40px;
+        background: $color-light;
+        box-shadow: 0px 20px 40px rgba(192, 135, 22, 0.08);
+        border-radius: 24px 0px 0px 24px;
+        align-items: center;
+        justify-content: space-between;
+        width: 420px;
+        margin: 52px auto 135px;
+    }
+
+    &__search {
+        width: fit-content;
+        margin: auto;
+        flex-direction: row;
+        background: $color-light;
+        border-radius: 100px;
+        padding: 4px;
+
+        .button {
+            width: auto;
+            border-radius: 0px 100px 100px 0px;
+            margin: 0;
+        }
+    }
+
+    &__search_large {
+        flex-direction: row;
+        width: fit-content;
+        align-items: center;
+        margin-top: 31px;
+
+        & > input {
+            margin: 0 16px 0 0;
+        }
+
+        & > select {
+            margin: 0 16px 0 0;
+        }
+
+        & > .button {
+            margin-top: 0px;
+            color: $color-light;
+            background-color: $color-primary;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "./varrible";
+@import "./mixin";
+
+.sub_header {
+    @include medium-text;
+    color: $color-light;
+}
+
+.medium_text {
+    @include medium-text;
+    color: $color-primary;
+
+    &__light {
+        color: $color-light;
+    }
+
+    &__aditional {
+        color: $color-additiona
+    }
+
+    &__bold {
+        font-weight: 700;
+    }
+}
+
+.small_section_header {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    color: $color-primary;
+
+    &__light {
+        color: $color-light;
+    }
+}
+
+.section_header {
+    font-family: 'Marcellus';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 48px;
+    color: $color-primary;
+    margin-top: 80px;
+
+    &__light {
+        color: $color-light;
+    }
+}
+
+.d_flex_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.m_8_2 {
+    margin: 80px 0 20px;
+}
+.t_l {
+    text-align: left !important;
+}
+
+.icon__submit {
+    path {
+        fill: $color-submit;
+    }
+
+    rect {
+        fill: $color-submit;
+    }
+}

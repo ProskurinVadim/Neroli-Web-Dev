@@ -1,0 +1,125 @@
+@import "../../../styles/varrible";
+@import "../../../styles/mixin";
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: 40px;
+
+    &_image {
+        border-radius: 24px;
+        width: 306px;
+        height: 306px;
+    }
+
+    .stars_list {
+        display: flex;
+        margin-top: 17px;
+        align-items: center;
+
+        &_item {
+            margin-right: 4px;
+
+            &.active {
+                svg > path {
+                    fill: $color-submit
+                }
+            }
+
+            &_rating {
+                margin-left: 12px;
+                @include medium-text;
+            }
+        }
+    }
+
+    &_date {
+        margin-top: 20px;
+        @include medium-text;
+        color: $color-additiona;
+
+        &_hours {
+        }
+    }
+
+    &-text {
+        width: 200px;
+    }
+
+    &_header {
+        margin-top: 8px;
+        margin-bottom: 12px;
+        @include card-header-text;
+        color: $color-primary;
+    }
+
+    &_adress {
+        @include medium-text;
+        font-weight: 700;
+        color: $color-additiona;
+    }
+
+    &_description {
+        @include small-text;
+        line-height: 24px;
+        color: $color-additiona;
+        margin: 0 12px;
+    }
+
+    &_link {
+        @include medium-text;
+        color: $color-primary;
+        text-decoration-line: underline;
+    }
+
+    &.news_card {
+        flex-direction: row;
+        width: 843px;
+        height: 246px;
+        border: 1px solid #C2D1D9;
+        border-radius: 24px;
+        margin-bottom: 40px;
+
+        .card_text {
+            width: 400px;
+        }
+
+        .card_image {
+            border-radius: 24px 0px 0px 24px;
+            height: 246px;
+            padding-right: 24px;
+        }
+
+        .card_header {
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+
+        .card_description {
+            margin: 0 0 8px;
+        }
+
+        .card_link {
+            margin-bottom: 20px
+        }
+
+        &.card__horizontal {
+            width: 421px;
+            height: 532px;
+            flex-direction: column;
+
+            .card_image {
+                width: 100%;
+                height: 266px;
+                padding-right: 0
+            }
+
+            .card_text {
+                width: 100%;
+                padding: 20px 21px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../../../styles/varrible";
+@import "../../../../styles/mixin";
+
+.main_page {
+    padding-top: 121px;
+    padding-bottom: 105px;
+    background-image: url("../../../../public/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .main_header {
+        font-family: 'Marcellus';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 66px;
+        line-height: 83px;
+        color: $color-light
+    }
+
+    .toggler {
+        margin: 40px auto 16px
+    }
+
+    .form {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .medium_text {
+        margin: 40px auto 16px;
+        width: 230px
+    }
+}

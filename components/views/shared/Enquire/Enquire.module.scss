@@ -1,0 +1,42 @@
+@import "../../../../styles/varrible";
+
+.enquire {
+    border-color: $color-border;
+    border-width: 2px 0px;
+    border-style: solid;
+    background: rgba(221, 221, 127, 0.08);
+
+    .notebook {
+        display: flex;
+        justify-content: space-between;
+
+        &_item {
+            width: 50%;
+            &:first-child {
+                padding-right: 28px;
+            }
+
+            &:last-child {
+                border-left: 4px dashed $color-submit;
+                padding-left: 32px;
+            }
+
+            .medium_text {
+                width: 414px;
+                text-align: left;
+                margin-top: 92px;
+            }
+        }
+    }
+
+    &_image {
+        margin-top: 40px;
+        width: 421px;
+        height: 408px;
+        background-image: url("../../../../public/enquire.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 0px 20px 40px rgba(192, 135, 22, 0.12);
+        border-radius: 0px 24px 24px 0px;
+    }
+}
