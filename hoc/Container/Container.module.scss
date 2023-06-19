@@ -28,6 +28,8 @@
 }
 
 @include sm {
-    width: 372px;
-    padding: 0px 20px;
+    .container {
+        width: 372px;
+        padding: 0px 20px;
+    }
 }
