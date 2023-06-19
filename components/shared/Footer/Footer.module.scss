@@ -37,7 +37,6 @@
         padding: 34px 0;
 
         .footer_item {
-            border-right: 1px solid $color-border;
             text-align: left;
             list-style: none;
             box-sizing: border-box;
@@ -54,6 +53,7 @@
             .small_section_header {
                 color: $color-additiona;
                 text-transform: uppercase;
+                font-size: 12px;
             }
 
             .medium_text {
@@ -116,6 +116,7 @@
 @include xl {
     .footer_item {
         padding: 0 70px;
+        border-right: 1px solid $color-border;
 
         &:first-child {
             width: 400px;
@@ -125,6 +126,7 @@
 @include lg {
     .footer_item {
         padding: 0 40px;
+        border-right: 1px solid $color-border;
 
         &:first-child {
             width: 25%;
@@ -137,10 +139,20 @@
         padding: 0 10px;
         width: 50%;
     }
+
+    .small_section_header {
+        margin-top: 28px;
+    }
 }
 
 @include sm {
     .footer_item {
+        padding: 0 10px 28px;
+        border-bottom: 1px solid $color-border;
         width: 100%;
+    }
+
+    .small_section_header {
+        margin-top: 28px;
     }
 }
