@@ -146,6 +146,9 @@
         width: 100%;
         border-radius: 0;
 
+        input {
+            border-radius: unset !important;
+        }
         .button {
             border-radius: 0;
         }
@@ -162,5 +165,6 @@
     .form__card {
         margin: 0 auto 135px;
         border-radius:unset;
+        box-shadow:unset;
     }
 }
