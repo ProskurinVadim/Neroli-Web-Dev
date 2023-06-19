@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from "react";
 import Container from "../../../../hoc/Container";
 import NewsCard from "../../../shared/Card/NewsCard";
-import { Button } from "../../../common";
+import Button,{ buttonStyles } from "../../../common/Button/Button";
 import { getData } from "./getData";
 import styles from "./LatestNews.module.scss";
 
@@ -11,7 +11,6 @@ const LatestNews = () => {
     const [data, setData] = useState([...getData()]);
     console.log(data);
     const handelSeeMore = () => {
-        setData((prev) => [...prev, ...prev])
     }
     return (
         <section>
@@ -24,7 +23,7 @@ const LatestNews = () => {
                         </li>)
                     }
                 </ul>
-                <Button onClick={handelSeeMore} text={<Link href="/blog">View all news</Link>} />
+                <Link href="/blog" className={`${styles.button} ${buttonStyles.button} ${buttonStyles.button__link}`}>View all news</Link>
             </Container>
         </section>
     )

@@ -3,7 +3,7 @@
 
 .contact_form {
     background-color: $color-primary;
-    height: 320px;
+    padding: 80px 30px 90px;
 
     &_content {
         display: flex;
@@ -12,13 +12,70 @@
     }
 
     .section_header {
-        margin-top: 90px;
+        margin-top: 0;
         text-align: left;
     }
 
     .medium_text {
         margin-top: 20px;
-        width: 500px;
         text-align: left;
+    }
+}
+
+
+@include xl {
+    .contact_form {
+        padding: 80px 30px 90px;
+
+        .medium_text {
+            width: 500px;
+        }
+    }
+}
+
+@include lg {
+    .contact_form {
+        padding: 80px 30px 90px;
+
+        .medium_text {
+            width: 500px;
+        }
+    }
+}
+
+@include md {
+    .contact_form {
+        padding: 40px 30px;
+
+        &_content {
+            flex-direction: column;
+        }
+
+        &_text_block{
+            margin: 0 auto;
+        } 
+        .medium_text {
+            width: 500px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include sm {
+    .contact_form {
+        padding: 40px 30px;
+
+        &_content {
+            flex-direction: column;
+        }
+
+        &_text_block {
+            margin: 0 auto;
+        }
+
+        .medium_text {
+            width: 370px;
+            margin-bottom: 40px;
+        }
     }
 }

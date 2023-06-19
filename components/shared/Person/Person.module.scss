@@ -46,16 +46,58 @@
 
 .person_comments {
     align-items: baseline;
-    max-width: 460px;
 
     &:nth-child(3n) {
         margin-right: 20px;
     }
 
     .person_description {
-        width: 380px;
         text-align: left;
         color: $color-primary;
     }
 }
 
+
+@include xl {
+    .person_comments {
+        max-width: 460px;
+
+
+        .person_description {
+            width: 380px;
+        }
+    }
+}
+
+@include lg {
+    .person_comments {
+        max-width: 460px;
+
+
+        .person_description {
+            width: 380px;
+        }
+    }
+}
+
+@include md {
+    .person_comments {
+        max-width: 370px;
+
+
+        .person_description {
+            width: 310px;
+        }
+    }
+}
+
+@include sm {
+    .person_comments {
+        max-width: 370px;
+
+
+        .person_description {
+            width: 310px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 @import "../../../../styles/varrible";
-
+@import "../../../../styles/mixin";
 .enquire {
     border-color: $color-border;
     border-width: 2px 0px;
@@ -11,16 +11,6 @@
         justify-content: space-between;
 
         &_item {
-            width: 50%;
-            &:first-child {
-                padding-right: 28px;
-            }
-
-            &:last-child {
-                border-left: 4px dashed $color-submit;
-                padding-left: 32px;
-            }
-
             .medium_text {
                 width: 414px;
                 text-align: left;
@@ -31,12 +21,117 @@
 
     &_image {
         margin-top: 40px;
-        width: 421px;
-        height: 408px;
         background-image: url("../../../../public/enquire.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 0px 20px 40px rgba(192, 135, 22, 0.12);
-        border-radius: 0px 24px 24px 0px;
+    }
+}
+
+@include xl {
+    .enquire {
+        .notebook {
+            &_item {
+                width: 50%;
+
+                &:first-child {
+                    padding-right: 28px;
+                }
+
+                &:last-child {
+                    border-left: 4px dashed $color-submit;
+                    padding-left: 32px;
+                }
+
+                .medium_text {
+                    width: 414px;
+                }
+            }
+        }
+
+        &_image {
+            border-radius: 0px 24px 24px 0px;
+            width: 421px;
+            height: 408px;
+        }
+    }
+}
+
+@include lg {
+    .enquire {
+        .notebook {
+            &_item {
+                width: 50%;
+
+                &:first-child {
+                    padding-right: 28px;
+                }
+
+                &:last-child {
+                    border-left: 4px dashed $color-submit;
+                    padding-left: 32px;
+                }
+
+                .medium_text {
+                    width: 414px;
+                }
+            }
+        }
+
+        &_image {
+            border-radius: 0px 24px 24px 0px;
+            width: 421px;
+            height: 408px;
+        }
+    }
+}
+
+@include md {
+    .enquire {
+        .notebook {
+            flex-direction: column-reverse;
+
+            &_item {
+                width: 100%;
+
+                .section_header {
+                    display: none;
+                }
+
+                .medium_text {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        &_image {
+            border-radius: 16px 16px 0px 0px;
+            width: 420px;
+            height: 189px;
+            margin: 40px auto 0;
+        }
+    }
+}
+
+@include sm {
+    .enquire {
+        .notebook {
+            flex-direction: column-reverse;
+
+            &_item {
+                width: 100%;
+
+                .medium_text {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        &_image {
+            border-radius: 16px 16px 0px 0px;
+            width: 370px;
+            height: 189px;
+        }
     }
 }

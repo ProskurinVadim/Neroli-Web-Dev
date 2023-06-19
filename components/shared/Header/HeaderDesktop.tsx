@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Search, Logo } from "../../icons";
 import { links } from "./getData"
 import styles from "./Header.module.scss";
-import { Button } from '../../common';
+import Button, { buttonStyles } from '../../common/Button/Button';
 
 interface IHeader {
     href: string;
@@ -31,7 +31,7 @@ const HeaderDesktop: React.FC<IHeader> = ({ href }) => {
                     </li>
                 </ul>
             </nav>
-            <Button onClick={onClick} text={<Link href="/book">Enquire now</Link>} />
+            <Link href="/book" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Enquire now</Link>
         </>
     )
 }

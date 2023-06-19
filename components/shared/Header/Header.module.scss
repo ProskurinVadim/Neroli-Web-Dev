@@ -15,17 +15,18 @@
             align-items: center;
 
             &_item {
-                padding-right: 48px;
-
                 a {
                     color: $color-primary;
                     @include button-text;
                     text-decoration: none;
+
+                    &:hover {
+                        color: $color-submit;
+                    }
                 }
 
                 &:last-child {
                     padding-right: 0;
-                    padding-left: 45px;
                 }
 
                 &.navbar_search {
@@ -38,6 +39,63 @@
                     }
                 }
             }
+
+            
         }
+    }
+}
+.navbar_icons {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+    .burger_icons {
+        margin-left: 28px;
+
+    }
+}
+@include xl {
+    .navbar {
+        &_item {
+            padding-right: 48px;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            padding-left: 45px;
+        }
+    }
+}
+
+@include lg {
+    .navbar {
+        &_item {
+            padding-right: 20px;
+
+            &:last-child {
+                padding-right: 0;
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+@include md {
+    .navbar {
+        &_item {
+            padding-right: 20px;
+
+            &:last-child {
+                padding-right: 0;
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+@include sm {
+    .container {
+        width: 360px;
+        padding: 0 32px;
     }
 }

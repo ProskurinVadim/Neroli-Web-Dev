@@ -2,7 +2,6 @@
 @import "../../../styles/mixin";
 
 .input {
-    max-width: 306px;
     width: 100%;
     margin: 8px 0;
     border: 1px solid $color-border;
@@ -16,11 +15,54 @@
 
     &_inline {
         margin: 0;
-        max-width: 220px;
         border-radius: unset;
 
         &__first {
             border-radius: 100px 0px 0px 100px;
+        }
+    }
+
+    &:focus {
+        border: 1px solid #DDDE70;
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
+    }
+}
+@include xl {
+    .input {
+        max-width: 306px;
+
+        &_inline {
+            max-width: 220px;
+        }
+    }
+}
+
+@include lg {
+    .input {
+        max-width: 306px;
+
+        &_inline {
+            max-width: 220px;
+        }
+    }
+}
+
+@include md {
+    .input {
+        max-width: 100%;
+
+        &_inline {
+            max-width: 100%;
+        }
+    }
+}
+
+@include sm {
+    .input {
+        max-width: 100%;
+
+        &_inline {
+            max-width: 100%;
         }
     }
 }

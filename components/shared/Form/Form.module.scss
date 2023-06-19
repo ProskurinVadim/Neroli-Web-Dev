@@ -1,10 +1,11 @@
-@import "../../../styles/varrible";
+    @import "../../../styles/varrible";
 @import "../../../styles/mixin";
 
 .form {
     display: flex;
     flex-direction: column;
     width: 306px;
+    box-sizing: border-box;
 
     &_text {
         color: color-form-text;
@@ -14,7 +15,6 @@
     }
 
     .button {
-        max-width: 306px;
         width: 100%;
         margin-top: 16px;
     }
@@ -33,20 +33,15 @@
         align-items: center;
         justify-content: space-between;
         width: 420px;
-        margin: 52px auto 135px;
     }
 
     &__search {
-        width: fit-content;
         margin: auto;
-        flex-direction: row;
         background: $color-light;
-        border-radius: 100px;
         padding: 4px;
 
         .button {
             width: auto;
-            border-radius: 0px 100px 100px 0px;
             margin: 0;
         }
     }
@@ -59,9 +54,11 @@
 
         & > input {
             margin: 0 16px 0 0;
+            box-shadow: none;
         }
 
         & > select {
+            box-shadow: none;
             margin: 0 16px 0 0;
         }
 
@@ -70,5 +67,100 @@
             color: $color-light;
             background-color: $color-primary;
         }
+    }
+}
+
+@include xl {
+    .form__search {
+        width: fit-content;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+        }
+    }
+
+    .form {
+        .button {
+            max-width: 306px;
+        }
+    }
+
+    .form__card {
+        margin: 52px auto 135px;
+    }
+}
+
+@include lg {
+    .form__search {
+        width: fit-content;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+        }
+    }
+
+    .form {
+        .button {
+            max-width: 306px;
+        }
+    }
+
+    .form__card {
+        margin: 52px auto 135px;
+    }
+}
+
+@include md {
+    .form__search {
+        flex-direction: column;
+        max-width: 306px;
+        border-radius: 0;
+
+        .button {
+            border-radius: 0;
+        }
+    }
+
+    .form {
+        margin: 0 auto;
+        max-width: 860px;
+
+        .button {
+            max-width: 306px;
+        }
+    }
+
+    .form__card {
+        margin: 0 auto 135px;
+        border-top: 0;
+    }
+}
+
+@include sm {
+    .form__search {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+
+        .button {
+            border-radius: 0;
+        }
+    }
+
+    .form {
+        width: 100%;
+
+        .button {
+            max-width: 1005;
+        }
+    }
+
+    .form__card {
+        margin: 0 auto 135px;
+        border-top: 0;
     }
 }

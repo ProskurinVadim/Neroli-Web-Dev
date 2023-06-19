@@ -3,8 +3,13 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 20px;
+
     &_item {
-        margin:  20px 0;
+        margin: 20px 0;
+
+        .card {
+            margin: 0 0 40px;
+        }
 
         & > div {
             margin: 0;

@@ -1,13 +1,20 @@
 .latest_news_list {
 	display: flex;
+	flex-wrap: wrap;
 	margin-top: 40px;
+
 	&_item {
 		.card {
 			flex-direction: row;
+
 			&_image {
 				width: 306px;
 				height: 246px;
 			}
 		}
 	}
+}
+
+.button {
+	margin-bottom: 80px;
 }

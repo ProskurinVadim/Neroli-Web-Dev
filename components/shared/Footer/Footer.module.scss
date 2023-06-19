@@ -10,6 +10,7 @@
     }
 
     &_header {
+        overflow: hidden;
         text-align: left;
         @include card-header-text;
         text-align: left;
@@ -31,14 +32,15 @@
 
     &_list {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         padding: 34px 0;
 
         .footer_item {
-            padding: 0 70px;
             border-right: 1px solid $color-border;
             text-align: left;
             list-style: none;
+            box-sizing: border-box;
 
             &:last-child {
                 border-right: none;
@@ -60,12 +62,15 @@
                 a {
                     text-decoration: none;
                     color: $color-primary;
+
+                    &:hover {
+                        color: $color-submit;
+                    }
                 }
             }
 
             .footer_description {
                 margin: 20px 0 32px;
-                width: 400px;
                 font-family: 'Montserrat';
                 font-weight: 400;
                 font-size: 12px;
@@ -94,7 +99,6 @@
 
         .footer_description {
             margin: 20px 0 32px;
-            width: 400px;
             font-family: 'Montserrat';
             font-weight: 400;
             font-size: 12px;
@@ -107,5 +111,36 @@
                 margin-right: 28px;
             }
         }
+    }
+}
+@include xl {
+    .footer_item {
+        padding: 0 70px;
+
+        &:first-child {
+            width: 400px;
+        }
+    }
+}
+@include lg {
+    .footer_item {
+        padding: 0 40px;
+
+        &:first-child {
+            width: 25%;
+        }
+    }
+}
+
+@include md {
+    .footer_item {
+        padding: 0 10px;
+        width: 50%;
+    }
+}
+
+@include sm {
+    .footer_item {
+        width: 100%;
     }
 }

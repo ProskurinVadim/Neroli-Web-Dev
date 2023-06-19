@@ -1,6 +1,35 @@
+@import '../../styles/mixin';
+
 .container {
     text-align: center;
     margin: 0 auto;
-    width: 1350px;
-    padding: 0 48px;
+    overflow-x: hidden
+    
+}
+@include xl {
+    .container {
+        width: 1350px;
+        padding: 0 48px;
+    }
+}
+
+@include lg {
+    .container {
+        width: 980px;
+        padding: 0 20px
+    }
+}
+
+@include md {
+    .container {
+        width: 720px;
+        padding: 0 44px;
+    }
+}
+
+@include sm {
+    .container {
+        width: 370px;
+        padding: 0 32px;
+    }
 }

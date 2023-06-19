@@ -10,9 +10,9 @@
     @include button-text;
 
     &_item {
-        padding: 9px 36px;
         border-radius: 10px;
         color: $color-additiona;
+        cursor: pointer;
 
         &.active {
             color: $color-light;
@@ -30,6 +30,40 @@
             &.active {
                 color: $color-light;
             }
+        }
+    }
+}
+
+@include xl {
+    .toggler {
+        &_item {
+            padding: 9px 36px;
+        }
+    }
+}
+
+@include lg {
+
+    .toggler {
+        &_item {
+            padding: 9px 36px;
+        }
+    }
+}
+
+@include md {
+
+    .toggler {
+        &_item {
+            padding: 9px 16px;
+        }
+    }
+}
+
+@include sm {
+    .toggler {
+        &_item {
+            padding: 9px 16px;
         }
     }
 }
