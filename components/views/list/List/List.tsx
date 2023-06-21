@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Container from "../../../../hoc/Container";
 import { getData } from "./getData";
-import Card from "../../../shared/Card/RaitingCard";
+import Card from "../../../shared/Card/AppartmentCard";
 import Pagination from "../../../shared/Pagination";
 import styles from "./List.module.scss";
 import Link from 'next/link';

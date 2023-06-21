@@ -10,6 +10,7 @@
     &_item {
         width: 10px;
         height: 10px;
+        box-sizing: border-box;
         border: 2px solid $color-additiona;
         border-radius: 100px;
         margin: 0 16px;
@@ -19,19 +20,19 @@
             background-color: $color-primary;
             border-color: $color-primary;
         }
+    }
 
-        &.arrow {
-            color: $color-additiona;
-            border: none;
-            line-height: 10px;
+    .arrow {
+        color: $color-additiona;
+        border: none;
+        height: 16px;
 
-            &:last-child {
-                margin-left: 2px;
-            }
+        &:last-child {
+            margin-left: 2px;
+        }
 
-            &:first-child {
-                margin-right: 2px;
-            }
+        &:first-child {
+            margin-right: 2px;
         }
     }
 

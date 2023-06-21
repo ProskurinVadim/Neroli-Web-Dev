@@ -1,6 +1,7 @@
 import Item from "./Item";
 import Condition, { If } from "../../../hoc/Conditional/Condition";
 import styles from "./Pagination.module.scss";
+import { LeftArrow, RightArrow } from "../../icons";
 interface IPagination {
     page: number,
     setPage: (newPage: number) => void
@@ -16,14 +17,13 @@ interface IPagination {
 const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, className }) => {
     const { withArrows = false, maxPages = 4, numerical = true } = config;
     const paginationArr = (new Array(maxPages)).fill("");
-    console.log(page,"1")
-    const nextPage = (newPage: number) => newPage < maxPages+1 ? setPage(newPage) : setPage(1);
+    const nextPage = (newPage: number) => newPage < maxPages+1 && setPage(newPage);
     const prevPage = (newPage: number) => newPage > 0 && setPage(newPage);
     return (
         <ul className={`${styles.pagination} ${numerical ? styles.numerical : ""}`}>
             <Condition condition={withArrows}>
                 <If>
-                    <Item onClick={() => prevPage(page - 1)} name="<" className={`${styles.pagination_item} ${styles.arrow}`} />
+                    <Item onClick={() => prevPage(page - 1)} name={<LeftArrow />} className={styles.arrow}/>
                 </If>
             </Condition>
             {
@@ -36,7 +36,7 @@ const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, classNa
             }
             <Condition condition={withArrows}>
                 <If>
-                    <Item onClick={() => nextPage(page + 1)} name=">" className={`${styles.pagination_item} ${styles.arrow}`} />
+                    <Item onClick={() => nextPage(page + 1)} name={<RightArrow />} className={styles.arrow} />
                 </If>
             </Condition>
         </ul>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Container from "../../../../hoc/Container";
 import Toggler from "../../../common/Toggler";  
 import Carousel from "../../../shared/Carousel";
-import Card from "../../../shared/Card/RaitingCard";
+import Card from "../../../shared/Card/AppartmentCard";
 import { getCarouselData } from "./getData";
 import styles from "./NewBuildings.module.scss"
 const NewBuildings = () => {
@@ -11,14 +11,14 @@ const NewBuildings = () => {
     const handelSetActive = (active: string) => setActive(_ => active);
     const data = getCarouselData(active);
     const config = {
-        time: 50000,
+        time: 5000,
+        itemsCount: 4,
         pagination: {
             withArrows: true,
             maxPages: Math.ceil(data.length/4),
             numerical: false,
         }
     };
-    console.log(styles)
     return (
         <section className={styles.new_buildings}>
             <Container>

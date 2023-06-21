@@ -13,6 +13,7 @@ const Comments = () => {
     const data = getCarouselData();
     const config = {
         time: 500000,
+        itemsCount: 3,
         pagination: {
             maxPages: 3,
             numerical: false,

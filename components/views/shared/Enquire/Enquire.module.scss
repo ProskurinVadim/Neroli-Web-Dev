@@ -26,6 +26,10 @@
         background-repeat: no-repeat;
         box-shadow: 0px 20px 40px rgba(192, 135, 22, 0.12);
     }
+
+    .section_header {
+        text-align: right;
+    }
 }
 
 @include xl {

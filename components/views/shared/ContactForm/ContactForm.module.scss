@@ -3,11 +3,14 @@
 
 .contact_form {
     background-color: $color-primary;
+    background-image: url("../../../../public/contact-us.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 80px 30px 90px;
 
     &_content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: end;
     }
 

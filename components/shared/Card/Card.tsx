@@ -5,7 +5,7 @@ import Image from "../../common/Image";
 
 interface ICard {
     image: string,
-    additional: React.ReactNode | string | null,
+    additional?: React.ReactNode | string | null,
     header: string
     adress?: string,
     description?: string,

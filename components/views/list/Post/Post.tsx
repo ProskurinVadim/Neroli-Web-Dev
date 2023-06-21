@@ -23,6 +23,7 @@ const Post: React.FC<IApartment> = ({ params }) => {
     const information = getInformation;
     const config = {
         time: 500000,
+        itemsCount: 1,
         pagination: {
             maxPages: 3,
             numerical: false,

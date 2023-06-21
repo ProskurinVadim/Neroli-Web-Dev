@@ -11,6 +11,7 @@ const ImageCarousel: React.FC<IImageCarousel> = ({ title }) => {
     const data = getData();
 
     const config = {
+        itemsCount: 1,
         time: 5000,
         pagination: {
             withArrows: true,

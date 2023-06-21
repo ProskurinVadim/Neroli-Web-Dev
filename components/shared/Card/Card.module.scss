@@ -5,34 +5,13 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    box-sizing: border-box;
 
     &_image {
         border-radius: 24px;
     }
 
-    .stars_list {
-        display: flex;
-        margin-top: 17px;
-        align-items: center;
-
-        &_item {
-            margin-right: 4px;
-
-            &.active {
-                svg > path {
-                    fill: $color-submit
-                }
-            }
-
-            &_rating {
-                margin-left: 12px;
-                @include medium-text;
-            }
-        }
-    }
-
     &_date {
-        margin-top: 20px;
         @include medium-text;
         color: $color-additiona;
 
@@ -41,7 +20,7 @@
     }
 
     &-text {
-        width: 200px;
+        width: 100%;
     }
 
     &_header {
@@ -51,6 +30,7 @@
         font-style: normal;
         font-weight: 500;
         color: $color-primary;
+        line-height: 30px;
     }
 
     &_adress {
@@ -80,6 +60,7 @@
 
         .card_text {
             box-sizing: border-box;
+            padding: 20px 21px;
         }
 
         .card_image {
@@ -87,7 +68,6 @@
         }
 
         .card_header {
-            line-height: 24px;
             margin-bottom: 8px;
         }
 
@@ -107,7 +87,8 @@
             .card_image {
                 width: 100%;
                 height: 266px;
-                padding-right: 0
+                padding-right: 0;
+                border-radius: 24px 24px 0 0;
             }
 
             .card_text {
@@ -124,7 +105,6 @@
         margin-right: 40px;
 
         &_header {
-            width: 325px;
             font-size: 21px;
         }
 
@@ -137,13 +117,12 @@
             width: 843px;
             height: 246px;
 
-            .card_text {
-                width: 413px;
+            .card_header {
+                font-size: 21px;
             }
 
             .card_image {
                 height: 246px;
-                padding-right: 24px;
             }
         }
     }
@@ -155,7 +134,6 @@
 
         &_header {
             font-size: 21px;
-            width: 350px;
         }
 
         &_image {
@@ -167,13 +145,8 @@
             width: 843px;
             height: 246px;
 
-            .card_text {
-                width: 413px;
-            }
-
             .card_image {
                 height: 246px;
-                padding-right: 24px;
             }
         }
     }
@@ -184,7 +157,6 @@
         margin-right: 40px;
 
         &_header {
-            width: 306px;
             font-size: 21px;
         }
 
@@ -199,14 +171,12 @@
             flex-direction: column;
 
             .card_text {
-                width: 100%;
                 padding: 20px 21px;
             }
 
             .card_image {
                 width: 100%;
                 height: 210px;
-                padding-right: 0;
             }
         }
     }
@@ -227,14 +197,12 @@
             flex-direction: column;
 
             .card_text {
-                width: 100%;
                 padding: 20px 21px;
             }
 
             .card_image {
                 width: 100%;
                 height: 210px;
-                padding-right: 0
             }
         }
     }

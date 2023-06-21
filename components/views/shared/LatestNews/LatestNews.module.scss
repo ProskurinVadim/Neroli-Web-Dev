@@ -5,12 +5,13 @@
 
 	&_item {
 		.card {
-			flex-direction: row;
-
 			&_image {
 				width: 306px;
 				height: 246px;
 			}
+		}
+		&:last-child {
+			margin-top: -288px;
 		}
 	}
 }

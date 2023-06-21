@@ -1,7 +1,7 @@
 interface IItem {
-    name: string,
+    name: React.ReactNode | string | null
     onClick: () => void
-    className: string
+    className?: string
 }
 
 const Item: React.FC<IItem> = ({ name, onClick, className }) => {

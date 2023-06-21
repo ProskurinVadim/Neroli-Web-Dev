@@ -8,7 +8,7 @@ import { getData } from "./getData";
 import styles from "./LatestNews.module.scss";
 
 const LatestNews = () => {
-    const [data, setData] = useState([...getData()]);
+    const data: any = getData()
     console.log(data);
     const handelSeeMore = () => {
     }
@@ -17,11 +17,15 @@ const LatestNews = () => {
             <Container>
                 <h2 className="section_header">Latest News</h2>
                 <ul className={styles.latest_news_list}>
-                    {
-                        data.map((elem: any, i) => <li className={styles.latest_news_list_item} key={`"news-item-${i}`} >
-                            <NewsCard {...elem} small={false} />
-                        </li>)
-                    }
+                    <li className={styles.latest_news_list_item}>
+                        <NewsCard {...data[0]} />
+                    </li>
+                    <li className={styles.latest_news_list_item}>
+                        <NewsCard {...data[1]} horizontal={true} />
+                    </li>
+                    <li className={styles.latest_news_list_item}>
+                        <NewsCard {...data[2]} />
+                    </li>
                 </ul>
                 <Link href="/blog" className={`${styles.button} ${buttonStyles.button} ${buttonStyles.button__link}`}>View all news</Link>
             </Container>

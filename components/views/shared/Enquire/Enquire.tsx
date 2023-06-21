@@ -26,7 +26,7 @@ const Enquire = () => {
         <section className={styles.enquire}>
             <Container className={styles.notebook}>
                 <div className={styles.notebook_item}>
-                    {width >= 1024 && <h2 className="section_header">Enquire now</h2>}
+                    {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
                     <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card}>
                         <p className={formStyles.form_text}>By clicking Submit, you agree to our
                             Terms & Privacy Policy.</p>

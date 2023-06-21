@@ -5,6 +5,9 @@ import Star from "./Star";
 import Logo from "./Logo/Logo";
 import LogoShort from "./Logo/LogoShort";
 
+import LeftArrow from "./Arrows/LeftArrow";
+import RightArrow from "./Arrows/RightArrow";
+
 import Facebook from "./SocialNetworks/Facebook";
 import Instagram from "./SocialNetworks/Instagram";
 import Whatsapp from "./SocialNetworks/Whatsapp";
@@ -43,5 +46,7 @@ export {
     Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
     CommercialAt, Mark,
-    PhoneColored, CalendarColored, EyeColored, LogoColored
+    RightArrow, LeftArrow,
+
+    PhoneColored, CalendarColored, EyeColored, LogoColored,
 }
