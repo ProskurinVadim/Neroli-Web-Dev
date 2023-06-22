@@ -1,3 +1,5 @@
+@import "../../../../styles/varrible";
+
 .list {
     display: flex;
     justify-content: space-between;
@@ -13,6 +15,28 @@
 
         & > div {
             margin: 0;
+        }
+    }
+
+    &_text_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &_toggler {
+        border: 1px solid $color-border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+
+        &_item {
+            padding: 10px;
+
+            &:first-child {
+                border-right: 1px solid $color-border;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import { ISVG } from "../../../types";
-const Phone: React.FC<ISVG> = ({ height = "16", width = "16", fill = "none", viewBox = "0 0 24 24" }) => {
+const Phone: React.FC<ISVG> = ({ height = "16", width = "16", fill = "none", viewBox = "0 0 16 16" }) => {
     return (
         <svg width={width} height={height} viewBox={viewBox} fill={fill} xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_105_1653)">

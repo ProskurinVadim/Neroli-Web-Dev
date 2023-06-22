@@ -3,8 +3,11 @@
 .container {
     text-align: center;
     margin: 0 auto;
-    overflow-x: hidden
-    
+    overflow-x: hidden;
+
+    &__overflow_initial {
+        overflow: initial;
+    }
 }
 @include xl {
     .container {

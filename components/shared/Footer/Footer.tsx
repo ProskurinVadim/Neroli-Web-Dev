@@ -1,5 +1,5 @@
 import FooterItem from "./FooterItem";
-import { LogoShort, Whatsapp, Facebook, Instagram } from "../../icons";
+import { DownArrow } from "../../icons";
 import Container from "../../../hoc/Container";
 import { aboutLinks, catigoriesLinks } from "../Header/getData";
 import styles from "./Footer.module.scss"
@@ -15,6 +15,8 @@ const Footer = () => {
                 <Container>
                     <h2 className={`${styles.footer_header}`}>
                         Experts in Real Estate Dubai
+
+                        <DownArrow />
                     </h2>
                 </Container>
             </div>

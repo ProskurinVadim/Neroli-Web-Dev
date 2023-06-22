@@ -8,10 +8,11 @@ interface IForm {
     fields: IFormFields[]
     value: any,
     className?: string,
+    buttonClassName? :string
     children?: React.ReactNode | string | null,
 }
 
-const Form: React.FC<IForm> = ({ onSubmit, fields, value, className, buttonText = "Submit", setValue, children }) => {
+const Form: React.FC<IForm> = ({ onSubmit, fields, value, className, buttonText = "Submit", setValue, children, buttonClassName = buttonStyles.button_submit }) => {
     const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
         setValue((prev_value: any) => {
             const newValue = { ...prev_value };
@@ -26,7 +27,7 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className, buttonText 
                     fields.map((elem: IFormFields, i: number) => elem.render(value[elem.key], handelChange(elem.key)))
                 }
             </>
-            <Button className={`${buttonStyles.button_submit} ${styles.button}`} onClick={onSubmit} text={buttonText}/>
+            <Button className={`${buttonClassName} ${styles.button}`} onClick={onSubmit} text={buttonText}/>
             <>{children}</>
         </form>
     )

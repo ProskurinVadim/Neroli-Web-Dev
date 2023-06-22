@@ -1,4 +1,4 @@
-import Image from "../../../../public/test-small.jpg"
+import Image from "../../../../public/main.jpg"
 import Person from "../../../../public/people-test.jpg"
 export const getTextData = {
     name: "1 Bedroom Apartment in Park One, Jumeirah Village Triangle.",

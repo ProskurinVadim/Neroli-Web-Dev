@@ -7,6 +7,7 @@ import LogoShort from "./Logo/LogoShort";
 
 import LeftArrow from "./Arrows/LeftArrow";
 import RightArrow from "./Arrows/RightArrow";
+import DownArrow from "./Arrows/DownArrow";
 
 import Facebook from "./SocialNetworks/Facebook";
 import Instagram from "./SocialNetworks/Instagram";
@@ -27,9 +28,13 @@ import Calendar from "./Card/Calendar";
 import CommercialAt from "./CommercialAt";
 import Mark from "./Mark";
 
+import Table from "./View/Table";
+import List from "./View/List";
 
 import Minus from "./Toggler/Minus";
 import Plus from "./Toggler/Plus";
+import ArrowBottom from "./Toggler/ArrowBottom";
+import ArrowTop from "./Toggler/ArrowTop";
 
 import CalendarColored from "./Card/CalendarColored";
 import EyeColored from "./Card/EyeColored";
@@ -42,11 +47,12 @@ export {
     Search,
     Star,
     Logo, LogoShort,
-    Minus, Plus,
+    Minus, Plus, ArrowTop, ArrowBottom,
     Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
     CommercialAt, Mark,
-    RightArrow, LeftArrow,
+    RightArrow, LeftArrow, DownArrow,
+    Table, List,
 
     PhoneColored, CalendarColored, EyeColored, LogoColored,
 }

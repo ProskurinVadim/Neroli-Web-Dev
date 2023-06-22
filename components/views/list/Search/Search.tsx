@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Form, { formStyles } from "../../../shared/Form/Form";
 import Button, { buttonStyles } from "../../../common/Button/Button";
-import Container from "../../../../hoc/Container";
+import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import { getDefaultData, getFormData } from "./getData";
 
 interface IForm {
@@ -21,12 +21,13 @@ const Search = () => {
     const onSubmit = () => {
         console.log(value)
     };
+    console.log(value)
     const handelOpen = () => setOpen((prev) => !prev);
     return (
         <section>
-            <Container>
+            <Container className={containerStyles.container__overflow_initial}>
                 <div className="d_flex_between">
-                    <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} />
+                    <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "} />
                     <Button text="More Filters" onClick={handelOpen} className={buttonStyles.button__transparent} />
                 </div>
                 {open && <p>Map</p>}

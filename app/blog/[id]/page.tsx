@@ -11,7 +11,7 @@ const Article: React.FC<IArticle> = ({params}) => {
     return (
         <>
             <Post />
-            <ContactForm />
+            <ContactForm isBottom={true} />
         </>
     )
 }

@@ -9,13 +9,16 @@ interface IForm {
     email: string,
     name: string
 }
-const Comments = () => {
+interface IContactForm {
+    isBottom?: boolean
+}
+const ContactForm: React.FC<IContactForm> = ({ isBottom }) => {
     const [value, setValue] = useState<IForm>({ ...defaultData })
     const fields: any = getFormData();
     const handelSubmit = () => console.log(value);
 
     return (
-        <section className={styles.contact_form}>
+        <section className={`${styles.contact_form} ${isBottom ? styles.contact_form__bottom : ""}`}>
             <Container className={styles.contact_form_content}>
                 <div className={styles.contact_form_text_block}>
                     <h3 className={`section_header section_header__light ${styles.section_header}`}>Stay updated</h3>
@@ -27,4 +30,4 @@ const Comments = () => {
     )
 };
 
-export default Comments
+export default ContactForm

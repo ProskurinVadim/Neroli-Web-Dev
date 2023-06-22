@@ -10,7 +10,7 @@ interface ICode {
 const Information: React.FC<ICode> = ({ code, baths, beds, name, size }) => {
     return (
         <>
-            <h2 className="section_header">{code}</h2>
+            <h2 className={`section_header ${styles.section_header}`}>{code}</h2>
             <ul className={styles.post_information_list}>
                 <li className={styles.post_information_list_item}> <Bed /> {beds}</li>
                 <li className={styles.post_information_list_item}> <Bath /> {baths}</li>

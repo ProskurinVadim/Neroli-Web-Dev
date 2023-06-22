@@ -1,14 +1,18 @@
 "use client";
 import Pagination from "../Pagination";
+import { LeftArrow, RightArrow } from "../../icons";
 import { useState, useEffect, useRef } from "react";
 import styles from "./Carousel.module.scss";
+import Condition, { If } from "../../../hoc/Conditional/Condition";
+
 interface ICarousel {
     data: any[],
     Item: any,
     children?: React.ReactNode | string | null,
     config: {
         itemsCount: number;
-        time: number
+        time: number,
+        paginationClassName? : string,
         pagination?: {
             withArrows?: boolean,
             maxPages?: number,
@@ -17,11 +21,12 @@ interface ICarousel {
     }
 }
 
-const Carousel: React.FC<ICarousel> = ({ data, Item, config = { itemsCount: 4} }) => {
+const Carousel: React.FC<ICarousel> = ({ data, Item, config = { itemsCount: 4,} }) => {
     const [page, setPage] = useState<number>(1);
     const { time, pagination } = config;
     const ref = useRef<HTMLDivElement>(null);
     const [transition, setTransition] = useState<number>(400);
+    const withArrows = !config.pagination?.withArrows;
     const update = (page: number) => {
         const newPage = page > Math.ceil(data.length / config.itemsCount) ? 1 : page;
         setPage(_ => newPage);
@@ -44,7 +49,13 @@ const Carousel: React.FC<ICarousel> = ({ data, Item, config = { itemsCount: 4} }
                     data.map((elem, i) => <div key={`carousel-item-${i}`} ref={ref}><Item {...elem}  /></div>)
                 }
             </div>
-            <Pagination page={page} setPage={update} config={pagination} />
+            <Condition condition={false}>
+                <If>
+                    <span className={`${styles.carousel_arrow}`}><LeftArrow /></span>
+                    <span className={`${styles.carousel_arrow}`}><RightArrow /></span>
+                </If>
+            </Condition>
+            <Pagination page={page} setPage={update} config={pagination} className={config.paginationClassName} />
         </div>
     )
 };

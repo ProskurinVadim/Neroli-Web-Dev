@@ -2,7 +2,10 @@
 @import "../../../../styles/mixin";
 
 .post {
+    margin-bottom: 80px;
+
     &_image_item {
+        margin-top: 40px;
         display: flex;
         justify-content: space-between;
     }
@@ -10,6 +13,7 @@
     &_big_images {
         width: 652px;
         height: 492px;
+        border-radius: 24px;
     }
 
     &_small_images {
@@ -21,6 +25,7 @@
             width: 306px;
             height: 226px;
             margin: 0 0 40px 40px;
+            border-radius: 24px;
         }
     }
 
@@ -40,10 +45,6 @@
             color: $color-primary;
             margin-right: 40px;
         }
-    }
-
-    & > .toggler {
-        margin: 40px 20px 0 0;
     }
 
     &_text_list {
@@ -71,9 +72,15 @@
         margin-bottom: 30px;
     }
 
+    &_toggler {
+        margin: 44px 0 19px 0;
+    }
+
     &_content {
         display: flex;
         justify-content: space-between;
+
+
 
         .text_block {
             width: 843px;
@@ -114,7 +121,7 @@
         }
 
         .map {
-            margin: 24px 0 80px;
+            margin-top: 24px;
 
             img {
                 width: 461px;
@@ -122,4 +129,9 @@
             }
         }
     }
+}
+
+
+.section_header {
+    margin-top: 0px;
 }

@@ -5,7 +5,7 @@ export default function BookPage() {
         <>
             <Enquire />
             <Comments />
-            <ContactForm />
+            <ContactForm isBottom={true} />
         </>
     )
 }

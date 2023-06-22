@@ -24,7 +24,9 @@
         text-align: left;
     }
 }
-
+.contact_form__bottom {
+    margin-bottom: -40px;
+}
 
 @include xl {
     .contact_form {

@@ -13,7 +13,7 @@ const TextBlock: React.FC<IText> = ({ name, characteristics=[], description, des
             <h4 className="medium_text">{name}</h4>
             <ul className={styles.post_text_list}>
                 {characteristics.map((elem, i) =>
-                    <li key={`list-item-${i}`}>{elem}</li>
+                    <li key={`list-item-${i}`} className="medium_text">{elem}</li>
                 )}
             </ul>
             <p className={`medium_text ${styles.post_medium_text}`}>{description}</p>

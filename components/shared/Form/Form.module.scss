@@ -51,27 +51,41 @@
         align-items: center;
         margin-top: 31px;
 
-        & > input {
-            margin: 0 16px 0 0;
+        .search_large_container {
+            margin-right: 16px;
             box-shadow: none;
-        }
 
-        & > select {
-            box-shadow: none;
-            margin: 0 16px 0 0;
-        }
+            .search_large_input {
+                margin: 0;
+                box-shadow: none;
+                width: min-content;
+            }
 
-        & > .button {
-            margin-top: 0px;
-            color: $color-light;
-            background-color: $color-primary;
+            p {
+                bottom: -5px;
+                left: 12px;
+            }
         }
+    }
+
+    .search_large_select {
+        box-shadow: none;
+        margin: 0 16px 0 0;
+
+        svg {
+            padding-left: 12px;
+        }
+    }
+
+    & > .button {
+        margin-top: 0px;
     }
 }
 
+
 @include xl {
     .form__search {
-        width: fit-content;
+        width: 573px;
         border-radius: 100px;
         flex-direction: row;
 
@@ -93,7 +107,7 @@
 
 @include lg {
     .form__search {
-        width: fit-content;
+        width: 573px;
         border-radius: 100px;
         flex-direction: row;
 

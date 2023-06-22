@@ -9,12 +9,14 @@ interface IAppartmentCard {
     description?: string,
     link?: string,
     small?: boolean,
+    className? : string,
 }
 
-const AppartmentCard: React.FC<IAppartmentCard> = (props) => {
+const AppartmentCard: React.FC<IAppartmentCard> = ({ small = true, className = "", ...props }) => {
     return (
         <Card {...props}
-            small={true}
+            small={small}
+            className={`${className} ${!small ? styles.card_vertical : ""}`}
         />
     )   
 }

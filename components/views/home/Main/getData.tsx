@@ -3,12 +3,12 @@ export const getFormData = () => [
     {
         key: "building",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onChange={onChange} placeholder="Community or building" className={`${inputStyles.input} ${inputStyles.input_inline} ${inputStyles.input_inline__first}`} />)
+            (<Input value={value} onChange={onChange} placeholder="Community or building" className={`${inputStyles.input_inline} ${inputStyles.input_inline__rounded}`} containerClassName={inputStyles.input_inline_container} />)
     },
     {
         key: "commercial",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onChange={onChange} placeholder="Price, Type and Bedrooms" className={`${inputStyles.input} ${inputStyles.input_inline}`} />)
+            (<Input value={value} onChange={onChange} placeholder="Price, Type and Bedrooms" className={`${inputStyles.input_inline}`} containerClassName={inputStyles.input_inline_container} />)
     }
 ]
 

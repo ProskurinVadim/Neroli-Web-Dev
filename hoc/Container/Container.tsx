@@ -11,4 +11,8 @@ const Container: React.FC<IContainer> = ({ children, className="" }) => {
     )
 }
 
+export {
+    styles as containerStyles
+}
+
 export default Container

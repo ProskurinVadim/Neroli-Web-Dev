@@ -19,6 +19,9 @@
         padding: 40px;
         text-align: left;
 
+        &_content {
+            padding-top: 10px;
+        }
         &_text {
             margin-top: 16px;
             display: flex;

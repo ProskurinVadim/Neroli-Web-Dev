@@ -14,13 +14,14 @@ interface IPagination {
 }
 
 
-const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, className }) => {
+const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, className="" }) => {
     const { withArrows = false, maxPages = 4, numerical = true } = config;
     const paginationArr = (new Array(maxPages)).fill("");
     const nextPage = (newPage: number) => newPage < maxPages+1 && setPage(newPage);
     const prevPage = (newPage: number) => newPage > 0 && setPage(newPage);
+    console.log(className,"className")
     return (
-        <ul className={`${styles.pagination} ${numerical ? styles.numerical : ""}`}>
+        <ul className={`${styles.pagination} ${numerical ? styles.numerical : ""} ${className}`}>
             <Condition condition={withArrows}>
                 <If>
                     <Item onClick={() => prevPage(page - 1)} name={<LeftArrow />} className={styles.arrow}/>
@@ -28,7 +29,7 @@ const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, classNa
             </Condition>
             {
                 paginationArr.map((_, i) => <Item
-                    name={numerical ? `${i}` : ""}
+                    name={numerical ? `${i+1}` : ""}
                     key={`paggination-item-${i}`}
                     className={`${styles.pagination_item} ${page-1===i ? styles.active : ""}`}
                     onClick={() => setPage(i+1)}
