@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Carousel from "../../../shared/Carousel";
-import Container from "../../../../hoc/Container";
+import Carousel, { carouselStyles } from "../../../shared/Carousel/Carousel";
+import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import Person, { personStyles } from "../../../shared/Person/Person";
 import { getCarouselData } from "./getData";
 import styles from "./Comments.module.scss";
@@ -12,18 +12,18 @@ interface IForm {
 const Comments = () => {
     const data = getCarouselData();
     const config = {
-        time: 500000,
-        itemsCount: 3,
+        time: 5000,
+        itemsCount: 2,
         pagination: {
-            maxPages: 3,
+            maxPages: Math.ceil(data.length / 2),
             numerical: false,
         }
     };
     return (
         <section className={styles.comments}>
-            <Container>
+            <Container className={containerStyles.container__overflow_initial}>
                 <h2 className={`section_header ${styles.section_header}`}>Why people love Neroli Properties </h2>
-                {<Carousel config={config} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}
+                {<Carousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}
             </Container>
         </section>
     )
