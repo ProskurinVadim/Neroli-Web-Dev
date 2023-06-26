@@ -8,7 +8,7 @@ import PersonCardItem from "./PersonCardItem";
 const personArr = [
     { icon: <Eye />, text: "Arrange a viewing, 24/7"},
     { icon: <Calendar />, text: "Choose a date & time" },
-    { icon: <Key />, text: "Need to sell first? Book a valuation" },
+    { icon: <Key />, text: <>Need to sell first?  <span className="text__underlining">Book a valuation</span></>},
 ]
 
 const PersonCard: React.FC<IAvatar> = ({ image, name, job}) => {

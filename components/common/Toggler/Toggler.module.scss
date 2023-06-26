@@ -2,7 +2,7 @@
 @import "../../../styles/mixin";
 
 .toggler {
-    padding: 4px;
+    padding: 3px;
     border-radius: 14px;
     display: flex;
     width: max-content;
@@ -14,9 +14,19 @@
         color: $color-additiona;
         cursor: pointer;
         line-height: 15px;
+        transition: 0.5s;
+
         &.active {
             color: $color-light;
             background: $color-primary;
+
+            &:hover {
+                color: $color-light;
+            }
+        }
+
+        &:hover {
+            color: $color-submit;
         }
     }
 
@@ -29,6 +39,15 @@
 
             &.active {
                 color: $color-light;
+
+                &:hover {
+                    color: $color-light;
+                }
+            }
+
+
+            &:hover {
+                color: $color-submit;
             }
         }
     }

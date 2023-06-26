@@ -10,6 +10,7 @@
     padding: 11px 12px;
     border-radius: 10px;
     box-sizing: border-box;
+    cursor: pointer;
 
     &_value {
         @include small-text;
@@ -33,26 +34,49 @@
         border-radius: 10px;
         border: 1px solid $color-border;
         left: 0;
-        top: 104%;
+        top: 45px;
         background: $color-light;
         text-align: left;
         z-index: 2;
+        width: max-content;
+        transition: 1s;
+        animation: appearance;
+        animation-duration: 1s;
 
         &_item {
             @include small-text;
             color: $color-placeholder;
             line-height: 18px;
             padding: 6px 12px;
-            width: max-content;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: 1s;
 
             &.active {
                 color: $color-primary;
                 font-weight: 700;
+
+                &:hover {
+                    background-color: $color-primary;
+                }
             }
 
             &:hover {
                 background-color: #F6F6F6;
             }
         }
+    }
+}
+
+@keyframes appearance {
+    from {
+        opacity: 0;
+        top: 65px;
+    }
+
+    to {
+        opacity: 1;
+        top: 45px;
     }
 }

@@ -4,7 +4,7 @@ import { Logo } from "../.../../../../icons"
 import styles from "../Footer.module.scss";
 interface IFooterItem {
     header: string,
-    list: ILink[] | string[],
+    list: any[],
     children?: React.ReactNode | string | null,
 }
 

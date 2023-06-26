@@ -16,13 +16,13 @@ interface IForm {
 
 const Search = () => {
     const [value, setValue] = useState<IForm>({ ...getDefaultData });
-    const [open, setOpen] = useState<boolean>(false);
-    const fields:any = getFormData();
+    const [open, setOpen] = useState<boolean | string>(false);
+    const [mapOpen, setMapOpen] = useState<boolean | string>(false);
+    const fields: any = getFormData(setOpen,open);
     const onSubmit = () => {
         console.log(value)
     };
-    console.log(value)
-    const handelOpen = () => setOpen((prev) => !prev);
+    const handelOpen = () => setMapOpen((prev) => !prev);
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
@@ -30,7 +30,7 @@ const Search = () => {
                     <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "} />
                     <Button text="More Filters" onClick={handelOpen} className={buttonStyles.button__transparent} />
                 </div>
-                {open && <p>Map</p>}
+                {mapOpen && <p>Map</p>}
             </Container>
         </section>
     )

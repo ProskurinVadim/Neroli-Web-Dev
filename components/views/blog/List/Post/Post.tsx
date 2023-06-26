@@ -9,15 +9,17 @@ const Post = () => {
     const data = getData();
     return (
         <section>
-            <Container >
-                <div style={{ backgroundImage: `url(${data.background_image})` }} className={styles.post_information}>
+            <div style={{ backgroundImage: `url(${data.background_image})` }} className={styles.post_information}>
+                <Container>
                     <h2 className={`section_header ${styles.section_header}`}>{data.header}</h2>
                     <ul className={`medium_text ${styles.post_information_list}`}>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><CalendarColored />{data.date}</li>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><EyeColored />{data.views}</li>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><Time />{data.time}</li>
                     </ul>
-                </div>
+                </Container>
+            </div>
+            <Container >
                 <p className={`medium_text ${styles.post_text}`}>{data.text}</p>
                 <Image src={data.image} alt="post-image" className={styles.post_image}/>
                 <p className={`medium_text ${styles.post_text}`}>{data.sub_text}</p>

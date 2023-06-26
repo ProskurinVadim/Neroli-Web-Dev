@@ -4,6 +4,7 @@
     text-align: center;
     margin: 0 auto;
     overflow-x: hidden;
+    box-sizing: border-box;
 
     &__overflow_initial {
         overflow: visible;
@@ -11,7 +12,7 @@
 }
 @include xl {
     .container {
-        width: 1350px;
+        width: 1440px;
         padding: 0 48px;
     }
 }
@@ -26,13 +27,17 @@
 @include md {
     .container {
         width: 720px;
-        padding: 0 44px;
+        padding: 0 28px;
     }
 }
 
 @include sm {
     .container {
-        width: 345px;
-        padding: 0px 10px;
+        width: 428px;
+        padding: 0px 28px;
+
+        __overflow_initial {
+            overflow: hidden;
+        }
     }
 }

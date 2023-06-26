@@ -53,12 +53,18 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
             </div>
             <Condition condition={withArrows}>
                 <If>
-                    <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__left}`} onClick={() => update(page - 1)}>
-                        <LeftArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
-                    </span>
-                    <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__right}`} onClick={() => update(page + 1)}>
-                        <RightArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
-                    </span>
+                    {
+                        page === 1 &&
+                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__left}`} onClick={() => update(page - 1)}>
+                            <LeftArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
+                        </span>
+                    }
+                    {
+                        page === maxPage &&
+                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__right}`} onClick={() => update(page + 1)}>
+                            <RightArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
+                        </span>
+                    }
                 </If>
             </Condition>
             <Pagination page={page} setPage={update} config={pagination} className={config.paginationClassName} />

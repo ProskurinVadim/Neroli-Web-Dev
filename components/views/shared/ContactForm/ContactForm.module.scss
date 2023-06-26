@@ -6,7 +6,7 @@
     background-image: url("../../../../public/contact-us.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 80px 30px 90px;
+    background-position: center;
 
     &_content {
         display: flex;
@@ -24,9 +24,6 @@
         text-align: left;
     }
 }
-.contact_form__bottom {
-    margin-bottom: -40px;
-}
 
 @include xl {
     .contact_form {
@@ -40,7 +37,6 @@
 
 @include lg {
     .contact_form {
-        padding: 80px 30px 90px;
 
         .medium_text {
             width: 500px;
@@ -50,25 +46,6 @@
 
 @include md {
     .contact_form {
-        padding: 40px 30px;
-
-        &_content {
-            flex-direction: column;
-        }
-
-        &_text_block{
-            margin: 0 auto;
-        } 
-        .medium_text {
-            width: 500px;
-            margin-bottom: 40px;
-        }
-    }
-}
-
-@include sm {
-    .contact_form {
-        padding: 40px 30px;
 
         &_content {
             flex-direction: column;
@@ -79,7 +56,25 @@
         }
 
         .medium_text {
-            width: 345px;
+            width: 500px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include sm {
+    .contact_form {
+
+        &_content {
+            flex-direction: column;
+        }
+
+        &_text_block {
+            margin: 0 auto;
+        }
+
+        .medium_text {
+            width: 100%;
             margin-bottom: 40px;
         }
     }

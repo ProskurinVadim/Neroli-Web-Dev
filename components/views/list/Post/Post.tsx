@@ -31,9 +31,9 @@ const Post: React.FC<IApartment> = ({ params }) => {
         }
     };
     return (
-        <section className={styles.post}>
+        <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
-                <h2 className={`section_header ${styles}`}> One Bedroom, Quality Finish, Near Park ID- {params.id}</h2>
+                <h2 className={`section_header`}> One Bedroom, Quality Finish, Near Park ID- {params.id}</h2>
                 <Carousel config={config} data={data} Item={(props: any) => <CarouselItem {...props} />} />
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>

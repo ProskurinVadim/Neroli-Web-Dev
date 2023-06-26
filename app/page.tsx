@@ -8,8 +8,8 @@ export default function Home() {
             <NewBuildings />
             <Enquire />
             <Comments />
-            <ContactForm /> 
-            <LatestNews />
+            <ContactForm />
+            <LatestNews />            
         </>
     )
 }

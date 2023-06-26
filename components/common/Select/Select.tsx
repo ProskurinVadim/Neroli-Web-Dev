@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ArrowBottom, ArrowTop } from "../../icons";
 import Condition, { If } from "../../../hoc/Conditional/Condition";
 import styles from "./Select.module.scss";
@@ -10,21 +10,25 @@ interface ISelect {
     }>,
     label: string,
     value: string,
-    onChange: (newValue: string) => void,
+    onChange: (e: any) => void,
     className?: string,
     defaultValue: string,
+    open: boolean,
+    setOpen: (open: boolean | string) => void
 }
 
-const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultValue = "", className = "", }) => {
-    const [open, setOpen] = useState(false);
-    const toggleOpen = () => setOpen((prev) => !prev);
+const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultValue = "", className = "", open, setOpen }) => {
     const handelChange = (newValue: string) => {
-        toggleOpen();
-        onChange(newValue);
+        setOpen(false);
+        const target = { value: newValue };
+        onChange({ target });
     }
-    const name = value ? options.filter(elem => elem.value === value)[0].name : defaultValue
+    const toggleOpen = () => {
+        !open ? setOpen(label): setOpen(false);
+    }
+    const name = value ? options.filter(elem => elem.value === value)[0].name : defaultValue;
     return (
-        <div onClick={() => toggleOpen()} className={`${styles.select} ${className}`}>
+        <div onClick={toggleOpen} className={`${styles.select} ${className}`}>
             <p className={styles.select_value}>
                 {name}
                 {open ? <ArrowBottom /> : <ArrowTop />}

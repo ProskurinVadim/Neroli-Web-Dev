@@ -25,9 +25,9 @@ const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, c
 			<Condition condition={Boolean(Object.keys(socialNetworks).length)}>
 				<If>
 					<ul className={styles.person_networks}>
-						<li><Facebook /></li>
-						<li><Linkedin /></li>
-						<li><Whatsapp /></li>
+						<li className="icon__hover"><Facebook /></li>
+						<li className="icon__hover"><Linkedin /></li>
+						<li className="icon__hover"><Whatsapp /></li>
 					</ul>
 				</If>
 			</Condition>

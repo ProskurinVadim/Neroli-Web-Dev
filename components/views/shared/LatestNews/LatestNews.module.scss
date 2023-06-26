@@ -1,21 +1,41 @@
+@import '../../../../styles/mixin';
+
 .latest_news_list {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 40px;
+}
 
-	&_item {
-		.card {
-			&_image {
-				width: 306px;
-				height: 246px;
+@include xl {
+	.latest_news_list {
+		&_item {
+			.card {
+				&_image {
+					width: 306px;
+					height: 246px;
+				}
 			}
-		}
-		&:last-child {
-			margin-top: -288px;
+
+			&:last-child {
+				margin-top: -288px;
+			}
 		}
 	}
 }
 
-.button {
-	margin-bottom: 40px;
+@include lg {
+	.latest_news_list {
+		&_item {
+			.card {
+				&_image {
+					width: 306px;
+					height: 246px;
+				}
+			}
+
+			&:last-child {
+				margin-top: -288px;
+			}
+		}
+	}
 }

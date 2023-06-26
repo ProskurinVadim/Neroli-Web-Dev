@@ -1,6 +1,8 @@
+@import '../../../styles/mixin';
 .carousel {
     overflow: hidden;
     position: relative;
+    padding-top: 40px;
 
     &_container {
         display: flex;
@@ -12,7 +14,7 @@
 
     &_arrow {
         position: absolute;
-        top: 115px;
+        top: 175px;
 
         &__left {
             left: -40px;
@@ -24,8 +26,31 @@
     }
 
     &__center {
-        overflow: visible;
-        width: 962px;
         margin: 0px auto;
+    }
+}
+@include xl {
+    .carousel__center {
+        width: 962px;
+        overflow: visible;
+    }
+}
+
+@include lg {
+    .carousel__center {
+        width: 662px;
+        overflow: visible;
+    }
+}
+
+@include md {
+    .carousel__center {
+        width: 480px;
+    }
+}
+
+@include sm {
+    .carousel__center {
+        width: 100%;
     }
 }

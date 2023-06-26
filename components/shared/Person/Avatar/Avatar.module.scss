@@ -5,7 +5,7 @@
     display: flex;
     text-align: left;
     justify-content: flex-start;
-
+    align-items: center;
     &_image {
         width: 67px;
         height: 67px;
@@ -20,6 +20,7 @@
     }
 
     &_job {
+        margin-top: 4px;
         @include small-text;
         color: $color-additiona;
     }

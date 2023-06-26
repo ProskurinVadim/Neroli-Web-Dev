@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 40px;
 
     &_item {
         margin: 20px 0;
@@ -33,9 +33,20 @@
 
         &_item {
             padding: 10px;
+            cursor: pointer;
+
+            svg {
+                transition: 1s;
+            }
 
             &:first-child {
                 border-right: 1px solid $color-border;
+            }
+
+            &:hover {
+                svg {
+                    fill: $color-primary;
+                }
             }
         }
     }

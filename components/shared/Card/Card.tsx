@@ -27,7 +27,7 @@ const Card: React.FC<ICard> = ({ image, additional, adress, description, link = 
                     !small &&
                     <>
                         <p className={styles.card_description}>{description}</p>
-                        <Link href={link} className={styles.card_link}>Learn more</Link>
+                        <Link href={link} className={`${styles.card_link} text__underlining`}>Learn more</Link>
                     </>
                 }
             </div>

@@ -17,9 +17,9 @@ const Map = () => {
                         <p className={`${styles.contact_us_info_text} medium_text`}><Mark /> 6116 Willa River Suite 610</p>
                     </div>
                     <div className={styles.contact_us_social_links}>
-                        <Facebook />
-                        <Instagram />
-                        <Whatsapp />
+                        <span className="icon__hover"><Facebook /></span>
+                        <span className="icon__hover"><Instagram /></span>
+                        <span className="icon__hover"><Whatsapp /></span>
                     </div>
                     <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Our team</Link>
                 </div>

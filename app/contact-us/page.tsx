@@ -1,4 +1,4 @@
-import { Comments } from "../../components/views/shared/";
+import { Comments, ContactForm } from "../../components/views/shared/";
 import { Map } from "../../components/views/contact-us";
 
 export default function ContactUs() {
@@ -7,6 +7,7 @@ export default function ContactUs() {
         <>
             <Map />
             <Comments />
+            <ContactForm />
         </>
     )
 }

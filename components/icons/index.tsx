@@ -4,10 +4,12 @@ import Star from "./Star";
 
 import Logo from "./Logo/Logo";
 import LogoShort from "./Logo/LogoShort";
+import LogoShortUnfill from "./Logo/LogoShortUnfill";
 
 import LeftArrow from "./Arrows/LeftArrow";
 import RightArrow from "./Arrows/RightArrow";
 import DownArrow from "./Arrows/DownArrow";
+import TopArrow from "./Arrows/TopArrow";
 
 import Facebook from "./SocialNetworks/Facebook";
 import Instagram from "./SocialNetworks/Instagram";
@@ -46,12 +48,12 @@ export {
     Burger,
     Search,
     Star,
-    Logo, LogoShort,
+    Logo, LogoShort, LogoShortUnfill,
     Minus, Plus, ArrowTop, ArrowBottom,
     Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
     CommercialAt, Mark,
-    RightArrow, LeftArrow, DownArrow,
+    RightArrow, LeftArrow, DownArrow, TopArrow,
     Table, List,
 
     PhoneColored, CalendarColored, EyeColored, LogoColored,

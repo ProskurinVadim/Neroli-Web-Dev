@@ -25,7 +25,7 @@ export default function Home() {
     const onClick = () => false;
     console.log(styles)
     return (
-        <section className={styles.main_page}>
+        <section className={`${styles.main_page}`}>
             <Container>
                 <h2 className="small_section_header small_section_header__light">Welcome to Form Estate</h2>
                 <h1 className={styles.main_header}>Find your property</h1>

@@ -13,9 +13,9 @@ const List = () => {
     const [page, setPage] = useState(1);
     const [view, setView] = useState<"list" | "table">("table")
     return (
-        <section className={styles.post}>
+        <section className="section__padding">
             <Container className="t_l">
-                <h2 className="section_header m_8_2">Search Results</h2>
+                <h2 className="section_header">Search Results</h2>
                 <div className={styles.list_text_container}>
                     <p className="medium_text medium_text__aditional">
                         Properties For Sale In Dubai: {data.length}

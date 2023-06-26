@@ -1,4 +1,4 @@
-import TestImage from "../../../../../../public/test-small.jpg";
+import TestImage from "../../../../../../public/main.jpg";
 
 const testData = {
     image: TestImage,

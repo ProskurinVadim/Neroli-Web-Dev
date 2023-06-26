@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     width: fit-content;
-    margin: 45px auto 40px;
 
     &_item {
         width: 10px;
@@ -13,7 +12,8 @@
         box-sizing: border-box;
         border: 2px solid $color-additiona;
         border-radius: 100px;
-        margin: 0 16px;
+        margin: 0 8px;
+        cursor: pointer;
 
         &.active {
             color: $color-light;
@@ -26,13 +26,14 @@
         color: $color-additiona;
         border: none;
         height: 16px;
+        cursor: pointer;
 
         &:last-child {
-            margin-left: 2px;
+            margin-left: 8px;
         }
 
         &:first-child {
-            margin-right: 2px;
+            margin-right: 8px;
         }
     }
 
@@ -43,6 +44,7 @@
 
         .pagination_item {
             @include button-text;
+            transition: 1s;
             margin: 0 2px;
             padding: 9px 16px;
             border-radius: 10px;
@@ -57,6 +59,39 @@
             &:first-child {
                 margin-left: 0;
             }
+
+            &:hover {
+                color: $color-submit;
+            }
+            &.active {
+                &:hover {
+                    color: $color-light;
+                }
+            }
         }
+    }
+}
+
+
+@include xl {
+    .pagination {
+        margin: 45px auto 0;
+    }
+}
+@include lg {
+    .pagination {
+        margin: 45px auto 0;
+    }
+}
+
+@include md {
+    .pagination {
+        margin: 28px auto 0;
+    }
+}
+
+@include sm {
+    .pagination {
+        margin: 28px auto 0;
     }
 }

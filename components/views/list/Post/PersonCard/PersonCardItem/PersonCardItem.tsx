@@ -1,7 +1,7 @@
 import styles from "../../Post.module.scss"
 interface IPersonCardItem {
     icon: any,
-    text: string
+    text: React.ReactNode | string | null
 }
 const PersonCardItem: React.FC<IPersonCardItem> = ({ icon, text }) => {
     return (
