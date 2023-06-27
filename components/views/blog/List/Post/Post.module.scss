@@ -1,24 +1,22 @@
 @import "../../../../../styles/varrible";
+@import "../../../../../styles/mixin";
 
 .post_information {
-    height: 356px;
     background-repeat: no-repeat;
     background-size: cover;
 
     .section_header {
         padding-top: 120px;
         color: #FFFFFF;
-        margin-top: 0;
     }
 
     &_list {
-        display: flex;
         margin-top: 40px;
+        display: flex;
         justify-content: center;
 
         &_item {
             display: flex;
-            margin-right: 40px;
             align-items: center;
 
             svg {
@@ -28,19 +26,19 @@
     }
 }
 .post_text {
-    width: 843px;
-    margin: 40px auto;
     text-align: left;
     line-height: 30px;
 }
 
+.post_image {
+    height: 372px;
+    border-radius: 24px;
+}
+
 .post_social_list {
     display: flex;
-    padding: 40px;
     border: 1px solid #C2D1D9;
     border-radius: 24px;
-    margin: 0 auto 40px;
-    width: 843px;
     box-sizing: border-box;
 
     &_item {
@@ -76,8 +74,157 @@
     }
 }
 
-.post_image {
-    width: 1024px;
-    height: 372px;
-    border-radius: 24px;
+@include xl {
+    .post_information {
+        height: 356px;
+
+        .section_header {
+            padding-top: 120px;
+        }
+
+        &_list {
+
+            &_item {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .post_text {
+        width: 843px;
+        margin: 40px auto;
+    }
+
+    .post_image {
+        width: 1024px;
+    }
+    .post_social_list {
+        padding: 40px;
+        margin: 0 auto 40px;
+        width: 843px;
+    }
 }
+
+@include lg {
+    .post_information {
+        height: 356px;
+
+        .section_header {
+            padding-top: 120px;
+        }
+
+        &_list {
+
+            &_item {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .post_text {
+        width: 600px;
+        margin: 40px auto;
+    }
+
+    .post_image {
+        width: 824px;
+    }
+
+    .post_social_list {
+        padding: 40px 30px;
+        margin: 0 auto 40px;
+        width: 800px
+    }
+}
+
+;
+@include md {
+    .post_information {
+        height: 428px;
+
+        .section_header {
+            padding-top: 60px;
+        }
+
+        &_list {
+            align-items: center;
+            flex-direction: column;
+
+            &_item {
+                width: 240px;
+                margin: 0 28px 30px;
+            }
+        }
+    }
+
+    .post_text {
+        width: 100%;
+        margin: 40px auto;
+        font-size: 14px;
+    }
+
+    .post_image {
+        width: 100%;
+    }
+
+    .post_social_list {
+        padding: 40px;
+        margin: 0 auto 40px;
+        flex-direction: column;
+        width: 100%;
+
+        &_item {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include sm {
+    .post_information {
+        height: 428px;
+
+        .section_header {
+            padding-top: 40px;
+        }
+
+        &_list {
+            align-items: center;
+            flex-direction: column;
+
+            &_item {
+                width: 160px;
+                margin: 0 28px 28px;
+            }
+        }
+    }
+
+    .post_text {
+        width: 100%;
+        margin: 40px auto 28px;
+        font-size: 14px;
+    }
+
+    .post_image {
+        width: 100%;
+    }
+
+    .post_social_list {
+        padding: 40px;
+        margin: 0 auto 25px;
+        flex-direction: column;
+        width: 100%;
+
+        &_item {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

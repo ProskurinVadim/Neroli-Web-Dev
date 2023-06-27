@@ -12,13 +12,14 @@ interface IHeader {
 
 const HeaderDesktop: React.FC<IHeader> = ({ href }) => {
     const onClick = () => false;
+    console.log(styles);
     return (
         <>
             <Link href="/"><Logo /></Link>
             <nav>
                 <ul className={styles.navbar}>
                     {links.map((elem, i) =>
-                        <li className={`${styles.navbar_item} ${href === elem.href ? "active" : ""}`} key={"link-item-" + i}>
+                        <li className={`${styles.navbar_item} ${href === elem.href ? styles.active : ""}`} key={"link-item-" + i}>
                             <Link
                                 href={elem.href}
                             >

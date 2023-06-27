@@ -1,5 +1,6 @@
 import { Input, Select } from "../../../common";
 import { formStyles } from "../../../shared/Form/Form";
+import styles  from "./Search.module.scss";
 
 const planOptions = [
     { value: "all", name: "All" },
@@ -64,27 +65,27 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     {
         key: "type",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={formStyles.search_large_select} />)
-    },
-    {
-        key: "beds",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds" className={formStyles.search_large_select}/>)
-    },
-    {
-        key: "price_min",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" className={formStyles.search_large_select}/>)
-    },
-    {
-        key: "price_max",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" className={formStyles.search_large_select}/>)
+            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={`${formStyles.search_large_select} ${styles.select__one_third_small}`} />)
     },
     {
         key: "property_type",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type" className={formStyles.search_large_select}  />)
+            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type" className={`${formStyles.search_large_select} ${styles.select__one_third}`} />)
+    },
+    {
+        key: "beds",
+        render: (value: string, onChange: (newValue: string) => void) =>
+            (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds" className={`${formStyles.search_large_select} ${styles.select__one_third}`} />)
+    },
+    {
+        key: "price_min",
+        render: (value: string, onChange: (newValue: string) => void) =>
+            (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" className={`${formStyles.search_large_select} ${styles.select__half}`} />)
+    },
+    {
+        key: "price_max",
+        render: (value: string, onChange: (newValue: string) => void) =>
+            (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" className={`${formStyles.search_large_select} ${styles.select__half}`} />)
     },
 ];
 

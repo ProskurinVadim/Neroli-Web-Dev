@@ -11,15 +11,15 @@ const List = () => {
     const data = getData("adress");
     const [page, setPage] = useState(1);
     return (
-        <section>
+        <section className="section__padding">
             <Container className="t_l">
-                <h2 className="section_header m_8_2">News & Blog</h2>
+                <h2 className={`section_header ${styles.section_header}`}>News & Blog</h2>
                 <p className="medium_text medium_text__aditional">Last Update: March 16, 2023</p>
                 <ul className={styles.list}>
                     {data.map((elem: any, i) =>
                         <li key={`card-item-key-${i}`} className={styles.list_item}>
                             <Link href="/blog/1" className="link_unset">
-                                <NewsCard  {...elem} horizontal={true} />
+                                <NewsCard  {...elem} horizontal={true} table={true} />
                             </Link>
                         </li>
                     )}

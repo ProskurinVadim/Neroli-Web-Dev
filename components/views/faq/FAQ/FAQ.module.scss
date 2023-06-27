@@ -2,8 +2,6 @@
 @import "../../../../styles/varrible";
 
 .faq_list {
-    width: 1024px;
-    margin: 0 auto 80px;
 
     .faq_list_item {
         width: 100%;
@@ -15,7 +13,6 @@
 
         &:first-child {
             border-radius: 16px 16px 0px 0px;
-            margin-top: 40px;
         }
 
         &:last-child {
@@ -42,7 +39,7 @@
 
 .medium_text {
     border-top: 1px solid #E5E5E5;
-    animation: anim 1s;
+    animation: anim 1s ease-in;
     text-align: left;
     padding: 20px;
 }
@@ -65,12 +62,40 @@
 
 @keyframes anim {
     from {
-        line-height: 0;
+        line-height: 1px;
         opacity: 0
     }
 
     to {
         line-height: 24px;
         opacity: 1
+    }
+}
+
+@include xl {
+    .faq_list {
+        margin: 40px auto 80px;
+        width: 1024px;
+    }
+}
+
+@include lg {
+    .faq_list {
+        margin: 40px auto 80px;
+        width: 880px;
+    }
+}
+
+@include md {
+    .faq_list {
+        margin: 40px auto;
+        width: 100%;
+    }
+}
+
+@include sm {
+    .faq_list {
+        margin: 40px auto 16px;
+        width: 100%;
     }
 }

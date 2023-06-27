@@ -11,11 +11,12 @@ import "../../../styles/global.scss"
 
 const Header = () => {
     const adaptive = useContext(AdaptiveContext);
-    const isActive = () => false;
+    const pathname = usePathname();
+    const isActive = (href: string) => pathname === href;
     return (
         <header className={styles.header}>
             <Container className={styles.header_container}>
-                {adaptive ? <HeaderMobile isActive={isActive} /> : <HeaderDesktop href={""} />}
+                {adaptive ? <HeaderMobile isActive={isActive} /> : <HeaderDesktop href={pathname} />}
             </Container>
         </header>
     )

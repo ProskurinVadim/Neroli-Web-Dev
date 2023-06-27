@@ -10,19 +10,14 @@
     }
 
     &_big_images {
-        width: 652px;
-        height: 492px;
         border-radius: 24px;
     }
 
     &_small_images {
         display: flex;
         flex-wrap: wrap;
-        width: 692px;
 
         img {
-            width: 306px;
-            height: 226px;
             margin: 0 0 40px 40px;
             border-radius: 24px;
 
@@ -70,7 +65,7 @@
                 font-weight: bold;
                 display: inline-block;
                 width: 5px;
-                margin-right:  16px;
+                margin-right: 16px;
             }
         }
     }
@@ -86,21 +81,15 @@
     &_content {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         margin-top: 40px;
 
-
-        .text_block {
-            width: 843px;
-        }
-
         .person_card {
-            width: 380px;
             border: 1px solid #E5E5E5;
             border-radius: 24px;
-            padding: 40px;
+            box-sizing: border-box;
 
             .buttons_div {
-                margin: 28px 0;
                 display: flex;
 
                 button {
@@ -122,9 +111,44 @@
             }
 
             .button {
-                margin-top: 28px;
                 width: 100%
             }
+        }
+    }
+}
+
+
+@include xl {
+    .post {
+        &_big_images {
+            width: 652px;
+            height: 492px;
+        }
+
+        .text_block {
+            width: 843px;
+        }
+
+        &_small_images {
+            width: 692px;
+
+            img {
+                width: 306px;
+                height: 226px;
+            }
+        }
+
+        .buttons_div {
+            margin: 28px 0;
+        }
+
+        .person_card {
+            width: 461px;
+            padding: 40px;
+        }
+
+        .button {
+            margin-top: 28px;
         }
 
         .map {
@@ -138,4 +162,166 @@
     }
 }
 
+@include lg {
+    .post {
+        &_big_images {
+            width: 652px;
+            height: 492px;
+        }
 
+        .text_block {
+            width: 600px;
+        }
+
+        &_small_images {
+            width: 692px;
+
+            img {
+                width: 306px;
+                height: 226px;
+            }
+        }
+
+        .buttons_div {
+            margin: 28px 0;
+        }
+
+        .person_card {
+            width: 461px;
+            padding: 40px;
+        }
+
+        .button {
+            margin-top: 28px;
+        }
+
+        .map {
+            margin-top: 24px;
+
+            img {
+                width: 461px;
+                height: 263px;
+            }
+        }
+    }
+}
+
+@include md {
+    .post {
+        &_toggler {
+            margin: 20px 0 19px 0;
+        }
+
+        &_image_item {
+            margin-bottom: -20px;
+            flex-wrap: wrap;
+        }
+
+        &_big_images {
+            width: 400px;
+            height: 280px;
+        }
+
+        .text_block {
+            width: 100%;
+        }
+
+        &_small_images {
+            width: 100%;
+
+            img {
+                width: 81px;
+                height: 60px;
+                margin: 16px 16px 0 0;
+                border-radius: 16px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        .buttons_div {
+            margin: 28px 0;
+        }
+
+        .person_card {
+            width: 380px;
+            padding: 40px;
+            margin-top: 16px;
+        }
+
+        .button {
+            margin-top: 20px;
+        }
+
+        .map {
+            margin-top: 40px;
+
+            img {
+                width: 461px;
+                height: 263px;
+            }
+        }
+    }
+}
+
+@include sm {
+    .post {
+        &_toggler {
+            margin: 20px 0 19px 0;
+        }
+
+        &_image_item {
+            margin-bottom: -20px;
+            flex-wrap: wrap;
+        }
+
+        &_big_images {
+            width: 372px;
+            height: 280px;
+        }
+
+        .text_block {
+            width: 100%;
+        }
+
+        &_small_images {
+            width: 100%;
+
+            img {
+                width: 81px;
+                height: 60px;
+                margin: 16px 16px 0 0;
+                border-radius: 16px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        .buttons_div {
+            margin: 16px 0;
+        }
+
+        .person_card {
+            width: 372px;
+            padding: 28px;
+            margin-top: 16px;
+        }
+
+        .button {
+            margin-top: 16px;
+        }
+
+        .map {
+            margin-top: 40px;
+
+            img {
+                width: 372px;
+                height: 263px;
+            }
+        }
+    }
+}

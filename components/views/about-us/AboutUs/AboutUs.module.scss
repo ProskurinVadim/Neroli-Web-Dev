@@ -1,23 +1,11 @@
 @import "../../../../styles/varrible";
+@import '../../../../styles/mixin';
 
-
-.about_us {
-
-	&_image {
-		margin: 40px 0;
-		width: 1024px;
-		height: 372px;
-	}
-}
 
 
 .medium_text {
-	margin: 30px auto 0;
-	width: 750px;
 
 	&__description {
-		width: 843px;
-		margin: 0 auto;
 		text-align: left;
 		line-height: 180%;
 	}
@@ -25,7 +13,6 @@
 
 
 .logo__colored {
-	margin-top: 80px;
 	display: block;
 
 	svg > path {
@@ -35,4 +22,79 @@
 
 .section_header {
 	margin-top: 11px;
+}
+
+
+@include xl {
+	.about_us_image {
+		margin: 40px 0;
+		width: 1024px;
+		height: 372px;
+	}
+
+	.medium_text {
+		margin: 30px auto 0;
+		width: 750px;
+
+		&__description {
+			width: 843px;
+			margin: 0 auto;
+		}
+	}
+}
+
+@include lg {
+
+	.about_us_image {
+		margin: 40px 0;
+		width: 100%;
+		height: 372px;
+	}
+
+	.medium_text {
+		margin: 30px auto 0;
+		width: 100%;
+
+		&__description {
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@include md {
+	.about_us_image {
+		margin: 36px 0;
+		width: 100%;
+		height: 372px;
+	}
+
+	.medium_text {
+		margin: 36px auto 0;
+		width: 100%;
+
+		&__description {
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@include sm {
+
+	.about_us_image {
+		margin: 36px 0;
+		width: 100%;
+		height: 372px;
+	}
+
+	.medium_text {
+		margin: 36px auto 0;
+		width: 100%;
+
+		&__description {
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
 }

@@ -4,6 +4,7 @@ import Form, { formStyles } from "../../../shared/Form/Form";
 import Button, { buttonStyles } from "../../../common/Button/Button";
 import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import { getDefaultData, getFormData } from "./getData";
+import styles from "./Search.module.scss";
 
 interface IForm {
     building: string,
@@ -26,10 +27,10 @@ const Search = () => {
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
-                <div className="d_flex_between">
-                    <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "} />
-                    <Button text="More Filters" onClick={handelOpen} className={buttonStyles.button__transparent} />
-                </div>
+                <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "}>
+                    <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
+                </Form>
+                    
                 {mapOpen && <p>Map</p>}
             </Container>
         </section>

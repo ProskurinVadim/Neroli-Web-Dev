@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import Container from "../../../../hoc/Container";
 import { getData } from "./getData";
 import Card from "../../../shared/Card/AppartmentCard";
@@ -12,6 +13,8 @@ const List = () => {
     const data = getData("adress");
     const [page, setPage] = useState(1);
     const [view, setView] = useState<"list" | "table">("table")
+    const adaptive = useContext(AdaptiveContext);
+    console.log(adaptive)
     return (
         <section className="section__padding">
             <Container className="t_l">
@@ -20,7 +23,7 @@ const List = () => {
                     <p className="medium_text medium_text__aditional">
                         Properties For Sale In Dubai: {data.length}
                     </p>
-                    <ListToggler active={view} setActive={setView} />
+                    {!adaptive && <ListToggler active={view} setActive={setView} />}
                 </div>
                 <ul className={styles.list}>
                     {data.map((elem: any, i) =>

@@ -19,10 +19,20 @@
                     color: $color-primary;
                     @include button-text;
                     text-decoration: none;
+                    padding: 5px 16px;
                     transition: 0.5s;
+                    border-radius: 100px;
+
 
                     &:hover {
                         color: $color-submit;
+                    }
+                }
+
+                &.active {
+                    a {
+                        color: $color-submit;
+                        background-color: $color-primary;
                     }
                 }
 

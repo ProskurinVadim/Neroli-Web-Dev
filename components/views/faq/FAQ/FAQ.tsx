@@ -15,7 +15,7 @@ const FAQ = () => {
         setActive(() => [...newArr])
     }
     return (
-        <section>
+        <section className="section__padding" >
             <Container>
                 <h2 className={`section_header ${styles.section_header}`}>FAQ</h2>
                 <p className="medium_text medium_text__aditional">Frequently Asked Questions.</p>

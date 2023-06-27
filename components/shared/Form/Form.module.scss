@@ -1,4 +1,4 @@
-    @import "../../../styles/varrible";
+@import "../../../styles/varrible";
 @import "../../../styles/mixin";
 
 .form {
@@ -12,10 +12,6 @@
         margin-top: 16px;
         width: 280px;
         @include medium-text;
-    }
-
-    .button {
-        width: 100%;
     }
 
     .form_inline {
@@ -48,38 +44,46 @@
 
     &__search_large {
         flex-direction: row;
-        width: fit-content;
+        width: 100%;
         align-items: center;
         margin-top: 31px;
 
         .search_large_container {
             margin-right: 16px;
             box-shadow: none;
+            width: fit-content;
+        }
 
-            .search_large_input {
-                margin: 0;
-                box-shadow: none;
-                width: min-content;
-            }
+        .search_large_input {
+            margin: 0;
+            box-shadow: none;
+            width: min-content;
+        }
+
+        p {
+            bottom: -5px;
+            left: 12px;
+        }
+
+
+        .search_large_select {
+            box-shadow: none;
+            margin: 0 16px 0 0;
 
             p {
-                bottom: -5px;
-                left: 12px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                width: 100%
+            }
+
+            svg {
+                padding-left: 12px;
             }
         }
-    }
 
-    .search_large_select {
-        box-shadow: none;
-        margin: 0 16px 0 0;
-
-        svg {
-            padding-left: 12px;
+        .button {
+            margin-top: 0px;
         }
-    }
-
-    & > .button {
-        margin-top: 0px;
     }
 }
 
@@ -97,13 +101,19 @@
 
     .form {
         .button {
-            max-width: 341px;
+            width: 100%;
         }
     }
 
     .form__card {
         margin: 52px auto 0;
         padding: 40px;
+    }
+
+    .form__search_large {
+        .button {
+            width: max-content;
+        }
     }
 }
 
@@ -120,13 +130,19 @@
 
     .form {
         .button {
-            max-width: 306px;
+            width: 100%;
         }
     }
 
     .form__card {
         margin: 52px auto 0;
         padding: 40px;
+    }
+
+    .form__search_large {
+        .button {
+            width: max-content;
+        }
     }
 }
 
@@ -146,7 +162,7 @@
         max-width: 860px;
 
         .button {
-            max-width: 306px;
+            width: 100%;
         }
     }
 
@@ -163,48 +179,75 @@
         .search_large_container {
             margin-bottom: 16px;
 
-            .search_large_input {   
+            .search_large_input {
                 width: 100%;
             }
         }
-        .select {
-            margin: 200px;
+
+        .search_large_select {
+            margin: 0 0 16px 0;
+        }
+
+        .button {
+            width: max-content;
         }
     }
 }
 
-@include sm {
-    .form__search {
-        flex-direction: column;
-        width: 100%;
-        border-radius: 14px;
+    @include sm {
+        .form__search {
+            flex-direction: column;
+            width: 100%;
+            border-radius: 14px;
 
-        input {
-            border-radius: unset !important;
+            input {
+                border-radius: unset !important;
 
-            &:first-child {
-                border-radius: 10px 10px 0px 0px;
+                &:first-child {
+                    border-radius: 10px 10px 0px 0px;
+                }
+            }
+
+            .button {
+                border-radius: 0px 0px 10px 10px;
+                border-radius: 0;
             }
         }
 
-        .button {
-            border-radius: 0px 0px 10px 10px;
-            border-radius: 0;
+        .form {
+            width: 100%;
+
+            .button {
+                width: 100%;
+            }
+        }
+
+        .form__card {
+            margin: 0 auto;
+            border-radius: unset;
+            box-shadow: unset;
+            padding: 28px;
+        }
+
+        .form__search_large {
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .search_large_container {
+                margin: 0 0 16px 0;
+                width: 100%;
+
+                .search_large_input {
+                    width: 100%;
+                }
+            }
+
+            .search_large_select {
+                margin: 0 0 16px 0;
+            }
+
+            .button {
+                width: fit-content;
+            }
         }
     }
-
-    .form {
-        width: 100%;
-
-        .button {
-            max-width: 1005;
-        }
-    }
-
-    .form__card {
-        margin: 0 auto;
-        border-radius: unset;
-        box-shadow: unset;
-        padding: 28px;
-    }
-}

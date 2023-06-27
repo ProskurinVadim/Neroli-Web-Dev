@@ -1,0 +1,34 @@
+@import "../../../../styles/mixin";
+
+.button {
+    margin-left: auto;
+}
+
+
+@include md {
+    .select__half {
+        width: 48%
+    }
+
+    .select__one_third {
+        width: 35%
+    }
+
+    .select__one_third_small {
+        width: 22%
+    }
+}
+
+@include sm {
+    .select__half {
+        width: 48%
+    }
+
+    .select__one_third {
+        width: 35%
+    }
+
+    .select__one_third_small {
+        width: 22%
+    }
+}

@@ -1,13 +1,48 @@
+@import '../../../../styles/mixin';
+
 .list {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
     &_item {
-        margin:  20px 0;
 
         & > div {
             margin: 0;
+        }
+    }
+}
+.section_header {
+    margin-bottom: 20px;
+}
+
+@include xl {
+    .list {
+        &_item {
+            margin-top: 40px;
+        }
+    }
+}
+
+@include lg {
+    .list {
+        &_item {
+            margin-top: 40px;
+        }
+    }
+}
+
+@include md {
+    .list {
+        &_item {
+            margin: 40px auto 0;
+        }
+    }
+}
+
+@include sm {
+    .list {
+        &_item {
+            margin: 40px auto 0;
         }
     }
 }
