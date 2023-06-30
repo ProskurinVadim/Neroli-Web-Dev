@@ -1,5 +1,5 @@
 import { ISVG } from "../../../types";
-const Instagram: React.FC<ISVG> = ({ height = "24", width = "24", fill = "none", viewBox = "0 0 24 24" }) => {
+const Instagram: React.FC<ISVG> = ({ height = "24", width = "25", fill = "none", viewBox = "0 0 25 24" }) => {
     return (
         <svg width={width} height={height} viewBox={viewBox} fill={fill} xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_451_1553)">
