@@ -29,6 +29,10 @@
         align-items: center;
         justify-content: space-between;
         width: 421px;
+
+        input {
+            box-shadow: none;
+        }
     }
 
     &__search {

@@ -33,11 +33,17 @@
 
 @include sm {
     .container {
-        width: 428px;
+        max-width: 428px;
+        width: 100%;
         padding: 0px 28px;
 
         __overflow_initial {
             overflow: hidden;
         }
+    }
+}
+@media (max-width: 428px) {
+    .container {
+        padding: 0px 10px;
     }
 }

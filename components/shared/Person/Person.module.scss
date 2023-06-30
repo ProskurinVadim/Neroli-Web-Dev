@@ -83,6 +83,10 @@
 @include md {
     .person {
         width: 375px;
+
+        .person_description {
+            width: 100%;
+        }
     }
 
     .person_comments {
@@ -90,7 +94,7 @@
 
 
         .person_description {
-            width: 310px;
+            width: 100%;
         }
     }
 }
@@ -98,6 +102,10 @@
 @include sm {
     .person {
         width: 375px;
+
+        .person_description {
+            width: 100%;
+        }
     }
 
     .person_comments {
@@ -105,7 +113,7 @@
 
 
         .person_description {
-            width: 310px;
+            width: 100%;
             overflow: hidden;
             display: -webkit-box;
             -webkit-box-orient: vertical;

@@ -2,5 +2,32 @@
     .toggler {
         margin: 20px auto 0;
     }
+    
 
+}
+@import '../../../../styles/mixin';
+
+
+@include xl {
+    .card {
+        margin-right: 40px;
+    }
+}
+
+@include lg {
+    .card {
+        margin-right: 40px;
+    }
+}
+
+@include md {
+    .card {
+        margin-right:16px;
+    }
+}
+
+@include sm {
+    .card {
+        margin-right: 16px;
+    }
 }

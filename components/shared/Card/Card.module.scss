@@ -64,7 +64,6 @@
         flex-direction: row;
         border: 1px solid #C2D1D9;
         border-radius: 24px;
-        margin-bottom: 40px;
 
         .card_text {
             padding: 20px 21px;
@@ -127,7 +126,6 @@
 
 @include xl {
     .card {
-        margin-right: 40px;
 
         &_header {
             font-size: 21px;
@@ -165,7 +163,6 @@
 
 @include lg {
     .card {
-        margin-right: 40px;
 
         &_header {
             font-size: 21px;
@@ -195,7 +192,6 @@
 
 @include md {
     .card {
-        margin-right: 40px;
 
         &_header {
             font-size: 21px;
@@ -232,7 +228,6 @@
 
 @include sm {
     .card {
-        margin-right: 16px;
         width: 178px;
 
         &_image {
@@ -264,3 +259,13 @@
     }
 }
 
+
+@media (max-width: 428px) {
+    .card {
+        width: 170px;
+
+        &_image {
+            width: 170px;
+        }
+    }
+}

@@ -41,7 +41,7 @@ const Post: React.FC<IApartment> = ({ params }) => {
                         <Toggler active={active} setActive={setActive} array={["Description", "Virtual Tour", "Street View"]} className={styles.post_toggler} />
                         <Text {...text}/>
                     </div>
-                    <div>
+                    <div className={styles.person_content}>
                         <PersonCard {...person}/>
                         <Map />
                     </div>

@@ -18,13 +18,13 @@ const LatestNews = () => {
                 <h2 className="section_header">Latest News</h2>
                 <ul className={styles.latest_news_list}>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...data[0]} />
+                        <NewsCard {...data[0]} table={true} />
                     </li>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...data[1]} horizontal={!adaptive} />
+                        <NewsCard {...data[1]} horizontal={!adaptive} table={true} />
                     </li>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...data[2]} />
+                        <NewsCard {...data[2]} table={true} />
                     </li>
                 </ul>
                 <Link href="/blog" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>View all news</Link>

@@ -9,6 +9,7 @@
 @include xl {
 	.latest_news_list {
 		&_item {
+			margin: 0 40px 40px 0px;
 			.card {
 				&_image {
 					width: 306px;
@@ -26,6 +27,7 @@
 @include lg {
 	.latest_news_list {
 		&_item {
+			margin: 0 40px 40px 0px ;
 			.card {
 				&_image {
 					width: 306px;
@@ -35,6 +37,35 @@
 
 			&:last-child {
 				margin-top: -288px;
+			}
+		}
+	}
+}
+
+@include md {
+	.latest_news_list {
+		justify-content: center;
+
+		&_item {
+			margin-bottom: 16px;
+
+			&:last-child {
+				margin-bottom: 26px;
+			}
+		}
+	}
+}
+
+
+@include sm {
+	.latest_news_list {
+		justify-content: center;
+
+		&_item {
+			margin-bottom: 16px;
+
+			&:last-child {
+				margin-bottom: 26px;
 			}
 		}
 	}

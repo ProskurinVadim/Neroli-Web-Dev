@@ -273,8 +273,9 @@
         }
 
         &_image_item {
-            margin-bottom: -20px;
+            margin: 0 20px -20px;
             flex-wrap: wrap;
+            margin-right: 30px;
         }
 
         &_big_images {
@@ -305,8 +306,12 @@
             margin: 16px 0;
         }
 
+        .person_content {
+            width: 100%;
+        }
+
         .person_card {
-            width: 372px;
+            width: 100%;
             padding: 28px;
             margin-top: 16px;
         }
@@ -319,9 +324,25 @@
             margin-top: 40px;
 
             img {
-                width: 372px;
+                width: 100%;
                 height: 263px;
             }
+        }
+    }
+}
+
+
+
+@media (max-width: 428px) {
+    .post {
+        &_small_images {
+            img {
+                width: 70px;
+            }
+        }
+
+        &_big_images {
+            width: 320px;
         }
     }
 }

@@ -24,7 +24,7 @@ const NewBuildings = () => {
             <Container>
                 <h2 className="section_header">New this week</h2>
                 <Toggler array={["For sale", "Off-Plan"]} active={active} setActive={handelSetActive} className={styles.toggler} />
-                <Carousel config={config} Item={(props: any) => <Card {...props} />} data={data} />
+                <Carousel config={config} Item={(props: any) => <Card {...props} className={styles.card} />} data={data} />
             </Container>
         </section>
     )
