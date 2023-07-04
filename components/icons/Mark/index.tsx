@@ -1,11 +1,35 @@
-import { ISVG } from "../../../types";
+import styles from "./Mark.module.scss";
 
-const Mark: React.FC<ISVG> = ({ height = "24", width = "24", fill = "none", viewBox = "0 0 24 24" }) => {
+interface IMark {
+    text?: string,
+}
+
+const Mark: React.FC<IMark> = ({ text }) => {
     return (
-        <svg width={width} height={height} viewBox={viewBox} fill={fill} xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 0.75C4.61875 0.75 0.25 5.11875 0.25 10.5C0.25 19.2068 9.71125 23.1922 9.71125 23.1922C9.80271 23.2305 9.90086 23.2502 10 23.2502C10.0991 23.2502 10.1973 23.2305 10.2887 23.1922C10.2887 23.1922 19.75 19.2068 19.75 10.5C19.75 5.11875 15.3813 0.75 10 0.75ZM10 3.75C6.27475 3.75 3.25 6.77475 3.25 10.5C3.25 14.2253 6.27475 17.25 10 17.25C13.7253 17.25 16.75 14.2253 16.75 10.5C16.75 6.77475 13.7253 3.75 10 3.75ZM10 5.25C12.8973 5.25 15.25 7.60275 15.25 10.5C15.25 13.3973 12.8973 15.75 10 15.75C7.10275 15.75 4.75 13.3973 4.75 10.5C4.75 7.60275 7.10275 5.25 10 5.25Z" fill="#DDDE70" />
-        </svg>
+        <div className={styles.mark}>
+            <span className={styles.mark_text}>{text}</span>
+            <svg width="42" height="47" viewBox="0 0 42 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Frame">
+                    <g id="Group" filter="url(#filter0_d_105_1687)">
+                        <path id="Vector" d="M21 1.25C12.0312 1.25 4.75 8.53125 4.75 17.5C4.75 32.0112 20.5187 38.6537 20.5187 38.6537C20.6712 38.7175 20.8348 38.7503 21 38.7503C21.1652 38.7503 21.3288 38.7175 21.4813 38.6537C21.4813 38.6537 37.25 32.0112 37.25 17.5C37.25 8.53125 29.9688 1.25 21 1.25ZM21 6.25C14.7912 6.25 9.75 11.2912 9.75 17.5C9.75 23.7087 14.7912 28.75 21 28.75C27.2088 28.75 32.25 23.7087 32.25 17.5C32.25 11.2912 27.2088 6.25 21 6.25ZM21 8.75C25.8287 8.75 29.75 12.6712 29.75 17.5C29.75 22.3287 25.8287 26.25 21 26.25C16.1713 26.25 12.25 22.3287 12.25 17.5C12.25 12.6712 16.1713 8.75 21 8.75Z" fill="#DDDE70" />
+                    </g>
+                </g>
+                <defs>
+                    <filter id="filter0_d_105_1687" x="0.75" y="1.25" width="40.5" height="45.5003" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feOffset dy="4" />
+                        <feGaussianBlur stdDeviation="2" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_105_1687" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_105_1687" result="shape" />
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
     )
-};
+}
 
 export default Mark

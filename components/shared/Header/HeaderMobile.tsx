@@ -3,7 +3,8 @@ import { useState } from "react";
 import Link from 'next/link';
 import { Search, Burger, LogoShort } from "../../icons";
 import { Button } from "../../common";
-import { links } from "./getData"
+import { links } from "./getData";
+import SearchInput from "./Search";
 import styles from "./Header.module.scss";
 
 interface IHeader {
@@ -12,30 +13,33 @@ interface IHeader {
 
 const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
     const [open, setOpen] = useState<boolean>(false);
-    const toggleOpen = () => setOpen(prev => !prev);
+    const toggleOpen = () => {
+        setOpen(prev => !prev);
+        document.body.style.overflowY = open ? "unset" : "hidden";
+    }
     return (
         <>
             <LogoShort />
-            <div onClick={toggleOpen} className={styles.navbar_icons}>
-                <span>
-                    <Search />
+            <div className={styles.navbar_icons}>
+                <SearchInput />
+                <span className={styles.burger_icons} onClick={toggleOpen}>
+                    <Burger active={open} />
                 </span>
-                <span className={styles.burger_icons}>
-                    <Burger />
-                </span>
-                <nav>
-                    <ul>
-                        {false && links.map((elem, i) =>
-                            <Link
-                                key={`link-item-+${i}`}
-                                href={elem.href}
-                                className={`${isActive(elem.href) ? "active" : ""}`}
-                            >
-                                {elem.name}
-                            </Link>
-                        )}
-                    </ul>
-                </nav>
+                {
+                    open && <nav className={styles.navbar_mobile}>
+                        <ul>
+                            {links.map((elem, i) =>
+                                <Link
+                                    key={`link-item-+${i}`}
+                                    href={elem.href}
+                                    className={`${styles.navbar_mobile_item} ${isActive(elem.href) ? styles.active : ""}`}
+                                >
+                                    {elem.name}
+                                </Link>
+                            )}
+                        </ul>
+                    </nav>
+                }
             </div>
             
             

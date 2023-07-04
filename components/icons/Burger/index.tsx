@@ -1,11 +1,16 @@
 import { ISVG } from "../../../types";
-const Burger: React.FC<ISVG> = ({ height = "15", width = "24", fill = "none", viewBox = "0 0 24 15" }) => {
+import styles from "./Burger.module.scss";
+
+interface IBurger {
+    active: boolean,
+}
+const Burger: React.FC<IBurger> = ({ active }) => {
     return (
-        <svg width={width} height={height} viewBox={viewBox} fill={fill} xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.474304" width="24" height="2" rx="1" fill="#3B4248" />
-            <rect y="6.4743" width="24" height="2" rx="1" fill="#3B4248" />
-            <rect y="12.4743" width="24" height="2" rx="1" fill="#3B4248" />
-        </svg>
+        <div className={`${active ? styles.active : ""} ${styles.burger}`}>
+            <span className={styles.burger_line} />
+            <span className={`${styles.burger_line} ${styles.burger_line__middle}} `}/>
+            <span className={styles.burger_line} />
+        </div>
     )
 };
 

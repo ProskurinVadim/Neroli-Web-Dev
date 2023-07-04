@@ -5,6 +5,7 @@ import Button, { buttonStyles } from "../../../common/Button/Button";
 import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import { getDefaultData, getFormData } from "./getData";
 import styles from "./Search.module.scss";
+import Map from "./Map";
 
 interface IForm {
     building: string,
@@ -18,7 +19,7 @@ interface IForm {
 const Search = () => {
     const [value, setValue] = useState<IForm>({ ...getDefaultData });
     const [open, setOpen] = useState<boolean | string>(false);
-    const [mapOpen, setMapOpen] = useState<boolean | string>(false);
+    const [mapOpen, setMapOpen] = useState<boolean>(false);
     const fields: any = getFormData(setOpen,open);
     const onSubmit = () => {
         console.log(value)
@@ -30,9 +31,8 @@ const Search = () => {
                 <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "}>
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
-                    
-                {mapOpen && <p>Map</p>}
             </Container>
+            <Map visible={mapOpen} />
         </section>
     )
 }
