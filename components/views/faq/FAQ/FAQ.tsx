@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, use, useEffect } from "react";
 import Container from "../../../../hoc/Container";
 import FAQItem from "./FAQItem";
 import Link from 'next/link';
@@ -7,9 +7,14 @@ import { getData } from "./getData";
 import { buttonStyles } from "../../../common/Button/Button";
 import styles from "./FAQ.module.scss";
 
-const FAQ = () => {
+interface IFAQ {
+    faq: any[]
+}
+
+const FAQ: React.FC<IFAQ> = ({ faq }) => {
+    console.log("FAQ",faq,"___")
     const [active, setActive] = useState<number[]>([])
-    const data = getData()
+    const data = getData();
     const handelSetActive = (index: number) => {
         const newArr = !active.includes(index) ? [...active, index] : active.filter(elem => elem !== index)
         setActive(() => [...newArr])
