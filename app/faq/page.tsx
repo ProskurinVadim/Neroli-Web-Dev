@@ -1,11 +1,12 @@
-"use client";
-import { use, useEffect } from "react";
+"use server";
 import { FAQ } from "../../components/views/faq";
 import { getFAQs } from "../../utils/fetch";
 
 
-const AboutUsPage =  () => {
-    return <FAQ faq={[]} />
+const AboutUsPage = async () => {
+    const { data } = await getFAQs()
+
+    return <FAQ faq={data} />
 }
 
 export default AboutUsPage

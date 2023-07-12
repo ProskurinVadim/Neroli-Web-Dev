@@ -1,6 +1,11 @@
+"use server";
 import { Main } from "../components/views/home";
-import { NewBuildings, Enquire, Comments, ContactForm, LatestNews } from "../components/views/shared"
-export default function Home() {
+import { NewBuildings, Enquire, Comments, ContactForm, LatestNews } from "../components/views/shared";
+import { getLastNews } from "../utils/fetch";
+import { formatNewsData } from "../utils/formater";
+const Home = async () => {
+
+    const { data } = await getLastNews()
 
     return (
         <>
@@ -9,7 +14,9 @@ export default function Home() {
             <Enquire />
             <Comments />
             <ContactForm />
-            <LatestNews />            
+            <LatestNews news={formatNewsData(data)}/>
         </>
     )
 }
+
+export default Home

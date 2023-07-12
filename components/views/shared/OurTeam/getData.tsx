@@ -1,24 +1,16 @@
 import TestImage from "../../../../public/people-test.jpg";
 
-const testData = {
+
+export const getData = (data: any[]) => data.map(({ attributes }: any) => ({
 	person: {
 		image: TestImage.src,
-		name: "Sean Farmer",
-		job: "Job title",
+		name: attributes.FullName,
+		job: attributes.Category,
 	},
-	description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+	description: attributes.Description,
 	socialNetworks: {
-		facebook: "Job title",
-		linkedin: "Job title",
-		whatsapp: "Job title"
+		facebook: attributes.Whatsapp,
+		linkedin: attributes.Whatsapp,
+		whatsapp: attributes.Whatsapp
 	}
-}
-
-export const getShortData = [testData, testData, testData]
-
-export const getFullData = [
-	testData, testData, testData,
-	testData, testData, testData,
-	testData, testData, testData,
-	testData, testData, testData,
-]
+}))

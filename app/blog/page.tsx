@@ -1,10 +1,11 @@
 import { List } from "../../components/views/blog";
 
-export default function News() {
-
+const News = async () => {
     return (
         <>
             <List />
         </>
     )
 }
+
+export default News

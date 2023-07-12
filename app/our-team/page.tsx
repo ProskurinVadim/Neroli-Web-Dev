@@ -1,10 +1,13 @@
 import { OurTeam } from "../../components/views/shared/";
+import { getFullAggents } from "../../utils/fetch";
 
-export default function AboutUsPage() {
-
+const OurTeamPage = async () => {
+    const { data } = await getFullAggents();
     return (
         <>
-            <OurTeam fullCard={true} />
+            <OurTeam fullCard={true} team={data} />
         </>
     )
 }
+
+export default OurTeamPage

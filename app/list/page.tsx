@@ -1,6 +1,9 @@
 import { Search, List, } from "../../components/views/list";
+import { getAppartments } from "../../utils/fetch";
 
-export default function ListPage() {
+const ListPage = async () => {
+
+    const { data } = await getAppartments();
 
     return (
         <div className="">
@@ -9,3 +12,5 @@ export default function ListPage() {
         </div>
     )
 }
+
+export default ListPage

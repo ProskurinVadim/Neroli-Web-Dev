@@ -5,23 +5,24 @@ import Container from "../../../../hoc/Container";
 import Person from "../../../shared/Person";
 import { Toggler } from "../../../common";
 import { buttonStyles } from "../../../common/Button/Button";
-import { getFullData, getShortData } from "./getData";
+import { getData } from "./getData";
 import styles from "./OurTeam.module.scss";
 
 interface IOurTeam {
-    fullCard: boolean
+    fullCard: boolean,
+    team: any[],
 }
-const OurTeam: React.FC<IOurTeam> = ({ fullCard=false }) => {
+const equal: any = {
+    "Managers": "Manager",
+    "Directors": "Director",
+    "Marketing": "Marketing",
+}
+const etc = ["Manager", "Director", "Marketing"];
+
+const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
     const [active, setActive] = useState<string>("Managers");
-    const config = {
-        time: 50000,
-        pagination: {
-            withArrows: true,
-            maxPages: 4,
-            numerical: false,
-        }
-    };
-    const data = fullCard ? getFullData : getShortData;
+    const data = !fullCard ? getData(team) : getData(team).filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
+    console.log(active)
     return (
         <section className="section__padding">
             <Container>

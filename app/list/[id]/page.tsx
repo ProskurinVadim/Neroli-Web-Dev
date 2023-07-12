@@ -7,7 +7,6 @@ interface IApartment {
 }
 
 const Apartment: React.FC<IApartment> = ({ params }) => {
-    console.log(params)
     return (
         <>
             <Post params={params} />
