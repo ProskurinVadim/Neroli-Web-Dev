@@ -6,6 +6,7 @@ import Carousel from "../../../shared/Carousel";
 import Card from "../../../shared/Card/AppartmentCard";
 import { getCarouselData } from "./getData";
 import styles from "./NewBuildings.module.scss"
+
 const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);

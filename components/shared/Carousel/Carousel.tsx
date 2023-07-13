@@ -28,21 +28,22 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
     const ref = useRef<HTMLDivElement>(null);
     const [transition, setTransition] = useState<number>(400);
     const withArrows = !config.pagination?.withArrows;
-    const maxPage = Math.ceil(data.length / config.itemsCount)
+    const maxPage = Math.ceil(data.length / config.itemsCount);
+
     const update = (page: number) => {
         const newPage = page > maxPage ? 1 : page;
         page !== 0 && setPage(_ => newPage);
     }
 
     useEffect(() => {
-        const width = ref.current ? ref.current.offsetWidth : 1
-        console.log();
+        const width = ref.current ? ref.current.offsetWidth : 1;
         setTransition(width * config.itemsCount)
     }, [])
+
     useEffect(() => {
         const interval = setInterval(() => update(page + 1), time);
         return () => interval && clearInterval(interval);
-    }, [config,page,time,update])
+    }, [config, page, time, update])
 
     return (
         <div className={`${styles.carousel} ${className}`}>
@@ -55,19 +56,23 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
                 <If>
                     {
                         page === 1 &&
-                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__left}`} onClick={() => update(page - 1)}>
+                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__left}`} onClick={() => update(page + 1)}>
                             <LeftArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
                         </span>
                     }
                     {
                         page === maxPage &&
-                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__right}`} onClick={() => update(page + 1)}>
+                        <span className={`${styles.carousel_arrow} ${styles.carousel_arrow__right}`} onClick={() => update(page - 1)}>
                             <RightArrow width={"20"} height={"20"} viewBox={"0 0 20 20"} />
                         </span>
                     }
                 </If>
             </Condition>
-            <Pagination page={page} setPage={update} config={pagination} className={config.paginationClassName} />
+            <Condition condition={maxPage !== 1}>
+                <If>
+                    <Pagination page={page} setPage={update} config={pagination} className={config.paginationClassName} />
+                </If>
+            </Condition>
         </div>
     )
 };

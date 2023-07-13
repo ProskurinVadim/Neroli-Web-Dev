@@ -25,11 +25,6 @@ const Map: React.FC<IMap> = ({ visible = false }) => {
     const [marks, setMarks] = useState<IMark[]>([]);
     const [polygons, setPolygons] = useState<any[]>([]);
 
-    const handelOnMarkerClick = (i: number) => () => {
-        const newMarkers = [...marks];
-        newMarkers[i]["active"] = newMarkers[i].active ? false : true;
-        setMarks((prev) => [...newMarkers])
-    }
     const { isLoaded, loadError } = useJsApiLoader({
         googleMapsApiKey: "AIzaSyCnY6J1ah-UU2LvjM5g2RuGZkrbJ-blekU",
         libraries: ['drawing']
@@ -84,8 +79,7 @@ const Map: React.FC<IMap> = ({ visible = false }) => {
                 marks.map((elem, index) => (
                     <Marker
                         key={index}
-                        icon={elem.active ? MarkerFillIcon.src : MarkerIcon.src}
-                        onClick={handelOnMarkerClick(index)}
+                        icon={MarkerIcon.src}
                         position={{ ...elem.position }}
                         label={elem.label}
                     />

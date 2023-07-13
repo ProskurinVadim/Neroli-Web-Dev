@@ -1,15 +1,15 @@
 const links = [
-    { name: "Buy Residental", href: "/list" },
-    { name: "Buy Commercial", href: "/list" },
-    { name: "Buy Off-Plan", href: "/list" },
+    { name: "Buy Residental", href: "/list?property_type=residential" },
+    { name: "Buy Commercial", href: "/list?property_type=commercial" },
+    { name: "Buy Off-Plan", href: "/list?property_type=off-plan" },
     { name: "About us", href: "/about-us" },
     { name: "Contact us", href: "/contact-us" }
 ];
 
 const catigoriesLinks = [
-    { name: "Buy Residental", href: "/list" },
-    { name: "Buy Commercial", href: "/list" },
-    { name: "Buy Off-Plan", href: "/list" },
+    { name: "Buy Residental", href: "/list?property_type=residential" },
+    { name: "Buy Commercial", href: "/list?property_type=commercial" },
+    { name: "Buy Off-Plan", href: "/list?property_type=off-plan" },
 ]
 
 const aboutLinks = [

@@ -7,5 +7,5 @@ const testData = {
     adress: "AED 895,000",
 }
 
-export const getCarouselData = (key: string) => [testData, testData, testData, testData, testData, testData, testData, testData, testData, testData, testData, testData]
+export const getCarouselData = (key: string) => [testData, testData, testData, testData, testData, testData, testData, testData]
 
