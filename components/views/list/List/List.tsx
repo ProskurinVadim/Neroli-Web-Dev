@@ -34,7 +34,7 @@ const List = () => {
                         </li>
                     )}
                 </ul>
-                <Pagination page={page} setPage={setPage} />
+                <Pagination page={page} setPage={setPage} className={styles.pagination} />
             </Container>
         </section>
     )

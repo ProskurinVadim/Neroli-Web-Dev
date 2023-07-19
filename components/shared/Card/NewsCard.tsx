@@ -6,7 +6,7 @@ interface INewsCard {
     header: string
     adress: string,
     description?: string,
-    date: { day: string, hours: string }
+    date: { day: string, mins: string }
     link?: string,
     horizontal?: boolean
     table?: boolean
@@ -14,7 +14,7 @@ interface INewsCard {
 
 const NewsCard: React.FC<INewsCard> = ({ horizontal = false, table = false, ...props }) => {
     return (
-        <Card {...props} className={`${styles.news_card} ${horizontal ? styles.card__horizontal : ""} ${table ? styles.card__horizontal__table : ""}`} additional={<p className={styles.card_date}>{props.date.day} <span className={styles.card_date_hours}>{props.date.hours}</span></p>} />
+        <Card {...props} className={`${styles.news_card} ${horizontal ? styles.card__horizontal : ""} ${table ? styles.card__horizontal__table : ""}`} additional={<p className={styles.card_date}>{props.date.day}<span className={styles.card_date_mins}>{props.date.mins}</span></p>} />
     )
 }
 

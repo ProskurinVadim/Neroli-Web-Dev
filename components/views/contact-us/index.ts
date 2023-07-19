@@ -1,5 +1,5 @@
-import Map from "./Map";
+import OfficeMap from "./OfficeMap";
 
 export {
-    Map
+    OfficeMap
 }

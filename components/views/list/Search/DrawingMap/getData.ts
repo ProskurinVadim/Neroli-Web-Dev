@@ -36,19 +36,11 @@ export const polygonOptions = {
         fontWeight: "bold"
     },
     strokeWeight: 4,
-    draggable: true,
-    editable: true
 }
 
 export const drawingManagerOptions = (google: any) => ({
     polygonOptions: polygonOptions,
-    drawingControl: true,
-    drawingControlOptions: {
-        position: google?.maps?.ControlPosition?.TOP_CENTER,
-        drawingModes: [
-            google?.maps?.drawing?.OverlayType?.POLYGON
-        ]
-    }
+    drawingControl: false,
 })
 
 export const containerStyle = {

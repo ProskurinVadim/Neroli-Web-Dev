@@ -62,12 +62,12 @@
 
 @keyframes anim {
     from {
-        line-height: 1px;
+        max-height:0;
         opacity: 0
     }
 
     to {
-        line-height: 24px;
+        max-height: 500px;
         opacity: 1
     }
 }

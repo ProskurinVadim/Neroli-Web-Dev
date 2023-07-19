@@ -1,6 +1,7 @@
 import Avatar from "../../../../shared/Person/Avatar";
 import Button, { buttonStyles } from "../../../../common/Button/Button";
 import styles from "../Post.module.scss";
+import Link from "next/link";
 import { IAvatar } from "../../../../../types";
 import { Key, Calendar, Eye, WhatsappUnfill, Phone } from "../../../../icons"
 import PersonCardItem from "./PersonCardItem";
@@ -8,7 +9,9 @@ import PersonCardItem from "./PersonCardItem";
 const personArr = [
     { icon: <Eye />, text: "Arrange a viewing, 24/7"},
     { icon: <Calendar />, text: "Choose a date & time" },
-    { icon: <Key />, text: <>Need to sell first?  <span className="text__underlining">Book a valuation</span></>},
+    {
+        icon: <Key />, text: <>Need to sell first?&nbsp;<span className="text__underlining"><Link href="/book" className="link_unset">Book a valuation</Link></span></>
+    },
 ]
 
 const PersonCard: React.FC<IAvatar> = ({ image, name, job}) => {

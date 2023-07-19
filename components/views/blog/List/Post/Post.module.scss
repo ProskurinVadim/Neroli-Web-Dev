@@ -73,6 +73,20 @@
     }
 }
 
+.recomendation_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+
+    &_item {
+
+        & > div {
+            margin: 0;
+        }
+    }
+}
+
 @include xl {
     .post_information {
         height: 356px;

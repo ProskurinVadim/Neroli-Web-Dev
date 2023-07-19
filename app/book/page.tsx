@@ -3,7 +3,7 @@ export default function BookPage() {
 
     return (
         <>
-            <Enquire />
+            <Enquire top={true} />
             <Comments />
             <ContactForm />
         </>

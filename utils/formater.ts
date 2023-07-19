@@ -7,7 +7,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June", "Jul
 
 const getDate = (string: string) => {
     const date = new Date(string);
-    return `${monthNames[date.getMonth()]} ${date.getDate()},${date.getFullYear()}`
+    return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 
 export const formatNewsData = (data: any[]) => data.map(({ id, attributes }) => (
@@ -16,7 +16,7 @@ export const formatNewsData = (data: any[]) => data.map(({ id, attributes }) => 
         header: attributes.Title,
         date: {
             day: getDate(attributes.Date),
-            hours: `${(new Date(attributes.publishedAt).getMinutes())} mins`,
+            mins: `${(new Date(attributes.publishedAt).getMinutes())} mins`,
         },
         description: attributes.Content,
         link: `/blog/${id}`

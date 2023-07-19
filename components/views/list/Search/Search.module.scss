@@ -15,29 +15,35 @@
     }
 }
 @include md {
-    .select__half {
-        width: 48%
-    }
-
-    .select__one_third {
-        width: 35%
-    }
-
-    .select__one_third_small {
-        width: 22%
+    .select {
+        width: 31%;
     }
 }
 
 @include sm {
-    .select__half {
-        width: 48%
-    }
+    .select {
+        &:nth-child(1) {
+            width: 100%;
+        }
 
-    .select__one_third {
-        width: 35%
-    }
+        &:nth-child(2) {
+            width: 22%;
+        }
 
-    .select__one_third_small {
-        width: 22%
+        &:nth-child(3) {
+            width: 35%;
+        }
+
+        &:nth-child(4) {
+            width: 35%;
+        }
+
+        &:nth-child(5) {
+            width: 48%;
+        }
+
+        &:nth-child(6) {
+            width: 48%;
+        }
     }
 }

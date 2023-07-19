@@ -13,6 +13,7 @@
         &_item {
             display: flex;
             flex-direction: column;
+
             .medium_text {
                 text-align: left;
             }
@@ -29,6 +30,10 @@
 
     .section_header {
         text-align: right;
+    }
+
+    &__top {
+        border-width: 1px 0px 2px;
     }
 }
 

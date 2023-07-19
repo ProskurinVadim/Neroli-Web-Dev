@@ -34,4 +34,8 @@ interface IAvatar {
     job: string
 }
 
-export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar}
+interface ICoords {
+    lat: number,
+    lng: number,
+}
+export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords}

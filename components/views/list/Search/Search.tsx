@@ -5,7 +5,7 @@ import Button, { buttonStyles } from "../../../common/Button/Button";
 import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import { getDefaultData, getFormData } from "./getData";
 import styles from "./Search.module.scss";
-import Map from "./Map";
+import DrawingMap from "./DrawingMap";
 
 interface IForm {
     building: string,
@@ -32,7 +32,7 @@ const Search = () => {
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>
-            <Map visible={mapOpen} />
+            <DrawingMap visible={mapOpen} />
         </section>
     )
 }

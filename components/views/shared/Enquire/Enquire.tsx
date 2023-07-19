@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import Container from "../../../../hoc/Container";
 import Form, { formStyles } from "../.../../../../shared/Form/Form";
 import Image from "../../../common/Image";
@@ -14,8 +14,10 @@ interface IForm {
     adress: string,
 }
 
-
-const Enquire = () => {
+interface IEnquire {
+    top?: boolean
+}
+const Enquire: React.FC<IEnquire> = ({top}) => {
     const [value, setValue] = useState<IForm>({ ...defaultData})
     const fields: any = getFormData();
     const handelSubmit = () => console.log("Enquire", value);
@@ -44,7 +46,7 @@ const Enquire = () => {
     const width = useWidth()
 
     return (
-        <section className={styles.enquire}>
+        <section className={` ${styles.enquire} ${top ? styles.enquire__top: ""}`}>
             <Container className={`${styles.notebook}`}>
                 <div className={`${styles.notebook_item} section__padding`}>
                     {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
@@ -55,7 +57,7 @@ const Enquire = () => {
                 <div className={`${styles.notebook_item} section__padding`}>
                     {width < 1024 && <h2 className="section_header">Enquire now</h2>}
                     <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>We have a waitlist of clients ready to view properties, extensive comparable community data and a trusted reputation. Just three of the reasons why people choose us.</p>
-                    <div className={styles.enquire_image} />
+                    <div className={styles.enquire_image} />    
                 </div>
             </Container>
         </section>

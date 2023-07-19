@@ -23,7 +23,6 @@ export default function Home() {
     const handelSetActive = (active: string) => setActive(_ => active);
     const handelSubmit = () => console.log(value);
     const onClick = () => false;
-    console.log(styles)
     return (
         <section className={`${styles.main_page}`}>
             <Container>
@@ -32,7 +31,7 @@ export default function Home() {
                 <Toggler array={["Residential", "Commercial", "Off-Plan"]} active={active} setActive={handelSetActive} className={`${styles.toggler} ${togglerStyles.toggler__fill}`}/>
                 <Form fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue} className={formStyles.form__search} buttonText="Search"/>
                 <p className={`medium_text ${styles.medium_text} medium_text__light`}>Prices are always changing, find out the value of your property today</p>
-                <Button text={<Link href="#">Contact us</Link>} onClick={onClick} />
+                <Link href="/contact-us"><Button text="Contact us" onClick={onClick} /></Link>
             </Container>
         </section>
     )

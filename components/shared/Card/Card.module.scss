@@ -15,8 +15,20 @@
     &_date {
         @include medium-text;
         color: $color-additiona;
+        display: flex;
+        &_mins {
+            display: flex;
+            align-items: center;
+            margin: 0 6px;
 
-        &_hours {
+            &:before {
+                content: "";
+                height: 4px;
+                width: 4px;
+                margin: 0 6px;
+                border-radius: 50%;
+                background-color: $color-submit;
+            }
         }
     }
 
@@ -119,7 +131,7 @@
         }
 
         .card_description {
-            margin: 35px 0 60px;
+            margin: 35px 0 55px;
         }
     }
 }

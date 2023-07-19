@@ -17,9 +17,17 @@ const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
         setOpen(prev => !prev);
         document.body.style.overflowY = open ? "unset" : "hidden";
     }
+    const logoOpen = () => {
+        setOpen(prev => false);
+        document.body.style.overflowY = open ? "unset" : "hidden";
+    }
     return (
         <>
-            <LogoShort />
+            <Link href={"/"} >
+                <span onClick={logoOpen}>
+                    <LogoShort />
+                </span>
+            </Link>
             <div className={styles.navbar_icons}>
                 <SearchInput />
                 <span className={styles.burger_icons} onClick={toggleOpen}>
@@ -29,13 +37,18 @@ const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
                     open && <nav className={styles.navbar_mobile}>
                         <ul>
                             {links.map((elem, i) =>
-                                <Link
-                                    key={`link-item-+${i}`}
-                                    href={elem.href}
+                                <li
                                     className={`${styles.navbar_mobile_item} ${isActive(elem.href) ? styles.active : ""}`}
+                                    onClick={toggleOpen}
+                                    key={`link-item-${i}`}
                                 >
-                                    {elem.name}
-                                </Link>
+                                    <Link
+                                        href={elem.href}
+                                        
+                                    >
+                                        {elem.name}
+                                    </Link>
+                                </li>
                             )}
                         </ul>
                     </nav>

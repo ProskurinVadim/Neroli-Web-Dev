@@ -150,22 +150,13 @@
         .button {
             margin-top: 28px;
         }
-
-        .map {
-            margin-top: 24px;
-
-            img {
-                width: 461px;
-                height: 263px;
-            }
-        }
     }
 }
 
 @include lg {
     .post {
         &_big_images {
-            width: 652px;
+            width: 492px;
             height: 492px;
         }
 
@@ -174,11 +165,12 @@
         }
 
         &_small_images {
-            width: 692px;
+            width: 448px;
 
             img {
-                width: 306px;
+                width: 204px;
                 height: 226px;
+                margin: 0 0 40px 20px;
             }
         }
 
@@ -194,15 +186,6 @@
         .button {
             margin-top: 28px;
         }
-
-        .map {
-            margin-top: 24px;
-
-            img {
-                width: 461px;
-                height: 263px;
-            }
-        }
     }
 }
 
@@ -214,11 +197,10 @@
 
         &_image_item {
             margin-bottom: -20px;
-            flex-wrap: wrap;
         }
 
         &_big_images {
-            width: 400px;
+            width: 384px;
             height: 280px;
         }
 
@@ -227,12 +209,12 @@
         }
 
         &_small_images {
-            width: 100%;
+            width: 290px;
 
             img {
-                width: 81px;
-                height: 60px;
-                margin: 16px 16px 0 0;
+                width: 124px;
+                height: 124px;
+                margin: 0 0 16px 16px;
                 border-radius: 16px;
 
                 &:last-child {
@@ -254,15 +236,6 @@
         .button {
             margin-top: 20px;
         }
-
-        .map {
-            margin-top: 40px;
-
-            img {
-                width: 461px;
-                height: 263px;
-            }
-        }
     }
 }
 
@@ -273,9 +246,9 @@
         }
 
         &_image_item {
-            margin: 0 20px -20px;
             flex-wrap: wrap;
             margin-right: 30px;
+            margin-bottom: -20px;
         }
 
         &_big_images {
@@ -318,15 +291,6 @@
 
         .button {
             margin-top: 16px;
-        }
-
-        .map {
-            margin-top: 40px;
-
-            img {
-                width: 100%;
-                height: 263px;
-            }
         }
     }
 }

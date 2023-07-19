@@ -1,9 +1,6 @@
 @import '../../../../styles/mixin';
 
 .contact_us {
-    background-image: url("../../../../public/map-big.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 
     &_container {
         display: flex;
@@ -11,18 +8,18 @@
     }
 
     &_info {
-        margin-top: 80px;
-        width: 460px;
         border: 1px solid #E5E5E5;
         box-sizing: border-box;
         border-radius: 24px;
         background-color: #fff;
         padding: 40px;
         text-align: left;
+        position: absolute;
 
         &_content {
             padding-top: 10px;
         }
+
         &_text {
             margin-top: 16px;
             display: flex;
@@ -46,26 +43,45 @@
 .section_header {
     margin-top: 0;
 }
+
 @include xl {
     .contact_us {
-        height: 556px;
+
+        &_info {
+            margin-top: 80px;
+            width: 460px;
+        }
     }
 }
 
 @include lg {
+
     .contact_us {
-        height: 772px;
+
+        &_info {
+            margin-top: 80px;
+            width: 460px;
+        }
     }
 }
 
 @include md {
+
     .contact_us {
-        height: 556px;
+
+        &_info {
+            margin: 28px auto 0;
+            width: 372px;
+        }
     }
 }
 
 @include sm {
     .contact_us {
-        height: 772px;
+
+        &_info {
+            margin: 28px auto 0;
+            width: 372px;
+        }
     }
 }

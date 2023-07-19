@@ -13,11 +13,11 @@ const Footer = () => {
     const toggleOpen = () => setOpen(prev => !prev);
     return (
         <footer className={styles.footer}>
-            <div className={styles.footer_header_container}>
+            <div className={styles.footer_header_container} onClick={toggleOpen}>
                 <Container>
                     <h2 className={`${styles.footer_header}`}>
                         Experts in Real Estate Dubai
-                        <span onClick={toggleOpen}>
+                        <span>
                             {open ? <DownArrow /> : <TopArrow />}
                         </span>
                     </h2>

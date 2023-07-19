@@ -1,4 +1,5 @@
 @import "../../../../styles/varrible";
+@import "../../../../styles/mixin";
 
 .list {
     display: flex;
@@ -7,7 +8,6 @@
     margin-top: 40px;
 
     &_item {
-        margin: 20px 0;
 
         .card {
             margin: 0 0 40px;
@@ -49,5 +49,18 @@
                 }
             }
         }
+    }
+}
+
+
+@include md {
+    .pagination {
+        margin: 0 auto;
+    }
+}
+
+@include sm {
+    .pagination {
+        margin: 0 auto;
     }
 }

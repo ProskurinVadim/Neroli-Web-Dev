@@ -55,7 +55,6 @@ const typeOptions = [
     { value: "plot", name: "Plot" },
     { value: "land", name: "Land" }
 ];
-console.log(formStyles)
 export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
     {
         key: "building",
@@ -65,27 +64,27 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     {
         key: "type",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={`${formStyles.search_large_select} ${styles.select__one_third_small}`} />)
+            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "property_type",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type" className={`${formStyles.search_large_select} ${styles.select__one_third}`} />)
+            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "beds",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds" className={`${formStyles.search_large_select} ${styles.select__one_third}`} />)
+            (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "price_min",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" className={`${formStyles.search_large_select} ${styles.select__half}`} />)
+            (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "price_max",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" className={`${formStyles.search_large_select} ${styles.select__half}`} />)
+            (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
 ];
 

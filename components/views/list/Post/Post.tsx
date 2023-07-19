@@ -4,7 +4,7 @@ import Container from "../../../../hoc/Container";
 import Carousel from "../../../shared/Carousel";
 import { Toggler } from "../../../common";
 import PersonCard from "./PersonCard";
-import Map from "./Map";
+import ApartmentMap from "./ApartmentMap";
 import Information from "./Information";
 import Text from "./Text";
 import CarouselItem from "./CarouselItem";
@@ -43,7 +43,7 @@ const Post: React.FC<IApartment> = ({ params }) => {
                     </div>
                     <div className={styles.person_content}>
                         <PersonCard {...person}/>
-                        <Map />
+                        <ApartmentMap />
                     </div>
                 </div>
             </Container>

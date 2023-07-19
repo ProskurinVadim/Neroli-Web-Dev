@@ -29,6 +29,7 @@ import Calendar from "./Card/Calendar";
 
 import CommercialAt from "./CommercialAt";
 import Mark from "./Mark";
+import MarkSmal from "./Mark/MarkSmal";
 
 import Table from "./View/Table";
 import List from "./View/List";
@@ -52,7 +53,7 @@ export {
     Minus, Plus, ArrowTop, ArrowBottom,
     Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
-    CommercialAt, Mark,
+    CommercialAt, Mark, MarkSmal,
     RightArrow, LeftArrow, DownArrow, TopArrow,
     Table, List,
 
