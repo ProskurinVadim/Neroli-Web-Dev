@@ -14,7 +14,7 @@ interface ILatestNews {
 const LatestNews: React.FC<ILatestNews> = ({ news }) => {
     const data: any = getData()
     const adaptive = useContext(AdaptiveContext);
-
+    console.log(adaptive,"adaptive")
     return (
         <section className="section__padding">
             <Container>
@@ -24,7 +24,7 @@ const LatestNews: React.FC<ILatestNews> = ({ news }) => {
                         <NewsCard {...news[0]} table={true} />
                     </li>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...news[1]} horizontal={!adaptive} table={true} />
+                        <NewsCard {...news[1]} horizontal={adaptive === "xl"} table={true} />
                     </li>
                     <li className={styles.latest_news_list_item}>
                         <NewsCard {...news[2]} table={true} />

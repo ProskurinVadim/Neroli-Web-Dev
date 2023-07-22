@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Container className={styles.header_container}>
-                {adaptive ? <HeaderMobile isActive={isActive} /> : <HeaderDesktop href={href} />}
+                {adaptive === "mobile" ? <HeaderMobile isActive={isActive} /> : <HeaderDesktop href={href} />}
             </Container>
         </header>
     )

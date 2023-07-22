@@ -41,13 +41,8 @@
                 }
 
                 &.navbar_search {
-                    &:before {
-                        content: "";
-                        display: block;
-                        width: 1px;
-                        height: 100%;
-                        background: $color-border;
-                    }
+                    display: flex;
+                    align-items: center;
                 }
             }
 
@@ -102,6 +97,7 @@
             top: 0;
             bottom: 0;
             position: relative;
+            cursor: pointer;
         }
 
         &_input {
@@ -145,6 +141,18 @@
     .navbar {
         &_item {
             padding-right: 48px;
+
+            &.navbar_search {
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 25px;
+                    margin-right: 40px;
+                    background: $color-border;
+                }
+            }
         }
 
         &:last-child {
@@ -172,6 +180,19 @@
         &_item {
             padding-right: 20px;
 
+            &.navbar_search {
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 25px;
+                    margin-left: 40px;
+                    background: $color-border;
+                }
+            }
+
+
             &:last-child {
                 padding-right: 0;
                 padding-left: 20px;
@@ -181,6 +202,23 @@
 }
 
 @include sm {
+    .navbar {
+        &_item {
+
+            &.navbar_search {
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 25px;
+                    margin-left: 40px;
+                    background: $color-border;
+                }
+            }
+        }
+    }
+
     .container {
         width: 360px;
         padding: 0 32px;

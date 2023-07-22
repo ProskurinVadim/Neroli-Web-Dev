@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const AdaptiveContext = createContext<boolean>(false);
+export const AdaptiveContext = createContext<string>("xl");

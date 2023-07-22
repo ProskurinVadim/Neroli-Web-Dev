@@ -1,4 +1,4 @@
-@import '../../../../styles/mixin';
+	@import '../../../../styles/mixin';
 
 .latest_news_list {
 	display: flex;
@@ -33,10 +33,6 @@
 					width: 306px;
 					height: 246px;
 				}
-			}
-
-			&:last-child {
-				margin-top: -288px;
 			}
 		}
 	}

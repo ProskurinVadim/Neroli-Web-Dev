@@ -4,6 +4,7 @@
 .button {
     height: auto;
     border: 1px solid $color-primary;
+    white-space: nowrap;
     padding: 12px 36px;
     background: $color-primary;
     color: $color-light;

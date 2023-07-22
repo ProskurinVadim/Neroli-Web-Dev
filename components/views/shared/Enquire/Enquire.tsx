@@ -50,7 +50,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
             <Container className={`${styles.notebook}`}>
                 <div className={`${styles.notebook_item} section__padding`}>
                     {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
-                    <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate}>
+                    <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate} buttonText="Submit details">
                         <p className={formStyles.form_text}>By clicking Submit, you agree to our <span className="text__underlining">Terms</span> & <span className="text__underlining">Privacy Policy</span>.</p>
                     </Form>
                 </div>

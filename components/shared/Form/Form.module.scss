@@ -93,15 +93,6 @@
 
 
 @include xl {
-    .form__search {
-        width: 573px;
-        border-radius: 100px;
-        flex-direction: row;
-
-        .button {
-            border-radius: 0px 100px 100px 0px;
-        }
-    }
 
     .form {
         .button {
@@ -109,9 +100,24 @@
         }
     }
 
+    .form__search {
+        width: 573px;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+            width: 125px;
+        }
+    }
+
     .form__card {
-        margin: 52px auto 0;
+        margin: 52px 0 0 auto;
         padding: 40px;
+
+        input {
+            max-width: 341px;
+        }
     }
 
     .form__search_large {
@@ -122,15 +128,6 @@
 }
 
 @include lg {
-    .form__search {
-        width: 573px;
-        border-radius: 100px;
-        flex-direction: row;
-
-        .button {
-            border-radius: 0px 100px 100px 0px;
-        }
-    }
 
     .form {
         .button {
@@ -138,9 +135,24 @@
         }
     }
 
+    .form__search {
+        width: 573px;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+            width: 125px;
+        }
+    }
+
     .form__card {
-        margin: 52px auto 0;
+        margin: 52px 0 0 auto;
         padding: 40px;
+
+        input {
+            max-width: 341px;
+        }
     }
 
     .form__search_large {
@@ -175,6 +187,11 @@
         padding: 28px;
         border-top: 0;
         border-radius: 0px 0px 16px 16px;
+
+
+        input {
+            max-width: 316px;
+        }
     }
 
     .form__search_large {
@@ -240,6 +257,10 @@
         box-shadow: unset;
         padding: 28px;
         border-radius: 0px 0px 16px 16px;
+
+        input {
+            max-width: 316px;
+        }
     }
 
     .form__search_large {

@@ -14,7 +14,7 @@ const AboutUs = () => {
             <Container >
                 <span className={styles.logo__colored}>
                     {
-                        adaptive ? <LogoShort width="70" height="70" viewBox="0 0 70 70" fill="#DDDE70" /> :
+                        adaptive === "mobile" ? <LogoShort width="70" height="70" viewBox="0 0 70 70" fill="#DDDE70" /> :
                         <LogoShortUnfill width="70" height="70" viewBox="0 0 70 70" fill="#DDDE70" />
                     }
                 </span>

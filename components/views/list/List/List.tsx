@@ -23,7 +23,7 @@ const List = () => {
                     <p className="medium_text medium_text__aditional">
                         Properties For Sale In Dubai: {data.length}
                     </p>
-                    {!adaptive && <ListToggler active={view} setActive={setView} />}
+                    {adaptive != "mobile" && <ListToggler active={view} setActive={setView} />}
                 </div>
                 <ul className={styles.list}>
                     {data.map((elem: any, i) =>

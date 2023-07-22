@@ -2,10 +2,10 @@
 @import "../../../styles/mixin";
 
 .footer {
-    cursor: pointer;
     &_header_container {
         border-top: 1px solid $color-border;
         padding: 35px 0;
+        cursor: pointer;
     }
 
     &_header {

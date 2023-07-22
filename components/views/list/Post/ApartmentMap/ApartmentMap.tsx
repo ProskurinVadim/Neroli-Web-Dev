@@ -8,7 +8,7 @@ const ApartmentMap = () => {
     const adaptive = useContext(AdaptiveContext);
 
     return (
-        <Map center={defaultCenter} marks={[{ position: defaultCenter }]} containerStyle={adaptive ? mobileContainerStyle : containerStyle} />
+        <Map center={defaultCenter} marks={[{ position: defaultCenter }]} containerStyle={adaptive === "mobile" ? mobileContainerStyle : containerStyle} />
     )
 };
 

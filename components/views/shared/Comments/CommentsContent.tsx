@@ -21,7 +21,7 @@ const CommentsContent: React.FC<ICommentsContent> = ({comments}) => {
     };
 
     return (
-        <section className="section__padding">
+        <section className="section__padding owerflow_hidden">
             <Container className={containerStyles.container__overflow_initial}>
                 <h2 className="section_header"> Why people love Neroli Properties </h2>
                 {<Carousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}

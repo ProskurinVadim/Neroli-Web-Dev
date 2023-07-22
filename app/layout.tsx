@@ -5,10 +5,10 @@ import { IChildren } from "../types";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
 import useWidth from "../hooks/useWidth";
-    
+
 const RootLayout: React.FC<IChildren> = ({ children }) => {
     const width = useWidth()
-    const adaptive = width <= 1024;
+    const adaptive = width >= 1440 ? "xl" : width >= 1024 ? "lg" : "mobile";
     const isActive = (href: string) => false;
     return (
         <html lang="en" >
