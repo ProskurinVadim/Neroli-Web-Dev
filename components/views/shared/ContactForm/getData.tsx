@@ -8,7 +8,7 @@ export const getFormData = () => [
     {
         key: "email",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
-            (<Input value={value} onChange={onChange} placeholder="Email" error={error} />)
+            (<Input value={value} onChange={onChange} placeholder="Email" error={error} type="email" />)
     },
 ]
 

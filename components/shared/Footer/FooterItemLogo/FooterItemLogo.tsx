@@ -11,9 +11,12 @@ const FooterItemLogo: React.FC = () => {
 
     return (
         <li className={styles.footer_item}>
-            <h3 className={`small_section_header ${styles.small_section_header}`}>
-                {adaptive === "mobile" ? <LogoShort /> : <LogoShortUnfill />}
-            </h3>
+
+            <Link href="/" className="link_unset">
+                <h3 className={`small_section_header ${styles.small_section_header}`}>
+                    {adaptive === "mobile" ? <LogoShort /> : <LogoShortUnfill />}
+                </h3>
+            </Link>
             <p className={`${styles.footer_description}`}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.

@@ -159,6 +159,9 @@
 }
 
 @include sm {
+    .footer_list {
+        padding: 0;
+    }
     .footer_item {
         padding: 0 0 28px;
         border-bottom: 1px solid $color-border;

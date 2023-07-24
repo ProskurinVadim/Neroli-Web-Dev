@@ -78,6 +78,13 @@
         margin: 44px 0 19px 0;
     }
 
+    .street_view {
+        padding-top: 0;
+    } 
+    .street_view_image {
+        border-radius: 24px;
+    }
+
     &_content {
         display: flex;
         justify-content: space-between;
@@ -151,12 +158,17 @@
             margin-top: 28px;
         }
     }
+
+    .street_view_image {
+        height: 492px;
+        width: 843px;
+    }
 }
 
 @include lg {
     .post {
         &_big_images {
-            width: 492px;
+            width: 550px;
             height: 492px;
         }
 
@@ -165,10 +177,10 @@
         }
 
         &_small_images {
-            width: 448px;
+            width: 550px;
 
             img {
-                width: 204px;
+                width: 255px;
                 height: 226px;
                 margin: 0 0 40px 20px;
             }
@@ -185,6 +197,11 @@
 
         .button {
             margin-top: 28px;
+        }
+
+        .street_view_image {
+            height: 492px;
+            width: 600px;
         }
     }
 }
@@ -235,6 +252,11 @@
 
         .button {
             margin-top: 20px;
+        }
+
+        .street_view_image {
+            height: 492px;
+            width: 664px;
         }
     }
 }
@@ -292,21 +314,11 @@
         .button {
             margin-top: 16px;
         }
-    }
-}
 
-
-
-@media (max-width: 428px) {
-    .post {
-        &_small_images {
-            img {
-                width: 70px;
-            }
-        }
-
-        &_big_images {
-            width: 320px;
+        .street_view_image {
+            height: 280px;
+            width: 372px;
         }
     }
 }
+

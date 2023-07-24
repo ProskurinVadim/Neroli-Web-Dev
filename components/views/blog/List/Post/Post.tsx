@@ -1,9 +1,17 @@
-"use set"
+"use client"
 import Container from "../../../../../hoc/Container";
 import { Image } from "../../../../common";
 import RecommendedList from "./RecommendedList";
 import { CalendarColored, EyeColored, Time, Twitter, Whatsapp, Facebook, CopyLink, Linkedin } from "../../../../icons";
 import styles from "./Post.module.scss";
+import {
+    TwitterShareButton,
+    LinkedinShareButton,
+    WhatsappShareButton,
+} from 'next-share'
+import { usePathname } from 'next/navigation';
+
+
 
 interface IPost {
     list: any[],
@@ -19,7 +27,11 @@ interface IPost {
     }
 }
 const Post: React.FC<IPost> = ({ blog, list }) => {
-
+    const path = usePathname();
+    const url = `https://neroli-web-dev.vercel.app/${path}`;
+    const copylink = (e: any) => {
+        navigator.clipboard.writeText(url)
+    }
     return (
         <section>
             <div style={{ backgroundImage: `url(${blog.background_image})` }} className={styles.post_information}>
@@ -37,11 +49,25 @@ const Post: React.FC<IPost> = ({ blog, list }) => {
                 <Image src={blog.image} alt="post-image" className={styles.post_image}/>
                 <p className={`medium_text ${styles.post_text}`}>{blog.sub_text}</p>
                 <ul className={styles.post_social_list}>
-                    <li className={`medium_text ${styles.post_social_list_item}`}><Twitter />Twitter</li>
-                    <li className={`medium_text ${styles.post_social_list_item}`}><Facebook />Facebook</li>
-                    <li className={`medium_text ${styles.post_social_list_item}`}><Linkedin />LinkedIn</li>
-                    <li className={`medium_text ${styles.post_social_list_item}`}><Whatsapp />WhatsApp</li>
-                    <li className={`medium_text ${styles.post_social_list_item}`}><CopyLink />Copy Link</li>
+                    <li className={`medium_text ${styles.post_social_list_item}`}>
+                        <TwitterShareButton url={url}>
+                            <Twitter />Twitter
+                        </TwitterShareButton>
+                    </li>
+                    <li className={`medium_text ${styles.post_social_list_item}`}>
+                        <Facebook />Facebook
+                    </li>
+                    <li className={`medium_text ${styles.post_social_list_item}`}>
+                        <LinkedinShareButton url={url}>
+                            <Linkedin />LinkedIn
+                        </LinkedinShareButton>
+                    </li>
+                    <li className={`medium_text ${styles.post_social_list_item}`}>
+                        <WhatsappShareButton url={url}>
+                            <Whatsapp />WhatsApp
+                        </WhatsappShareButton>
+                    </li>
+                    <li className={`medium_text ${styles.post_social_list_item}`} onClick={copylink} ><CopyLink />Copy Link</li>
                 </ul>
                 <RecommendedList list={list}/>
             </Container>

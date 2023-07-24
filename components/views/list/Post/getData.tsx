@@ -21,7 +21,6 @@ export const getCarouselItem = () => {
             TestItem, TestItem, TestItem
         ]
 }
-
 export const getPerson = {
     image: Person.src,
     name: "Sean Farmer",

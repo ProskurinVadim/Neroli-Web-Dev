@@ -28,7 +28,7 @@ const Search = () => {
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
-                <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "}>
+                <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "} buttonText={"Search"}>
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>

@@ -12,7 +12,6 @@ interface ILatestNews {
     news: any[]
 }
 const LatestNews: React.FC<ILatestNews> = ({ news }) => {
-    const data: any = getData()
     const adaptive = useContext(AdaptiveContext);
     console.log(adaptive,"adaptive")
     return (
@@ -21,13 +20,19 @@ const LatestNews: React.FC<ILatestNews> = ({ news }) => {
                 <h2 className="section_header">Latest News</h2>
                 <ul className={styles.latest_news_list}>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...news[0]} table={true} />
+                        <Link href={news[0].link} className="link_unset">
+                            <NewsCard {...news[0]} table={true} />
+                         </Link>
+                    </li>
+                        <li className={styles.latest_news_list_item}>
+                        <Link href={news[1].link} className="link_unset">
+                            <NewsCard {...news[1]} horizontal={adaptive === "xl"} table={true} />
+                        </Link>
                     </li>
                     <li className={styles.latest_news_list_item}>
-                        <NewsCard {...news[1]} horizontal={adaptive === "xl"} table={true} />
-                    </li>
-                    <li className={styles.latest_news_list_item}>
-                        <NewsCard {...news[2]} table={true} />
+                        <Link href={news[2].link} className="link_unset">
+                            <NewsCard {...news[2]} table={true} />
+                        </Link>
                     </li>
                 </ul>
                 <Link href="/blog" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>View all news</Link>

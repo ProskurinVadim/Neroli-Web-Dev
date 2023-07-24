@@ -48,6 +48,10 @@
         width: fit-content;
         cursor: pointer;
         transition: 0.5s;
+        button {
+            display: flex;
+            align-items: center;
+        }
         svg {
             margin-right: 12px;
             path {

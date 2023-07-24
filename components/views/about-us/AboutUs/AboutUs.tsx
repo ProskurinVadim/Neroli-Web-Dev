@@ -4,7 +4,7 @@ import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import { Image } from "../../../common";
 import Container from "../../../../hoc/Container";
 import IMG from "../../../../public/about-us.jpg";
-import { LogoShort, LogoShortUnfill } from "../../../icons";
+import { LogoLarge, LogoLargeUnfill } from "../../../icons";
 import styles from "./AboutUs.module.scss";
 const AboutUs = () => {
 
@@ -14,8 +14,8 @@ const AboutUs = () => {
             <Container >
                 <span className={styles.logo__colored}>
                     {
-                        adaptive === "mobile" ? <LogoShort width="70" height="70" viewBox="0 0 70 70" fill="#DDDE70" /> :
-                        <LogoShortUnfill width="70" height="70" viewBox="0 0 70 70" fill="#DDDE70" />
+                        adaptive === "mobile" ? <LogoLarge width="70" height="70" viewBox="0 0 70 70" /> :
+                            <LogoLargeUnfill width="70" height="70" viewBox="0 0 70 70" />
                     }
                 </span>
                 <h2 className={`section_header ${styles.section_header}`}>This is our business</h2>

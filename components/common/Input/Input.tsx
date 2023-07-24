@@ -7,12 +7,13 @@ interface IInput {
     className?: string,
     containerClassName?: string,
     error?: string,
+    type?: string,
 }
 
-const Input: React.FC<IInput> = ({ value, onChange, placeholder, className = "", containerClassName = "", error }) => {
+const Input: React.FC<IInput> = ({ value, onChange, placeholder, className = "", containerClassName = "", error, type = "text" }) => {
     return (
         <div className={`${styles.input_container} ${containerClassName}`} >
-            <input className={`${styles.input} ${className}`} onChange={onChange} value={value} placeholder={placeholder} />
+            <input className={`${styles.input} ${className}`} onChange={onChange} value={value} placeholder={placeholder} type={type}/>
             {error && <p className={styles.input_error_text}>{ error }</p>}
         </div>
     )

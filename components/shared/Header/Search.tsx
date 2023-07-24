@@ -10,12 +10,12 @@ const SearchInput = () => {
     const { value, setValue } = useInput();
     const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
     return (
-        <div className={styles.header_search}>
-            {open && <input value={value} onChange={handelChange} className={`${inputStyles.input} ${styles.header_search_input} `} />}
-            <span onClick={toogleOpen} className={styles.header_search_icon}>
+        <>
+            {open && <input value={value} onChange={handelChange} className={`${inputStyles.input} ${styles.navbar_search_input} `} />}
+            <span onClick={toogleOpen} className={styles.navbar_search_icon}>
                 <Search />
             </span>
-        </div>
+        </>
     )
     
 }

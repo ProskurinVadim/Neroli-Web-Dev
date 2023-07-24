@@ -9,6 +9,10 @@ import Information from "./Information";
 import Text from "./Text";
 import CarouselItem from "./CarouselItem";
 import styles from "./Post.module.scss";
+import { Image } from "../../../common";
+
+import Condition, { If, Else } from "../../../../hoc/Conditional/Condition";
+
 import { getCarouselItem, getPerson, getTextData, getInformation } from "./getData";
 interface IApartment {
     params: {
@@ -38,8 +42,15 @@ const Post: React.FC<IApartment> = ({ params }) => {
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
                         <Information {...information} />
-                        <Toggler active={active} setActive={setActive} array={["Description", "Virtual Tour", "Street View"]} className={styles.post_toggler} />
-                        <Text {...text}/>
+                        <Toggler active={active} setActive={setActive} array={["Description", "Street View"]} className={styles.post_toggler} />
+                        <Condition condition={active === "Description"}>
+                            <If>
+                                <Text {...text} />
+                                </If>
+                            <Else>
+                                <Carousel className={styles.street_view} config={config} data={data} Item={(props: any) => <Image src={props.img1} alt="street view image" className={styles.street_view_image} />} />
+                            </Else>
+                        </Condition>
                     </div>
                     <div className={styles.person_content}>
                         <PersonCard {...person}/>

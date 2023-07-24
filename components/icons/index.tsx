@@ -4,6 +4,8 @@ import Star from "./Star";
 
 import Logo from "./Logo/Logo";
 import LogoShort from "./Logo/LogoShort";
+import LogoLarge from "./Logo/LogoLarge";
+import LogoLargeUnfill from "./Logo/LogoLargeUnfill";
 import LogoShortUnfill from "./Logo/LogoShortUnfill";
 
 import LeftArrow from "./Arrows/LeftArrow";
@@ -49,7 +51,7 @@ export {
     Burger,
     Search,
     Star,
-    Logo, LogoShort, LogoShortUnfill,
+    Logo, LogoShort, LogoShortUnfill, LogoLargeUnfill, LogoLarge,
     Minus, Plus, ArrowTop, ArrowBottom,
     Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,

@@ -15,7 +15,12 @@ const OfficeMap = () => {
     const adaptive = useContext(AdaptiveContext);
 
     return (
-        <Map center={defaultCenter} containerStyle={adaptive ? mobileContainerStyle : containerStyle} marks={[{ position: defaultCenter }]} markerIcon={Marker}>
+        <Map
+            center={adaptive ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter}
+            containerStyle={adaptive ? mobileContainerStyle : containerStyle}
+            marks={[{ position: defaultCenter }]}
+            markerIcon={Marker}
+        >
             <Container className={styles.contact_us_container}>
                 <div className={styles.contact_us_info}>
                     <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>

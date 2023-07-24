@@ -29,7 +29,9 @@ const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
                 </span>
             </Link>
             <div className={styles.navbar_icons}>
-                <SearchInput />
+                <div className={styles.navbar_search}>
+                    <SearchInput />
+                </div>
                 <span className={styles.burger_icons} onClick={toggleOpen}>
                     <Burger active={open} />
                 </span>
