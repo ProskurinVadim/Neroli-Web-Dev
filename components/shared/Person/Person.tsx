@@ -12,7 +12,7 @@ interface IPerson {
 	description: string
 	socialNetworks: {
 		facebook?: string,
-		linkedin?: string,
+		instagram?: string,
 		whatsapp?: string
 	}
 	className: string

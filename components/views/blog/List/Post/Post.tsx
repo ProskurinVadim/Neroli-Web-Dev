@@ -21,9 +21,7 @@ interface IPost {
         views: string,
         background_image: string,
         time: string,
-        text: string,
-        image: string,
-        sub_text: string
+        description: string,
     }
 }
 const Post: React.FC<IPost> = ({ blog, list }) => {
@@ -39,15 +37,13 @@ const Post: React.FC<IPost> = ({ blog, list }) => {
                     <h2 className={`section_header ${styles.section_header}`}>{blog.header}</h2>
                     <ul className={`medium_text ${styles.post_information_list}`}>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><CalendarColored />{blog.date}</li>
-                        <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><EyeColored />{blog.views}</li>
+                        <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><EyeColored />{blog.views || 0}</li>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><Time />{blog.time}</li>
                     </ul>
                 </Container>
             </div>
             <Container >
-                <p className={`medium_text ${styles.post_text}`}>{blog.text}</p>
-                <Image src={blog.image} alt="post-image" className={styles.post_image}/>
-                <p className={`medium_text ${styles.post_text}`}>{blog.sub_text}</p>
+                <p className={`medium_text ${styles.post_text}`} dangerouslySetInnerHTML={{ __html: blog.description }}></p>
                 <ul className={styles.post_social_list}>
                     <li className={`medium_text ${styles.post_social_list_item}`}>
                         <TwitterShareButton url={url}>

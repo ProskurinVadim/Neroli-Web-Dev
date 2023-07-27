@@ -28,7 +28,9 @@ export default function Home() {
             <Container>
                 <h2 className="small_section_header small_section_header__light">Welcome to Form Estate</h2>
                 <h1 className={styles.main_header}>Find your property</h1>
-                <Toggler array={["Residential", "Commercial", "Off-Plan"]} active={active} setActive={handelSetActive} className={`${styles.toggler} ${togglerStyles.toggler__fill}`}/>
+                <div className={`${styles.toggler_container}`} >
+                    <Toggler array={["Residential", "Commercial", "Off-Plan"]} active={active} setActive={handelSetActive} className={`${styles.toggler} ${togglerStyles.toggler__fill}`} />
+                </div>
                 <Form fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue} className={formStyles.form__search} buttonText="Search"/>
                 <p className={`medium_text ${styles.medium_text} medium_text__light`}>Prices are always changing, find out the value of your property today</p>
                 <Link href="/contact-us"><Button text="Contact us" onClick={onClick} /></Link>

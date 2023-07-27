@@ -16,6 +16,7 @@
         @include medium-text;
         color: $color-additiona;
         display: flex;
+
         &_mins {
             display: flex;
             align-items: center;
@@ -37,6 +38,7 @@
         display: flex;
         flex-grow: 1;
         flex-direction: column;
+        justify-content: space-between;
         box-sizing: border-box;
         padding-top: 8px;
     }
@@ -90,6 +92,8 @@
         }
 
         .card_description {
+            max-height: 100px;
+            overflow: hidden;
             margin: 0 0 8px;
         }
 
@@ -257,6 +261,11 @@
             width: 345px;
             height: 504px;
             flex-direction: column;
+
+            .card_header {
+                font-size: 21px;
+                font-weight: 500;
+            }
 
             .card_text {
                 padding: 20px 21px;

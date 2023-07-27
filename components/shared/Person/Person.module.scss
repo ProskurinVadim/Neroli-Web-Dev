@@ -83,6 +83,11 @@
 @include md {
     .person {
         width: 375px;
+        margin-top: 16px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
 
         .person_description {
             width: 100%;
@@ -91,6 +96,7 @@
 
     .person_comments {
         max-width: 370px;
+        margin-top: 40px;
 
 
         .person_description {
@@ -102,6 +108,11 @@
 @include sm {
     .person {
         width: 375px;
+        margin-top: 16px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
 
         .person_description {
             width: 100%;
@@ -110,6 +121,7 @@
 
     .person_comments {
         max-width: 370px;
+        margin-top: 40px;
 
 
         .person_description {

@@ -1,9 +1,9 @@
 import { AboutUs } from "../../components/views/about-us/";
 import { Comments, OurTeam } from "../../components/views/shared/";
-import { getAggents } from "../../utils/fetch";
+import { getBestAggents } from "../../utils/fetch";
 
 const AboutUsPage = async () => {
-    const { data } = await getAggents();
+    const { data } = await getBestAggents();
     return (
         <>
             <AboutUs />

@@ -9,7 +9,7 @@ interface ICommentsContent {
     comments: any[]
 }
 
-const CommentsContent: React.FC<ICommentsContent> = ({comments}) => {
+const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
     const data = getCarouselData(comments)
     const config = {
         time: 500000,

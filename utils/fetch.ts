@@ -20,28 +20,27 @@ export const getFAQs = () => {
 }
 
 export const getReviews = () => {
-    return instance("/reviews");
+    return instance("/reviews?populate=*");
 }
 
-export const getAggents = () => {
-    return instance("/agents?pagination[limit]=3",);
+export const getBestAggents = () => {
+    return instance("/agents?populate=*&filters[Best_agent][$eq]=true",);
 }
-
 export const getFullAggents = () => {
-    return instance("/agents",);
+    return instance("/agents?populate=*",);
 }
 
 export const getBlogs = (page:number) => {
-    return fetch(`${baseURL}/blogs?pagination[page]=${page}&pagination[pageSize]=9`, { headers });
+    return fetch(`${baseURL}/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=9`, { headers });
 }
 export const getLastNews = () => {
-    return instance(`/blogs?sort[0]=Date:desc&pagination[pageSize]=3`,);
+    return instance(`/blogs?populate=*&sort[0]=Date:desc&pagination[pageSize]=3`,);
 }
 export const getRecomendedNews = (id: string) => {
-    return instance(`/blogs?filters[id][$ne]=${id}&sort[0]=Date:desc&pagination[pageSize]=3`,);
+    return instance(`/blogs?populate=*&filters[id][$ne]=${id}&sort[0]=Date:desc&pagination[pageSize]=3`,);
 }
 export const getBlog = (id: string) => {
-    return instance(`/blogs/${id}`,);
+    return instance(`/blogs/${id}?populate=*`,);
 }
 
 export const getAppartments = () => {

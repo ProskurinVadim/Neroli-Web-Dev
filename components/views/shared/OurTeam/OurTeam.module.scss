@@ -12,4 +12,9 @@
 }
 .toggler {
     margin: 0 auto 0;
+
+    &_container {
+        width: 100%;
+        overflow: scroll;
+    }
 }

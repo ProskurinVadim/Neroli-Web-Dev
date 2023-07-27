@@ -14,7 +14,12 @@
     }
 
     .toggler {
-        margin: 40px auto 16px
+        margin: 40px auto 16px;
+
+        &_container {
+            width: 100%;
+            overflow: scroll;
+        }
     }
 
     .form {

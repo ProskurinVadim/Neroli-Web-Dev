@@ -22,13 +22,18 @@ const etc = ["Manager", "Director", "Marketing"];
 const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
     const [active, setActive] = useState<string>("Managers");
     const data = !fullCard ? getData(team) : getData(team).filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
+    console.log(data,"__");
     console.log(active)
     return (
         <section className="section__padding">
             <Container>
                 <h2 className="section_header">Our Team</h2>
                 <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>Our team consists exclusively of professionals.</p>
-                {fullCard && <Toggler active={active} setActive={setActive} array={["Managers", "Directors", "Marketing", "ETC"]} className={styles.toggler} />}
+                {fullCard &&
+                    <div className={styles.toggler_container}>
+                        <Toggler active={active} setActive={setActive} array={["Managers", "Directors", "Marketing", "ETC"]} className={styles.toggler} />
+                    </div>
+                 } 
                 <div className={styles.team_list}>
                     {data.map((elem: any, i) => <Person {...elem} key={`person-item-${i}`}/> )}
                 </div>
