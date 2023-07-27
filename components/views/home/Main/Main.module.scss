@@ -15,11 +15,6 @@
 
     .toggler {
         margin: 40px auto 16px;
-
-        &_container {
-            width: 100%;
-            overflow: scroll;
-        }
     }
 
     .form {
@@ -89,6 +84,12 @@
 
         .medium_text {
             width: 276px
+        }
+
+
+        .toggler_container {
+            width: 100%;
+            overflow: scroll;
         }
     }
 }

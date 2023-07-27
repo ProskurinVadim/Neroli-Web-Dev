@@ -1,3 +1,5 @@
+@import "../../../../styles/mixin";
+
 .team_list {
     display: flex;
     flex-wrap: wrap;
@@ -12,8 +14,10 @@
 }
 .toggler {
     margin: 0 auto 0;
+}
 
-    &_container {
+@include sm {
+    .toggler_container {
         width: 100%;
         overflow: scroll;
     }
