@@ -19,6 +19,29 @@ interface IApartment {
         id: string
     }
 }
+
+// const formatPostData = (data: any[]) => data.map(({ attributes }) => ({
+//     code: attributes.Address.description, //code -> adress
+//     description: attributes.Description,
+//     beds: attributes.Bedrooms,
+//     baths:  2,
+//     size: attributes.Square,
+//     name: attributes.Title,
+//     person: {
+//         image: attributes.Agent.attributes.Photo.data ? attributes.Agent.attributes.Photo.data.attributes.url : defaultAgentImage,
+//         name: attributes.Agent.attributes.FullName,
+//         job: attributes.Agent.attributes.Category || "",
+//     },
+//     carousel: {
+//         img1: attributes.Photos.data[0].attributes.formats.large.url,
+//         img2: attributes.Photos.data[1].attributes.formats.large.url,
+//         img3: attributes.Photos.data[2].attributes.formats.large.url,
+//         img4: attributes.Photos.data[3].attributes.formats.large.url,
+//         img5: attributes.Photos.data[4].attributes.formats.large.url,
+//     },
+//     street_view: attributes.Street_View.data.map((elem: any) => elem.attributes.formats.large.url)
+// }))
+
 const Post: React.FC<IApartment> = ({ params }) => {
     const [active, setActive] = useState<string>("Description");
     const text = getTextData;

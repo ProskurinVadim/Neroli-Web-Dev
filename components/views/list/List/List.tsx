@@ -19,7 +19,7 @@ const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     id,
 }))
 
-const filterAll = (items, propertyType) => {
+const filterAll = (items: any[], propertyType = "Residental") => {
     if(propertyType === "residential" ) {
         return items.filter(({category}) => category === "Residental");
     }
@@ -29,6 +29,8 @@ const filterAll = (items, propertyType) => {
     if(propertyType === "off-plan" ) {
         return items.filter(({category}) => category === "Off-plan");
     }
+
+    return []
 }
 
 const List = () => {
@@ -36,9 +38,9 @@ const List = () => {
     const items = formatData(useItems());
 
     const searchParams = useSearchParams();
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     const propertyType = params.get("property_type");
-    const filteredItems = filterAll(items, propertyType);
+    const filteredItems = filterAll(items, propertyType || "");
 
     const [page, setPage] = useState(1);
     const [view, setView] = useState<"list" | "table">("table")
