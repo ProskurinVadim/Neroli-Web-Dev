@@ -11,7 +11,9 @@ const instance = async (url: string ) => {
     return response.json();
 }
 
-
+export const getItems = ()=> {
+    return instance("/items?populate=*")
+}
 
 export const getFAQs = () => {
     return instance("/faqs");

@@ -1,13 +1,15 @@
 "use client"
 import { AdaptiveContext } from "../context/AdaptiveContext";
+import ItemsProvider from "@/context/ItemsContext";
 import localFont from 'next/font/local';
 import { IChildren } from "../types";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
 import useWidth from "../hooks/useWidth";
 
-const RootLayout: React.FC<IChildren> = ({ children }) => {
+const RootLayout: React.FC<IChildren> =  ({ children }) => {
     const width = useWidth()
+
     const adaptive = width >= 1440 ? "xl" : width >= 1024 ? "lg" : "mobile";
     return (
         <html lang="en" >
@@ -17,11 +19,14 @@ const RootLayout: React.FC<IChildren> = ({ children }) => {
             <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat&display=swap" rel="stylesheet" />
             <body className="body">
+            <ItemsProvider>
                 <AdaptiveContext.Provider value={ adaptive }>
                     <Header />
-                        {children}
+                    {children}
                     <Footer />
                 </AdaptiveContext.Provider>
+            </ItemsProvider>
+
             </body>
         </html >
     )

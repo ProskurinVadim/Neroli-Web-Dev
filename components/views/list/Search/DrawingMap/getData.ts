@@ -22,8 +22,8 @@ export const getData = () => [
 ];
 
 export const defaultCenter = {
-    lat: -36.5,
-    lng: 150,
+    lat: 25.0657000,
+    lng: 55.1712800,
 }
 
 export const polygonOptions = {

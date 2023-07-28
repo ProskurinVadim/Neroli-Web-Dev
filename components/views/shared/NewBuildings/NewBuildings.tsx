@@ -6,12 +6,22 @@ import Toggler from "../../../common/Toggler";
 import Carousel from "../../../shared/Carousel";
 import Card from "../../../shared/Card/AppartmentCard";
 import { getCarouselData } from "./getData";
-import styles from "./NewBuildings.module.scss"
+import useItems from "../../../../hooks/useItems";
+import styles from "./NewBuildings.module.scss";
+
+const formatData = (data: any[]) => data.map(({ attributes }) => ({
+    adress: attributes.Address.description, //code -> adress
+    image: attributes.Photos.data[0].attributes.formats.large.url,
+    header: attributes.Title,
+    category: attributes.Category,
+}))
 
 const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);
     const data = getCarouselData(active);
+    const items = formatData(useItems());
+    const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residental" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
     const config = {
         time: 5000,
         itemsCount: 4,
@@ -26,7 +36,7 @@ const NewBuildings = () => {
             <Container>
                 <h2 className="section_header">New this week</h2>
                 <Toggler array={["For sale", "Off-Plan"]} active={active} setActive={handelSetActive} className={styles.toggler} />
-                <Carousel config={config} data={data}
+                <Carousel config={config} data={filteredItems}
                     Item={(props: any) =>
                         <Link className="link_unset" href={`/list/${props.id}`}>
                             <Card {...props} className={styles.card} />
