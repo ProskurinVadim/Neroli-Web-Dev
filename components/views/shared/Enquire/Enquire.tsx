@@ -59,7 +59,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                             By clicking Submit, you agree to our
                             <Link className="text__underlining link_unset" href="/terms">Terms</Link>
                              &nbsp; & &nbsp;
-                            <Link className="text__underlining link_unset" href="/terms">Privacy Policy</Link>.
+                            <Link className="text__underlining link_unset" href="/privacy-policy">Privacy Policy</Link>.
                         </p>
                     </Form>
                 </div>

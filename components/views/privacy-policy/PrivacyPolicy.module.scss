@@ -1,0 +1,21 @@
+@import "../../../styles/mixin";
+
+.terms {
+
+    &_header {
+        @include card-header-text;
+    }
+
+    &_content_padding {
+        margin-top: 40px;
+        text-align: left;
+
+        &:last-child {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.section_header {
+    margin-bottom: 20px;
+}
