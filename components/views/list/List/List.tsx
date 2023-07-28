@@ -14,7 +14,7 @@ const List = () => {
     const [page, setPage] = useState(1);
     const [view, setView] = useState<"list" | "table">("table")
     const adaptive = useContext(AdaptiveContext);
-    console.log(adaptive)
+
     return (
         <section className="section__padding">
             <Container className="t_l">
