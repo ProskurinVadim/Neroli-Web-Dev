@@ -9,11 +9,12 @@ import { getCarouselData } from "./getData";
 import useItems from "../../../../hooks/useItems";
 import styles from "./NewBuildings.module.scss";
 
-const formatData = (data: any[]) => data.map(({ attributes }) => ({
+const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     adress: attributes.Address.description, //code -> adress
     image: attributes.Photos.data[0].attributes.formats.large.url,
     header: attributes.Title,
     category: attributes.Category,
+    id,
 }))
 
 const NewBuildings = () => {
