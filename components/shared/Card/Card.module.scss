@@ -200,6 +200,7 @@
 
             &.card__horizontal {
                 width: 421px;
+                max-width: 100%;
                 height: 532px;
             }
         }
@@ -258,8 +259,8 @@
         }
 
         &.news_card {
-            width: 345px;
-            height: 504px;
+            width: calc(100vw - 56px);
+            //height: 504px;
             flex-direction: column;
 
             .card_header {

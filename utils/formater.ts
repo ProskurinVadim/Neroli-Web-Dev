@@ -56,7 +56,10 @@ export const formatAgentsData = (data: ITeamsData[]) => data.map(({ attributes }
     socialNetworks: {
         facebook: attributes.Facebook,
         instagram: attributes.Instagram,
-        whatsapp: attributes.WhatsApp
+        whatsapp: attributes.WhatsApp,
+        viber: attributes.Viber,
+        twitter: attributes.Twitter,
+        threads: attributes.Threads,
     }
 }))
 

@@ -18,8 +18,11 @@ import Instagram from "./SocialNetworks/Instagram";
 import Whatsapp from "./SocialNetworks/Whatsapp";
 import WhatsappUnfill from "./SocialNetworks/WhatsappUnfill";
 import Linkedin from "./SocialNetworks/Linkedin";
-import Phone from "./SocialNetworks/Phone";
 import Twitter from "./SocialNetworks/Twitter";
+import Viber from "./SocialNetworks/Viber";
+import Threads from "./SocialNetworks/Threads";
+
+import Phone from "./SocialNetworks/Phone";
 import CopyLink from "./SocialNetworks/CopyLink";
 
 import Key from "./Card/Key";
@@ -53,7 +56,7 @@ export {
     Star,
     Logo, LogoShort, LogoShortUnfill, LogoLargeUnfill, LogoLarge,
     Minus, Plus, ArrowTop, ArrowBottom,
-    Facebook, Instagram, Whatsapp, Linkedin, Phone, WhatsappUnfill, Twitter, CopyLink,
+    Facebook, Instagram, Whatsapp, Linkedin, Viber, Threads, Phone, WhatsappUnfill, Twitter, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
     CommercialAt, Mark, MarkSmal,
     RightArrow, LeftArrow, DownArrow, TopArrow,

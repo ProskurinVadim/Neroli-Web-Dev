@@ -6,6 +6,9 @@ interface ITeamsData {
         Description: string | null,
         Facebook: string | null,
         WhatsApp: string | null,
+        Instagram: string | null,
+        Twitter: string | null,
+        Threads: string | null,
         [x: string]: any;
         Photo: {
             data: {

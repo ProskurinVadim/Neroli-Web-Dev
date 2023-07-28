@@ -276,7 +276,10 @@
         }
 
         &_big_images {
+            //width: 372px;
+            //height: 280px;
             width: 372px;
+            max-width: calc(100vw - 56px);
             height: 280px;
         }
 
@@ -288,13 +291,15 @@
             width: 100%;
 
             img {
-                width: 81px;
-                height: 60px;
+                //width: 81px;
+                width: calc(33% - 21px);
+                height: 80px;
                 margin: 16px 16px 0 0;
                 border-radius: 16px;
 
                 &:last-child {
                     margin-right: 0px;
+                    display: none;
                 }
             }
         }
@@ -320,6 +325,7 @@
         .street_view_image {
             height: 280px;
             width: 372px;
+            max-width: calc(100vw - 56px);
         }
     }
 }

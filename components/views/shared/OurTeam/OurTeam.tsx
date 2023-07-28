@@ -21,8 +21,7 @@ const etc = ["Manager", "Director", "Marketing"];
 const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
     const [active, setActive] = useState<string>("Managers");
     const data = !fullCard ? team : team.filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
-    console.log(data,"__");
-    console.log(active)
+
     return (
         <section className="section__padding">
             <Container>

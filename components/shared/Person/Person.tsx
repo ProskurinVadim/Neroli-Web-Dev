@@ -1,6 +1,6 @@
 import Avatar from "./Avatar";
 import Condition, { If } from "../../../hoc/Conditional/Condition";
-import { Facebook, Whatsapp, Linkedin } from "../../icons";
+import { Facebook, Whatsapp, Instagram, Twitter, Viber, Threads } from "../../icons";
 import styles from "./Person.module.scss";
 
 interface IPerson {
@@ -13,7 +13,10 @@ interface IPerson {
 	socialNetworks: {
 		facebook?: string,
 		instagram?: string,
-		whatsapp?: string
+		whatsapp?: string,
+		twitter?: string,
+		viber?: string,
+		threads?: string,
 	}
 	className: string
 }
@@ -25,9 +28,28 @@ const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, c
 			<Condition condition={Boolean(Object.keys(socialNetworks).length)}>
 				<If>
 					<ul className={styles.person_networks}>
-						<li className="icon__hover"><Facebook /></li>
-						<li className="icon__hover"><Linkedin /></li>
-						<li className="icon__hover"><Whatsapp /></li>
+						{socialNetworks.facebook && <li className="icon__hover">
+							<a href={socialNetworks.facebook}><Facebook /></a>
+						</li>}
+						{socialNetworks.instagram && <li className="icon__hover">
+							<a href={socialNetworks.instagram}><Instagram /></a>
+						</li>}
+						{socialNetworks.whatsapp && <li className="icon__hover">
+							<a href={socialNetworks.whatsapp}><Whatsapp /></a>
+						</li>}
+						{socialNetworks.twitter && <li className="icon__hover">
+							<a href={socialNetworks.twitter}><Twitter /></a>
+						</li>}
+						{socialNetworks.viber && <li className="icon__hover">
+							<a href={socialNetworks.viber}><Viber /></a>
+						</li>}
+						{socialNetworks.threads && <li className="icon__hover">
+							<a href={socialNetworks.threads}><Threads /></a>
+						</li>}
+						{/*<li className="icon__hover">*/}
+						{/*	<Linkedin />*/}
+						{/*</li>*/}
+						{/*<li className="icon__hover"><Whatsapp /></li>*/}
 					</ul>
 				</If>
 			</Condition>

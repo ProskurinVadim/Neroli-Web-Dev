@@ -19,6 +19,7 @@
     .list {
         &_item {
             margin-top: 40px;
+
         }
     }
 }
@@ -27,6 +28,7 @@
     .list {
         &_item {
             margin-top: 40px;
+            max-width: calc(33% - 20px);
         }
     }
 }
