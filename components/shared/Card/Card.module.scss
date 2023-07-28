@@ -283,7 +283,8 @@
 
 @media (max-width: 428px) {
     .card {
-        width: 170px;
+        //width: 170px;
+        width: calc((100vw - 72px) / 2);
 
         &_image {
             width: 170px;

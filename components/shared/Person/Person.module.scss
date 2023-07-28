@@ -108,6 +108,7 @@
 @include sm {
     .person {
         width: 375px;
+        max-width: calc(100vw - 56px);
         margin-top: 16px;
 
         &:first-child {
