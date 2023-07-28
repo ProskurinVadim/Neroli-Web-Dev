@@ -4,7 +4,9 @@ import { getReviews } from "../../../../utils/fetch";
 
 const Comments = async () => {
     const { data } = await getReviews()
-    return <CommentsContent comments={data} />
+    return <>
+        <CommentsContent comments={data} />
+    </>
     
 }
 

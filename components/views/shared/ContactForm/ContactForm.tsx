@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 import Container from "../../../../hoc/Container";
 import Form from "../../../shared/Form";
 import { getFormData, defaultData } from "./getData";
@@ -15,12 +16,15 @@ const ContactForm = ({ }) => {
     const [value, setValue] = useState<IForm>({ ...defaultData })
     const fields: any = getFormData();
     const handelSubmit = () => console.log(value);
+    const { push } = useRouter();
 
     const validate = (value: IForm) => {
         const emailErr = !isEmail(value.email);
         if (emailErr) {
             return ["", emailError]
         } else {
+            console.log('sad')
+            push("/thank-you");
             return ["", ""]
         }
     }

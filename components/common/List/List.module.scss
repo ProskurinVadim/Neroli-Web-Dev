@@ -1,0 +1,21 @@
+@import "../../../styles/varrible";
+
+@import "../../../styles/mixin";
+.list {
+
+    &_item {
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:before {
+            content: "\2022";
+            color: $color-submit;
+            font-weight: bold;
+            display: inline-block;
+            width: 5px;
+            margin-right: 16px;
+        }
+    }
+}

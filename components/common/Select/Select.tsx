@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ArrowBottom, ArrowTop } from "../../icons";
 import Condition, { If } from "../../../hoc/Conditional/Condition";
+import Options from "./Options";
 import styles from "./Select.module.scss";
 interface ISelect {
     options: Array<{
@@ -26,6 +27,9 @@ const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultVal
     const toggleOpen = () => {
         !open ? setOpen(label): setOpen(false);
     }
+
+    const handelClose = () => setOpen(false);
+    
     const name = value ? options.filter(elem => elem.value === value)[0].name : defaultValue;
     return (
         <div onClick={toggleOpen} className={`${styles.select} ${className}`}>
@@ -35,19 +39,7 @@ const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultVal
             </p>
             <Condition condition={open}>
                 <If>
-                    <ul className={styles.select_options_list}>
-                        {
-                            options.map((elem, i) =>
-                                <li
-                                    className={`${styles.select_options_list_item} ${elem.value === value ? "active" : ""}`}
-                                    onClick={() => handelChange(elem.value)}
-                                    key={`option-item-${i}`}
-                                >
-                                    {elem.name}
-                                </li>
-                            )
-                        }
-                    </ul>
+                    <Options handelChange={handelChange} options={options} value={value} handelClose={handelClose}/>
                 </If>
             </Condition>
         </div>

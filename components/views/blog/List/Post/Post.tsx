@@ -10,18 +10,19 @@ import {
     WhatsappShareButton,
 } from 'next-share'
 import { usePathname } from 'next/navigation';
+import { INewsCard } from "../../../../../types";
 
 
 
 interface IPost {
-    list: any[],
+    list: INewsCard[],
     blog: {
         header: string,
         date: string,
         views: string,
         background_image: string,
         time: string,
-        description: string,
+        description: string | TrustedHTML,
     }
 }
 const Post: React.FC<IPost> = ({ blog, list }) => {

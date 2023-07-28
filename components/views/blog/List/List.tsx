@@ -7,10 +7,11 @@ import Pagination from "../../../shared/Pagination";
 import styles from "./List.module.scss";
 import Link from 'next/link';
 import { getBlogs } from "../../../../utils/fetch";
+import { INewsCard } from "../../../../types";
 
 const List: React.FC = () => {
     const [page, setPage] = useState(1);
-    const [data, setData] = useState<any>([]);
+    const [data, setData] = useState<INewsCard[]>([]);
     const [limit, setLimit] = useState<number>(0);
 
     useEffect( () => {

@@ -5,7 +5,6 @@ import Container from "../../../../hoc/Container";
 import Person from "../../../shared/Person";
 import { Toggler } from "../../../common";
 import { buttonStyles } from "../../../common/Button/Button";
-import { getData } from "./getData";
 import styles from "./OurTeam.module.scss";
 
 interface IOurTeam {
@@ -21,7 +20,7 @@ const etc = ["Manager", "Director", "Marketing"];
 
 const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
     const [active, setActive] = useState<string>("Managers");
-    const data = !fullCard ? getData(team) : getData(team).filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
+    const data = !fullCard ? team : team.filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
     console.log(data,"__");
     console.log(active)
     return (

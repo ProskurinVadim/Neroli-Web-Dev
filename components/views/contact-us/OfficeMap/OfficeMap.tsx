@@ -16,8 +16,8 @@ const OfficeMap = () => {
 
     return (
         <Map
-            center={adaptive ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter}
-            containerStyle={adaptive ? mobileContainerStyle : containerStyle}
+            center={adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter}
+            containerStyle={adaptive === "mobile" ? mobileContainerStyle : containerStyle}
             marks={[{ position: defaultCenter }]}
             markerIcon={Marker}
         >

@@ -38,4 +38,16 @@ interface ICoords {
     lat: number,
     lng: number,
 }
-export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords}
+
+interface INewsCard {
+    image: string,
+    header: string
+    description?: string | null,
+    date: { day: string, mins: string }
+    link?: string,
+    horizontal?: boolean
+    table?: boolean
+}
+
+
+export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords, INewsCard}

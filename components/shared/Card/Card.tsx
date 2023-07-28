@@ -7,8 +7,8 @@ interface ICard {
     image: string,
     additional?: React.ReactNode | string | null,
     header: string
-    adress?: string,
-    description?: string,
+    adress?: string | null,
+    description?: string | null,
     link?: string,
     small?: boolean,
     className?: string,

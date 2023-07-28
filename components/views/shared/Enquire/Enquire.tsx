@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from 'next/navigation'
+import Link from "next/link";
 import Container from "../../../../hoc/Container";
 import Form, { formStyles } from "../.../../../../shared/Form/Form";
-import Image from "../../../common/Image";
 import { defaultData, getFormData } from "./getData";
 import styles from "./Enquire.module.scss";
 import useWidth from "../../../../hooks/useWidth";
 import { isEmail, isFull, isPhone, containError, emailError, phoneError } from "../../../../utils/validation";
+
 interface IForm {
     name: string,
     email: string,
@@ -21,6 +23,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
     const [value, setValue] = useState<IForm>({ ...defaultData})
     const fields: any = getFormData();
     const handelSubmit = () => console.log("Enquire", value);
+    const { push } = useRouter();
 
     const validate = (value: IForm) => {
         const containPhone = isFull(value.phone);
@@ -39,6 +42,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
         } else if (containPhone && phoneErr) {
             return ["", "", phoneError, ""]
         } else {
+            push("/thank-you");
             return ["", "", "" , ""]
         }
     }
@@ -51,7 +55,12 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                 <div className={`${styles.notebook_item} section__padding`}>
                     {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
                     <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate} buttonText="Submit details">
-                        <p className={formStyles.form_text}>By clicking Submit, you agree to our <span className="text__underlining">Terms</span> & <span className="text__underlining">Privacy Policy</span>.</p>
+                        <p className={formStyles.form_text}>
+                            By clicking Submit, you agree to our
+                            <Link className="text__underlining link_unset" href="/terms">Terms</Link>
+                             &nbsp; & &nbsp;
+                            <Link className="text__underlining link_unset" href="/terms">Privacy Policy</Link>.
+                        </p>
                     </Form>
                 </div>
                 <div className={`${styles.notebook_item} section__padding`}>

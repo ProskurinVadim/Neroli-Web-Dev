@@ -31,17 +31,19 @@
 }
 
 
+$screen-sl-min: 0px;
 $screen-sm-min: 300px;
 $screen-md-min: 800px;
 $screen-lg-min: 1024px;
 $screen-xl-min: 1440px;
 
-@mixin sm {
-    @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-min}) {
+
+@mixin sl {
+    @media (min-width: #{$screen-sl-min}) and (max-width: 480px) {
         @content;
     }
 }
-@mixin ssm {
+@mixin sm {
     @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-min}) {
         @content;
     }

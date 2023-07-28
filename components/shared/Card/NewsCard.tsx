@@ -1,16 +1,7 @@
 import Card from "./Card";
 import styles from "./Card.module.scss";
+import { INewsCard } from "../../../types";
 
-interface INewsCard {
-    image: string,
-    header: string
-    adress: string,
-    description?: string,
-    date: { day: string, mins: string }
-    link?: string,
-    horizontal?: boolean
-    table?: boolean
-}
 
 const NewsCard: React.FC<INewsCard> = ({ horizontal = false, table = false, ...props }) => {
     return (

@@ -17,7 +17,7 @@ const FAQ: React.FC<IFAQ> = ({ faq }) => {
         setActive(() => [...newArr])
     }
     return (
-        <section className="section__padding" >
+        <section className="section__padding">
             <Container>
                 <h2 className={`section_header ${styles.section_header}`}>FAQ</h2>
                 <p className="medium_text medium_text__aditional">Frequently Asked Questions.</p>

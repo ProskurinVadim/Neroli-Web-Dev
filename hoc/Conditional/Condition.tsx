@@ -6,7 +6,6 @@ import If from "./If";
 import ElseIf from "./ElseIf";
 import Else from "./Else";
 
-// added types for hoc that I foget to add before
 
 const Condition: FC<ICondition> = ({ children, condition }) => {
 
