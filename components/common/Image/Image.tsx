@@ -6,9 +6,9 @@ interface IImage {
     className?: string,
 }
 
-const Image: React.FC<IImage> = ({ alt, src, className }) => {
+const Image: React.FC<IImage> = ({ width = 100, height = 100, alt, src, className }) => {
     return (
-        <IMG alt={alt} src={src} className={className} />
+        <IMG width={width} height={height} alt={alt} src={src} className={className} />
     )
 }
 

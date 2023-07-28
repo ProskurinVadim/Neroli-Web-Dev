@@ -287,7 +287,8 @@
         width: calc((100vw - 72px) / 2);
 
         &_image {
-            width: 170px;
+            //width: 170px;
+            max-width: 100%;
         }
     }
 }
