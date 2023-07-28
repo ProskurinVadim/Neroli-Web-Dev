@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7d71ed0-81e9-4213-8fa3-7b850a540f62" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/Image/Image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Image/Image.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared/Card/Card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared/Card/Card.module.scss" afterDir="false" />
-    </list>
+    <list default="true" id="a7d71ed0-81e9-4213-8fa3-7b850a540f62" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690527366294</updated>
       <workItem from="1690527378372" duration="215000" />
-      <workItem from="1690527839933" duration="3577000" />
+      <workItem from="1690527839933" duration="4174000" />
     </task>
     <servers />
   </component>
