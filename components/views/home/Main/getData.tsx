@@ -6,7 +6,7 @@ export const getFormData = () => [
             (<Input value={value} onChange={onChange} placeholder="Community or building" className={`${inputStyles.input_inline} ${inputStyles.input_inline__rounded}`} containerClassName={inputStyles.input_inline_container} />)
     },
     {
-        key: "commercial",
+        key: "rest",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
             (<Input value={value} onChange={onChange} placeholder="Price, Type and Bedrooms" className={`${inputStyles.input_inline}`} containerClassName={inputStyles.input_inline_container} />)
     }
@@ -14,6 +14,5 @@ export const getFormData = () => [
 
 export const defaultData = {
     building: "",
-    commercial: "",
-    off_plan: ""
+    rest: "",
 }

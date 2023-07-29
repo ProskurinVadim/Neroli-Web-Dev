@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import ListContent from "./ListContent";
 import Search from "./Search";
-import { getAppartments } from "@/utils/fetch";
-import { formatListData } from "@/utils/formater";
+import { getAppartments, getMapAppartments } from "@/utils/fetch";
+import { formatListData, formatListMapData } from "@/utils/formater";
 //dublicat
 interface IForm {
     building: string,
@@ -21,15 +21,21 @@ const List = () => {
 
     const search = async (value: IForm | {}) => {
         const newData = await getAppartments(value);
-        setData(formatListData(newData.data));
-        console.log(data)
+        setData([...formatListData(newData.data)]);
+    }
+    const draw = async (body: any,) => {
+        console.log(body)
+        const newData = await getMapAppartments(body, {});
+        console.log(newData)
+        setData([...formatListMapData(newData)]);
+
     }
     useEffect(() => {
         search({})
     },[])
     return (
         <>
-            <Search onSubmit={search} />
+            <Search onSubmit={search} onDraw={draw} />
             <ListContent page={page} setPage={setPage} data={data} />
         </>
     )

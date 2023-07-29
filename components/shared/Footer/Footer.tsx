@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FooterItem from "./FooterItem";
 import { DownArrow, TopArrow } from "../../icons";
 import Container from "../../../hoc/Container";
@@ -7,9 +7,16 @@ import { aboutLinks, catigoriesLinks } from "../Header/getData";
 import styles from "./Footer.module.scss"
 import "../../../styles/reset.scss";
 import FooterItemLogo from "./FooterItemLogo";
+import { IContacts } from "@/types";
+import { getContactUs } from "@/utils/fetch";
+
 const Footer = () => {
     const [open, setOpen] = useState<boolean>(false);
-    const contactList = [{ name: "info@neroliproperties.com", href: "mailto: info@neroliproperties.com"}, { name: "888 - 587 - 3025", href: "tel:+888-587-3025" }, "6116 Willa River Suite 610"];
+    const [contacts, setContacts] = useState<IContacts>({ email: "", address: "", phone: "" });
+    useEffect(() => {
+        getContactUs()
+            .then(({ data }) => setContacts(data.attributes));
+    },[])
     const toggleOpen = () => setOpen(prev => !prev);
     return (
         <footer className={styles.footer}>
@@ -35,7 +42,9 @@ const Footer = () => {
                         <FooterItemLogo />
                         <FooterItem header="Contact" list={catigoriesLinks} />
                         <FooterItem header="About Form" list={aboutLinks} />
-                        <FooterItem header="Categories" list={contactList} />
+                        <FooterItem header="Categories"
+                            list={[{ name: contacts.email, href: `mailto: ${contacts.email}` }, { name: contacts.phone, href: `tel: ${contacts.phone}` }, contacts.address]}
+                        />
                     </ul>
                 </Container>
             </div>

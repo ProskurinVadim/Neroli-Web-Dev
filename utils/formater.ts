@@ -72,6 +72,15 @@ export const formatListData = (data: any[]) => data.map(({ id, attributes }) => 
     id,
 }))
 
+export const formatListMapData = (data: any[]) => data.map((elem: any) => ({
+    adress: elem.Address.description,
+    image: elem.Address.details.photos[0].url,
+    header: elem.Title,
+    category: elem.Category,
+    description: elem.Description,
+    id: elem.id,
+}))
+
 interface IApartment {
     information: {
         adress: string,

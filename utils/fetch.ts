@@ -5,7 +5,7 @@ const headers = {
     "Authorization": `Bearer ${token}`
 }
 
-const instance = async (url: string ) => {
+const instance = async (url: string) => {
     const response = await fetch(`${baseURL}${url}`, {
         headers
     })
@@ -32,8 +32,12 @@ export const getFullAggents = () => {
     return instance("/agents?populate=*",);
 }
 
-export const getBlogs = (page:number) => {
-    return fetch(`${baseURL}/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=9`, { headers });
+export const getBlogs = (page: number, title?: string) => {
+    let query = "&pagination[page]=${page}&pagination[pageSize]=9";
+    if (title) {
+        query += `&filters[Title][$containsi]=${title}`;
+    }
+    return fetch(`${baseURL}/blogs?populate=*${query}`, { headers });
 }
 export const getLastNews = () => {
     return instance(`/blogs?populate=*&sort[0]=Date:desc&pagination[pageSize]=3`,);
@@ -67,6 +71,37 @@ export const getAppartments = ({ type, price_min, price_max, property_type, buil
     }
     return instance(`/items?populate=*${query}`,);
 }
+
+export const getMapAppartments = async (body: any,{ type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
+    let query = ""
+    if (type) {
+        query += `&filters[Category][$eq]=${type}`;
+    }
+    if (price_min) {
+        query += `&filters[Price][$gt]=${price_min}`;
+    }
+    if (price_max) {
+        query += `&filters[Price][$lt]=${price_max}`;
+    }
+    if (property_type) {
+        query += `&filters[PropertyTypeResidental][$eq]=${property_type}`;
+    }
+    if (building) {
+        query += `&filters[Title][$containsi]=${building}`;
+    }
+    if (beds) {
+        query += `&filters[Bedrooms][$eq]=${beds}`;
+    }
+    const response = await fetch(`${baseURL}/items/containsLocation?populate=*${query}`, {
+        headers: {
+            "Content-Type": "application/json",
+            ...headers
+        },
+        method: "POST", body: JSON.stringify(body)
+    });
+    return response.json()
+}
+
 
 export const getContactUs = () => {
     return instance("/contact-us")

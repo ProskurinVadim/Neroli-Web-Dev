@@ -19,14 +19,14 @@ interface IForm {
 }
 
 interface ISearch {
-    onSubmit: (value: IForm) => void
+    onSubmit: (value: IForm) => void;
+    onDraw: (body: any) => void
 }
 
-const Search: React.FC<ISearch> = ({ onSubmit }) => {
+const Search: React.FC<ISearch> = ({ onSubmit, onDraw }) => {
 
     const searchParams = useSearchParams();
     const params = new URLSearchParams(searchParams.toString());
-    const property_type = params.get("property_type") || "";
 
     const [value, setValue] = useState<IForm>({ ...getDefaultData });
     const [open, setOpen] = useState<boolean | string>(false);
@@ -44,7 +44,7 @@ const Search: React.FC<ISearch> = ({ onSubmit }) => {
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>
-            <DrawingMap visible={mapOpen} >
+            <DrawingMap visible={mapOpen} onDraw={onDraw}>
                 {modalOpen && <InfoModal setOpen={setModalOpen} />}
             </DrawingMap>
         </section>

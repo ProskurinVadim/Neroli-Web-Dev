@@ -49,5 +49,10 @@ interface INewsCard {
     table?: boolean
 }
 
+interface IContacts {
+    email: string;
+    phone: string;
+    address: string;
+}
 
-export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords, INewsCard}
+export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords, INewsCard, IContacts}

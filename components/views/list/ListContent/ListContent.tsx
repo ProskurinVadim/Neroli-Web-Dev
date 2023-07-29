@@ -32,8 +32,8 @@ const ListContent: React.FC<IList> = ({ data, page, setPage }) => {
                 <ul className={styles.list}>
                     {data.map((elem: any, i) =>
                         <li key={`card-item-key-${i}`} className={styles.list_item}>
-                            <Link href="/list/1" className="link_unset">
-                                <Card  {...elem} className={styles.card} small={view === "table"} />
+                            <Link href={`/list/${elem.id}`} className="link_unset">
+                                <Card {...elem} className={styles.card} small={view === "table"} />
                             </Link>
                         </li>
                     )}

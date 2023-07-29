@@ -9,14 +9,9 @@ import styles from "./OfficeMap.module.scss";
 import Map from "../../../shared/Map";
 import Marker from "./Marker.svg";
 import { defaultCenter, mobileContainerStyle, containerStyle } from "./getData";
+import { IContacts } from "@/types";
 
-interface IOfficeMap {
-    email: string;
-    phone: string;
-    address: string;
-}
-
-const OfficeMap: React.FC<IOfficeMap> = ({ email, address, phone }) => {
+const OfficeMap: React.FC<IContacts> = ({ email, address, phone }) => {
 
     const adaptive = useContext(AdaptiveContext);
 

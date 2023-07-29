@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import { Button } from "../../../common";
 import Toggler, { togglerStyles} from "../../../common/Toggler/Toggler";
 import Form, { formStyles } from "../../../shared/Form/Form";
@@ -10,8 +11,7 @@ import styles from "./Main.module.scss";
 import { defaultData, getFormData } from "./getData";
 interface IForm {
     building: string,
-    commercial: string,
-    off_plan: string
+    rest: string,
 }
 
 
@@ -19,9 +19,30 @@ export default function Home() {
     const [active, setActive] = useState<string>("Residential");
     const [value, setValue] = useState<IForm>({ ...defaultData });
     const fields: any = getFormData();
+    const { push } = useRouter();
 
     const handelSetActive = (active: string) => setActive(_ => active);
-    const handelSubmit = () => console.log(value);
+    const handelSubmit = () => {
+        console.log(fields);
+        const { building, rest } = value;
+        let query = `?property_type=${active.toLowerCase()}`
+        if (building) {
+            query += `&building=${building}`
+        }
+        rest.split(" ").map((elem: string) => {
+            if (isNaN(+elem) && !query.includes("&type") && elem) {
+                query += `&type=${elem}`
+            }
+            else if (+elem < 10 && !query.includes("&beds") && elem) {
+                query += `&beds=${elem}`
+            }
+            if (+elem >= 10 && !query.includes("&price_min")) {
+                query += `&price_min=${elem}`
+            }
+            console.log(query)
+            push(`/list${query}`)
+        })
+    };
     const onClick = () => false;
     return (
         <section className={`${styles.main_page}`}>

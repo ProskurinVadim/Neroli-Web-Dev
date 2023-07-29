@@ -19,9 +19,10 @@ interface IMark {
 
 interface IMap {
     visible: boolean,
+    onDraw: (body: any) => void;
     children: React.ReactNode | string | null
 }
-const DrawingMap: React.FC<IMap> = ({ visible = false, children }) => {
+const DrawingMap: React.FC<IMap> = ({ visible = false, onDraw, children }) => {
 
     const [marks, setMarks] = useState<IMark[]>([]);
     const [open, setOpen] = useState <boolean>(false)
@@ -39,6 +40,7 @@ const DrawingMap: React.FC<IMap> = ({ visible = false, children }) => {
             setPolygons([...polygons, newPolygon]);
             setMarks([...getData()])
             setOpen(true);
+            onDraw([...polygons, newPolygon])
         }
     }
 
@@ -71,9 +73,8 @@ const DrawingMap: React.FC<IMap> = ({ visible = false, children }) => {
                 }
             </div>
             {children}
-            {open && <InfoModal setOpen={setOpen} />}
         </Map>
     )
 }
-
+//{ open && <InfoModal setOpen={setOpen} /> }
 export default DrawingMap
