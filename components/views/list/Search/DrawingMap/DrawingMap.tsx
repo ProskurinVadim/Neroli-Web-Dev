@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { DrawingManager, GoogleMap, Marker, useJsApiLoader, Polygon } from '@react-google-maps/api';
 import Button, { buttonStyles } from "../../../../common/Button/Button";
 import Map from "../../../../shared/Map";
+import InfoModal from "../modals/InfoModal";
 import styles from "../Search.module.scss";
 
 import { getData, defaultCenter, drawingManagerOptions, polygonOptions, containerStyle } from "./getData";
@@ -17,11 +18,13 @@ interface IMark {
 }
 
 interface IMap {
-    visible: boolean
+    visible: boolean,
+    children: React.ReactNode | string | null
 }
-const DrawingMap: React.FC<IMap> = ({ visible = false }) => {
+const DrawingMap: React.FC<IMap> = ({ visible = false, children }) => {
 
     const [marks, setMarks] = useState<IMark[]>([]);
+    const [open, setOpen] = useState <boolean>(false)
     const [polygons, setPolygons] = useState<any[]>([]);
     const [drawing, setDrawing] = useState<boolean>(false);
 
@@ -35,6 +38,7 @@ const DrawingMap: React.FC<IMap> = ({ visible = false }) => {
             $overlayEvent.overlay?.setMap(null);
             setPolygons([...polygons, newPolygon]);
             setMarks([...getData()])
+            setOpen(true);
         }
     }
 
@@ -66,6 +70,8 @@ const DrawingMap: React.FC<IMap> = ({ visible = false }) => {
                         : <Button text="Draw a frame" onClick={draw} className={`${styles.map_button} ${buttonStyles.button_submit}`} />
                 }
             </div>
+            {children}
+            {open && <InfoModal setOpen={setOpen} />}
         </Map>
     )
 }

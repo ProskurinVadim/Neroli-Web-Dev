@@ -104,6 +104,9 @@
 .body {
     overflow-x: clip;
 }
+*::selection {
+    background-color: $color-submit;
+}
 @include xl {
     .small_section_header {
         font-size: 21px;

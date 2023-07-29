@@ -1,13 +1,18 @@
 import { Comments, ContactForm } from "../../components/views/shared/";
 import { OfficeMap } from "../../components/views/contact-us";
+import { getContactUs } from "@/utils/fetch";
 
-export default function ContactUs() {
+ const ContactUs = async () => {
+
+     const contacts = await getContactUs();
 
     return (
         <>
-            <OfficeMap />
+            <OfficeMap {...contacts.data.attributes} />
             <Comments />
             <ContactForm />
         </>
     )
 }
+
+export default ContactUs

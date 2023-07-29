@@ -8,29 +8,3 @@ export const getTextData = {
 }
 
 const TestImage = Image.src;
-const TestItem = {
-    img1: TestImage,
-    img2: TestImage,
-    img3: TestImage,
-    img4: TestImage,
-    img5: TestImage,
-}
-
-export const getCarouselItem = () => {
-    return [
-            TestItem, TestItem, TestItem
-        ]
-}
-export const getPerson = {
-    image: Person.src,
-    name: "Sean Farmer",
-    job: "Job title"
-}
-
-export const getInformation = {
-    code: "AED 895,000",
-    beds: 1,
-    baths: 2,
-    size: 1189,
-    name: "1 Bedroom Apartment for Sale in Park One, Jumeirah Village Triangle."
-}

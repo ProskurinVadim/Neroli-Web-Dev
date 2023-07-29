@@ -10,7 +10,13 @@ import Map from "../../../shared/Map";
 import Marker from "./Marker.svg";
 import { defaultCenter, mobileContainerStyle, containerStyle } from "./getData";
 
-const OfficeMap = () => {
+interface IOfficeMap {
+    email: string;
+    phone: string;
+    address: string;
+}
+
+const OfficeMap: React.FC<IOfficeMap> = ({ email, address, phone }) => {
 
     const adaptive = useContext(AdaptiveContext);
 
@@ -25,9 +31,9 @@ const OfficeMap = () => {
                 <div className={styles.contact_us_info}>
                     <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
                     <div className={`${styles.contact_us_info_content}`}>
-                        <p className={`${styles.contact_us_info_text} medium_text`}><CommercialAt /> info@neroliproperties.com</p>
-                        <p className={`${styles.contact_us_info_text} medium_text icon_fill`}><PhoneColored /> 888-587-3025</p>
-                        <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal /> 6116 Willa River Suite 610</p>
+                        <p className={`${styles.contact_us_info_text} medium_text`}><CommercialAt />{email}</p>
+                        <p className={`${styles.contact_us_info_text} medium_text icon_fill`}><PhoneColored />{phone}</p>
+                        <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
                     </div>
                     <div className={styles.contact_us_social_links}>
                         <span className="icon__hover"><Facebook /></span>

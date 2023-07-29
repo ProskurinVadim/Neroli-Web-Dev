@@ -18,7 +18,7 @@ const Footer = () => {
                     <h2 className={`${styles.footer_header}`}>
                         Experts in Real Estate Dubai
                         <span>
-                            {open ? <DownArrow /> : <TopArrow />}
+                            {!open ? <DownArrow /> : <TopArrow />}
                         </span>
                     </h2>
                     { open &&

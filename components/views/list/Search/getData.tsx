@@ -4,25 +4,25 @@ import styles  from "./Search.module.scss";
 
 const planOptions = [
     { value: "all", name: "All" },
-    { value: "residential", name: "Residential" },
-    { value: "commercial", name: "Commercial" },
-    { value: "off-plan", name: "Off - Plan" }
+    { value: "Residental", name: "Residental" },
+    { value: "Commercial", name: "Commercial" },
+    { value: "Off-plan", name: "Off - Plan" }
 ];
 
 const bedroomsOptions = [
-    { value: "all", name: "All" },
-    { value: "studio", name: "Studio" },
-    { value: "1_bedroom", name: "1 Bedroom" },
-    { value: "2_bedroom", name: "2 Bedroom" },
-    { value: "3_bedroom", name: "3 Bedroom" },
-    { value: "4_bedroom", name: "4 Bedroom" },
-    { value: "5_bedroom", name: "5 Bedroom" },
-    { value: "6_bedroom", name: "6 Bedroom" },
-    { value: "7_+_bedroom", name: "7 + Bedroom" },
+    { value: "", name: "All" },
+    { value: "Studio", name: "Studio" },
+    { value: "Bedrooms 1", name: "1 Bedroom" },
+    { value: "Bedrooms 2", name: "2 Bedroom" },
+    { value: "Bedrooms 3", name: "3 Bedroom" },
+    { value: "Bedrooms 4", name: "4 Bedroom" },
+    { value: "Bedrooms 5", name: "5 Bedroom" },
+    { value: "Bedrooms 6", name: "6 Bedroom" },
+    { value: "Bedrooms 7+", name: "7 + Bedroom" },
 ];;
 
 const price = [
-    { value: "all", name: "All" },
+    { value: "", name: "All" },
     { value: "500000", name: "AED 500, 000" },
     { value: "750000", name: "AED 750, 000" },
     { value: "1000000", name: "AED 1, 000, 000" },
@@ -45,15 +45,15 @@ const price = [
 ];
 
 const typeOptions = [
-    { value: "all", name: "All" },
-    { value: "apartment", name: "Apartment" },
-    { value: "villa", name: "Villa" },
-    { value: "townhouse", name: "Townhouse" },
+    { value: "", name: "All" },
+    { value: "Apartment", name: "Apartment" },
+    { value: "Villa", name: "Villa" },
+    { value: "Townhouse", name: "Townhouse" },
 
-    { value: "penthouse", name: "Penthouse" },
-    { value: "duplex", name: "Duplex" },
-    { value: "plot", name: "Plot" },
-    { value: "land", name: "Land" }
+    { value: "Penthouse", name: "Penthouse" },
+    { value: "Duplex", name: "Duplex" },
+    { value: "Plot", name: "Plot" },
+    { value: "Land", name: "Land" }
 ];
 export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
     {

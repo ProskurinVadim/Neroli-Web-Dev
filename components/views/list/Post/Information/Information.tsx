@@ -1,22 +1,22 @@
 import { Bed, Bath, Size} from "../../../../icons";
 import styles from "../Post.module.scss";
 interface ICode {
-    code: string,
-    beds: number,
+    adress: string,
+    beds: string,
     baths: number,
     size: number,
-    name: string
+    header: string
 }
-const Information: React.FC<ICode> = ({ code, baths, beds, name, size }) => {
+const Information: React.FC<ICode> = ({ adress, baths, beds, header, size }) => {
     return (
         <>
-            <h2 className={`section_header ${styles.section_header}`}>{code}</h2>
+            <h2 className={`section_header ${styles.section_header}`}>{adress}</h2>
             <ul className={styles.post_information_list}>
                 <li className={styles.post_information_list_item}> <Bed /> {beds}</li>
                 <li className={styles.post_information_list_item}> <Bath /> {baths}</li>
                 <li className={styles.post_information_list_item}> <Size /> {size} sqft</li>
             </ul>
-            <p className="medium_text medium_text__aditional">{name}</p>
+            <p className="medium_text medium_text__aditional">{header}</p>
         </>
     )
 }

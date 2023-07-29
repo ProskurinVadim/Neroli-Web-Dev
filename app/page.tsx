@@ -5,8 +5,7 @@ import { getLastNews } from "../utils/fetch";
 import { formatNewsData } from "../utils/formater";
 const Home = async () => {
 
-    const { data } = await getLastNews()
-
+    const { data } = await getLastNews();
     return (
         <>
             <Main />

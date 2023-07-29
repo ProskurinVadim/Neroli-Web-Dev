@@ -14,6 +14,21 @@
         margin: 0 20px;
     }
 }
+
+.modal {
+    position: absolute;
+
+    &_confirm {
+        right: 0;
+    }
+
+    &_info {
+        left: 0;
+        right: 0;
+        height: 100%;
+        background-color: #fff;
+    }
+}
 @include md {
     .select {
         width: 31%;

@@ -55,7 +55,16 @@ interface INewsData {
     }
 }
 
+interface IItemQuery {
+    type?: string,
+    price_min?: string,
+    price_max?: string,
+    property_type?: string,
+    building?: string,
+    beds? : string,
+}
 export type {
     ITeamsData,
-    INewsData
+    INewsData,
+    IItemQuery
 }
