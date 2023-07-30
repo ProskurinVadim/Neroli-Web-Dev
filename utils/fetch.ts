@@ -107,8 +107,12 @@ export const getContactUs = () => {
     return instance("/contact-us")
 }
 
-export const getAboutUs = () => {
-    return instance("/about-us")
+export const getAboutUs = async () => {
+    const response = await fetch(`${baseURL}/about-us`, {
+        headers,
+        next: { revalidate: 60 }
+    })
+    return response.json();
 }
 
 export const getAppartment = (id: string) => {

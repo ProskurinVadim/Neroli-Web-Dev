@@ -9,12 +9,10 @@ interface IArticle {
 }
 
 const Article: React.FC<IArticle> = async ({ params }) => {
-
     const recomendedNewsData = getRecomendedNews(params.id);
     const blogData = getBlog(params.id);
     const [news, blog] = await Promise.all([recomendedNewsData, blogData])
-
-    console.log(formatNewsData(news.data))
+    
     return (
         <>
             <Post list={formatNewsData(news.data)} blog={formaBlogData(blog.data)}/>
