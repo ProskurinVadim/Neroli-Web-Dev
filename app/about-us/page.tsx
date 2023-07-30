@@ -3,6 +3,8 @@ import { Comments, OurTeam } from "../../components/views/shared/";
 import { getBestAggents, getAboutUs } from "../../utils/fetch";
 import { formatAgentsData } from "../../utils/formater";
 
+export const revalidate = 60;
+
 const AboutUsPage = async () => {
     const contentData = getAboutUs();
     const agentsData =  getBestAggents();
