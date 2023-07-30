@@ -20,15 +20,15 @@ const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
 const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);
-    const data = getCarouselData(active);
+
     const items = formatData(useItems());
-    const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residental" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
+    const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
     const config = {
         time: 5000,
         itemsCount: 4,
         pagination: {
             withArrows: true,
-            maxPages: Math.ceil(data.length / 4),
+            maxPages: Math.ceil(filteredItems.length / 4),
             numerical: false,
         }
     };
