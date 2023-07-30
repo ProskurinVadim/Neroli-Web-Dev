@@ -1,13 +1,16 @@
 const token = "527f761c97d1abd6c5d6e4e6fa4ec50451560a44c95e44598df61bcb836802e288e666c1af2cf0f95cedf7d05e498b7cc7ac9741d484c0cb21a373f18cb399389f90578aa40a627945a94f0bbc5d08a5dbb6251f3c55dbf920dd9a0dc6258caa92fd0e211aafa9aee45e1b58ea528f22dd7d1ec44b0cf60d6221bf985b009859";
 const baseURL = "https://neroli-admin.onrender.com/api";
+
 import { IItemQuery } from "./fetchTypes";
+
 const headers = {
     "Authorization": `Bearer ${token}`
 }
 
 const instance = async (url: string) => {
     const response = await fetch(`${baseURL}${url}`, {
-        headers
+        headers,
+        next: { revalidate: 60 }
     })
     return response.json();
 }
@@ -37,7 +40,10 @@ export const getBlogs = (page: number, title?: string | null) => {
     if (title) {
         query += `&filters[Title][$containsi]=${title}`;
     }
-    return fetch(`${baseURL}/blogs?populate=*${query}`, { headers });
+    return fetch(`${baseURL}/blogs?populate=*${query}`, {
+        headers,
+        next: { revalidate: 60 }
+    });
 }
 export const getLastNews = () => {
     return instance(`/blogs?populate=*&sort[0]=Date:desc&pagination[pageSize]=3`,);
@@ -108,11 +114,7 @@ export const getContactUs = () => {
 }
 
 export const getAboutUs = async () => {
-    const response = await fetch(`${baseURL}/about-us`, {
-        headers,
-        next: { revalidate: 60 }
-    })
-    return response.json();
+    return instance("/about-us");
 }
 
 export const getAppartment = (id: string) => {

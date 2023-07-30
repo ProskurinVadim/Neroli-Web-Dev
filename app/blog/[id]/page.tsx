@@ -8,6 +8,8 @@ interface IArticle {
     }
 }
 
+export const revalidate = 60;
+
 const Article: React.FC<IArticle> = async ({ params }) => {
     const recomendedNewsData = getRecomendedNews(params.id);
     const blogData = getBlog(params.id);

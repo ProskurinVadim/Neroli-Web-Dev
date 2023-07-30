@@ -1,7 +1,7 @@
-"use server";
 import { FAQ } from "../../components/views/faq";
 import { getFAQs } from "../../utils/fetch";
 
+export const revalidate = 60;
 
 const AboutUsPage = async () => {
     const { data } = await getFAQs()
