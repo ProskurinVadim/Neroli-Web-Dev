@@ -6,6 +6,7 @@ export const revalidate = 60;
 
 const OurTeamPage = async () => {
     const { data } = await getFullAggents();
+
     return (
         <>
             <OurTeam fullCard={true} team={formatAgentsData(data)} />
