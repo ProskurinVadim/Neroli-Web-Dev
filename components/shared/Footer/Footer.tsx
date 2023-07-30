@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import FooterItem from "./FooterItem";
 import { DownArrow, TopArrow } from "../../icons";
 import Container from "../../../hoc/Container";
@@ -40,9 +41,9 @@ const Footer = () => {
                 <Container >
                     <ul className={styles.footer_list}>
                         <FooterItemLogo />
-                        <FooterItem header="Contact" list={catigoriesLinks} />
-                        <FooterItem header="About Form" list={aboutLinks} />
-                        <FooterItem header="Categories"
+                        <FooterItem header="Categories" list={catigoriesLinks} />
+                        <FooterItem header="About Neroli" list={aboutLinks} />
+                        <FooterItem header="Contact"
                             list={[{ name: contacts.email, href: `mailto: ${contacts.email}` }, { name: contacts.phone, href: `tel: ${contacts.phone}` }, contacts.address]}
                         />
                     </ul>
@@ -50,8 +51,8 @@ const Footer = () => {
             </div>
             <div className={styles.footer_additional_information}>
                 <Container>
-                    <p className="medium_text">Terms and Conditions</p>
-                    <p className="medium_text medium_text__aditional">@ 2023 - Neroli Properties. All right reserved.</p>
+                    <Link href="/terms" className={`medium_text ${styles.footer_link}`}>Terms and Conditions</Link>
+                    <p className="medium_text medium_text__aditional">@ 2023 - Neroli Properties. All rights reserved.</p>
                 </Container>
             </div>
             

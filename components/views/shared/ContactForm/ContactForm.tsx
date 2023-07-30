@@ -23,7 +23,6 @@ const ContactForm = ({ }) => {
         if (emailErr) {
             return ["", emailError]
         } else {
-            console.log('sad')
             push("/thank-you");
             return ["", ""]
         }

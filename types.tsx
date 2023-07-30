@@ -43,7 +43,7 @@ interface ICoords {
 interface INewsCard {
     image: string,
     header: string
-    description?: string | null,
+    description: string,
     date: { day: string, mins: string }
     link?: string,
     horizontal?: boolean

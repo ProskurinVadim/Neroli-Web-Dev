@@ -56,7 +56,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                     {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
                     <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate} buttonText="Submit details">
                         <p className={formStyles.form_text}>
-                            By clicking Submit, you agree to our
+                            By clicking Submit, you agree to our&nbsp;
                             <Link className="text__underlining link_unset" href="/terms">Terms</Link>
                              &nbsp; & &nbsp;
                             <Link className="text__underlining link_unset" href="/privacy-policy">Privacy Policy</Link>.

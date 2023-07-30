@@ -16,6 +16,7 @@
     &_small_images {
         display: flex;
         flex-wrap: wrap;
+        //object-fit: cover;
 
         img {
             margin: 0 0 40px 40px;
@@ -330,3 +331,10 @@
     }
 }
 
+.bedrooms {
+    @include sm {
+        display: none;
+        margin-right: 0;
+    }
+    margin-right: 10px;
+}

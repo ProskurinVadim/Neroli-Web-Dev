@@ -13,7 +13,6 @@ interface IHeader {
 
 const HeaderDesktop: React.FC<IHeader> = ({ href }) => {
     const onClick = () => false;
-    console.log(href,"href");
     return (
         <>
             <Link href="/"><Logo /></Link>

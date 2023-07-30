@@ -27,7 +27,7 @@ interface IMark {
 interface ISearch {
     onSubmit: (value: IForm) => void;
     onDraw: (body: any) => void,
-    marks?: IMark[]
+    marks: IMark[]
 }
 
 const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
@@ -41,9 +41,8 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
         searchParams.get("type")
     ]
 
-    console.log(type)
     const [value, setValue] = useState<IForm>({ ...getDefaultData(property_type, building, price_min, beds) });
-    console.log(value)
+
     const [open, setOpen] = useState<boolean | string>(false);
     const [modalOpen, setModalOpen] = useState<boolean>(true)
     const [mapOpen, setMapOpen] = useState<boolean>(false);

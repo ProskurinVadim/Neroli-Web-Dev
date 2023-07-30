@@ -3,7 +3,7 @@ interface ITeamsData {
     attributes: {
         FullName: string | null,
         Category: string | null,
-        Description: string | null,
+        Description: string,
         Facebook: string | null,
         WhatsApp: string | null,
         Instagram: string | null,
@@ -28,7 +28,7 @@ interface INewsData {
         Title: string,
         Views: string | null,
         publishedAt: string,
-        Content: string | null,
+        Content: string,
         [x: string]: any;
         Photo: {
             data: Array<{

@@ -10,11 +10,7 @@ interface IApartment {
 }
 
 const Apartment: React.FC<IApartment> = async ({ params }) => {
-
-    console.log(params)
     const data: any = await getAppartment(params.id);
-
-    console.log(data)
 
     return (
         <>

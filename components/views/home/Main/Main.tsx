@@ -23,7 +23,6 @@ export default function Home() {
 
     const handelSetActive = (active: string) => setActive(_ => active);
     const handelSubmit = () => {
-        console.log(fields);
         const { building, rest } = value;
         let query = `?type=${active}`
         if (building) {
@@ -39,7 +38,6 @@ export default function Home() {
             if (+elem >= 10 && !query.includes("&price_min")) {
                 query += `&price_min=${elem}`
             }
-            console.log(query)
             push(`/list${query}`)
         })
     };

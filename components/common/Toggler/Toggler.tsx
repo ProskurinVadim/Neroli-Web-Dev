@@ -8,7 +8,6 @@ interface IToggler {
 }
 
 const Toggler: React.FC<IToggler> = ({ active, array, setActive, className = "" }) => {
-	console.log(styles)
 	return (
 		<ul className={`${styles.toggler} ${className}`}>
 			{

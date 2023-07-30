@@ -6,7 +6,7 @@ interface IAppartmentCard {
     image: string,
     header: string,
     adress: string,
-    description?: string,
+    description: string,
     link?: string,
     small?: boolean,
     className? : string,

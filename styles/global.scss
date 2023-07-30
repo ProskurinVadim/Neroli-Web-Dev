@@ -10,6 +10,20 @@
     @include medium-text;
     color: $color-primary;
 
+    ul {
+        padding-left: 15px;
+        list-style: none !important;
+
+        li::before {
+            content: "\2022";
+            color: #DDDE70;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    }
+
     &__light {
         color: $color-light;
     }

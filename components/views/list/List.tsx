@@ -25,7 +25,7 @@ const List = () => {
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(0);
     const [marks, setMarks] = useState<IMark[]>([]);
-    console.log(marks,"__")
+
     const search = async (value: IForm | {}) => {
         const newData = await getAppartments(value);
         setData([...formatListData(newData.data)]);
@@ -33,7 +33,6 @@ const List = () => {
     const draw = async (body: any,) => {
         const newData = await getMapAppartments(body, {});
         const newMarks = newData.map((elem: any) => ({ position: { lat: elem.Address.lat, lng: elem.Address.lng}}))
-        console.log(newData)
         setMarks([...newMarks])
         setData([...formatListMapData(newData)]);
 
