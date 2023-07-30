@@ -4,6 +4,25 @@
 
 .about_us_content {
 	margin-top: 30px;
+
+	strong {
+		font-weight: bold;
+	}
+
+	ul {
+		padding-left: 15px;
+		list-style: none !important;
+
+		li::before {
+			content: "\2022";
+			color: #DDDE70;
+			font-weight: bold;
+			display: inline-block;
+			width: 1em;
+			margin-left: -1em;
+		}
+	}
+
 	p {
 		text-align: left;
 		line-height: 180%;
