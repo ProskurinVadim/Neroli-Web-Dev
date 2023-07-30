@@ -52,7 +52,7 @@ const Post: React.FC<IApartment> = ({  information, person, carousel, street_vie
                         <Toggler active={active} setActive={setActive} array={["Description", "Street View"]} className={styles.post_toggler} />
                         <Condition condition={active === "Description"}>
                             <If>
-                                <p className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}></p>
+                                <div className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}/>
                                 </If>
                             <Else>
                                 <Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.img1} alt="street view image" className={styles.street_view_image} />} />

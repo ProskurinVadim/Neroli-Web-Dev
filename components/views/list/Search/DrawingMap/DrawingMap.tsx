@@ -6,25 +6,23 @@ import Map from "../../../../shared/Map";
 import InfoModal from "../modals/InfoModal";
 import styles from "../Search.module.scss";
 
-import { getData, defaultCenter, drawingManagerOptions, polygonOptions, containerStyle } from "./getData";
+import { defaultCenter, drawingManagerOptions, containerStyle } from "./getData";
 
 interface IMark {
     position: {
         lat: number,
         lng: number
     },
-    label?: string,
-    active?: boolean
 }
 
 interface IMap {
     visible: boolean,
     onDraw: (body: any) => void;
-    children: React.ReactNode | string | null
-}
-const DrawingMap: React.FC<IMap> = ({ visible = false, onDraw, children }) => {
+    children: React.ReactNode | string | null,
+    marks: IMark[]
 
-    const [marks, setMarks] = useState<IMark[]>([]);
+}
+const DrawingMap: React.FC<IMap> = ({ visible = false, onDraw, children, marks }) => {
     const [open, setOpen] = useState <boolean>(false)
     const [polygons, setPolygons] = useState<any[]>([]);
     const [drawing, setDrawing] = useState<boolean>(false);
@@ -38,7 +36,6 @@ const DrawingMap: React.FC<IMap> = ({ visible = false, onDraw, children }) => {
             newPolygon.push(startPoint);
             $overlayEvent.overlay?.setMap(null);
             setPolygons([...polygons, newPolygon]);
-            setMarks([...getData()])
             setOpen(true);
             onDraw([...polygons, newPolygon])
         }

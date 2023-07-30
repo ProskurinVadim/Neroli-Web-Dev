@@ -14,7 +14,7 @@ const personArr = [
     },
 ]
 
-const PersonCard: React.FC<IAvatar> = ({ image, name, job}) => {
+const PersonCard: React.FC<IAvatar> = ({ image, name, job, id}) => {
     const onClick = () => {
         console.log("click")
     }
@@ -29,7 +29,7 @@ const PersonCard: React.FC<IAvatar> = ({ image, name, job}) => {
                 personArr.map((elem,i) => <PersonCardItem {...elem} key={`person-item-${i}`}/>)
             }
             <Button onClick={onClick} text="Book a Viewing" className={styles.button} />
-            <a href={`https://neroli-admin.onrender.com/api/items/8/presentation`} target="_blank"><Button onClick={onClick} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>
+            <a href={`https://neroli-admin.onrender.com/api/items/${id}/presentation`} target="_blank"><Button onClick={onClick} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>
         </div>
     )
 }

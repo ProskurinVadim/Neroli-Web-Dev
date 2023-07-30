@@ -18,7 +18,7 @@ interface ICard {
 const Card: React.FC<ICard> = ({ image, additional, adress, description, link = "", small = false, className = "", header }) => {
     return (
         <div className={`${styles.card} ${className}`}>
-            <Image src={image} alt="image" className={styles.card_image} />
+            <div style={{ "backgroundImage": `url(${image})` }} className={styles.card_image}/>
             <div className={styles.card_text}>
                 {additional}
                 <p className={styles.card_header}>{header}</p>

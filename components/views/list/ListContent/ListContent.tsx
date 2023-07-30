@@ -1,11 +1,9 @@
 "use client";
 import { useState, useContext } from "react";
-import { useSearchParams } from "next/navigation";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import Container from "../../../../hoc/Container";
-import { getData } from "./getData";
 import Card from "../../../shared/Card/AppartmentCard";
-import Pagination from "../../../shared/Pagination";
+import { PaginationNumerial } from "../../../shared/Pagination";
 import styles from "./List.module.scss";
 import Link from 'next/link';
 import ListToggler from "./ListToggler";
@@ -13,12 +11,17 @@ import ListToggler from "./ListToggler";
 interface IList {
     data: any[],
     page: number,
+    limit: number,
     setPage: (page: number) => void
 }
-const ListContent: React.FC<IList> = ({ data, page, setPage }) => {
+const ListContent: React.FC<IList> = ({ data, page, setPage, limit }) => {
     const [view, setView] = useState<"list" | "table">("table")
     const adaptive = useContext(AdaptiveContext);
-
+    const config = {
+        withArrows: false,
+        maxPages: 100,
+        numerical: true,
+    }
     return (
         <section className="section__padding">
             <Container className="t_l">
@@ -38,7 +41,7 @@ const ListContent: React.FC<IList> = ({ data, page, setPage }) => {
                         </li>
                     )}
                 </ul>
-                {data.length > 12 && <Pagination page={page} setPage={setPage} className={styles.pagination} />}
+                {<PaginationNumerial page={page} setPage={setPage} className={styles.pagination} config={config} />}
             </Container>
         </section>
     )

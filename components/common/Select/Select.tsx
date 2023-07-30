@@ -19,6 +19,7 @@ interface ISelect {
 }
 
 const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultValue = "", className = "", open, setOpen }) => {
+    console.log(options, value)
     const handelChange = (newValue: string) => {
         setOpen(false);
         const target = { value: newValue };

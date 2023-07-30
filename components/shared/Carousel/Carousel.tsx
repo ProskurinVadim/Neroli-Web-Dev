@@ -1,5 +1,5 @@
 "use client";
-import Pagination from "../Pagination";
+import { PaginationDot } from "../Pagination";
 import { LeftArrow, RightArrow } from "../../icons";
 import { useState, useEffect, useRef } from "react";
 import styles from "./Carousel.module.scss";
@@ -70,7 +70,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
             </Condition>
             <Condition condition={maxPage !== 1}>
                 <If>
-                    <Pagination page={page} setPage={update} config={pagination} className={config.paginationClassName} />
+                    <PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName} />
                 </If>
             </Condition>
         </div>

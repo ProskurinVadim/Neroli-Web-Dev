@@ -65,7 +65,7 @@ export const formatAgentsData = (data: ITeamsData[]) => data.map(({ attributes }
 
 export const formatListData = (data: any[]) => data.map(({ id, attributes }) => ({
     adress: attributes.Address.description, 
-    image: attributes.Photos.data[0].attributes.formats.large.url,
+    image: attributes.Photos.data[0].attributes.formats.small.url,
     header: attributes.Title,
     category: attributes.Category,
     description: attributes.Description,
@@ -74,7 +74,7 @@ export const formatListData = (data: any[]) => data.map(({ id, attributes }) => 
 
 export const formatListMapData = (data: any[]) => data.map((elem: any) => ({
     adress: elem.Address.description,
-    image: elem.Address.details.photos[0].url,
+    image: elem.Address.details.photos ? elem.Address.details.photos[0].url : defaultNewsBGImage.src,
     header: elem.Title,
     category: elem.Category,
     description: elem.Description,
@@ -103,7 +103,7 @@ const test = { images: [testNewAdditionalImagez.src, testNewAdditionalImagez.src
 
 //    image: attributes.Agent.data.attributes.Photo.data ? attributes.Agent.data.attributes.Photo.data.attributes.url : defaultAgentImage,
 
-export const formatPostData = ({ attributes }: any ) => ({
+export const formatPostData = ({ attributes, id }: any ) => ({
     information: {
         adress: attributes.Address.description,
         header: attributes.Title,
@@ -116,8 +116,8 @@ export const formatPostData = ({ attributes }: any ) => ({
         image: defaultAgentImage.src,
         name: attributes.Agent.data.attributes.FullName,
         job: attributes.Agent.data.attributes.Category || "",
+        id: id,
     },
-  
     carousel: [test, test, test],
     description: attributes.Description,
     street_view: attributes.Street_View.data.map((elem: any) => elem.attributes.formats.large.url)

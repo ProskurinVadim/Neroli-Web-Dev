@@ -32,8 +32,8 @@ export const getFullAggents = () => {
     return instance("/agents?populate=*",);
 }
 
-export const getBlogs = (page: number, title?: string) => {
-    let query = "&pagination[page]=${page}&pagination[pageSize]=9";
+export const getBlogs = (page: number, title?: string | null) => {
+    let query = `&pagination[page]=${page}&pagination[pageSize]=9`;
     if (title) {
         query += `&filters[Title][$containsi]=${title}`;
     }
@@ -105,6 +105,10 @@ export const getMapAppartments = async (body: any,{ type, price_min, price_max, 
 
 export const getContactUs = () => {
     return instance("/contact-us")
+}
+
+export const getAboutUs = () => {
+    return instance("/about-us")
 }
 
 export const getAppartment = (id: string) => {

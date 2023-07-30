@@ -3,8 +3,8 @@ import { formStyles } from "../../../shared/Form/Form";
 import styles  from "./Search.module.scss";
 
 const planOptions = [
-    { value: "all", name: "All" },
-    { value: "Residental", name: "Residental" },
+    { value: "", name: "All" },
+    { value: "Residential", name: "Residential" },
     { value: "Commercial", name: "Commercial" },
     { value: "Off-plan", name: "Off - Plan" }
 ];
@@ -55,16 +55,20 @@ const typeOptions = [
     { value: "Plot", name: "Plot" },
     { value: "Land", name: "Land" }
 ];
+/*
+
+    {
+        key: "type",
+        render: (value: string, onChange: (newValue: string) => void) =>
+            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={`${formStyles.search_large_select} ${styles.select}`} />)
+    },
+
+ */
 export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
     {
         key: "building",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
             (<Input value={value} onChange={onChange} placeholder="Community or building" className={formStyles.search_large_input} containerClassName={formStyles.search_large_container} />)
-    },
-    {
-        key: "type",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="all" open={open === "all"} setOpen={setOpen} options={planOptions} defaultValue="All" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "property_type",
@@ -88,11 +92,38 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     },
 ];
 
-export const getDefaultData = {
-    building: "",
-    type: "",
-    beds: "",
-    price_min: "",
-    price_max: "",
-    property_type: "",
+
+type queryType = string | null;
+
+const getDefaultBeds = (beds: queryType) => {
+    if (beds === null) return ""
+    else if (+beds === 0) return "Studio"
+    if (+beds <= 6) return `Bedrooms ${beds}`
+    else return "Bedrooms 7+"
+
 }
+const getDefaultType = (type: queryType) => {
+    let res = "";
+    if (type) {
+        const match = typeOptions.filter(
+            elem => elem.value.toLowerCase() === type.toLowerCase()
+        );
+        res = match[0] ? match[0].value : ""
+    }
+
+    return res
+}
+const getDefaultPrice = (price: queryType) => {
+    if (price) return typeOptions.filter(
+        elem => elem.value <= price
+    )[0].value;
+
+    return ""
+}
+export const getDefaultData = (property_type: queryType, building: queryType, price_min: queryType, beds: queryType) => ({
+    building: building || "",
+    property_type: getDefaultType(property_type),
+    beds: getDefaultBeds(beds),
+    price_min: getDefaultPrice(price_min),
+    price_max: "",
+});

@@ -44,7 +44,7 @@ const Post: React.FC<IPost> = ({ blog, list }) => {
                 </Container>
             </div>
             <Container >
-                <p className={`medium_text ${styles.post_text}`} dangerouslySetInnerHTML={{ __html: blog.description }}></p>
+                <div className={`medium_text ${styles.post_text}`} dangerouslySetInnerHTML={{ __html: blog.description }} />
                 <ul className={styles.post_social_list}>
                     <li className={`medium_text ${styles.post_social_list_item}`}>
                         <TwitterShareButton url={url}>

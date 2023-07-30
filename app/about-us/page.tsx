@@ -1,14 +1,17 @@
 import { AboutUs } from "../../components/views/about-us/";
 import { Comments, OurTeam } from "../../components/views/shared/";
-import { getBestAggents } from "../../utils/fetch";
+import { getBestAggents, getAboutUs } from "../../utils/fetch";
 import { formatAgentsData } from "../../utils/formater";
 
 const AboutUsPage = async () => {
-    const { data } = await getBestAggents();
+    const contentData = getAboutUs();
+    const agentsData =  getBestAggents();
+    const [content, agents] = await Promise.all([contentData, agentsData])
+    console.log(content);
     return (
         <>
-            <AboutUs />
-            <OurTeam fullCard={false} team={formatAgentsData(data)} />
+            <AboutUs title={content.data.attributes.Title} content={content.data.attributes.Content} />
+            <OurTeam fullCard={false} team={formatAgentsData(agents.data)} />
             <Comments />
         </>
     )

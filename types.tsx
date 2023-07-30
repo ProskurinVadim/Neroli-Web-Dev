@@ -31,7 +31,8 @@ interface ISVG {
 interface IAvatar {
     image: string,
     name: string,
-    job: string
+    job: string,
+    id?: string
 }
 
 interface ICoords {

@@ -1,21 +1,23 @@
 "use client";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, } from "react";
 import Container from "../../../../hoc/Container";
 import { formatNewsData } from "../../../../utils/formater";
 import NewsCard from "../../../shared/Card/NewsCard";
-import Pagination from "../../../shared/Pagination";
+import { PaginationNumerial } from "../../../shared/Pagination";
 import styles from "./List.module.scss";
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { getBlogs } from "../../../../utils/fetch";
 import { INewsCard } from "../../../../types";
 
 const List: React.FC = () => {
     const [page, setPage] = useState(1);
     const [data, setData] = useState<INewsCard[]>([]);
-    const [limit, setLimit] = useState<number>(0);
-
+    const [limit, setLimit] = useState<number>(0);  
+    const searchParams = useSearchParams();
+    const title = searchParams.get("title");
     useEffect( () => {
-        getBlogs(page)
+        getBlogs(page, title)
             .then((res) => res.json())
             .then(({ data, meta }) => {
                 setData(formatNewsData(data));
@@ -43,7 +45,7 @@ const List: React.FC = () => {
                         </li>
                     )}
                 </ul>
-                {limit ? <Pagination page={page} setPage={setPage} config={config} /> : <></>}
+                {limit ? <PaginationNumerial page={page} setPage={setPage} config={config} /> : <></>}
             </Container>
         </section>
     )

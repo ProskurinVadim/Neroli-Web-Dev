@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form, { formStyles } from "../../../shared/Form/Form";
 import Button, { buttonStyles } from "../../../common/Button/Button";
 import Container, { containerStyles } from "../../../../hoc/Container/Container";
@@ -11,24 +11,39 @@ import { useSearchParams } from "next/navigation";
 
 interface IForm {
     building: string,
-    type: string,
     property_type: string,
     price_min: string,
     price_max: string,
     beds: string,
+    type?: string
 }
 
+interface IMark {
+    position: {
+        lat: number,
+        lng: number
+    },
+}
 interface ISearch {
     onSubmit: (value: IForm) => void;
-    onDraw: (body: any) => void
+    onDraw: (body: any) => void,
+    marks?: IMark[]
 }
 
-const Search: React.FC<ISearch> = ({ onSubmit, onDraw }) => {
+const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
 
     const searchParams = useSearchParams();
-    const params = new URLSearchParams(searchParams.toString());
+    const [property_type, building, price_min, beds, type] = [
+        searchParams.get("property_type"),
+        searchParams.get("building"),
+        searchParams.get("price_min"),
+        searchParams.get("beds"),
+        searchParams.get("type")
+    ]
 
-    const [value, setValue] = useState<IForm>({ ...getDefaultData });
+    console.log(type)
+    const [value, setValue] = useState<IForm>({ ...getDefaultData(property_type, building, price_min, beds) });
+    console.log(value)
     const [open, setOpen] = useState<boolean | string>(false);
     const [modalOpen, setModalOpen] = useState<boolean>(true)
     const [mapOpen, setMapOpen] = useState<boolean>(false);
@@ -36,15 +51,18 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw }) => {
     const fields: any = getFormData(setOpen, open);
 
     const handelOpen = () => setMapOpen((prev) => !prev);
-
+    const handelSubmit = () => type && onSubmit({ ...value, type })
+    useEffect(() => {
+        handelSubmit()
+    }, [type])
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
-                <Form value={value} setValue={setValue} fields={fields} onSubmit={onSubmit} className={formStyles.form__search_large} buttonClassName={" "} buttonText={"Search"}>
+                <Form value={value} setValue={setValue} fields={fields} onSubmit={handelSubmit} className={formStyles.form__search_large} buttonClassName={" "} buttonText={"Search"}>
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>
-            <DrawingMap visible={mapOpen} onDraw={onDraw}>
+            <DrawingMap visible={mapOpen} onDraw={onDraw} marks={marks}>
                 {modalOpen && <InfoModal setOpen={setModalOpen} />}
             </DrawingMap>
         </section>
