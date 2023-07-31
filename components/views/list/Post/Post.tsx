@@ -10,6 +10,8 @@ import CarouselItem from "./CarouselItem";
 import styles from "./Post.module.scss";
 import { Image } from "../../../common";
 import Condition, { If, Else } from "../../../../hoc/Conditional/Condition";
+import BookingModal from "./BookingModal";
+import Portal from "../../../../hoc/Portal"
 
 interface IApartment {
     information: {
@@ -30,7 +32,8 @@ interface IApartment {
 }
 
 
-const Post: React.FC<IApartment> = ({  information, person, carousel, street_view, description }) => {
+const Post: React.FC<IApartment> = ({ information, person, carousel, street_view, description }) => {
+    const [open, setOpen] = useState<boolean>(false);
     const [active, setActive] = useState<string>("Description");
     const config = {
         time: 500000,
@@ -41,11 +44,15 @@ const Post: React.FC<IApartment> = ({  information, person, carousel, street_vie
             withArrows: true,
         }
     };
+    const handelSubmit = (value: any) => {
+        console.log(value);
+    }
     return (
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
                 <h2 className={`section_header`}> {information.header}</h2>
-                <Carousel config={config} data={carousel} Item={(props: any) => <CarouselItem {...props} />} />
+                <Carousel config={config} data={carousel} Item={(props: any) => <Image src={props.src} alt="appartment image" className={styles.street_view_image} />} />
+  
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
                         <Information {...information} />
@@ -53,17 +60,23 @@ const Post: React.FC<IApartment> = ({  information, person, carousel, street_vie
                         <Condition condition={active === "Description"}>
                             <If>
                                 <div className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}/>
-                                </If>
+                            </If>
                             <Else>
-                                <Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.img1} alt="street view image" className={styles.street_view_image} />} />
+                                <Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.src} alt="street view image" className={styles.street_view_image} />} />
                             </Else>
                         </Condition>
                     </div>
                     <div className={styles.person_content}>
-                        <PersonCard {...person}/>
-                        <ApartmentMap />
+                        <PersonCard {...person} onClick={() => setOpen((_:boolean) => true)}/>
+                        {open && <ApartmentMap />}
                     </div>
                 </div>
+                {open && <Portal>
+                    <div className={styles.booking_modal_container}>
+                        <BookingModal onSubmit={handelSubmit} onClose={() => setOpen(()=> false)} />
+                    </div>
+                </Portal>
+                }
             </Container>
         </section>
     )

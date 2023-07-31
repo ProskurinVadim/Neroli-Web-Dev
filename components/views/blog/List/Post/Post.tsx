@@ -8,6 +8,7 @@ import {
     TwitterShareButton,
     LinkedinShareButton,
     WhatsappShareButton,
+    FacebookShareButton,
 } from 'next-share'
 import { usePathname } from 'next/navigation';
 import { INewsCard } from "../../../../../types";
@@ -27,7 +28,7 @@ interface IPost {
 }
 const Post: React.FC<IPost> = ({ blog, list }) => {
     const path = usePathname();
-    const url = `https://neroli-web-dev.vercel.app/${path}`;
+    const url = `https://neroli-web-dev.vercel.app${path}`;
     const copylink = (e: any) => {
         navigator.clipboard.writeText(url)
     }
@@ -52,7 +53,9 @@ const Post: React.FC<IPost> = ({ blog, list }) => {
                         </TwitterShareButton>
                     </li>
                     <li className={`medium_text ${styles.post_social_list_item}`}>
-                        <Facebook />Facebook
+                        <FacebookShareButton url={url}>
+                            <Facebook />Facebook
+                            </ FacebookShareButton>
                     </li>
                     <li className={`medium_text ${styles.post_social_list_item}`}>
                         <LinkedinShareButton url={url}>

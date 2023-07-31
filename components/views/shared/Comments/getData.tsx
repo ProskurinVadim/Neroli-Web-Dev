@@ -1,4 +1,4 @@
-import TestImage from "../../../../public/people-test.jpg";
+import TestImage from "../../../../public/people-test.png";
 
 
 

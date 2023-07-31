@@ -19,13 +19,14 @@ const RootLayout: React.FC<IChildren> =  ({ children }) => {
             <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat&display=swap" rel="stylesheet" />
             <body className="body">
-            <ItemsProvider>
-                <AdaptiveContext.Provider value={ adaptive }>
-                    <Header />
-                    {children}
-                    <Footer />
-                </AdaptiveContext.Provider>
-            </ItemsProvider>
+                <div id="portal" />
+                <ItemsProvider>
+                    <AdaptiveContext.Provider value={ adaptive }>
+                        <Header />
+                        {children}
+                        <Footer />
+                    </AdaptiveContext.Provider>
+                </ItemsProvider>
 
             </body>
         </html >

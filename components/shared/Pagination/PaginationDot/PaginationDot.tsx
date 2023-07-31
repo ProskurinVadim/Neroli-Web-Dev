@@ -8,17 +8,21 @@ interface IPagination {
     config?: {
         withArrows?: boolean,
         maxPages?: number,
-    }
+    },
+    children?: React.ReactNode | string | null,
     className?: string
 }
 
 
-const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, className = "" }) => {
+const Pagination: React.FC<IPagination> = ({ page, setPage, config = {}, className = "", children }) => {
     const { maxPages = 4,} = config;
     const paginationArr = (new Array(maxPages)).fill("");
     return (
         <ul className={`${styles.pagination} ${className}`}>
             <Left page={page} setPage={setPage} config={config} />
+            {
+                children
+            }
             {
                 paginationArr.map((_, i) => <Item
                     name={""}

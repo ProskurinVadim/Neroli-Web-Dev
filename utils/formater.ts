@@ -1,7 +1,7 @@
 
 import defaultNewsBGImage from "../public/news-test.jpg";
 import testNewAdditionalImagez from "../public/news-content-test.jpg";
-import defaultAgentImage from "../public/people-test.jpg";
+import defaultAgentImage from "../public/people-test.png";
 import { ITeamsData, INewsData } from "./fetchTypes";
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -68,7 +68,7 @@ export const formatListData = (data: any[]) => data.map(({ id, attributes }) => 
     image: attributes.Photos.data[0].attributes.formats.small.url,
     header: attributes.Title,
     category: attributes.Category,
-    description: attributes.Description,
+    description: attributes.ShortDescription,
     id,
 }))
 
@@ -103,22 +103,24 @@ const test = { images: [testNewAdditionalImagez.src, testNewAdditionalImagez.src
 
 //    image: attributes.Agent.data.attributes.Photo.data ? attributes.Agent.data.attributes.Photo.data.attributes.url : defaultAgentImage,
 
-export const formatPostData = ({ attributes, id }: any ) => ({
+export const formatPostData = (post: any, agent: any)  => ({
     information: {
-        adress: attributes.Address.description,
-        header: attributes.Title,
-        beds: attributes.Bedrooms,
+        adress: post.attributes.Address.description,
+        header: post.attributes.Title,
+        beds: post.attributes.Bedrooms,
         baths: 2,
-        size: attributes.Square,
+        size: post.attributes.Square,
     },
 
     person: {
-        image: defaultAgentImage.src,
-        name: attributes.Agent.data.attributes.FullName,
-        job: attributes.Agent.data.attributes.Category || "",
-        id: id,
+        image: agent.attributes.Photo.data ? agent.attributes.Photo.data.attributes.url :  defaultAgentImage.src,
+        name: agent.attributes.FullName,
+        job: agent.attributes.Category || "",
+        whatsapp: agent.WhatsApp,
+        phone: agent.attributes.Phone,
+        id: post.id,
     },
-    carousel: [test, test, test],
-    description: attributes.Description,
-    street_view: attributes.Street_View.data.map((elem: any) => elem.attributes.formats.large.url)
+    carousel: post.attributes.Photos.data.map((elem: any) => ({ src: elem.attributes.formats.medium.url })),
+    description: post.attributes.Description,
+    street_view: post.attributes.Street_View.data.map((elem: any) => ({ src: elem.attributes.formats.medium.url }))
 })

@@ -66,20 +66,8 @@
         color: $color-additiona;
         margin: 0 12px;
         flex-grow: 1;
-
-        ul {
-            padding-left: 15px;
-            list-style: none !important;
-
-            li::before {
-                content: "\2022";
-                color: #DDDE70;
-                font-weight: bold;
-                display: inline-block;
-                width: 1em;
-                margin-left: -1em;
-            }
-        }
+        max-height: 100px;
+        overflow: hidden;
     }
 
     &_link {

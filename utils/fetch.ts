@@ -34,6 +34,9 @@ export const getBestAggents = () => {
 export const getFullAggents = () => {
     return instance("/agents?populate=*",);
 }
+export const getAggent = (id:string) => {
+    return instance(`/agents/${id}?populate=*`,);
+}
 
 export const getBlogs = (page: number, title?: string | null) => {
     let query = `&pagination[page]=${page}&pagination[pageSize]=9`;

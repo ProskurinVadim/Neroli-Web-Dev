@@ -13,7 +13,8 @@ interface ICarousel {
     config: {
         itemsCount: number;
         time: number,
-        paginationClassName? : string,
+        paginationClassName?: string,
+        children?: React.ReactNode | string | null,
         pagination?: {
             withArrows?: boolean,
             maxPages?: number,
@@ -22,7 +23,7 @@ interface ICarousel {
     }
 }
 
-const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { itemsCount: 4,} }) => {
+const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { itemsCount: 4, }, children }) => {
     const [page, setPage] = useState<number>(1);
     const { time, pagination } = config;
     const ref = useRef<HTMLDivElement>(null);
@@ -70,7 +71,9 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
             </Condition>
             <Condition condition={maxPage !== 1}>
                 <If>
-                    <PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName} />
+                    <PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName}>
+                        {children}
+                    </PaginationDot>
                 </If>
             </Condition>
         </div>

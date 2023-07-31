@@ -41,7 +41,7 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
         searchParams.get("type")
     ]
 
-    const [value, setValue] = useState<IForm>({ ...getDefaultData(property_type, building, price_min, beds) });
+    const [value, setValue] = useState<IForm>({ building: "", property_type: "", price_min: "", price_max: "", beds:""});
 
     const [open, setOpen] = useState<boolean | string>(false);
     const [modalOpen, setModalOpen] = useState<boolean>(true)
@@ -50,18 +50,22 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
     const fields: any = getFormData(setOpen, open);
 
     const handelOpen = () => setMapOpen((prev) => !prev);
-    const handelSubmit = () => type && onSubmit({ ...value, type })
+    const handelSubmit = (value: IForm, type: string | null) => type && onSubmit({ ...value, type })
+    console.log(type)
     useEffect(() => {
-        handelSubmit()
+        console.log("sa")
+        const initialData = { ...getDefaultData(property_type, building, price_min, beds) };
+        setValue(initialData)
+        handelSubmit(initialData, type)
     }, [type])
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
-                <Form value={value} setValue={setValue} fields={fields} onSubmit={handelSubmit} className={formStyles.form__search_large} buttonClassName={" "} buttonText={"Search"}>
+                <Form value={value} setValue={setValue} fields={fields} onSubmit={() => handelSubmit(value, type)} className={formStyles.form__search_large} buttonClassName={" "} buttonText={"Search"}>
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>
-            <DrawingMap visible={mapOpen} onDraw={onDraw} marks={marks}>
+            <DrawingMap visible={mapOpen} onDraw={onDraw} marks={marks} buttonsVisible={!modalOpen}>
                 {modalOpen && <InfoModal setOpen={setModalOpen} />}
             </DrawingMap>
         </section>

@@ -14,12 +14,14 @@ import { IContacts } from "@/types";
 const OfficeMap: React.FC<IContacts> = ({ email, address, phone }) => {
 
     const adaptive = useContext(AdaptiveContext);
-
+    const center = adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter;
+    const marks = adaptive !== "mobile" ? [{ position: { ...defaultCenter, lng: defaultCenter.lng - 0.015 } }]
+        : [{ position: defaultCenter }];
     return (
         <Map
-            center={adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter}
+            center={center}
             containerStyle={adaptive === "mobile" ? mobileContainerStyle : containerStyle}
-            marks={[{ position: defaultCenter }]}
+            marks={marks}
             markerIcon={Marker}
         >
             <Container className={styles.contact_us_container}>

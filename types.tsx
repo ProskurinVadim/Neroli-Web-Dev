@@ -32,7 +32,10 @@ interface IAvatar {
     image: string,
     name: string,
     job: string,
-    id?: string
+    id?: string,
+    whatsapp?: string,
+    phone?: string,
+    onClick?: (value: any) => void
 }
 
 interface ICoords {

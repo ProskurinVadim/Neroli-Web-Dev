@@ -1,7 +1,7 @@
 import { NewBuildings, ContactForm } from "../../../components/views/shared/";
 import { Post } from "../../../components/views/list";
 import { formatPostData } from "@/utils/formater";
-import { getAppartment } from "@/utils/fetch";
+import { getAggent, getAppartment } from "@/utils/fetch";
 
 interface IApartment {
     params: {
@@ -10,11 +10,12 @@ interface IApartment {
 }
 
 const Apartment: React.FC<IApartment> = async ({ params }) => {
-    const data: any = await getAppartment(params.id);
+    const post: any =  await getAppartment(params.id);
+    const agent: any = await getAggent(post.data.attributes.Agent.data.id);
 
     return (
         <>
-            <Post {...formatPostData(data.data)} />
+            <Post {...formatPostData(post.data,agent.data)} />
             <ContactForm />
             <NewBuildings />
         </>
