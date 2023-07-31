@@ -11,7 +11,7 @@ import styles from "./NewBuildings.module.scss";
 
 const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     adress: attributes.Address.description, //code -> adress
-    image: attributes.Photos.data[0].attributes.formats.large.url,
+    image: attributes.Photos.data[0].attributes.formats.small.url,
     header: attributes.Title,
     category: attributes.Category,
     id,

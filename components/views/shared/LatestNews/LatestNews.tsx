@@ -13,6 +13,7 @@ interface ILatestNews {
 }
 const LatestNews: React.FC<ILatestNews> = ({ news }) => {
     const adaptive = useContext(AdaptiveContext);
+
     return (
         <section className="section__padding">
             <Container>

@@ -21,7 +21,7 @@ const List: React.FC = () => {
     const [limit, setLimit] = useState<number>(0);  
     const searchParams = useSearchParams();
     const title = searchParams.get("title");
-    console.log(data)
+
     useEffect( () => {
         getBlogs(page, title)
             .then((res) => res.json())

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from "./Card.module.scss";
-import Image from "../../common/Image";
+// import Image from "../../common/Image";
+import Image from "next/image";
 
 interface ICard {
     image: string,
@@ -13,11 +14,14 @@ interface ICard {
     className?: string,
 }
 
-
 const Card: React.FC<ICard> = ({ image, additional, adress, description, link = "", small = false, className = "", header }) => {
+
     return (
         <div className={`${styles.card} ${className}`}>
-            <div style={{ "backgroundImage": `url(${image})` }} className={styles.card_image}/>
+            <div className={styles.card_image_wrapper}>
+                <Image fill={true} src={image} className={styles.card_image} />
+            </div>
+
             <div className={styles.card_text}>
                 {additional}
                 <p className={styles.card_header}>{header}</p>

@@ -12,6 +12,18 @@
         border-radius: 24px;
         background-size: cover;
         background-repeat: no-repeat;
+        object-fit: cover;
+        
+        &_wrapper {
+            width: 306px;
+            height: 306px;
+            position: relative;
+
+            @include sm {
+                width: calc((100vw - 72px) / 2);
+                height: calc((100vw - 72px) / 2);
+            }
+        }
     }
 
     &_date {
