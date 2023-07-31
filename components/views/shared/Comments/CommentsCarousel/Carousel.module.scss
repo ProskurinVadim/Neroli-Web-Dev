@@ -1,0 +1,62 @@
+@import "../../../../../styles/mixin";
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    padding-top: 40px;
+
+    &_container {
+        display: flex;
+        transition: all 250ms linear;
+        overflow: visible;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    &_arrow {
+        position: absolute;
+        top: 175px;
+        cursor: pointer;
+
+        &__left {
+            left: -80px
+        }
+
+        &__right {
+            right: -40px;
+        }
+    }
+
+    &__center {
+        margin: 0px auto;
+    }
+}
+@include xl {
+    .carousel__center {
+        width: 962px;
+        overflow: visible;
+    }
+}
+
+@include lg {
+    .carousel__center {
+        width: 662px;
+        overflow: visible;
+    }
+}
+
+@include md {
+    .carousel__center {
+        width: 480px;
+    }
+}
+
+@include sm {
+    .carousel__center {
+        width: 100%;
+    }
+}
+
+.item {
+    cursor: pointer;
+}

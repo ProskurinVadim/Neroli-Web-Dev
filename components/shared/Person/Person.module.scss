@@ -58,10 +58,11 @@
 
     .person_comments {
         width: 461px;
+        max-width: 100%;
 
 
         .person_description {
-            width: 380px;
+            //width: 380px;
         }
     }
 }
@@ -70,14 +71,16 @@
     .person {
         width: 421px;
         max-width: calc(33% - 20px);
+
     }
 
     .person_comments {
-        max-width: 461px;
+        //max-width: 461px;
 
+        max-width: 100%;
 
         .person_description {
-            width: 380px;
+            //width: 380px;
         }
     }
 }

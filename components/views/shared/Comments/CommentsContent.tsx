@@ -1,11 +1,11 @@
 "use client";
 import {useContext} from "react";
-import Carousel, { carouselStyles } from "../../../shared/Carousel/Carousel";
+import CommentsCarousel, { carouselStyles } from "./CommentsCarousel/CommentsCarousel";
+import SwiperCommentsCarousel from "./SwiperCommentsCarousel/SwiperCommentsCarousel";
 import Container, { containerStyles } from "../../../../hoc/Container/Container";
 import Person, { personStyles } from "../../../shared/Person/Person";
 import {AdaptiveContext} from "@/context/AdaptiveContext";
 import { getCarouselData } from "./getData";
-
 
 interface ICommentsContent {
     comments: any[]
@@ -28,7 +28,11 @@ const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
         <section className="section__padding owerflow_hidden">
             <Container className={containerStyles.container__overflow_initial}>
                 <h2 className="section_header"> Why people love Neroli Properties </h2>
-                {<Carousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}
+                <div style={{height: "400px"}}>
+                    <SwiperCommentsCarousel data={data} />
+                </div>
+
+                {/*{<CommentsCarousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}*/}
             </Container>
         </section>
     )

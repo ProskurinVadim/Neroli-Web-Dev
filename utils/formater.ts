@@ -24,7 +24,7 @@ const getReadTime = (text: string | null) => {
     
 export const formatNewsData = (data: INewsData[]) => data.map(({ id, attributes }) => (
     {
-        image: attributes.Photo.data ? attributes.Photo.data[0].attributes.formats.small.url : defaultNewsBGImage.src,
+        image: attributes.Photo.data ? attributes.Photo.data[0].attributes.formats.medium.url : defaultNewsBGImage.src,
         header: attributes.Title,
         date: {
             day: getDate(attributes.Date || attributes.publishedAt),
