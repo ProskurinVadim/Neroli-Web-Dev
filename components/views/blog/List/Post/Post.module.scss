@@ -83,6 +83,10 @@
     flex-wrap: wrap;
     margin-bottom: 80px;
 
+    @include sm {
+        gap: 30px;
+    }
+
     &_item {
 
         & > div {

@@ -3,11 +3,17 @@ import { useContext } from "react";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import { ILink } from "../../../../types";
 import styles from "../Footer.module.scss";
-import { LogoShortUnfill, Whatsapp, Facebook, Instagram, LogoShort } from "../../../icons";
+import { LogoShortUnfill, Whatsapp, Facebook, Instagram, Linkedin, Viber, Threads, Twitter, Uaddme, LogoShort } from "../../../icons";
+
+import socialLinks from "./socialLinks";
 
 const FooterItemLogo: React.FC = () => {
 
     const adaptive = useContext(AdaptiveContext);
+
+    const socialLinkElements = socialLinks.map(({id, icon, link}) => <Link key={id} target="_blank" href={link} className="icon__hover">
+                                                                                                    {icon}
+                                                                                                </Link>);
 
     return (
         <li className={styles.footer_item}>
@@ -22,15 +28,16 @@ const FooterItemLogo: React.FC = () => {
                 Ut enim ad minim veniam.
             </p>
             <div className={styles.footer_social_links}>
-                <span className="icon__hover">
-                    <Facebook />
-                </span>
-                <span className="icon__hover">
-                    <Instagram />
-                </span>
-                <span className="icon__hover">
-                    <Whatsapp />
-                </span>
+                {socialLinkElements}
+                {/*<span className="icon__hover">*/}
+                {/*    <Facebook />*/}
+                {/*</span>*/}
+                {/*<span className="icon__hover">*/}
+                {/*    <Instagram />*/}
+                {/*</span>*/}
+                {/*<span className="icon__hover">*/}
+                {/*    <Whatsapp />*/}
+                {/*</span>*/}
             </div>
         </li>
     )

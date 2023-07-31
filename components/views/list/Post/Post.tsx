@@ -35,6 +35,7 @@ interface IApartment {
 const Post: React.FC<IApartment> = ({ information, person, carousel, street_view, description }) => {
     const [open, setOpen] = useState<boolean>(false);
     const [active, setActive] = useState<string>("Description");
+    console.log(person)
     const config = {
         time: 500000,
         itemsCount: 1,
@@ -47,6 +48,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
     const handelSubmit = (value: any) => {
         console.log(value);
     }
+
     return (
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">

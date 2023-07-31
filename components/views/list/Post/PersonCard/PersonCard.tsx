@@ -1,4 +1,5 @@
 import Avatar from "../../../../shared/Person/Avatar";
+import Link from "next/link";
 import Button, { buttonStyles } from "../../../../common/Button/Button";
 import styles from "../Post.module.scss";
 import { IAvatar } from "../../../../../types";
@@ -13,15 +14,15 @@ const getData = (onClick: any) => [
     },
 ]
 
-const PersonCard: React.FC<IAvatar> = ({ image, name, job, id, onClick, whatsapp, phone }) => {
-    const onClick2 = () => {}
+const PersonCard: React.FC<IAvatar> = ({ image,  name, job, id, onClick, whatsapp, phone }) => {
+    // const onClick2 = () => {}
     const data = getData(onClick)
     return (
         <div className={styles.person_card}>
             <Avatar image={image} name={name} job={job} />
             <div className={styles.buttons_div}>
-                <Button onClick={onClick2} text={<><WhatsappUnfill /> Whatsapp</>} className={buttonStyles.button__whatsapp} />
-                <Button onClick={onClick2} className={buttonStyles.button__recall} text={<><Phone /> Call us</>} />
+                {whatsapp && <Link className={styles.link} target="_blank" href={whatsapp}><Button onClick={()=> {}} text={<><WhatsappUnfill /> Whatsapp</>} className={buttonStyles.button__whatsapp} /></Link>}
+                {phone && <Link className={styles.link} target="_blank" href={`tel:${phone}`}><Button onClick={()=> {}} className={buttonStyles.button__recall} text={<><Phone /> Call us</>} /></Link>}
             </div>
             {
                 data.map((elem,i) => <PersonCardItem {...elem} key={`person-item-${i}`}/>)

@@ -116,7 +116,7 @@ export const formatPostData = (post: any, agent: any)  => ({
         image: agent.attributes.Photo.data ? agent.attributes.Photo.data.attributes.url :  defaultAgentImage.src,
         name: agent.attributes.FullName,
         job: agent.attributes.Category || "",
-        whatsapp: agent.WhatsApp,
+        whatsapp: agent.attributes.WhatsApp,
         phone: agent.attributes.Phone,
         id: post.id,
     },

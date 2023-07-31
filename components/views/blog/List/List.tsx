@@ -10,12 +10,18 @@ import { useSearchParams } from 'next/navigation';
 import { getBlogs } from "../../../../utils/fetch";
 import { INewsCard } from "../../../../types";
 
+// const calcLastUpdate = data => {
+//     const lastElement = data[data.length - 1];
+//     // const
+// }
+
 const List: React.FC = () => {
     const [page, setPage] = useState(1);
     const [data, setData] = useState<INewsCard[]>([]);
     const [limit, setLimit] = useState<number>(0);  
     const searchParams = useSearchParams();
     const title = searchParams.get("title");
+    console.log(data)
     useEffect( () => {
         getBlogs(page, title)
             .then((res) => res.json())
@@ -31,6 +37,7 @@ const List: React.FC = () => {
         maxPages: limit,
         numerical: true,
     }
+
     return (
         <section className="section__padding">
             <Container className="t_l">

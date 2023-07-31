@@ -11,12 +11,20 @@ import Marker from "./Marker.svg";
 import { defaultCenter, mobileContainerStyle, containerStyle } from "./getData";
 import { IContacts } from "@/types";
 
+import socialLinks from "@/components/shared/Footer/FooterItemLogo/socialLinks";
+
 const OfficeMap: React.FC<IContacts> = ({ email, address, phone }) => {
 
     const adaptive = useContext(AdaptiveContext);
     const center = adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter;
     const marks = adaptive !== "mobile" ? [{ position: { ...defaultCenter, lng: defaultCenter.lng - 0.015 } }]
         : [{ position: defaultCenter }];
+
+    const socialLinkElements = socialLinks.map(({id, icon, link}) => <Link key={id} target="_blank" href={link} className="icon__hover">
+        {icon}
+    </Link>);
+
+
     return (
         <Map
             center={center}
@@ -33,9 +41,10 @@ const OfficeMap: React.FC<IContacts> = ({ email, address, phone }) => {
                         <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
                     </div>
                     <div className={styles.contact_us_social_links}>
-                        <span className="icon__hover"><Facebook /></span>
-                        <span className="icon__hover"><Instagram /></span>
-                        <span className="icon__hover"><Whatsapp /></span>
+                        {socialLinkElements}
+                        {/*<span className="icon__hover"><Facebook /></span>*/}
+                        {/*<span className="icon__hover"><Instagram /></span>*/}
+                        {/*<span className="icon__hover"><Whatsapp /></span>*/}
                     </div>
                     <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Our team</Link>
                 </div>

@@ -41,7 +41,7 @@ const ListContent: React.FC<IList> = ({ data, page, setPage, limit }) => {
                         </li>
                     )}
                 </ul>
-                {<PaginationNumerial page={page} setPage={setPage} className={styles.pagination} config={config} />}
+                {/*{<PaginationNumerial page={page} setPage={setPage} className={styles.pagination} config={config} />}*/}
             </Container>
         </section>
     )
