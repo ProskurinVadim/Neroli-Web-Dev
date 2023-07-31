@@ -106,6 +106,10 @@ const test = { images: [testNewAdditionalImagez.src, testNewAdditionalImagez.src
 export const formatPostData = (post: any, agent: any)  => ({
     information: {
         adress: post.attributes.Address.description,
+        coords: {
+            lat: post.attributes.Address.lat,
+            lng: post.attributes.Address.lng,
+        },
         header: post.attributes.Title,
         beds: post.attributes.Bedrooms,
         baths: 2,

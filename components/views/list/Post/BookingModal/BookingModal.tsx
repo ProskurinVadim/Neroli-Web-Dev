@@ -7,6 +7,8 @@ import { defaultData, getFormData } from "./getData";
 import styles from "../Post.module.scss";
 import { isEmail, isFull, isPhone, containError, emailError, phoneError } from "../../../../../utils/validation";
 
+import CloseIcon from "./CloseIcon";
+
 interface IForm {
     name: string,
     email: string,
@@ -65,6 +67,9 @@ const BookingModal: React.FC<IModal> = ({ onSubmit, onClose }) => {
 
     return (
         <div className={styles.booking_modal} ref={ref}>
+            <span className={styles.closeIcon} onClick={onClose}>
+                 <CloseIcon />
+            </span>
             <div className={styles.booking_modal_image} />
             <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={`${styles.booking_modal_form}`} validate={validate} buttonText="Submit details">
                 <p className={styles.booking_modal_text}>

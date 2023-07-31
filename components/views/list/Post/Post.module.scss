@@ -142,6 +142,7 @@
 
 
 .booking_modal {
+    position: relative;
 
     &_form {
         background-color: #fff;
@@ -409,6 +410,7 @@
 
     .booking_modal {
         width: 372px;
+        position: relative;
 
         &_image {
             width: 100%;
@@ -419,4 +421,11 @@
 
 .link {
     text-decoration: none;
+}
+
+.closeIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -80px;
 }

@@ -19,7 +19,8 @@ interface IApartment {
         header: string,
         beds: string,
         baths: number,
-        size: number
+        size: number,
+        coords: any,
     }
     person: {
         image: string,
@@ -35,7 +36,7 @@ interface IApartment {
 const Post: React.FC<IApartment> = ({ information, person, carousel, street_view, description }) => {
     const [open, setOpen] = useState<boolean>(false);
     const [active, setActive] = useState<string>("Description");
-    console.log(person)
+
     const config = {
         time: 500000,
         itemsCount: 1,
@@ -70,7 +71,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                     </div>
                     <div className={styles.person_content}>
                         <PersonCard {...person} onClick={() => setOpen((_:boolean) => true)}/>
-                        {open && <ApartmentMap />}
+                        <ApartmentMap coords={information.coords} />
                     </div>
                 </div>
                 {open && <Portal>
