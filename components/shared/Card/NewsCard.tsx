@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const NewsCard: React.FC<INewsCard> = ({ horizontal = false, table = false, ...props }) => {
-    console.log(props)
+
     return (
         <div className={`${styles.card} ${styles.news_card}  ${horizontal ? styles.card__horizontal : ""}`}>
             <div className={`${styles.card_image_wrapper} ${horizontal ? styles.card_image_wrapper_horizontal : ""}`}>
