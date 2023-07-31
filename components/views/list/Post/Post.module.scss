@@ -85,6 +85,8 @@
 
     .street_view_image {
         border-radius: 24px;
+        object-fit: cover;
+        object-position: center;
     }
 
     &_content {
@@ -434,4 +436,10 @@
         right: 0;
         top: -80px;
     }
+}
+
+.postImg {
+    position: relative;
+    width: 600px;
+    height: 600px;
 }

@@ -8,7 +8,8 @@ import ApartmentMap from "./ApartmentMap";
 import Information from "./Information";
 import CarouselItem from "./CarouselItem";
 import styles from "./Post.module.scss";
-import { Image } from "../../../common";
+// import { Image } from "../../../common";
+import Image from "next/image";
 import Condition, { If, Else } from "../../../../hoc/Conditional/Condition";
 import BookingModal from "./BookingModal";
 import Portal from "../../../../hoc/Portal"
@@ -54,7 +55,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
                 <h2 className={`section_header`}> {information.header}</h2>
-                <Carousel config={config} data={carousel} Item={(props: any) => <Image src={props.src} alt="appartment image" className={styles.street_view_image} />} />
+                <Carousel config={config} data={carousel} Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>} />
   
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
