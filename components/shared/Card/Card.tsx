@@ -19,7 +19,7 @@ const Card: React.FC<ICard> = ({ image, additional, adress, description, link = 
     return (
         <div className={`${styles.card} ${className}`}>
             <div className={styles.card_image_wrapper}>
-                <Image fill={true} src={image} className={styles.card_image} />
+                <Image alt={header} fill={true} src={image} className={styles.card_image} />
             </div>
 
             <div className={styles.card_text}>
