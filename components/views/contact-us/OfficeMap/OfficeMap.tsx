@@ -8,6 +8,7 @@ import Link from 'next/link';
 import styles from "./OfficeMap.module.scss";
 import Map from "../../../shared/Map";
 import Marker from "./Marker.svg";
+import MobileMarker from "./MobileMarker.svg";
 import { defaultCenter, mobileContainerStyle, containerStyle } from "./getData";
 import { IContacts } from "@/types";
 
@@ -30,7 +31,7 @@ const OfficeMap: React.FC<IContacts> = ({ email, address, phone }) => {
             center={center}
             containerStyle={adaptive === "mobile" ? mobileContainerStyle : containerStyle}
             marks={marks}
-            markerIcon={Marker}
+            markerIcon={adaptive === "mobile" ? MobileMarker : Marker}
         >
             <Container className={styles.contact_us_container}>
                 <div className={styles.contact_us_info}>

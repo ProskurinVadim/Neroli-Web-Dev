@@ -105,7 +105,7 @@
     }
 
     &:hover {
-        path {
+        path[fill="#DDDE70"] {
             fill: $color-primary;
         }
     }
