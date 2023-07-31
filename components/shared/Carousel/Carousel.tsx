@@ -45,7 +45,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, config = { items
         const interval = setInterval(() => update(page + 1), time);
         return () => interval && clearInterval(interval);
     }, [config, page, time, update])
-
+    console.log(page)
     return (
         <div className={`${styles.carousel} ${className}`}>
             <div className={styles.carousel_container} style={{ transform: `translateX(-${transition*(page-1)}px`}}>

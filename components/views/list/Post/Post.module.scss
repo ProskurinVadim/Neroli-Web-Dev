@@ -409,8 +409,9 @@
     }
 
     .booking_modal {
-        width: 372px;
+        width: calc(100vw - 56px);
         position: relative;
+        top: 70px;
 
         &_image {
             width: 100%;
@@ -428,4 +429,9 @@
     position: absolute;
     top: 0;
     right: -80px;
+
+    @include sm {
+        right: 0;
+        top: -80px;
+    }
 }
