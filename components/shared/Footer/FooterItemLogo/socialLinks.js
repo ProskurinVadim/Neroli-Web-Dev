@@ -39,7 +39,7 @@ const socialLinks = [
     {
         id: "8",
         icon: <Uaddme />,
-        link: "uadd.me/"
+        link: "https://uadd.me/neroliproperties"
     },
 ];
 
