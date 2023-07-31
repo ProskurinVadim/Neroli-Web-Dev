@@ -1,6 +1,7 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "../../../../hoc/Container";
+import CarouselGallery from "../../../shared/Carousel/CarouselGallery";
 import Carousel from "../../../shared/Carousel";
 import { Toggler } from "../../../common";
 import PersonCard from "./PersonCard";
@@ -39,7 +40,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
     const [active, setActive] = useState<string>("Description");
 
     const config = {
-        time: 500000,
+        time: 1000,
         itemsCount: 1,
         pagination: {
             maxPages: 3,
@@ -55,8 +56,14 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
                 <h2 className={`section_header`}> {information.header}</h2>
-                <Carousel config={config} data={carousel} Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>} />
-  
+                <CarouselGallery
+                    config={config}
+                    data={carousel}
+                    Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}
+                    galleryClassName={styles.post_small_images}
+                    GalleryItem={(props: any) => <Image src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}
+                />
+               
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
                         <Information {...information} />

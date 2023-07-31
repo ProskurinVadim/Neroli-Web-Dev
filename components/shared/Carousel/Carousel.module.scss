@@ -30,6 +30,30 @@
         margin: 0px auto;
     }
 }
+.animate {
+    img {
+        transition: 1s;
+        &:nth-child(1) {
+            transform: translateX(-346px)
+        }
+
+        &:nth-child(2) {
+            transform: translateX(-346px)
+        }
+
+        &:nth-child(3) {
+            transform: translateX(346px)    
+        }
+
+        &:nth-child(4) {
+            transform: translateY(-266px)
+        }
+
+        &:nth-child(5) {
+            transform: translateY(-266px)
+        }
+    }
+}
 @include xl {
     .carousel__center {
         width: 962px;

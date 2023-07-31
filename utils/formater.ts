@@ -124,7 +124,7 @@ export const formatPostData = (post: any, agent: any)  => ({
         phone: agent.attributes.Phone,
         id: post.id,
     },
-    carousel: post.attributes.Photos.data.map((elem: any) => ({ src: elem.attributes.formats.medium.url })),
+    carousel: post.attributes.Photos.data.map((elem: any, i: any) => ({ src: elem.attributes.formats.medium.url, index: i +1 })),
     description: post.attributes.Description,
     street_view: post.attributes.Street_View.data.map((elem: any) => ({ src: elem.attributes.formats.medium.url }))
 })
