@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { getBlogs } from "../../../../utils/fetch";
 import { INewsCard } from "../../../../types";
+import {nanoid} from "nanoid";
 
 // const calcLastUpdate = data => {
 //     const lastElement = data[data.length - 1];
@@ -46,8 +47,8 @@ const List: React.FC = () => {
                 <ul className={styles.list}>
                     {data.map((elem: any, i:any) =>
                         <li key={`card-item-key-${i}`} className={styles.list_item}>
-                            <Link href={elem.link} className="link_unset">
-                                <NewsCard  {...elem} horizontal={true} table={true} />
+                            <Link key={i} href={elem.link} className="link_unset">
+                                <NewsCard key={i}  {...elem} horizontal={true} table={true} />
                             </Link>
                         </li>
                     )}
