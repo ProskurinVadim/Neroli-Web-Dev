@@ -202,3 +202,58 @@
         border-color: $color-primary !important;
     }
 }
+
+.reviewsSwiper {
+    & .swiper-button-prev {
+        left: 0px;
+    }
+
+    & .swiper-button-prev:after {
+        content: url("../public/arrow-left.svg");
+    }
+
+    & .swiper-button-next {
+        right: -50px;
+    }
+
+    & .swiper-button-next:after {
+        content: url("../public/arrow-right.svg");
+    }
+
+    .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    & .swiper-wrapper {
+        //transform: translate3d(20px, 0px, 0px) !important;
+    }
+}
+
+.newBuildingSwiper {
+
+    & .swiper-button-prev {
+        left: 100px;
+        top: 308px;
+        z-index: 99;
+    }
+
+    & .swiper-button-prev:after {
+        content: url("../public/arrow-left.svg");
+    }
+
+    & .swiper-button-next {
+        right: 100px;
+        top: 308px;
+        z-index: 99;
+    }
+
+    & .swiper-button-next:after {
+        content: url("../public/arrow-right.svg");
+    }
+
+    .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+        opacity: 1;
+        cursor: pointer;
+    }
+}

@@ -31,3 +31,12 @@
         margin-right: 16px;
     }
 }
+
+.sliderContainer {
+    margin-top: 40px;
+    height: 460px;
+
+    @include sm {
+        height: 330px;
+    }
+}
