@@ -24,6 +24,7 @@ interface ICarousel {
 
 const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, config = { itemsCount: 4, }, galleryClassName }) => {
     const [page, setPage] = useState<number>(1);
+
     const [gallery, setGallery] = useState<any>([...data]);
     const { time, pagination } = config;
     const ref = useRef<HTMLDivElement>(null);
@@ -60,26 +61,32 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             setGallery([...newGallery])
         }, time);
     }
-
+    const slide = (index) => {
+        setGallery(prevGallery => {
+            const copy = prevGallery.map(item => ({...item}));
+            const [firstElement] = copy.splice(index + 1, 1);
+            copy.unshift(firstElement);
+            return copy;
+        })
+    }
     useEffect(() => {
 
-        const interval = setInterval(() => {
-            update(page + 1);
-        }, time)
-        return () => interval && clearInterval(interval);
+        // const interval = setInterval(() => {
+        //     update(page + 1);
+        // }, time)
+        // return () => interval && clearInterval(interval);
     }, [config, page, time, update])
-
+    // console.log(data)
     return (
         <div className={`${styles.carousel} ${className}`}>
             <div className={styles.carousel_container} style={{ transform: `translateX(-${transition * (page - 1)}px` }}>
-                {
-                    data.map((elem, i) => <div key={`carousel-item-${i}`} ref={ref}><Item {...elem} /></div>)
-                }
+                <div key={`carousel-item-1`} ref={ref}><Item {...gallery[0]} /></div>
+                <div className={`${galleryClassName}`} >
+                    {gallery.slice(1).map((elem: any, i: number) => <GalleryItem {...elem} onClick={()=>slide(i)}/>)}
+                </div>
             </div>
-            <div className={`${galleryClassName} ${anim ? styles.s : ""}`} >
-                {gallery.map((elem: any) => <GalleryItem {...elem} onClick={()=>setPage(elem.index)}/>)}
-            </div>
-            <PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName} />
+
+            {/*<PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName} />*/}
         </div>
     )
 };

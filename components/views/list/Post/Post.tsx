@@ -7,7 +7,7 @@ import { Toggler } from "../../../common";
 import PersonCard from "./PersonCard";
 import ApartmentMap from "./ApartmentMap";
 import Information from "./Information";
-import SwiperStreetViewCarousel from "./SwiperStreetViewCarousel/SwiperStreetViewCarousel";
+import SwiperMobilePostCarousel from "./SwiperStreetViewCarousel/SwiperMobilePostCarousel";
 import CarouselItem from "./CarouselItem";
 import styles from "./Post.module.scss";
 // import { Image } from "../../../common";
@@ -59,7 +59,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                 <h2 className={`section_header`}> {information.header}</h2>
                 <CarouselGallery
                     config={config}
-                    data={carousel}
+                    data={carousel.slice(0, 5)}
                     Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}
                     galleryClassName={styles.post_small_images}
                     GalleryItem={(props: any) => <Image src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}
@@ -74,7 +74,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                                 <div className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}/>
                             </If>
                             <Else>
-                                <div className={styles.streetViewSlider}><SwiperStreetViewCarousel data={street_view} /></div>
+                                <div className={styles.streetViewSlider}><SwiperMobilePostCarousel data={street_view} /></div>
                                 {/*<Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.src} alt="street view image" className={styles.street_view_image} />} />*/}
                             </Else>
                         </Condition>
