@@ -62,7 +62,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                 <h2 className={`section_header`}> {information.header}</h2>
                 {adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <CarouselGallery
                     config={config}
-                    data={carousel.slice(0, 5)}
+                    data={carousel}
                     Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}
                     galleryClassName={styles.post_small_images}
                     GalleryItem={(props: any) => <Image src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}

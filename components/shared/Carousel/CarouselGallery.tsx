@@ -64,7 +64,9 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     const slide = (index: number) => {
         setGallery((prevGallery: []) => {
             const copy = [...prevGallery];
-            const [firstElement] = copy.splice(index + 1, 1);
+            const [prevFirstElement] = copy.splice(0, 1);
+            copy.push(prevFirstElement);
+            const [firstElement] = copy.splice(index, 1);
             copy.unshift(firstElement);
             return copy;
         })
@@ -82,7 +84,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             <div className={styles.carousel_container} style={{ transform: `translateX(-${transition * (page - 1)}px` }}>
                 <div key={`carousel-item-1`} ref={ref}><Item {...gallery[0]} /></div>
                 <div className={`${galleryClassName}`} >
-                    {gallery.slice(1).map((elem: any, i: number) => <GalleryItem {...elem} onClick={()=>slide(i)}/>)}
+                    {gallery.slice(1, 5).map((elem: any, i: number) => <GalleryItem {...elem} onClick={()=>slide(i)}/>)}
                 </div>
             </div>
 

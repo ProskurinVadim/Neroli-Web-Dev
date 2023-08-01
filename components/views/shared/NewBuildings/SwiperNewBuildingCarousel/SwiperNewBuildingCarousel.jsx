@@ -41,6 +41,10 @@ export default function SwiperNewBuildingCarousel({data}) {
                         slidesPerView: 3,
                         spaceBetween: 40,
                     },
+                    1500: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
                 }}
                 modules={[Navigation, Pagination]}
                 className="newBuildingSwiper"
