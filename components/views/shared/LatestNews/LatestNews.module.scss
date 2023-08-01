@@ -10,7 +10,7 @@
 	}
 }
 
-@include xl {
+@media (min-width: 1441px){
 	.latest_news_list {
 		&_item {
 			margin: 0 40px 40px 0px;

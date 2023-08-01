@@ -58,6 +58,10 @@ export default function SwiperMobilePostCarousel({data}) {
             <Swiper
                 onSwiper={setThumbsSwiper}
                 spaceBetween={15}
+                // navigation={true}
+                pagination={{
+                    clickable: true,
+                }}
                 slidesPerView={4}
                 freeMode={true}
                 watchSlidesProgress={true}

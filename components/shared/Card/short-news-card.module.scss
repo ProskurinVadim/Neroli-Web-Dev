@@ -22,6 +22,12 @@
       &_horizontal {
         width: 100%;
 
+        @media (min-width: 1440px) and (max-width: 1440px) {
+          width: 306px;
+          height: 100%;
+          position: relative;
+        }
+
         @include sm {
           width: calc(100vw - 56px);
           height: calc((100vw - 56px) / 1.8);
@@ -124,7 +130,10 @@
     }
 
     &.card__horizontal {
-      flex-direction: column;
+      @media (min-width: 1441px) {
+        flex-direction: column;
+      }
+
 
       .card_image {
         width: 100%;
@@ -166,7 +175,7 @@
   }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1441px){
   .card {
 
     &_header {
