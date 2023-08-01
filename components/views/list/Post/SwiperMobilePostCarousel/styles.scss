@@ -4,8 +4,10 @@
     height: 100%;
 }
 
+;
 .streetViewSwiper {
     & .swiper-pagination {
+
         //bottom: -30px;
     }
     & .swiper-slide {
@@ -26,4 +28,11 @@
         /*height: 100%;*/
         /*object-fit: cover;*/
     }
+}
+
+.swiper-button-next {
+    z-index: 100!important;
+}
+.swiper-button-prev {
+    z-index: 100!important;
 }
