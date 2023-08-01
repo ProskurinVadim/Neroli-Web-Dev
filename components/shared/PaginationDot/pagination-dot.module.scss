@@ -1,0 +1,17 @@
+@import "../../../styles/varrible";
+
+.item {
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border: 2px solid $color-additiona;
+  border-radius: 100px;
+  margin: 0 8px;
+  cursor: pointer;
+
+  &.active {
+    color: $color-light;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}

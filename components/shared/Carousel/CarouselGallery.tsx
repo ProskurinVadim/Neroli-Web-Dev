@@ -41,7 +41,6 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     }, [])
 
     const galleryUpdateLeft = () => {
-
         setAnim(() => true);
         setTimeout(() => {
             setAnim(() => false)
@@ -61,9 +60,6 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             setGallery([...newGallery])
         }, time);
     }
-
-
-
 
     useEffect(() => {
 

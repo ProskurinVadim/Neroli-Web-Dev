@@ -5,6 +5,7 @@
 }
 
 .swiper-slide {
+    cursor: pointer;
     /*text-align: center;*/
     /*font-size: 18px;*/
     /*background: grey;*/

@@ -184,3 +184,21 @@
         font-size: 14px;
     }
 }
+
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    box-sizing: border-box !important;
+    border: 2px solid $color-additiona !important;
+    border-radius: 100px !important;
+    margin: 0 8px !important;;
+    cursor: pointer !important;
+    background-color: transparent  !important;
+    opacity: 1  !important;
+
+    &-active {
+        color: $color-light !important;
+        background-color: $color-primary !important;
+        border-color: $color-primary !important;
+    }
+}

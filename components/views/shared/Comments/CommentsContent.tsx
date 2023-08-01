@@ -28,7 +28,7 @@ const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
         <section className="section__padding owerflow_hidden">
             <Container className={containerStyles.container__overflow_initial}>
                 <h2 className="section_header"> Why people love Neroli Properties </h2>
-                <div style={{height: "400px"}}>
+                <div style={{height: "380px", marginTop: "40px"}}>
                     <SwiperCommentsCarousel data={data} />
                 </div>
 
