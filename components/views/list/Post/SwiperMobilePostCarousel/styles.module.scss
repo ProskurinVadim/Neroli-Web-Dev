@@ -1,0 +1,18 @@
+.main_image_container {
+  width: calc(100vw - 56px);
+  height: 281px;
+}
+
+.main_image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.sub_image_container {
+  width: calc((100vw - 101px) /3);
+}
+
+.sub_image {
+  object-fit: cover;
+  object-position: center;
+}
