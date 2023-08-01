@@ -61,16 +61,16 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             setGallery([...newGallery])
         }, time);
     }
+
     const slide = (index: number) => {
         setGallery((prevGallery: []) => {
             const copy = [...prevGallery];
-            const [prevFirstElement] = copy.splice(0, 1);
-            copy.push(prevFirstElement);
-            const [firstElement] = copy.splice(index, 1);
-            copy.unshift(firstElement);
+            const prevElements = copy.splice(0, index + 1);
+            copy.push(...prevElements);
             return copy;
         })
     }
+
     useEffect(() => {
 
         // const interval = setInterval(() => {

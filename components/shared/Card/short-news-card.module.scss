@@ -140,6 +140,10 @@
         height: 266px;
         padding-right: 0;
         border-radius: 23px 23px 0 0;
+
+        @media (min-width: 1440px) and (max-width: 1440px) {
+          border-radius: 23px 0px 0px 23px;
+        }
       }
 
       .card_text {

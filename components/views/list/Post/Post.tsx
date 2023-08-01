@@ -65,7 +65,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                     data={carousel}
                     Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}
                     galleryClassName={styles.post_small_images}
-                    GalleryItem={(props: any) => <Image src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}
+                    GalleryItem={(props: any) => <Image className={styles.cursorPointer} src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}
                 />}
 
                 <div className={styles.post_content}>
