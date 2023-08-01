@@ -8,8 +8,11 @@
   object-position: center;
 }
 
-.sub_image_container {
+.subSlider {
   margin-top: 15px;
+}
+
+.sub_image_container {
   width: calc((100vw - 101px) /3);
   height: 59px;
 }

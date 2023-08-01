@@ -55,21 +55,24 @@ export default function SwiperMobilePostCarousel({data}) {
             >
                 {mainElements}
             </Swiper>
-            <Swiper
-                onSwiper={setThumbsSwiper}
-                spaceBetween={15}
-                // navigation={true}
-                pagination={{
-                    clickable: true,
-                }}
-                slidesPerView={4}
-                freeMode={true}
-                watchSlidesProgress={true}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="postMainThumbSwiper"
-            >
-                {subElements}
-            </Swiper>
+            <div className={styles.subSlider}>
+                <Swiper
+                    onSwiper={setThumbsSwiper}
+                    spaceBetween={15}
+                    // navigation={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    slidesPerView={4}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="postMainThumbSwiper"
+                >
+                    {subElements}
+                </Swiper>
+            </div>
+
         </>
     );
 }
