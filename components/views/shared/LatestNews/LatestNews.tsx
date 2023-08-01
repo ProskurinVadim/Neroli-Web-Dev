@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useContext } from "react";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import Container from "../../../../hoc/Container";
-import NewsCard from "../../../shared/Card/NewsCard";
+import ShortNewsCard from "../../../shared/Card/ShortNewsCard";
 import { buttonStyles } from "../../../common/Button/Button";
 import { getData } from "./getData";
 import styles from "./LatestNews.module.scss";
@@ -21,17 +21,17 @@ const LatestNews: React.FC<ILatestNews> = ({ news }) => {
                 <ul className={styles.latest_news_list}>
                     <li className={styles.latest_news_list_item}>
                         <Link href={news[0].link} className="link_unset">
-                            <NewsCard {...news[0]} table={true} />
+                            <ShortNewsCard {...news[0]} table={true} />
                          </Link>
                     </li>
                         <li className={styles.latest_news_list_item}>
                         <Link href={news[1].link} className="link_unset">
-                            <NewsCard {...news[1]} horizontal={adaptive === "xl"} table={true} />
+                            <ShortNewsCard {...news[1]} horizontal={adaptive === "xl"} table={true} />
                         </Link>
                     </li>
                     <li className={styles.latest_news_list_item}>
                         <Link href={news[2].link} className="link_unset">
-                            <NewsCard {...news[2]} table={true} />
+                            <ShortNewsCard {...news[2]} table={true} />
                         </Link>
                     </li>
                 </ul>

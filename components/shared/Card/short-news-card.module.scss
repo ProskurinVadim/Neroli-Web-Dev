@@ -20,7 +20,7 @@
       position: relative;
 
       &_horizontal {
-        width: 342px;
+        width: 100%;
 
         @include sm {
           width: calc(100vw - 56px);
@@ -166,18 +166,7 @@
   }
 }
 
-//@media (min-width: 1024px) and (max-width: 1441px) {
-//  .card.news_card.card__horizontal {
-//    width: 421px;
-//    height: 532px;
-//
-//    &:nth-child(3n) {
-//      margin-right: 0;
-//    }
-//  }
-//}
-
-@include xl {
+@media (min-width: 1440px){
   .card {
 
     &_header {
@@ -188,28 +177,6 @@
     &_image {
       width: 306px;
       height: 306px;
-
-      &_wrapper {
-        width: 306px;
-        height: 100%;
-        position: relative;
-
-        &_horizontal {
-          width: 100%;
-
-          @include sm {
-            width: calc(100vw - 56px);
-            height: calc((100vw - 56px) / 1.8);
-            //height: calc((100vw - 56px);
-          }
-        }
-
-        //@include sm {
-        //  width: calc((100vw - 72px) / 2);
-        //  height: calc((100vw - 72px) / 2);
-        //}
-      }
-
     }
 
     &.news_card {
@@ -227,6 +194,8 @@
       &.card__horizontal {
         width: 421px;
         height: 532px;
+        //width: 843px;
+        //height: 246px;
 
         &:nth-child(3n) {
           margin-right: 0;
@@ -250,18 +219,18 @@
     }
 
     &.news_card {
-      //width: 843px;
-      //height: 246px;
+      width: 843px;
+      height: 246px;
 
       .card_image {
         height: 246px;
       }
 
-      &.card__horizontal {
-        width: 421px;
-        max-width: 100%;
-        height: 532px;
-      }
+      //&.card__horizontal {
+      //  width: 421px;
+      //  max-width: 100%;
+      //  height: 532px;
+      //}
     }
   }
 }
@@ -275,8 +244,12 @@
     }
 
     &_image {
-      width: 306px;
+      width: 100%;
       height: 306px;
+
+      &_wrapper {
+        width: 100%;
+      }
     }
 
     &.news_card {
@@ -309,6 +282,11 @@
     &_image {
       height: 178px;
       width: 178px;
+
+      &_wrapper {
+        height: 178px;
+        width: 100%;
+      }
     }
 
     &_header {
