@@ -7,6 +7,7 @@ import { Toggler } from "../../../common";
 import PersonCard from "./PersonCard";
 import ApartmentMap from "./ApartmentMap";
 import Information from "./Information";
+import SwiperStreetViewCarousel from "./SwiperStreetViewCarousel/SwiperStreetViewCarousel";
 import CarouselItem from "./CarouselItem";
 import styles from "./Post.module.scss";
 // import { Image } from "../../../common";
@@ -73,7 +74,8 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                                 <div className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}/>
                             </If>
                             <Else>
-                                <Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.src} alt="street view image" className={styles.street_view_image} />} />
+                                <div className={styles.streetViewSlider}><SwiperStreetViewCarousel data={street_view} /></div>
+                                {/*<Carousel className={styles.street_view} config={config} data={street_view} Item={(props: any) => <Image src={props.src} alt="street view image" className={styles.street_view_image} />} />*/}
                             </Else>
                         </Condition>
                     </div>
