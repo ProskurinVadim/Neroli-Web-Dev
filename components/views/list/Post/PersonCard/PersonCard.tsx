@@ -28,7 +28,7 @@ const PersonCard: React.FC<IAvatar> = ({ image,  name, job, id, onClick, whatsap
                 data.map((elem,i) => <PersonCardItem {...elem} key={`person-item-${i}`}/>)
             }
             <Button onClick={onClick} text="Book a Viewing" className={styles.button} />
-            <a href={`https://pdf-presentation.onrender.com/api/presentation/${id}`} target="_blank"><Button onClick={onClick} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>
+            <a href={`https://pdf-presentation.onrender.com/api/presentation/${id}`}><Button onClick={()=>{}} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>
         </div>
     )
 }
