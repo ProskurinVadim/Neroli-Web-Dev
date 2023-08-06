@@ -112,7 +112,7 @@ export const formatPostData = (post: any, agent: any)  => ({
         },
         header: post.attributes.Title,
         beds: post.attributes.Bedrooms,
-        baths: 2,
+        baths: post.attributes.Bathrooms.split(" ")[1],
         size: post.attributes.Square,
     },
 

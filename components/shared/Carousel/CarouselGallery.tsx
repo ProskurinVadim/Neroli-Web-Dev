@@ -2,8 +2,7 @@
 import { PaginationDot } from "../Pagination";
 import { LeftArrow, RightArrow } from "../../icons";
 import { useState, useEffect, useRef } from "react";
-import styles from "./Carousel.module.scss";
-import Condition, { If } from "../../../hoc/Conditional/Condition";
+import styles from "./Carousel.module.scss";    
 
 interface ICarousel {
     data: any[],
@@ -28,9 +27,15 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     const [gallery, setGallery] = useState<any>([...data]);
     const { time, pagination } = config;
     const ref = useRef<HTMLDivElement>(null);
+    const galleryRef = useRef<HTMLDivElement>(null);
     const [transition, setTransition] = useState<number>(400);
     const [anim,setAnim] = useState(false);
     const maxPage = Math.ceil(data.length / config.itemsCount);
+    console.log(data.length)
+    const configPagination = {
+        withArrows: true,
+        maxPages: Math.ceil(data.length / 4)
+    };
     const update = (page: number) => {
         const newPage = page > maxPage ? 1 : page;
         page !== 0 && setPage(_ => newPage);
@@ -70,7 +75,31 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             return copy;
         })
     }
+    console.log(gallery)
+    const handelCllick = (i: number) => {
 
+        const galleryClass = galleryRef.current?.classList;
+        galleryRef.current?.classList.remove(styles.anim_appear)
+        if (!galleryClass?.contains(styles.anim_hide)) {
+            galleryClass?.add(styles.anim_hide);
+            setTimeout(() => {
+                galleryRef.current?.classList.remove(styles.anim_hide)
+                galleryClass?.add(styles.anim_appear);
+                slide(i)
+            }, 1500);
+        }
+    }
+    const galleryOnClick = (i: number, elem?: any) => {
+        const newPage = elem.index  
+        setPage(Math.ceil(newPage / 4));
+        handelCllick(i)
+        
+    }
+    const handelSetPage = (page: number) => {
+        console.log(page)
+        handelCllick(page);
+        setPage(page);
+    }
     useEffect(() => {
 
         // const interval = setInterval(() => {
@@ -82,13 +111,13 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     return (
         <div className={`${styles.carousel} ${className}`}>
             <div className={styles.carousel_container} style={{ transform: `translateX(-${transition * (page - 1)}px` }}>
-                <div key={`carousel-item-1`} ref={ref}><Item {...gallery[0]} /></div>
-                <div className={`${galleryClassName}`} >
-                    {gallery.slice(1, 5).map((elem: any, i: number) => <GalleryItem {...elem} onClick={()=>slide(i)}/>)}
+                <div key={`carousel-item-1`}><Item {...gallery[0]} /></div>
+                <div className={`${galleryClassName}`} ref={galleryRef}>
+                    {gallery.slice(1, 5).map((elem: any, i: number) => <GalleryItem {...elem} onClick={() => galleryOnClick(i, elem)} key={`gallery-item${i}`} />)}
                 </div>
             </div>
 
-            {/*<PaginationDot page={page} setPage={update} config={pagination} className={config.paginationClassName} />*/}
+            <PaginationDot page={page} setPage={handelSetPage} config={configPagination} />
         </div>
     )
 };
