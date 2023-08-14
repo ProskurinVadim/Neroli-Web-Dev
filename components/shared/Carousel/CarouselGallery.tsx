@@ -31,7 +31,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     const [transition, setTransition] = useState<number>(400);
     const [anim,setAnim] = useState(false);
     const maxPage = Math.ceil(data.length / config.itemsCount);
-    console.log(data.length)
+
     const configPagination = {
         withArrows: true,
         maxPages: Math.ceil(data.length / 4)
@@ -75,7 +75,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
             return copy;
         })
     }
-    console.log(gallery)
+
     const handelCllick = (i: number) => {
 
         const galleryClass = galleryRef.current?.classList;
@@ -86,7 +86,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
                 galleryRef.current?.classList.remove(styles.anim_hide)
                 galleryClass?.add(styles.anim_appear);
                 slide(i)
-            }, 1500);
+            }, 400);
         }
     }
     const galleryOnClick = (i: number, elem?: any) => {
