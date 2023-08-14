@@ -33,38 +33,38 @@
 .anim_hide {
     img {
         &:nth-child(1) {
-            animation: ease-in anim4 0.4s;
+            //animation: ease-in anim4 0.4s;
         }
 
         &:nth-child(2) {
-            animation: ease-in anim3 0.4s;
+            //animation: ease-in anim3 0.4s;
         }
 
         &:nth-child(3) {
-            animation: ease-in anim2 0.4s;
+            //animation: ease-in anim2 0.4s;
         }
 
         &:nth-child(4) {
-            animation: ease-in anim1 0.4s;
+            //animation: ease-in anim1 0.4s;
         }
     }
 }
 .anim_appear {
     img {
         &:nth-child(1) {
-            animation: linear anim8 0.4s;
+            //animation: linear anim8 0.4s;
         }
 
         &:nth-child(2) {
-            animation: linear anim7 0.4s;
+            //animation: linear anim7 0.4s;
         }
 
         &:nth-child(3) {
-            animation: linear anim6 0.4s;
+            //animation: linear anim6 0.4s;
         }
 
         &:nth-child(4) {
-            animation: linear anim5 0.4s;
+            //animation: linear anim5 0.4s;
         }
     }
 }
