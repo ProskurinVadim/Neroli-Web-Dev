@@ -44,7 +44,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
     const adaptive = useContext(AdaptiveContext);
 
     const config = {
-        time: 400,
+        time: 0,
         itemsCount: 1,
         pagination: {
             maxPages: 3,

@@ -77,7 +77,6 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     }
 
     const handelCllick = (i: number) => {
-
         const galleryClass = galleryRef.current?.classList;
         galleryRef.current?.classList.remove(styles.anim_appear)
         if (!galleryClass?.contains(styles.anim_hide)) {
@@ -86,7 +85,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
                 galleryRef.current?.classList.remove(styles.anim_hide)
                 galleryClass?.add(styles.anim_appear);
                 slide(i)
-            }, 400);
+            }, 0);
         }
     }
     const galleryOnClick = (i: number, elem?: any) => {
