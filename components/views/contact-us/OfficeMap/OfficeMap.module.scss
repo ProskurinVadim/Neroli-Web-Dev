@@ -17,7 +17,7 @@
         position: absolute;
 
         &_content {
-            padding-top: 10px;
+            //padding-top: 10px;
         }
 
         &_text {
@@ -42,6 +42,8 @@
 
 .section_header {
     margin-top: 0;
+    text-align: left;
+    margin-bottom: 28px;
 }
 
 @include xl {
@@ -70,7 +72,7 @@
     .contact_us {
 
         &_info {
-            margin: 28px auto 0;
+            margin: 80px auto 0;
             width: 372px;
         }
     }
@@ -80,7 +82,7 @@
     .contact_us {
 
         &_info {
-            margin: 28px auto 0;
+            margin: 40px auto 0;
             width: 372px;
         }
     }
@@ -90,6 +92,7 @@
     .contact_us {
         &_info {
             margin: 28px auto 0;
+            padding: 28px;
             width: 90%;
         }
 

@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { Search, Logo } from "../../icons";
 import { links } from "./getData"
@@ -10,12 +11,11 @@ interface IHeader {
     href: string;
 }
 
-
 const HeaderDesktop: React.FC<IHeader> = ({ href }) => {
     const onClick = () => false;
     return (
         <>
-            <Link href="/"><Logo /></Link>
+            <Link className={styles.header_logo} href="/"><Logo /></Link>
             <nav>
                 <ul className={styles.navbar}>
                     {links.map((elem, i) =>

@@ -37,6 +37,36 @@ $screen-md-min: 800px;
 $screen-lg-min: 1024px;
 $screen-xl-min: 1440px;
 
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 601px) and (max-width: 1140px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1141px) and (max-width: 1360px) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media (min-width: 1361px) {
+        @content;
+    }
+}
+
+@mixin no-mobile {
+    @media (min-width: 601px) {
+        @content;
+    }
+}
+
 
 @mixin sl {
     @media (min-width: #{$screen-sl-min}) and (max-width: 480px) {

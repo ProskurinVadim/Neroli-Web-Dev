@@ -1,6 +1,10 @@
 @import "../../../../styles/mixin";
 @import "../../../../styles/varrible";
 
+.subtitle {
+    text-align: center;
+}
+
 .faq_list {
 
     .faq_list_item {
@@ -23,7 +27,7 @@
         &_content {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
+            padding: 20px 20px 20px 28px;
         }
 
         &_icon {
@@ -32,7 +36,10 @@
             box-sizing: border-box;
             height: 24px;
             width: 24px;
-            line-height: 26px;
+            //line-height: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
@@ -53,10 +60,15 @@
     color: $color-additiona;
     margin: 0 auto;
     width: 276px;
+    text-align: center;
+}
+
+.button_wrapper {
+    text-align: center;
 }
 
 .button {
-    margin: 16px 0 40px;
+    margin: 16px 0 0;
 }
 
 

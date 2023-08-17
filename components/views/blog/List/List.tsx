@@ -40,7 +40,7 @@ const List: React.FC = () => {
     }
 
     return (
-        <section className="section__padding">
+        <section className={`section__padding ${styles.section}`}>
             <Container className="t_l">
                 <h2 className={`section_header ${styles.section_header}`}>News & Blog</h2>
                 <p className="medium_text medium_text__aditional">Last Update: March 16, 2023</p>

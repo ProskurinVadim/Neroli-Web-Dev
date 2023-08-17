@@ -1,75 +1,83 @@
-	@import '../../../../styles/mixin';
+.latest_news_list_large {
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: minmax(650px, 843px) minmax(350px, 461px);
+	gap: 40px;
+	grid-auto-rows: auto;
+}
 
 .latest_news_list {
+	margin-top: 40px;
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 40px;
-
-	@media (min-width: 1024px) and (max-width: 1280px) {
-		justify-content: center;
-	}
+	justify-content: center;
 }
+//
+//@media (min-width: 1441px){
+//	.latest_news_list {
+//		&_item {
+//			margin: 0 40px 40px 0px;
+//			.card {
+//				&_image {
+//					width: 306px;
+//					height: 246px;
+//				}
+//			}
+//
+//			&:last-child {
+//				margin-top: -288px;
+//			}
+//		}
+//	}
+//}
+//
+//@include lg {
+//	.latest_news_list {
+//		justify-content: center;
+//
+//		&_item {
+//			margin: 0 40px 40px 0px ;
+//
+//			.card {
+//				&_image {
+//					width: 306px;
+//					height: 246px;
+//				}
+//			}
+//		}
+//	}
+//}
+//
+//@include md {
+//	.latest_news_list {
+//		justify-content: center;
+//
+//		&_item {
+//			margin-bottom: 16px;
+//
+//			&:last-child {
+//				margin-bottom: 26px;
+//			}
+//		}
+//	}
+//}
+//
+//
+//@include sm {
+//	.latest_news_list {
+//		justify-content: center;
+//
+//		&_item {
+//			margin-bottom: 16px;
+//
+//			&:last-child {
+//				margin-bottom: 26px;
+//			}
+//		}
+//	}
+//}
 
-@media (min-width: 1441px){
-	.latest_news_list {
-		&_item {
-			margin: 0 40px 40px 0px;
-			.card {
-				&_image {
-					width: 306px;
-					height: 246px;
-				}
-			}
-
-			&:last-child {
-				margin-top: -288px;
-			}
-		}
-	}
-}
-
-@include lg {
-	.latest_news_list {
-		justify-content: center;
-
-		&_item {
-			margin: 0 40px 40px 0px ;
-
-			.card {
-				&_image {
-					width: 306px;
-					height: 246px;
-				}
-			}
-		}
-	}
-}
-
-@include md {
-	.latest_news_list {
-		justify-content: center;
-
-		&_item {
-			margin-bottom: 16px;
-
-			&:last-child {
-				margin-bottom: 26px;
-			}
-		}
-	}
-}
-
-
-@include sm {
-	.latest_news_list {
-		justify-content: center;
-
-		&_item {
-			margin-bottom: 16px;
-
-			&:last-child {
-				margin-bottom: 26px;
-			}
-		}
-	}
+.button_wrapper {
+	text-align: center;
 }

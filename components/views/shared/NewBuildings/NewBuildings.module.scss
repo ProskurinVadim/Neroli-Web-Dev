@@ -1,4 +1,6 @@
 .new_buildings {
+    padding-bottom: 32px;
+
     .toggler {
         margin: 20px auto 0;
     }
@@ -10,19 +12,19 @@
 
 @include xl {
     .card {
-        margin-right: 40px;
+        //margin-right: 40px;
     }
 }
 
 @include lg {
     .card {
-        margin-right: 40px;
+        //margin-right: 40px;
     }
 }
 
 @include md {
     .card {
-        margin-right:16px;
+        //margin-right:16px;
     }
 }
 
@@ -36,7 +38,12 @@
     margin-top: 40px;
     height: 460px;
 
+    @include mobile {
+        height: 350px;
+        margin-bottom: 8px;
+    }
+
     @include sm {
-        height: 330px;
+        //height: 330px;
     }
 }

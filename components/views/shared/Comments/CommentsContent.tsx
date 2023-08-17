@@ -7,6 +7,8 @@ import Person, { personStyles } from "../../../shared/Person/Person";
 import {AdaptiveContext} from "@/context/AdaptiveContext";
 import { getCarouselData } from "./getData";
 
+import styles from "./comments-content.module.scss";
+
 interface ICommentsContent {
     comments: any[]
 }
@@ -15,20 +17,11 @@ const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
     const data = getCarouselData(comments);
     const adaptive = useContext(AdaptiveContext);
 
-    const config = {
-        time: 500000,
-        itemsCount: (adaptive === "mobile") ? 1 : 2,
-        pagination: {
-            maxPages: (adaptive === "mobile") ? data.length : Math.ceil(data.length / 2),
-            numerical: false,
-        }
-    };
-
     return (
-        <section className="section__padding owerflow_hidden">
-            <Container className={containerStyles.container__overflow_initial}>
+        <section className={`section__padding owerflow_hidden ${styles.section}`}>
+            <Container className={`${containerStyles.container__overflow_initial} ${styles.container}`}>
                 <h2 className="section_header"> Why people love Neroli Properties </h2>
-                <div style={{height: "380px", marginTop: "40px"}}>
+                <div className={styles.carousel_wrapper}>
                     <SwiperCommentsCarousel data={data} />
                 </div>
 

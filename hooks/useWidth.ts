@@ -13,7 +13,7 @@ const useDeviceSize = () => {
         return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
 
-    return width
+    return width;
 
 }
 

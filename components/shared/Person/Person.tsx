@@ -22,7 +22,7 @@ interface IPerson {
 	className: string
 }
 
-const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, className }) => {
+const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, className = "" }) => {
 	return (
 		<div className={`${styles.person} ${className}`}>
 			<Avatar {...person} />

@@ -23,7 +23,7 @@ const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
     const data = !fullCard ? team : team.filter(elem => active !== "ETC" ? elem.person.job === equal[active] : !etc.includes(elem.person.job));
 
     return (
-        <section className="section__padding">
+        <section className={`section__padding ${styles.section}`}>
             <Container>
                 <h2 className="section_header">Our Team</h2>
                 <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>Our team consists exclusively of professionals.</p>
@@ -35,7 +35,7 @@ const OurTeam: React.FC<IOurTeam> = ({ fullCard = false, team }) => {
                 <div className={styles.team_list}>
                     {data.map((elem: any, i) => <Person {...elem} key={`person-item-${i}`}/> )}
                 </div>
-                {!fullCard && <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link} ${styles.button}`}>All team</Link>}
+                {!fullCard && <div className={styles.button_wrapper}><Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link} ${styles.button}`}>All team</Link></div>}
             </Container>
         </section>
     )

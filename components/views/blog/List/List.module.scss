@@ -1,50 +1,66 @@
-@import '../../../../styles/mixin';
+.section {
+    padding-top: 64px;
+}
 
 .list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    &_item {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 421px));
+    gap: 40px;
 
-        & > div {
-            margin: 0;
-        }
+    @include tablet {
+        grid-template-columns: repeat(2, minmax(300px, 421px));
     }
+    
+    @media (max-width: 768px) {
+        grid-template-columns: minmax(300px, 421px);
+    }
+    
+    //display: flex;
+    //justify-content: space-between;
+    //flex-wrap: wrap;
+    //&_item {
+    //
+    //    & > div {
+    //        margin: 0;
+    //    }
+    //}
 }
 .section_header {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 @include xl {
-    .list {
-        &_item {
-            margin-top: 40px;
-
-        }
-    }
+    //.list {
+    //    &_item {
+    //        margin-top: 40px;
+    //
+    //    }
+    //}
 }
 
 @include lg {
-    .list {
-        &_item {
-            margin-top: 40px;
-            max-width: calc(33% - 20px);
-        }
-    }
+    //.list {
+    //    &_item {
+    //        margin-top: 40px;
+    //        max-width: calc(33% - 20px);
+    //    }
+    //}
 }
 
 @include md {
-    .list {
-        &_item {
-            margin: 40px auto 0;
-        }
-    }
+    //.list {
+    //    &_item {
+    //        margin: 40px auto 0;
+    //    }
+    //}
 }
 
 @include sm {
-    .list {
-        &_item {
-            margin: 40px auto 0;
-        }
-    }
+    //.list {
+    //    &_item {
+    //        margin: 40px auto 0;
+    //    }
+    //}
 }

@@ -1,16 +1,13 @@
 "use client"
-import { AdaptiveContext } from "../context/AdaptiveContext";
+
+import AdaptiveProvider from "@/context/AdaptiveContext";
 import ItemsProvider from "@/context/ItemsContext";
 import localFont from 'next/font/local';
 import { IChildren } from "../types";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
-import useWidth from "../hooks/useWidth";
 
 const RootLayout: React.FC<IChildren> =  ({ children }) => {
-    const width = useWidth()
-
-    const adaptive = width >= 1440 ? "xl" : width >= 1024 ? "lg" : "mobile";
     return (
         <html lang="en" >
             <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,13 +18,12 @@ const RootLayout: React.FC<IChildren> =  ({ children }) => {
             <body className="body">
                 <div id="portal" />
                 <ItemsProvider>
-                    <AdaptiveContext.Provider value={ adaptive }>
+                    <AdaptiveProvider>
                         <Header />
                         {children}
                         <Footer />
-                    </AdaptiveContext.Provider>
+                    </AdaptiveProvider>
                 </ItemsProvider>
-
             </body>
         </html >
     )

@@ -7,83 +7,70 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 88px 0 80px;
 
-    &_content {
-        display: flex;
-        justify-content: space-around;
-        align-items: end;
+    @media (max-width: 950px) {
+        padding: 60px 0;
     }
 
-    .section_header {
-        margin-top: 0;
-        text-align: left;
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &_content {
+        max-width: 965px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 950px) {
+            max-width: 500px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
     }
 
     .medium_text {
         margin-top: 20px;
+        //text-align: left;
+    }
+}
+
+.text_block {
+    max-width: 500px;
+
+    @media (max-width: 950px) {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    @include mobile {
         text-align: left;
     }
-}
 
-@include xl {
-    .contact_form {
-        padding: 80px 30px 90px;
+    &_header {
+        margin-top: 0;
+        text-align: left;
 
-        .medium_text {
-            width: 500px;
+        @media (max-width: 950px) {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-weight: bold;
+            text-align: left;
         }
     }
 }
 
-@include lg {
-    .contact_form {
-
-        .medium_text {
-            width: 500px;
-        }
+.form {
+    @media (max-width: 950px) {
+        max-width: 306px;
     }
-}
 
-@include md {
-    .contact_form {
-
-        &_content {
-            flex-direction: column;
-        }
-
-        &_text_block {
-            margin: 0 auto;
-        }
-
-        .section_header {
-            font-weight: 700;
-        }
-
-        .medium_text {
-            width: 500px;
-            margin-bottom: 40px;
-        }
-    }
-}
-
-@include sm {
-    .contact_form {
-
-        &_content {
-            flex-direction: column;
-        }
-
-        &_text_block {
-            margin: 0 auto;
-        }
-
-        .section_header {
-            font-weight: 700;
-        }
-
-        .medium_text {
-            width: 100%;
-            margin-bottom: 40px;
-        }
+    @include mobile {
+        max-width: 100%;
     }
 }

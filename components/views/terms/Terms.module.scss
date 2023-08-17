@@ -1,17 +1,31 @@
 @import "../../../styles/mixin";
 
+.section {
+    padding-top: 64px;
+}
+
+.subtitle {
+    text-align: center;
+}
+
 .terms {
 
     &_header {
         @include card-header-text;
+        max-width: 843px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &_content_padding {
         margin-top: 40px;
         text-align: left;
+        max-width: 843px;
+        margin-left: auto;
+        margin-right: auto;
 
         &:last-child {
-            margin-bottom: 40px;
+            //margin-bottom: 40px;
         }
     }
 }

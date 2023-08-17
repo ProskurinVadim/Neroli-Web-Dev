@@ -1,44 +1,54 @@
-@import '../../styles/mixin';
-
 .container {
-    text-align: center;
     margin: 0 auto;
-    overflow-x: hidden;
+    //overflow-x: hidden;
     box-sizing: border-box;
 
     &__overflow_initial {
         overflow: visible;
     }
-}
-@include xl {
-    .container {
-        width: 1440px;
-        padding: 0 48px;
+
+    @include no-mobile {
+        max-width: 1440px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    @include mobile {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
-
-@include lg {
-    .container {
-        width: 1140px;
-        padding: 0 20px
-    }
-}
-
-@include md {
-    .container {
-        width: 720px;
-        padding: 0 28px;
-    }
-}
-
-@include sm {
-    .container {
-        max-width: 428px;
-        width: 100%;
-        padding: 0px 28px;
-
-        __overflow_initial {
-            overflow: hidden;
-        }
-    }
-}
+//
+//@include xl {
+//    .container {
+//        width: 1440px;
+//        padding: 0 48px;
+//    }
+//}
+//
+//@include lg {
+//    .container {
+//        width: 1140px;
+//        padding: 0 20px
+//    }
+//}
+//
+//@include md {
+//    .container {
+//        width: 720px;
+//        padding: 0 28px;
+//    }
+//}
+//
+//@include sm {
+//    .container {
+//        max-width: 428px;
+//        width: 100%;
+//        padding: 0px 28px;
+//
+//        __overflow_initial {
+//            overflow: hidden;
+//        }
+//    }
+//}

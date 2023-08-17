@@ -1,0 +1,17 @@
+.section {
+  height: 430px;
+}
+
+.container {
+  position: relative;
+}
+
+.carousel_wrapper {
+  width: calc(100vw - 20% - 48px);
+  max-width: 1463px;
+  height: 380px;
+  margin-top: 40px;
+  position: absolute;
+  left: 20%;
+  overflow: hidden;
+}

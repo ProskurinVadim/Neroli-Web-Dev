@@ -6,11 +6,16 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    .main_sub_header {
+        text-align: center;
+    }
+
     .main_header {
         font-family: 'Marcellus';
         font-style: normal;
         font-weight: 400;
-        color: $color-light
+        color: $color-light;
+        text-align:  center;
     }
 
     .toggler {
@@ -24,7 +29,8 @@
 
     .medium_text {
         margin: 40px auto 16px;
-        width: 230px
+        width: 276px;
+        text-align: center;
     }
 }
 
@@ -39,7 +45,7 @@
         }
 
         .medium_text {
-            width: 230px
+            width: 276px
         }
     }
 }
@@ -53,11 +59,18 @@
         }
 
         .medium_text {
-            width: 230px
+            width: 276px
         }
     }
 }
+.button_wrapper {
+    text-align: center;
+}
 @include md {
+    .search {
+        border-radius: 14px;
+        width: 306px;
+    }
 
     .main_page {
         padding: 106px 0 107px;
@@ -74,6 +87,10 @@
 }
 
 @include sm {
+    .search {
+        width: 306px;
+    }
+
     .main_page {
         padding: 106px 0 107px;
 

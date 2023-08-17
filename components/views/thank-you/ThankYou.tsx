@@ -10,7 +10,10 @@ const ThankYou = () => {
                 <h1 className={styles.section_header}>Great!</h1>
                 <p className={styles.thank_you_header}>Your application has been successfully accepted!</p>
                 <p className={`medium_text ${styles.medium_text}`}>Our manager will contact you shortly!</p>
-                <Link href="/" className={`${buttonStyles.button} ${styles.button__link} ${styles.button} link_unset`}>Back to the main page</Link>
+                <div className={styles.button_wrapper}>
+                    <Link href="/" className={`${buttonStyles.button} ${styles.button__link} ${styles.button} link_unset`}>Back to the main page</Link>
+                </div>
+
             </Container>
         </section>
     )

@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useContext } from "react";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import { Image } from "../../../common";
@@ -15,7 +16,7 @@ const AboutUs: React.FC<IAboutUs> = ({ title, content }) => {
 
     const adaptive = useContext(AdaptiveContext);
     return (
-        <section className="section__padding">
+        <section className={`section__padding ${styles.section}`}>
             <Container >
                 <span className={styles.logo__colored}>
                     {

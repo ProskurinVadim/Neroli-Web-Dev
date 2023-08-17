@@ -1,6 +1,5 @@
-import Card from "./Card";
 import styles from "./short-news-card.module.scss";
-import { INewsCard } from "../../../types";
+import { INewsCard } from "../../../../types";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -16,7 +16,7 @@ interface IForm {
 
 }
 
-const Form: React.FC<IForm> = ({ onSubmit, fields, value, className, buttonText = "Submit", setValue, children, buttonClassName = buttonStyles.button_submit, validate }) => {
+const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", buttonText = "Submit", setValue, children, buttonClassName = buttonStyles.button_submit, validate }) => {
     const [error, setError] = useState<string[]>(Object.keys(value).map(() => ""));
 
     const handelSubmit = () => {

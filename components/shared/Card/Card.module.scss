@@ -13,15 +13,30 @@
         background-size: cover;
         background-repeat: no-repeat;
         object-fit: cover;
-        
+
+        @media (max-width: 768px) {
+            :global(.swiper-slide) &_wrapper {
+                max-width: 100%;
+                width: 306px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            :global(.swiper-slide) &_wrapper {
+                max-width: 100%;
+                width: 178px;
+                height: 178px;
+            }
+        }
+
         &_wrapper {
             width: 306px;
             height: 306px;
             position: relative;
 
             @include sm {
-                width: calc((100vw - 72px) / 2);
-                height: calc((100vw - 72px) / 2);
+                //width: calc((100vw - 72px) / 2);
+                //height: calc((100vw - 72px) / 2);
             }
         }
     }
@@ -261,6 +276,10 @@
 }
 
 @include sm {
+    :global(.swiper-slide) .card {
+        width: 100%;
+        //max-width: 250px;
+    }
     .card {
         width: 178px;
 

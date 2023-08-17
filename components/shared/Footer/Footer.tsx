@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import FooterItem from "./FooterItem";
@@ -19,6 +20,7 @@ const Footer = () => {
             .then(({ data }) => setContacts(data.attributes));
     },[])
     const toggleOpen = () => setOpen(prev => !prev);
+
     return (
         <footer className={styles.footer}>
             <div className={styles.footer_header_container} onClick={toggleOpen}>
@@ -30,7 +32,7 @@ const Footer = () => {
                         </span>
                     </h2>
                     { open &&
-                        <p className={`${styles.medium_text} medium_text`}>
+                        <p className={`${styles.footer_details_text} medium_text`}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis magna tellus, convallis eu egestas vitae, consectetur a sem. Nam egestas sodales ligula. Duis elementum ipsum vel urna fermentum bibendum. Aenean ex lectus, scelerisque laoreet lorem sed, blandit maximus purus. Duis ut venenatis quam, non tincidunt neque. Nunc elit erat, egestas quis neque vel, placerat blandit dui. Nullam non bibendum magna, non varius quam. Curabitur a ultricies urna. Suspendisse potenti. Praesent et erat arcu. Donec varius enim mi, eget pellentesque augue congue eu. Mauris vehicula, quam vel vehicula tempor, massa libero imperdiet dolor, eget iaculis justo velit non risus. Aliquam aliquam leo eget nunc vulputate pulvinar.
                         </p>
                     }

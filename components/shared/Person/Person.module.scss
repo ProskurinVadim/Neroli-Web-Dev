@@ -4,21 +4,43 @@
 .person {
     border: 1px solid $color-border;
     border-radius: 24px;
-    padding: 39px 25px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    //margin-top: 40px;
     box-sizing: border-box;
 
     &_networks {
-        width: 182px;
+        //width: 182px;
+        width: 100%;
         padding: 14px;
-        border-top: 1px solid $color-border;
-        border-bottom: 1px solid $color-border;
+        //border-top: 1px solid $color-border;
+        //border-bottom: 1px solid $color-border;
         margin-top: 28px;
         display: flex;
         justify-content: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 182px;
+            border-top: 1px solid $color-border;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+        }
+
+        &::after {
+            content: "";
+            width: 182px;
+            border-top: 1px solid $color-border;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+        }
 
         li {
             margin-right: 16px;
@@ -33,7 +55,7 @@
         margin-top: 28px;
         @include medium-text;
         color: $color-additiona;
-        width: 250px;
+        //width: 250px;
         text-align: center;
     }
 }
@@ -51,11 +73,6 @@
 
 
 @include xl {
-    .person {
-        width: 421px;
-
-    }
-
     .person_comments {
         width: 461px;
         max-width: 100%;
@@ -69,8 +86,9 @@
 
 @include lg {
     .person {
-        width: 421px;
-        max-width: calc(33% - 20px);
+        //width: 421px;
+        //max-width: calc(33% - 20px);
+        padding: 28px 20px;
     }
 
     .person_comments {
@@ -86,11 +104,12 @@
 
 @include md {
     .person {
-        width: 375px;
-        margin-top: 16px;
+        //width: 375px;
+        //margin-top: 16px;
+        margin-top: 0;
 
         &:first-child {
-            margin-top: 40px;
+            //margin-top: 40px;
         }
 
         .person_description {
@@ -111,12 +130,12 @@
 
 @include sm {
     .person {
-        width: 375px;
-        max-width: calc(100vw - 56px);
-        margin-top: 16px;
+        //width: 375px;
+        //max-width: calc(100vw - 56px);
+        //margin-top: 16px;
 
         &:first-child {
-            margin-top: 40px;
+            //margin-top: 40px;
         }
 
         .person_description {
@@ -137,6 +156,18 @@
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 4;
             white-space: pre-wrap;
+            margin-top: 16px;
         }
+    }
+}
+
+@include mobile {
+    .person {
+        margin-top: 0;
+        padding: 28px;
+    }
+
+    .person_description {
+        margin-top: 16px;
     }
 }

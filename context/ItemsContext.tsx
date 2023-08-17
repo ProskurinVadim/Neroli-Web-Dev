@@ -4,10 +4,12 @@ import { useState, useEffect, createContext } from 'react';
 import {getItems} from "@/utils/fetch";
 
 export const ItemsContext = createContext<any[]>([]);
+
 interface IContainer {
     className?: string;
     children: React.ReactNode | string | null;
 }
+
 const ItemsProvider:React.FC<IContainer> = ({children}) => {
     const [items, setItems] = useState([]);
 

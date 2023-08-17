@@ -1,8 +1,16 @@
 @import "../../../../styles/varrible";
 @import '../../../../styles/mixin';
 
+.section {
+	padding-bottom: 0;
+	margin-bottom: -13px;
+}
+
 .about_us_content {
-	margin-top: 30px;
+	margin-top: 28px;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
 
 	strong {
 		font-weight: bold;
@@ -24,13 +32,24 @@
 
 	p {
 		text-align: left;
+		font-size: 16px;
+		color: #3B4248;
 		line-height: 180%;
+		max-width: 843px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
 
 	img {
-		width: 100%;
+		//max-width: 100%;
+		max-width: 1024px;
 		border-radius: 24px;
 		margin: 40px 0;
+		display: block;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 .medium_text {
@@ -42,6 +61,7 @@
 
 .logo__colored {
 	display: block;
+	text-align: center;
 
 	svg > path {
 		fill: $color-submit;
@@ -50,6 +70,12 @@
 
 .section_header {
 	margin-top: 11px;
+	font-size: 50px;
+	line-height: 64px;
+
+	@include mobile {
+		font-size: 32px;
+	}
 }
 
 

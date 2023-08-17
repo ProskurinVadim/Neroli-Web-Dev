@@ -1,19 +1,45 @@
 @import "../../../../styles/mixin";
 
+.section {
+    padding-top: 64px;
+}
+
 .team_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 421px));
+    //flex-wrap: wrap;
+    //justify-content: space-between;
+    gap: 40px;
+
+    @include md {
+        grid-template-columns: repeat(2, minmax(300px, 421px));
+        //margin-top: 40px;
+    }
+
+    @include sm {
+        grid-template-columns: repeat(2, minmax(250px, 421px));
+        //margin-top: 40px;
+    }
+
+    @include mobile {
+        grid-template-columns: minmax(300px, 421px);
+        justify-content: center;
+        //margin-top: 44px;
+    }
 
 }
 .button {
     margin-top:  40px;
 }
+.button_wrapper {
+    text-align: center;
+}
 .medium_text {
     margin: 20px 0 40px;
+    text-align: center;
 }
 .toggler {
-    margin: 0 auto 0;
+    margin: 0 auto 40px;
 }
 
 @include sm {

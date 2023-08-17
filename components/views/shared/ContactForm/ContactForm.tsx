@@ -29,13 +29,15 @@ const ContactForm = ({ }) => {
     }
 
     return (
-        <section className={`${styles.contact_form} section__padding`}>
-            <Container className={styles.contact_form_content}>
-                <div className={styles.contact_form_text_block}>
-                    <h3 className={`section_header section_header__light ${styles.section_header}`}>Stay updated</h3>
-                    <p className={`medium_text medium_text__light ${styles.medium_text}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim. sed do eiusmod tempor incididunt.</p>
+        <section className={styles.contact_form}>
+            <Container>
+                <div className={styles.contact_form_content}>
+                    <div className={styles.text_block}>
+                        <h3 className={`section_header section_header__light ${styles.text_block_header}`}>Stay updated</h3>
+                        <p className={`medium_text medium_text__light ${styles.medium_text}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim. sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <Form className={styles.form} fields={fields} setValue={setValue} value={value} onSubmit={handelSubmit} validate={validate} buttonText="Subscribe" />
                 </div>
-                <Form fields={fields} setValue={setValue} value={value} onSubmit={handelSubmit} validate={validate} buttonText="Subscribe" />
             </Container>
         </section>
     )

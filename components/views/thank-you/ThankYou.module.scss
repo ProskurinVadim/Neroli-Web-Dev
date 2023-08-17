@@ -20,13 +20,17 @@
         margin: 29px auto;
         width: 372px;
         line-height: 30px;
+        text-align: center;
     }
 }
 
 .medium_text {
     margin-bottom: 29px;
+    text-align: center;
 }
-
+.button_wrapper {
+    text-align: center;
+}
 .button {
     display: inline-block;
 }

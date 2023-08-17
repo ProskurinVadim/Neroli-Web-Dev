@@ -99,6 +99,8 @@
 
 @include md {
     .enquire {
+        padding: 40px 0;
+
         .notebook {
             flex-direction: column-reverse;
 
@@ -107,10 +109,12 @@
 
                 &:first-child {
                     padding-bottom: 0;
+                    padding-top: 0;
                 }
 
                 &:last-child {
                     padding-top: 0;
+                    padding-bottom: 0;
                 }
 
                 .section_header {
@@ -118,7 +122,8 @@
                 }
 
                 .medium_text {
-                    width: 100%;
+                    max-width: 500px;
+                    margin: 0 auto;
                     margin-top: 20px;
                     text-align: center;
                 }
@@ -143,6 +148,8 @@
                 width: 100%;
 
                 &:first-child {
+                    max-width: 420px;
+                    margin:  0 auto;
                     padding-top: 0;
                 }
 
@@ -151,9 +158,44 @@
                 }
 
                 .medium_text {
-                    width: 100%;
-                    margin-top: 20px;
+                    max-width: 500px;
                     text-align: center;
+                    margin: 20px auto 0;
+                }
+            }
+        }
+
+        &_image {
+            border-radius: 16px 16px 0px 0px;
+            width: 420px;
+            height: 189px;
+            margin: 40px auto 0;
+        }
+    }
+}
+
+@include mobile {
+    .enquire {
+        .notebook {
+            flex-direction: column-reverse;
+
+            &_item {
+                width: 100%;
+
+                &:first-child {
+                    //max-width: 420px;
+                    margin:  0 auto;
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                .medium_text {
+                    max-width: 500px;
+                    text-align: center;
+                    margin: 20px auto 0;
                 }
             }
         }
@@ -161,7 +203,9 @@
         &_image {
             border-radius: 16px 16px 0px 0px;
             width: 100%;
+            max-width: 420px;
             height: 189px;
+            margin: 40px auto 0;
         }
     }
 }
