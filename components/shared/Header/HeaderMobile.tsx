@@ -7,6 +7,7 @@ import { links } from "./getData";
 import SearchInput from "./Search";
 import Portal from "../../../hoc/Portal";
 import styles from "./Header.module.scss";
+import {buttonStyles} from "@/components/common/Button/Button";
 
 interface IHeader {
     isActive: (href: string) => boolean;
@@ -52,7 +53,9 @@ const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
                                         </Link>
                                     </li>
                                 )}
-                            </ul>   
+                                <Link href="/book" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Enquire now</Link>
+                            </ul>
+
                         </nav> 
                     </Portal>
                 }
