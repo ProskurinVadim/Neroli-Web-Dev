@@ -16,7 +16,7 @@ import styles from "./Post.module.scss";
 import Image from "next/image";
 import Condition, { If, Else } from "../../../../hoc/Conditional/Condition";
 import BookingModal from "./BookingModal";
-import Portal from "../../../../hoc/Portal"
+import Portal from "../../../../hoc/Portal";
 
 interface IApartment {
     information: {

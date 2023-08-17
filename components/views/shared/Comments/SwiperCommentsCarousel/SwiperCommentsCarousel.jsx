@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {nanoid} from "nanoid";
 import Person, { personStyles } from "../../../../shared/Person/Person";
+import styles from "../comments-content.module.scss";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,7 +18,7 @@ import { Navigation } from 'swiper/modules';
 
 export default function SwiperCommentsCarousel({data}) {
 
-    const elements = data.map(item => <SwiperSlide key={nanoid()}><Person className={personStyles.person_comments}  {...item} /></SwiperSlide>)
+    const elements = data.map(item => <SwiperSlide className={styles.swiper_slide} key={nanoid()}><Person className={personStyles.person_comments}  {...item} /></SwiperSlide>)
     return (
         <>
             <Swiper
@@ -25,6 +26,9 @@ export default function SwiperCommentsCarousel({data}) {
                 // spaceBetween={40}
                 // centeredSlides={true}
                 // navigation={true}
+                _slideClass="sas"
+                _slideClasses="sss"
+           
                 pagination={{
                     clickable: true,
                 }}
@@ -43,7 +47,7 @@ export default function SwiperCommentsCarousel({data}) {
                     },
                 }}
                 modules={[Navigation, Pagination]}
-                className="reviewsSwiper"
+                className={`reviewsSwiper `}
             >
                 {elements}
             </Swiper>
