@@ -1,5 +1,6 @@
-@import "../../../../styles/mixin";
-@import "../../../../styles/varrible";
+.question {
+    max-width: calc(100% - 40px);
+}
 
 .subtitle {
     text-align: center;
@@ -27,6 +28,7 @@
         &_content {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             padding: 20px 20px 20px 28px;
         }
 
