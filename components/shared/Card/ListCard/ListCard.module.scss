@@ -152,9 +152,11 @@
             padding-top: 0;
         }
 
-        .card_description {
+        & .card_description {
             margin-top: 35px;
             margin-bottom: auto;
+            margin-right: 0;
+            margin-left: 0;
         }
     }
 }

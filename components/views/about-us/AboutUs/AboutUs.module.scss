@@ -50,6 +50,14 @@
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
+
+		@include tablet {
+			max-width: calc(100vw - 94px);
+		}
+
+		@include mobile {
+			max-width: calc(100vw - 40px);
+		}
 	}
 }
 .medium_text {

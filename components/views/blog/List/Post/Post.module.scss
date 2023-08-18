@@ -219,7 +219,8 @@
 
 @include sm {
     .post_information {
-        height: 428px;
+        //height: 428px;
+        padding-bottom: 25px;
 
         .section_header {
             padding-top: 40px;

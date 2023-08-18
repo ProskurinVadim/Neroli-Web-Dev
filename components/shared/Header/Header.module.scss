@@ -66,37 +66,44 @@
         }
 
         &_item {
-            font-size: 12px;
-            text-transform: uppercase;
+
             //padding: 20px 40px;
             margin-bottom: 36px;
-            line-height: 24px;
-            color: $color-primary;
+
             width: 100%;
             text-align: left;
             box-sizing: border-box;
             text-align: center;
 
             a {
+                padding: 5px 16px;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: $color-primary;
                 text-decoration: none;
                 color: inherit;
-                color: #3B4248;
+                line-height: 24px;
                 font-family: "Montserrat";
                 font-style: normal;
                 font-weight: 700;
                 font-size: 12px;
                 text-align: center;
-                text-transform: uppercase;
                 text-decoration: none;
+                border-radius: 100px;
+
+                &:hover {
+                    color: $color-submit;
+                }
             }
 
-            &:hover {
-                color: $color-submit;
-            }
+
 
             &.active {
-                color: $color-submit;
-                background-color: $color-primary;
+                a {
+                    color: $color-submit;
+                    background-color: $color-primary;
+                }
+
             }
         }
     }
