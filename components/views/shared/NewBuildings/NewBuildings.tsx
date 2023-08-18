@@ -45,7 +45,7 @@ const NewBuildings = () => {
                 {/*<Carousel config={config} data={filteredItems}*/}
                 {/*    Item={(props: any) =>*/}
                 {/*        <Link className="link_unset" href={`/list/${props.id}`}>*/}
-                {/*            <Card {...props} className={styles.card} />*/}
+                {/*            <ListCard {...props} className={styles.card} />*/}
                 {/*        </Link>*/}
                 {/*    }*/}
                 {/*/>*/}

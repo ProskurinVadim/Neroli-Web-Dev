@@ -2,7 +2,7 @@
 import { useState, useContext } from "react";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import Container from "../../../../hoc/Container";
-import Card from "../../../shared/Card/AppartmentCard";
+import Card from "../../../shared/Card/AppartmentListCard";
 import { PaginationNumerial } from "../../../shared/Pagination";
 import styles from "./List.module.scss";
 import Link from 'next/link';
@@ -22,6 +22,7 @@ const ListContent: React.FC<IList> = ({ data, page, setPage, limit }) => {
         maxPages: 100,
         numerical: true,
     }
+
     return (
         <section className="section__padding">
             <Container className="t_l">
@@ -30,13 +31,13 @@ const ListContent: React.FC<IList> = ({ data, page, setPage, limit }) => {
                     <p className="medium_text medium_text__aditional">
                         Properties For Sale In Dubai: {data.length}
                     </p>
-                    {adaptive != "mobile" && <ListToggler active={view} setActive={setView} />}
+                    {adaptive !== "mobile" && <ListToggler active={view} setActive={setView} />}
                 </div>
-                <ul className={styles.list}>
+                <ul className={`${styles.list} ${(view === "list" && adaptive !== "mobile") ? styles.view_list : ""}`}>
                     {data.map((elem: any, i) =>
                         <li key={`card-item-key-${i}`} className={styles.list_item}>
                             <Link href={`/list/${elem.id}`} className="link_unset">
-                                <Card {...elem} className={styles.card} small={view === "table"} />
+                                <Card {...elem} className={styles.card} small={view === "table" || adaptive === "mobile"} />
                             </Link>
                         </li>
                     )}

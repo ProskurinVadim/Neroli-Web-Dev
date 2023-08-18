@@ -2,11 +2,34 @@
 @import "../../../../styles/mixin";
 
 .list {
-    display: flex;
+    //display: flex;
     //justify-content: space-between;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 306px));
     margin-top: 40px;
     gap: 40px;
+
+    &.view_list {
+        grid-template-columns: repeat(2, minmax(500px, 628px));
+
+        @include tablet {
+            grid-template-columns: minmax(500px, 628px);
+        }
+    }
+
+    @include tablet {
+        grid-template-columns: repeat(3, minmax(200px, 306px));
+    }
+
+    @include sm {
+        grid-template-columns: repeat(2, minmax(200px, 306px));
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, minmax(178px, 306px));
+        gap: 16px;
+    }
 
     &_item {
 
