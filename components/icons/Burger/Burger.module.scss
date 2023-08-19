@@ -19,8 +19,9 @@
     &.active {
         .burger_line {
             width: 14px;
+
             &:first-child {
-                transform: rotate(50grad) translate3d(6px,3px,0);
+                transform: rotate(50grad) translate3d(7px, 4px, 0);
             }
 
             &:nth-child(2) {
@@ -29,7 +30,7 @@
             }
 
             &:last-child {
-                transform: rotate(-50grad) translate3d(5px,-3px,0);
+                transform: rotate(-50grad) translate3d(4px, -2px, 0)
             }
         }
     }

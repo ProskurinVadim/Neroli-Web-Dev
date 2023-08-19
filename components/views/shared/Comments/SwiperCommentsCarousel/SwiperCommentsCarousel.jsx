@@ -26,8 +26,6 @@ export default function SwiperCommentsCarousel({data}) {
                 // spaceBetween={40}
                 // centeredSlides={true}
                 // navigation={true}
-                _slideClass="sas"
-                _slideClasses="sss"
            
                 pagination={{
                     clickable: true,

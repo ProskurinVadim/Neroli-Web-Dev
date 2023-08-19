@@ -227,7 +227,9 @@
 
 
     .navbar_search {
-
+        &:before {
+            display: none
+        }
         &:after {
             content: "";
             display: block;
@@ -242,6 +244,10 @@
 @include sm {
 
     .navbar_search {
+        &:before {
+            display: none
+        }
+
         &:after {
             content: "";
             display: block;
