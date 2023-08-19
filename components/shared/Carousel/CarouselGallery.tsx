@@ -110,7 +110,7 @@ const Carousel: React.FC<ICarousel> = ({ data, className, Item, GalleryItem, con
     return (
         <div className={`${styles.carousel} ${className}`}>
             <div className={styles.carousel_container} style={{ transform: `translateX(-${transition * (page - 1)}px` }}>
-                <div key={`carousel-item-1`}><Item {...gallery[0]} /></div>
+                <Item {...gallery[0]} />
                 <div className={`${galleryClassName}`} ref={galleryRef}>
                     {gallery.slice(1, 5).map((elem: any, i: number) => <GalleryItem {...elem} onClick={() => galleryOnClick(i, elem)} key={`gallery-item${i}`} />)}
                 </div>

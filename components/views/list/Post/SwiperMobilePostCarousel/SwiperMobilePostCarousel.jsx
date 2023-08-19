@@ -35,7 +35,6 @@ export default function SwiperMobilePostCarousel({data}) {
 
 
     const onUpdate = (e) => additionalSwiperRef.current.swiper.slideTo(e.activeIndex);
-    
 
     return (
         <>

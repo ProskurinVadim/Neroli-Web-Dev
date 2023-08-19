@@ -1,6 +1,10 @@
 @import "../../../../styles/varrible";
 @import "../../../../styles/mixin";
 
+.section_header {
+    text-align: left;
+}
+
 .post {
 
     &_image_item {
@@ -193,7 +197,7 @@
         }
 
         &_small_images {
-            width: 692px;
+            flex: 0 1 692px;
 
             img {
                 width: 306px;
@@ -241,10 +245,11 @@
         }
 
         &_small_images {
-            width: 652px;
+            flex: 0 1 652px;
 
             img {
-                width: 306px;
+                width: calc(50% - 40px);
+                max-width: 306px;
                 height: 230px;
                 margin: 0 0 40px 20px;
             }
@@ -440,7 +445,8 @@
 
 .postImg {
     position: relative;
-    width: 600px;
+    flex: 0 1 100%;
+    max-width: 652px;
     height: 495px;
 }
 
