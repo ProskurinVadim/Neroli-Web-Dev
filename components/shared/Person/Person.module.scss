@@ -148,6 +148,12 @@
         max-width: calc(100vw - 56px);
         margin-top: 40px;
 
+        @include mobile {
+            width: 100%;
+            max-width: 400px;
+            margin: 0;
+        }
+
 
         .person_description {
             width: 100%;

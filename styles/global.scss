@@ -310,3 +310,9 @@
 .postMainSwiper {
     overflow: hidden;
 }
+
+.reviewsSwiper .swiper-wrapper {
+    @media (min-width: 440px) and (max-width: 600px) {
+        gap: 40px;
+    }
+}
