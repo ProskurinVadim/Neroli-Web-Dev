@@ -38,9 +38,12 @@
     margin-top: 40px;
     height: 460px;
 
+
     @include mobile {
         height: 350px;
         margin-bottom: 8px;
+        overflow: hidden;
+        width: 100%;
     }
 
     @include sm {
