@@ -3,7 +3,12 @@
 	display: grid;
 	grid-template-columns: minmax(650px, 843px) minmax(350px, 461px);
 	gap: 40px;
-	grid-auto-rows: auto;
+	//grid-template-rows: 1fr;
+	//grid-auto-rows: auto;
+
+	& > div > li:first-child {
+		margin-bottom: 46px;
+	}
 }
 
 .latest_news_list {
@@ -79,5 +84,11 @@
 //}
 
 .button_wrapper {
+	margin-top: 40px;
 	text-align: center;
+}
+
+.card_link {
+	display: block;
+	height: 100%;
 }

@@ -14,7 +14,7 @@ interface ILatestNews {
 }
 const LatestNews: React.FC<ILatestNews> = ({ news }) => {
     const adaptive = useContext(AdaptiveContext);
-    console.log(adaptive)
+
     return (
         <section className="section__padding">
             <Container>
@@ -23,18 +23,18 @@ const LatestNews: React.FC<ILatestNews> = ({ news }) => {
                     <ul className={styles.latest_news_list_large}>
                         <div>
                             <li className={styles.latest_news_list_item}>
-                                <Link href={news[0].link} className="link_unset">
+                                <Link href={news[0].link} className={`link_unset ${styles.card_link}`}>
                                     <LongNewsCard {...news[0]} table={true} />
                                 </Link>
                             </li>
                             <li className={styles.latest_news_list_item}>
-                                <Link href={news[1].link} className="link_unset">
+                                <Link href={news[1].link} className={`link_unset ${styles.card_link}`}>
                                     <LongNewsCard {...news[1]} horizontal={adaptive === "desktop-large"} table={true} />
                                 </Link>
                             </li>
                         </div>
                         <li className={styles.latest_news_list_item}>
-                            <Link href={news[2].link} className="link_unset">
+                            <Link href={news[2].link} className={`link_unset ${styles.card_link}`}>
                                 <ShortNewsCard {...news[2]} table={true} />
                             </Link>
                         </li>
