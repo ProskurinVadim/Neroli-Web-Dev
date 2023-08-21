@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://neroli-web-dev.vercel.app/
+
+# Sitemaps
+Sitemap: https://neroli-web-dev.vercel.app/sitemap.xml
