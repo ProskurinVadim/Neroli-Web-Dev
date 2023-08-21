@@ -1,5 +1,5 @@
-const token = "527f761c97d1abd6c5d6e4e6fa4ec50451560a44c95e44598df61bcb836802e288e666c1af2cf0f95cedf7d05e498b7cc7ac9741d484c0cb21a373f18cb399389f90578aa40a627945a94f0bbc5d08a5dbb6251f3c55dbf920dd9a0dc6258caa92fd0e211aafa9aee45e1b58ea528f22dd7d1ec44b0cf60d6221bf985b009859";
-const baseURL = "https://neroli-admin.onrender.com/api";
+const token = process.env.NEXT_PUBLIC_TOKEN;
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 import { IItemQuery } from "./fetchTypes";
 
