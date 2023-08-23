@@ -26,7 +26,7 @@ interface IMark {
 }
 interface ISearch {
     onSubmit: (value: IForm) => void;
-    onDraw: (body: any) => void,
+    onDraw: (body: any, filters: any) => void,
     marks: IMark[]
 }
 
@@ -50,7 +50,8 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
     const fields: any = getFormData(setOpen, open);
 
     const handelOpen = () => setMapOpen((prev) => !prev);
-    const handelSubmit = (value: IForm, type: string | null) => type && onSubmit({ ...value, type })
+    const handelSubmit = (value: IForm, type: string | null) => type && onSubmit({ ...value, type });
+    const handelDraw = (data: any) => onDraw(data, { ...value, type });
     console.log(type)
     useEffect(() => {
         console.log("sa")
@@ -65,7 +66,7 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
                     <Button text="More Filters" onClick={handelOpen} className={`${buttonStyles.button__transparent} ${styles.button}`} />
                 </Form>
             </Container>
-            <DrawingMap visible={mapOpen} onDraw={onDraw} marks={marks} buttonsVisible={!modalOpen}>
+            <DrawingMap visible={mapOpen} onDraw={handelDraw} marks={marks} buttonsVisible={!modalOpen}>
                 {modalOpen && <InfoModal setOpen={setModalOpen} />}
             </DrawingMap>
         </section>

@@ -81,7 +81,8 @@ export const getAppartments = ({ type, price_min, price_max, property_type, buil
     return instance(`/items?populate=*${query}`,);
 }
 
-export const getMapAppartments = async (body: any,{ type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
+export const getMapAppartments = async (body: any, { type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
+    console.log(type,"type")
     let query = ""
     if (type) {
         query += `&filters[Category][$eq]=${type}`;

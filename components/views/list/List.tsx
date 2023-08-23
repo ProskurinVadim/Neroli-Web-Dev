@@ -30,8 +30,8 @@ const List = () => {
         const newData = await getAppartments(value);
         setData([...formatListData(newData.data)]);
     }
-    const draw = async (body: any,) => {
-        const newData = await getMapAppartments(body, {});
+    const draw = async (body: any, fields: any) => {
+        const newData = await getMapAppartments(body, fields);
         const newMarks = newData.map((elem: any) => ({ position: { lat: elem.Address.lat, lng: elem.Address.lng}}))
         setMarks([...newMarks])
         setData([...formatListMapData(newData)]);
