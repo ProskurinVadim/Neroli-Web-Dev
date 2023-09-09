@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
-import Link from 'next/link';
+
 import Container from "../../../../hoc/Container";
-import Toggler from "../../../common/Toggler";  
-import Carousel from "../../../shared/Carousel";
-import Card from "../../../shared/Card/AppartmentCard";
+import Toggler from "../../../common/Toggler";
 import SwiperNewBuildingCarousel from "./SwiperNewBuildingCarousel/SwiperNewBuildingCarousel";
-import { getCarouselData } from "./getData";
+
 import useItems from "../../../../hooks/useItems";
+
 import styles from "./NewBuildings.module.scss";
 
 const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
@@ -24,15 +23,7 @@ const NewBuildings = () => {
 
     const items = formatData(useItems());
     const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
-    const config = {
-        time: 5000,
-        itemsCount: 4,
-        pagination: {
-            withArrows: true,
-            maxPages: Math.ceil(filteredItems.length / 4),
-            numerical: false,
-        }
-    };
+
     return (
         <section className={`${styles.new_buildings} section__padding`}>
             <Container>
@@ -41,14 +32,6 @@ const NewBuildings = () => {
                 <div className={styles.sliderContainer}>
                     <SwiperNewBuildingCarousel data={filteredItems} />
                 </div>
-
-                {/*<Carousel config={config} data={filteredItems}*/}
-                {/*    Item={(props: any) =>*/}
-                {/*        <Link className="link_unset" href={`/list/${props.id}`}>*/}
-                {/*            <ListCard {...props} className={styles.card} />*/}
-                {/*        </Link>*/}
-                {/*    }*/}
-                {/*/>*/}
             </Container>
         </section>
     )

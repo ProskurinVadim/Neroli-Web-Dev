@@ -52,6 +52,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
             withArrows: true,
         }
     };
+
     const handelSubmit = (value: any) => {
         console.log(value);
     }
