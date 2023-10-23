@@ -27,6 +27,7 @@ const Map: React.FC<IMap> = ({ marks = [], polygons = [], children, center, cont
 
     const { isLoaded, loadError } = useJsApiLoader({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || "",
+        // googleMapsApiKey: "AIzaSyCi-xp2Ku7l7MOKc-ceg6d7L4BFtRm9MTY",
         libraries: ['drawing']
     });
 
