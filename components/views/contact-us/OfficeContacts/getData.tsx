@@ -43,11 +43,11 @@ export const getFormData = () => [
     {
         key: "subject",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
-            (<Select options={options} onChange={onChange} />)
+            (<Select options={options} />)
     },
     {
         key: "text",
-        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) =>
+        render: (value: string, onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void) =>
             (<textarea className={styles.textarea} value={value} onChange={onChange} placeholder="How can we help?">How can we help?</textarea>)
     }
 ]

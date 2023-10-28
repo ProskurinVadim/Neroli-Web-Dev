@@ -29,7 +29,7 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", button
         isValid && onSubmit(value);
     }
 
-    const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setValue((prev_value: any) => {
             const newValue = { ...prev_value };
             newValue[key] = e.target.value;
