@@ -1,4 +1,11 @@
 import {Input} from "../../../../components/common";
+import Select from 'react-select';
+
+const options = [
+    { value: 'Subject 1', label: 'Subject 1' },
+    { value: 'Subject 2', label: 'Subject 2' },
+    { value: 'Subject 3', label: 'Subject 3' }
+]
 
 export const containerStyle = {
     width: "100vw",
@@ -34,7 +41,7 @@ export const getFormData = () => [
     {
         key: "subject",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
-            (<select value={value} onChange={()=>{}} placeholder="Phone" error={error}></select>)
+            (<Select options={options} />)
     },
     {
         key: "adress",
