@@ -33,6 +33,12 @@
     }
 }
 
+.order {
+    @media (max-width: 778px) {
+        order: 2;
+    }
+}
+
 .contact_us {
 
     &_container {
@@ -43,6 +49,10 @@
         gap: 30px;
         margin-top: 40px;
         margin-bottom: 35px;
+
+        @media (max-width: 778px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &_form {
@@ -63,6 +73,10 @@
         padding: 40px;
         text-align: left;
         //position: absolute;
+
+        @media (max-width: 778px) {
+            order: 1;
+        }
 
         &_content {
             //padding-top: 10px;
@@ -144,9 +158,9 @@
             width: 90%;
         }
 
-        &_container {
-            display: flex;
-            justify-content: center;
-        }
+        //&_container {
+        //    display: flex;
+        //    justify-content: center;
+        //}
     }
 }

@@ -68,7 +68,7 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
 
     return (
         <Container className={styles.contact_us_container}>
-            <div>
+            <div className={styles.order}>
                 <div className={styles.contact_us_form}>
                     <h2 className={`section_header ${styles.section_header}`}>Get in touch</h2>
                     <p className={`${styles.form_text} medium_text`}>Complete the form below, and your message will be promptly delivered to the appropriate Neroli Properties staff member who will contact you in the next 24 hours.</p>
