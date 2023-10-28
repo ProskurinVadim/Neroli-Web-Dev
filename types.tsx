@@ -14,7 +14,7 @@ interface ICondition {
 
 interface IFormFields {
     key: string,
-    render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error?: string) => React.Component<any, any>
+    render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void, error?: string) => React.Component<any, any>
 }
 
 interface IIcon {

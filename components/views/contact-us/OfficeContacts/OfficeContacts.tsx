@@ -22,7 +22,7 @@ interface IForm {
     email: string,
     phone: string,
     subject: string,
-    adress: string,
+    text: string,
 }
 
 const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
@@ -63,18 +63,23 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
         {icon}
     </Link>);
 
-
     return (
         <Container className={styles.contact_us_container}>
-            <div className={styles.contact_us_form}>
-                <h2 className={`section_header ${styles.section_header}`}>Get in touch</h2>
-                <p className={`${styles.form_text} medium_text`}>Complete the form below, and your message will be promptly delivered to the appropriate Neroli Properties staff member who will contact you in the next 24 hours.</p>
-                <p className={`${styles.form_text} medium_text`}>If you require immediate assistance, please don't hesitate to call us on +971 58 52 333 52.</p>
+            <div>
+                <div className={styles.contact_us_form}>
+                    <h2 className={`section_header ${styles.section_header}`}>Get in touch</h2>
+                    <p className={`${styles.form_text} medium_text`}>Complete the form below, and your message will be promptly delivered to the appropriate Neroli Properties staff member who will contact you in the next 24 hours.</p>
+                    <p className={`${styles.form_text} medium_text`}>If you require immediate assistance, please don't hesitate to call us on +971 58 52 333 52.</p>
 
-                <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} validate={validate} buttonText="Submit enquiry">
-                    <></>
-                </Form>
+                    <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} validate={validate} buttonText="Submit enquiry">
+                        <></>
+                    </Form>
+                </div>
+                <div className={styles.fast_contact}>
+                    <p className={styles.fast_contact_question}>Need immediate assistance?</p>
+                </div>
             </div>
+
             <div className={styles.contact_us_info}>
                 <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
                 <div className={`${styles.contact_us_info_content}`}>
@@ -90,6 +95,7 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                 </div>
                 <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Our team</Link>
             </div>
+
         </Container>
     )
 }

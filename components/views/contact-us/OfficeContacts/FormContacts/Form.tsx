@@ -29,27 +29,29 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", button
         isValid && onSubmit(value);
     }
 
-    const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setValue((prev_value: any) => {
             const newValue = { ...prev_value };
             newValue[key] = e.target.value;
             return { ...newValue }
         })
     }
-
+    // console.log(fields)
     return (
         <form className={`${styles.form} ${className}`} onSubmit={(e => e.preventDefault())}>
-                {
-                    fields.map((elem: IFormFields, i: number) => {
-                        const result = elem.render(value[elem.key], handelChange(elem.key), error[i]);
-                        // console.log(result)
-                        return result;
-                        // return <></>
-                       // elem.render(value[elem.key], handelChange(elem.key), error[i])
-                    })
-                }
-            <Button className={`${buttonClassName} ${styles.button}`} onClick={handelSubmit} text={buttonText}/>
-            <>{children}</>
+            <>
+                    {
+                        fields.map((elem: IFormFields, i: number) => {
+                            const result = elem.render(value[elem.key], handelChange(elem.key), error[i]);
+                            console.log(result);
+                            return result;
+                        })
+                    }
+
+
+                <Button className={`${buttonClassName} ${styles.button}`} onClick={handelSubmit} text={buttonText}/>
+                <>{children}</>
+            </>
         </form>
     )
 }

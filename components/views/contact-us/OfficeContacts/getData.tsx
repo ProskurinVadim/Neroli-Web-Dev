@@ -1,6 +1,8 @@
 import {Input} from "../../../../components/common";
 import Select from 'react-select';
 
+import styles from "./FormContacts/Form.module.scss";
+
 const options = [
     { value: 'Subject 1', label: 'Subject 1' },
     { value: 'Subject 2', label: 'Subject 2' },
@@ -41,12 +43,12 @@ export const getFormData = () => [
     {
         key: "subject",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
-            (<Select options={options} />)
+            (<Select options={options} onChange={onChange} />)
     },
     {
-        key: "adress",
-        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onChange={onChange} placeholder="Property Address" />)
+        key: "text",
+        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) =>
+            (<textarea className={styles.textarea} value={value} onChange={onChange} placeholder="How can we help?">How can we help?</textarea>)
     }
 ]
 
@@ -55,5 +57,5 @@ export const defaultData = {
     email: "",
     phone: "",
     subject: "",
-    adress: "",
+    text: "",
 }
