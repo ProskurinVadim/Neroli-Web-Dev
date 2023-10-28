@@ -6,6 +6,8 @@ import Container from "../../../../hoc/Container";
 import { buttonStyles } from "../../../common/Button/Button";
 import { CommercialAt, MarkSmal, PhoneColored, Facebook, Instagram, Whatsapp } from "../../../icons";
 import Link from 'next/link';
+import {WhatsappUnfill, Phone} from "../../../icons";
+import Button from "../../../common/Button/Button";
 import styles from "./OfficeContacts.module.scss";
 import Map from "../../../shared/Map";
 import Marker from "./Marker.svg";
@@ -78,6 +80,10 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                 </div>
                 <div className={styles.fast_contact}>
                     <p className={styles.fast_contact_question}>Need immediate assistance?</p>
+                    <div className={styles.fast_contact_buttons}>
+                        <Link target="_blank" href="https://wa.me/38932843264"><Button onClick={()=> {}} text={<><WhatsappUnfill /> Whatsapp</>} className={buttonStyles.button__whatsapp} /></Link>
+                        <Link target="_blank" href={`tel:+971585233352`}><Button onClick={()=> {}} className={buttonStyles.button__recall} text={<><Phone /> Call us</>} /></Link>
+                    </div>
                 </div>
             </div>
 
