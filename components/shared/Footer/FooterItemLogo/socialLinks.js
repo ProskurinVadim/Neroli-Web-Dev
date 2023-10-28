@@ -14,7 +14,7 @@ const socialLinks = [
     {
         id: "3",
         icon: <Linkedin />,
-        link: ""
+        link: "#"
     },
     {
         id: "4",
@@ -24,7 +24,7 @@ const socialLinks = [
     {
         id: "5",
         icon: <Twitter />,
-        link: "https://wa.me/message/UOVF673LBPCKO1"
+        link: ""
     },
     {
         id: "6",

@@ -11,7 +11,9 @@ interface IApartment {
 
 const Apartment: React.FC<IApartment> = async ({ params }) => {
     const post: any =  await getAppartment(params.id);
-    const agent: any = await getAggent(post.data.attributes.Agent.data.id);
+    console.log(post.data.attributes.Agent)
+    // const agent: any = await getAggent(post.data.attributes.Agent.data.id);
+    const agent = post.data.attributes.Agent;
 
     return (
         <>

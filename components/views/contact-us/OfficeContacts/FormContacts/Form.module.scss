@@ -1,0 +1,287 @@
+
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    //flex-direction: column;
+    //width: 306px;
+    box-sizing: border-box;
+
+    &_text {
+        color: $color-form-text;
+        margin-top: 16px;
+        //width: 280px;
+        @include medium-text;
+        text-align: center;
+    }
+
+    .form_inline {
+        flex-direction: row;
+        background: $color-light;
+        border-radius: 100px;
+    }
+
+    &__card {
+        border-radius: 24px 0px 0px 24px;
+        border: 1px solid #E5E5E5;
+        background: $color-light;
+        box-shadow: 0px 20px 40px rgba(192, 135, 22, 0.08);
+        border-radius: 24px 0px 0px 24px;
+        align-items: center;
+        justify-content: space-between;
+        width: 421px;
+
+        input {
+            box-shadow: none;
+        }
+    }
+
+    &__search {
+        margin: auto;
+        background: $color-light;
+        padding: 4px;
+
+        .button {
+            width: auto;
+            margin: 0;
+        }
+    }
+
+    &__search_large {
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-top: 31px;
+
+        .search_large_container {
+            margin-right: 16px;
+            box-shadow: none;
+            width: fit-content;
+        }
+
+        .search_large_input {
+            margin: 0;
+            box-shadow: none;
+            width: min-content;
+        }
+
+        p {
+            bottom: -5px;
+            left: 12px;
+        }
+
+
+        .search_large_select {
+            box-shadow: none;
+            margin: 0 16px 0 0;
+
+            p {
+                white-space: nowrap;
+                overflow: hidden;
+                width: 100%
+            }
+
+            svg {
+                padding-left: 12px;
+            }
+        }
+
+        .button {
+            margin-top: 0px;
+        }
+    }
+}
+
+
+@include xl {
+
+    .form {
+        .button {
+            //width: 100%;
+        }
+    }
+
+    .form__search {
+        width: 573px;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+            width: 125px;
+        }
+    }
+
+    .form__card {
+        margin: 52px 0 0 auto;
+        padding: 40px;
+
+        input {
+            max-width: 341px;
+        }
+    }
+
+    .form__search_large {
+        .button {
+            width: max-content;
+        }
+    }
+}
+
+@include lg {
+
+    .form {
+        .button {
+            //width: 100%;
+        }
+    }
+
+    .form__search {
+        width: 573px;
+        border-radius: 100px;
+        flex-direction: row;
+
+        .button {
+            border-radius: 0px 100px 100px 0px;
+            width: 125px;
+        }
+    }
+
+    .form__card {
+        margin: 52px 0 0 auto;
+        padding: 40px;
+
+        input {
+            max-width: 341px;
+        }
+    }
+
+    .form__search_large {
+        .button {
+            width: max-content;
+        }
+    }
+}
+
+@include md {
+    .form__search {
+        flex-direction: column;
+        max-width: 306px;
+        border-radius: 0;
+
+        .button {
+            border-radius: 0;
+        }
+    }
+
+    .form {
+        margin: 0 auto;
+        max-width: 860px;
+
+        .button {
+            width: 100%;
+        }
+    }
+
+    .form__card {
+        margin: 0 auto;
+        padding: 28px;
+        border-top: 0;
+        border-radius: 0px 0px 16px 16px;
+
+        input {
+            max-width: 316px;
+        }
+    }
+
+    .form__search_large {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .search_large_container {
+            margin-bottom: 16px;
+
+            .search_large_input {
+                width: 100%;
+            }
+        }
+
+        .search_large_select {
+            margin: 0 0 16px 0;
+        }
+
+        .button {
+            width: max-content;
+        }
+    }
+}
+
+@include sm {
+    .form__search {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 14px;
+
+        div {
+            input {
+                border-radius: unset;
+            }
+
+
+            &:first-child {
+
+                input {
+                    border-radius: 10px 10px 0px 0px;
+                    margin-bottom: -1px;
+                }
+            }
+        }
+
+        .button {
+            border-radius: 0px 0px 10px 10px; 
+        }
+    }
+
+    .form {
+        width: 100%;
+
+        .button {
+            width: 100%;
+        }
+    }
+
+    .form__card {
+        margin: 0 auto;
+        border-radius: unset;
+        box-shadow: unset;
+        padding: 28px;
+        border-radius: 0px 0px 16px 16px;
+
+        input {
+            max-width: 316px;
+        }
+    }
+
+    .form__search_large {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .search_large_container {
+            margin: 0 0 16px 0;
+            width: 100%;
+
+            .search_large_input {
+                width: 100%;
+            }
+        }
+
+        .search_large_select {
+            margin: 0 0 16px 0;
+        }
+
+        .button {
+            width: fit-content;
+        }
+    }
+}

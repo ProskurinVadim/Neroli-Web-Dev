@@ -21,7 +21,8 @@ import { Navigation } from 'swiper/modules';
 
 export default function SwiperStreetViewCarousel({data}) {
 
-    const elements = data.map(item => <SwiperSlide key={nanoid()}><div className={styles.street_view_image_container}><Image fill={true} src={item.src} alt="street view image" className={styles.street_view_image} /></div></SwiperSlide>)
+    const elements = data.map(item => <SwiperSlide key={nanoid()}><div className={styles.street_view_image_container}><Image fill={true} src={item.src} alt="street view image" className={styles.street_view_image} /></div></SwiperSlide>);
+    console.log(data)
     return (
         <>
             <Swiper

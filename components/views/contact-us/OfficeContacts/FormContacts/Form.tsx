@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Form.module.scss";
-import Button, { buttonStyles } from "../../common/Button/Button";
-import { IFormFields } from "../../../types";
-import { isEmptyArr } from "../../../utils/validation";
+import Button, { buttonStyles } from "../../../../../components/common/Button/Button";
+import { IFormFields } from "../../../../../types";
+import { isEmptyArr } from "../../../../../utils/validation";
 interface IForm {
     onSubmit: (data: any) => void,
     buttonText?: string,
@@ -42,8 +42,11 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", button
             <>
                 {
                     fields.map((elem: IFormFields, i: number) => {
-                        const result = elem.render(value[elem.key], handelChange(elem.key),error[i]);
+                        const result = elem.render(value[elem.key], handelChange(elem.key), error[i]);
+                        // console.log(result)
                         return result;
+                        // return <></>
+                       // elem.render(value[elem.key], handelChange(elem.key), error[i])
                     })
                 }
             </>

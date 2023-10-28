@@ -112,12 +112,12 @@ export const formatPostData = (post: any, agent: any)  => ({
         },
         header: post.attributes.Title,
         beds: post.attributes.Bedrooms,
-        baths: post.attributes.Bathrooms.split(" ")[1],
+        baths: post.attributes.Bathrooms?.split(" ")[1] || null,
         size: post.attributes.Square,
     },
 
     person: {
-        image: agent.attributes.Photo.data ? agent.attributes.Photo.data.attributes.url :  defaultAgentImage.src,
+        image: agent.attributes.Photo?.data ? agent.attributes.Photo.data.attributes.url :  defaultAgentImage.src,
         name: agent.attributes.FullName,
         job: agent.attributes.Category || "",
         whatsapp: agent.attributes.WhatsApp,

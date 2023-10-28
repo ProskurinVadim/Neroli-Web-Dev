@@ -1,5 +1,7 @@
 import OfficeMap from "./OfficeMap";
+import OfficeContacts from "./OfficeContacts";
 
 export {
-    OfficeMap
+    OfficeMap,
+    OfficeContacts,
 }
