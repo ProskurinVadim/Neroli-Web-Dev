@@ -1,12 +1,24 @@
 
-
-.form {
+.fields {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    & textarea {
+        grid-column: span 2;
+    }
+}
+
+.form {
     //flex-direction: column;
     //width: 306px;
     box-sizing: border-box;
+
+    & input {
+        box-shadow: none;
+    }
+
+
 
     &_text {
         color: $color-form-text;

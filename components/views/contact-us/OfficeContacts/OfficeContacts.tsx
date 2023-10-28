@@ -65,32 +65,32 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
 
 
     return (
-            <Container className={styles.contact_us_container}>
-                <div className={styles.contact_us_form}>
-                    <h2 className={`section_header ${styles.section_header}`}>Get in touch</h2>
-                    <p className={`${styles.form_text} medium_text`}>Complete the form below, and your message will be promptly delivered to the appropriate Neroli Properties staff member who will contact you in the next 24 hours.</p>
-                    <p className={`${styles.form_text} medium_text`}>If you require immediate assistance, please don't hesitate to call us on +971 58 52 333 52.</p>
+        <Container className={styles.contact_us_container}>
+            <div className={styles.contact_us_form}>
+                <h2 className={`section_header ${styles.section_header}`}>Get in touch</h2>
+                <p className={`${styles.form_text} medium_text`}>Complete the form below, and your message will be promptly delivered to the appropriate Neroli Properties staff member who will contact you in the next 24 hours.</p>
+                <p className={`${styles.form_text} medium_text`}>If you require immediate assistance, please don't hesitate to call us on +971 58 52 333 52.</p>
 
-                    <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} validate={validate} buttonText="Submit enquiry">
-                        <></>
-                    </Form>
+                <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} validate={validate} buttonText="Submit enquiry">
+                    <></>
+                </Form>
+            </div>
+            <div className={styles.contact_us_info}>
+                <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
+                <div className={`${styles.contact_us_info_content}`}>
+                    <p className={`${styles.contact_us_info_text} medium_text`}><CommercialAt />{email}</p>
+                    <p className={`${styles.contact_us_info_text} medium_text icon_fill`}><PhoneColored />{phone}</p>
+                    <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
                 </div>
-                <div className={styles.contact_us_info}>
-                    <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
-                    <div className={`${styles.contact_us_info_content}`}>
-                        <p className={`${styles.contact_us_info_text} medium_text`}><CommercialAt />{email}</p>
-                        <p className={`${styles.contact_us_info_text} medium_text icon_fill`}><PhoneColored />{phone}</p>
-                        <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
-                    </div>
-                    <div className={styles.contact_us_social_links}>
-                        {socialLinkElements}
-                        {/*<span className="icon__hover"><Facebook /></span>*/}
-                        {/*<span className="icon__hover"><Instagram /></span>*/}
-                        {/*<span className="icon__hover"><Whatsapp /></span>*/}
-                    </div>
-                    <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Our team</Link>
+                <div className={styles.contact_us_social_links}>
+                    {socialLinkElements}
+                    {/*<span className="icon__hover"><Facebook /></span>*/}
+                    {/*<span className="icon__hover"><Instagram /></span>*/}
+                    {/*<span className="icon__hover"><Whatsapp /></span>*/}
                 </div>
-            </Container>
+                <Link href="/our-team" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Our team</Link>
+            </div>
+        </Container>
     )
 }
 

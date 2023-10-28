@@ -39,7 +39,6 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", button
 
     return (
         <form className={`${styles.form} ${className}`} onSubmit={(e => e.preventDefault())}>
-            <>
                 {
                     fields.map((elem: IFormFields, i: number) => {
                         const result = elem.render(value[elem.key], handelChange(elem.key), error[i]);
@@ -49,7 +48,6 @@ const Form: React.FC<IForm> = ({ onSubmit, fields, value, className = "", button
                        // elem.render(value[elem.key], handelChange(elem.key), error[i])
                     })
                 }
-            </>
             <Button className={`${buttonClassName} ${styles.button}`} onClick={handelSubmit} text={buttonText}/>
             <>{children}</>
         </form>
