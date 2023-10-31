@@ -1,5 +1,6 @@
 import { Comments, ContactForm } from "../../components/views/shared/";
-import { OfficeMap } from "../../components/views/contact-us";
+// import { OfficeMap } from "../../components/views/contact-us";
+import { OfficeContacts} from "../../components/views/contact-us";
 import { getContactUs } from "@/utils/fetch";
 
 export const revalidate = 60;
@@ -10,8 +11,9 @@ export const revalidate = 60;
 
     return (
         <>
-            <OfficeMap {...contacts.data.attributes} />
-            <Comments />
+            <OfficeContacts {...contacts.data.attributes} />
+            {/*<OfficeMap {...contacts.data.attributes} />*/}
+            {/*<Comments />*/}
             <ContactForm />
         </>
     )
