@@ -64,8 +64,8 @@ export const formatAgentsData = (data: ITeamsData[]) => data.map(({ attributes }
 }))
 
 export const formatListData = (data: any[]) => data.map(({ id, attributes }) => ({
-    adress: attributes.Address.description, 
-    image: attributes.Photos.data[0].attributes.formats.small.url,
+    adress: attributes.Address?.description, 
+    image: attributes.Photos.data?.length ? attributes.Photos.data[0].attributes.formats.small.url : [],
     header: attributes.Title,
     category: attributes.Category,
     description: attributes.ShortDescription,
@@ -112,7 +112,7 @@ export const formatPostData = (post: any, agent: any)  => ({
         },
         header: post.attributes.Title,
         beds: post.attributes.Bedrooms,
-        baths: post.attributes.Bathrooms.split(" ")[1],
+        baths: post.attributes.Bathrooms ? post.attributes.Bathrooms.split(" ")[1] : null,
         size: post.attributes.Square,
     },
 

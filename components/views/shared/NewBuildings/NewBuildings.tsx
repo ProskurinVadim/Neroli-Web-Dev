@@ -11,8 +11,8 @@ import useItems from "../../../../hooks/useItems";
 import styles from "./NewBuildings.module.scss";
 
 const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
-    adress: attributes.Address.description, //code -> adress
-    image: attributes.Photos.data[0].attributes.formats.medium.url,
+    adress: attributes.Address?.description, //code -> adress
+    image: attributes.Photos.data?.length ? attributes.Photos.data[0].attributes.formats.medium.url : [],
     header: attributes.Title,
     category: attributes.Category,
     id,
@@ -22,7 +22,7 @@ const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);
 
-    const items = formatData(useItems());
+    const items = formatData(useItems()).slice(0, 4);
     const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
     const config = {
         time: 5000,
