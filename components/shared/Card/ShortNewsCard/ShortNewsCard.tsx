@@ -6,7 +6,7 @@ import Link from "next/link";
 const ShortNewsCard: React.FC<INewsCard> = ({ horizontal = false, table = false, ...props }) => {
 
     return (
-        <div className={`${styles.card} ${styles.news_card}  ${horizontal ? styles.card__horizontal : ""}`}>
+        <div className={`${styles.card} ${horizontal ? styles.card__horizontal : ""}`}>
             <div className={`${styles.card_image_wrapper} ${horizontal ? styles.card_image_wrapper_horizontal : ""}`}>
                 <Image alt={props.header} fill={true} src={props.image} className={styles.card_image} />
             </div>

@@ -92,10 +92,10 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                 <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
                 <div className={`${styles.contact_us_info_content}`}>
                     <p className={`${styles.contact_us_info_text} medium_text`}>
-                        <Link href={`mailto: ${email}`}><CommercialAt />{email}</Link>
+                        <Link href={`mailto: ${email}`}><CommercialAt /><span>{email}</span></Link>
                     </p>
                     <p className={`${styles.contact_us_info_text} medium_text icon_fill`}>
-                        <Link href={`tel: ${phone}`}><PhoneColored />{phone}</Link>
+                        <Link href={`tel: ${phone}`}><PhoneColored /><span>{phone}</span></Link>
                     </p>
                     <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
                 </div>

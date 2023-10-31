@@ -24,7 +24,7 @@ const FAQ: React.FC<IFAQ> = ({ faq }) => {
                 <ul className={styles.faq_list}>
                     {faq.map((elem, i) => <FAQItem {...elem.attributes} key={`faq-item-${i}`}active={active.includes(i)} setActive={()=>handelSetActive(i)} />)}
                 </ul>
-                <p className={styles.contact_us_text}>Any questions? Contact us and we&#39;ll help!</p>
+                <p className={styles.contact_us_text}>Any questions? <br />Contact us and we&#39;ll help!</p>
                 <div className={styles.button_wrapper}>
                     <Link href="/contact-us" className={`${buttonStyles.button} ${buttonStyles.button__link} ${styles.button}`}>Contact us</Link>
                 </div>

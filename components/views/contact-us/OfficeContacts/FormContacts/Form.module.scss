@@ -29,6 +29,10 @@
     @media (max-width: 480px) {
         display: block;
 
+        & > div[class^="Input"] {
+            margin-bottom: 16px;
+        }
+
         & textarea {
             margin-top: 15px;
         }
@@ -47,6 +51,7 @@
     & div[class^="Select"] {
         margin: 0;
         width: 100%;
+        max-width: 100%;
 
         & p {
             width: 100%;

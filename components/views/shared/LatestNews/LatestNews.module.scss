@@ -3,7 +3,15 @@
 	display: grid;
 	grid-template-columns: minmax(650px, 843px) minmax(350px, 461px);
 	gap: 40px;
-	grid-auto-rows: auto;
+	//grid-auto-rows: auto;
+
+	& .link {
+		text-decoration: none;
+
+		& > div {
+			height: calc(100% - 46px);
+		}
+	}
 }
 
 .latest_news_list {

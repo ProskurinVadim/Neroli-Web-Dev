@@ -27,20 +27,45 @@
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+        padding: 28px;
+    }
+
     &_buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+
+        @media (max-width: 480px) {
+            width: 100%;
+            grid-template-columns: 1fr;
+            gap: 16px;
+
+            & button {
+                width: 100%;
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+        }
     }
 
     & a {
         text-decoration: none;
+
+        @media (max-width: 480px) {
+            width: 100%;
+        }
     }
 
     &_question {
         font-weight: bold;
         font-size: 16px;
         font-family: "Montserrat";
+
+        @media (max-width: 480px) {
+            margin-bottom: 28px;
+        }
     }
 }
 
@@ -64,6 +89,12 @@
         @media (max-width: 1024px) {
             grid-template-columns: 1fr;
             //justify-content: center;
+            justify-items: center;
+            gap: 28px;
+        }
+
+        @media (max-width: 480px) {
+            margin-top: 28px;
         }
     }
 
@@ -75,6 +106,11 @@
         padding: 40px;
         text-align: left;
         margin-bottom: 40px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 28px;
+            padding: 28px;
+        }
     }
 
     &_info {
@@ -90,6 +126,13 @@
             order: 1;
             max-width: 460px;
             align-self: center;
+            //margin-top: 28px;
+        }
+
+        @media (max-width: 480px) {
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         &_content {
@@ -99,11 +142,19 @@
         &_text {
             margin-top: 16px;
             display: flex;
+            align-items: center;
 
             a {
                 text-decoration: none;
                 color: #3B4248;
                 transition: 0.5s;
+                display: flex;
+                align-items: center;
+
+                & span {
+                    position: relative;
+                    left: -2px;
+                }
 
                 &:hover {
                     color: #DDDE70;
@@ -179,9 +230,9 @@
 @include sl {
     .contact_us {
         &_info {
-            margin: 28px auto 0;
+            //margin: 28px auto 0;
             padding: 28px;
-            width: 90%;
+            //width: 90%;
         }
 
         //&_container {

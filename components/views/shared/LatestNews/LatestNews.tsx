@@ -14,7 +14,7 @@ interface ILatestNews {
 }
 const LatestNews: React.FC<ILatestNews> = ({ news }) => {
     const adaptive = useContext(AdaptiveContext);
-    console.log(adaptive)
+
     return (
         <section className="section__padding">
             <Container>
@@ -33,11 +33,11 @@ const LatestNews: React.FC<ILatestNews> = ({ news }) => {
                                 </Link>
                             </li>
                         </div>
-                        <li className={styles.latest_news_list_item}>
-                            <Link href={news[2].link} className="link_unset">
+                        {/*<li className={styles.latest_news_list_item}>*/}
+                            <Link href={news[2].link} className={`link_unset ${styles.link}`}>
                                 <ShortNewsCard {...news[2]} table={true} />
                             </Link>
-                        </li>
+                        {/*</li>*/}
                     </ul>
                 )}
                 {adaptive === "tablet" && (
