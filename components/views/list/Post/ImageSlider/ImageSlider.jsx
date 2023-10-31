@@ -18,6 +18,8 @@ const ImageSlider = ({initialSlide, items}) => {
             }}
             navigation={true}
             initialSlide={initialSlide}
+            slidesPerView={1}
+            spaceBetween={60}
             modules={[Navigation, Pagination]}
             className="imagesSwiper">
                 {elements}
