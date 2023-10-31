@@ -1,12 +1,13 @@
-import {Input} from "../../../../components/common";
-import Select from 'react-select';
+import {Input, Select} from "../../../../components/common";
+// import Select from 'react-select';
 
 import styles from "./FormContacts/Form.module.scss";
+import {formStyles} from "@/components/shared/Form/Form";
 
 const options = [
-    { value: 'Subject 1', label: 'Subject 1' },
-    { value: 'Subject 2', label: 'Subject 2' },
-    { value: 'Subject 3', label: 'Subject 3' }
+    { value: 'Subject 1', name: 'Subject 1' },
+    { value: 'Subject 2', name: 'Subject 2' },
+    { value: 'Subject 3', name: 'Subject 3' }
 ]
 
 export const containerStyle = {
@@ -24,7 +25,7 @@ export const defaultCenter = {
     lng: 55.1712800,
 }
 
-export const getFormData = () => [
+export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
     {
         key: "name",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
@@ -42,8 +43,9 @@ export const getFormData = () => [
     },
     {
         key: "subject",
-        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
-            (<Select options={options} />)
+        render: (value: string, onChange: (newValue: string) => void, error: string) =>
+            (<Select value={value} onChange={onChange} open={open === "subject"} options={options} setOpen={setOpen} defaultValue="Subject 1" />)
+
     },
     {
         key: "text",

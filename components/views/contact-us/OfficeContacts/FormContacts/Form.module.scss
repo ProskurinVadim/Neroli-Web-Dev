@@ -44,6 +44,15 @@
     //width: 306px;
     box-sizing: border-box;
 
+    & div[class^="Select"] {
+        margin: 0;
+        width: 100%;
+
+        & p {
+            width: 100%;
+        }
+    }
+
     & input {
         box-shadow: none;
         max-width: 100%;

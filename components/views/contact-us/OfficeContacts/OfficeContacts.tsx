@@ -29,8 +29,9 @@ interface IForm {
 }
 
 const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
+    const [open, setOpen] = useState<boolean | string>(false);
     const [value, setValue] = useState<IForm>({ ...defaultData})
-    const fields: any = getFormData();
+    const fields: any = getFormData(setOpen, open);
     const handelSubmit = () => console.log("Enquire", value);
 
     const { push } = useRouter();
@@ -57,10 +58,10 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
         }
     }
 
-    const adaptive = useContext(AdaptiveContext);
-    const center = adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter;
-    const marks = adaptive !== "mobile" ? [{ position: { ...defaultCenter, lng: defaultCenter.lng - 0.015 } }]
-        : [{ position: defaultCenter }];
+    // const adaptive = useContext(AdaptiveContext);
+    // const center = adaptive === "mobile" ? { ...defaultCenter, lat: defaultCenter.lat + 0.007 } : defaultCenter;
+    // const marks = adaptive !== "mobile" ? [{ position: { ...defaultCenter, lng: defaultCenter.lng - 0.015 } }]
+    //     : [{ position: defaultCenter }];
 
     const socialLinkElements = socialLinks.map(({id, icon, link}) => <Link key={id} target="_blank" href={link} className="icon__hover">
         {icon}

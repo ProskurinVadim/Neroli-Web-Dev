@@ -51,13 +51,13 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
 
     const handelOpen = () => setMapOpen((prev) => !prev);
     const handelSubmit = (value: IForm, type: string | null) => type && onSubmit({ ...value, type })
-    console.log(type)
+
     useEffect(() => {
-        console.log("sa")
         const initialData = { ...getDefaultData(property_type, building, price_min, beds) };
         setValue(initialData)
         handelSubmit(initialData, type)
-    }, [type])
+    }, [type]);
+
     return (
         <section>
             <Container className={containerStyles.container__overflow_initial}>
