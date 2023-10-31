@@ -61,7 +61,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
                 <h2 className={`section_header`}> {information.header}</h2>
-                {adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <ImagesList items={carousel.slice(0, 5)} />}
+                {adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <ImagesList items={carousel} />}
                 {/*{adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <CarouselGallery*/}
                 {/*    config={config}*/}
                 {/*    data={carousel}*/}

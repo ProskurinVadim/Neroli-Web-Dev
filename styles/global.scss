@@ -340,3 +340,11 @@
         //bottom: -20px !important;
     }
 }
+
+.imagesSwiper {
+    &.swiper {
+        margin: 30px 0;
+        width: 50vw;
+        overflow: clip;
+    }
+}

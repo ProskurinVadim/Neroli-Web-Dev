@@ -1,0 +1,12 @@
+.imgWrapper {
+  position: relative;
+  height: 492px;
+  width: 100%;
+}
+
+.img {
+  border-radius: 24px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}

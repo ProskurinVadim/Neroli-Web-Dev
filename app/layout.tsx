@@ -16,6 +16,7 @@ const RootLayout: React.FC<IChildren> =  ({ children }) => {
             <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat&display=swap" rel="stylesheet" />
             <body className="body">
+                <div id="modal-root" />
                 <div id="portal" />
                 <ItemsProvider>
                     <AdaptiveProvider>
