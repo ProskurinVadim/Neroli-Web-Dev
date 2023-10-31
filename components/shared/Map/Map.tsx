@@ -26,7 +26,7 @@ interface IMap {
 const Map: React.FC<IMap> = ({ marks = [], polygons = [], children, center, containerStyle, markerIcon = MarkerIcon  }) => {
 
     const { isLoaded, loadError } = useJsApiLoader({
-        googleMapsApiKey: "AIzaSyCnY6J1ah-UU2LvjM5g2RuGZkrbJ-blekU",
+        googleMapsApiKey: "AIzaSyCi-xp2Ku7l7MOKc-ceg6d7L4BFtRm9MTY",
         libraries: ['drawing']
     });
 
