@@ -1,5 +1,6 @@
 .section {
   height: 430px;
+  padding-bottom: 32px;
 }
 
 .container {
@@ -14,6 +15,13 @@
   position: absolute;
   left: 20%;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    width: calc(100% - 56px);
+    margin: 0 auto;
+    position: static;
+    margin-top: 40px;
+  }
 }
 .swiper_slide {
     width: fit-content !important;

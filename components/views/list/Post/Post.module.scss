@@ -3,6 +3,10 @@
 
 .post {
 
+    h2 {
+        text-align: left;
+    }
+
     &_image_item {
         display: flex;
         justify-content: space-between;
@@ -448,6 +452,10 @@
     height: 350px;
     position: relative;
     z-index: 100;
+
+    @media (max-width: 480px) {
+        margin-bottom: 30px;
+    }
 }
 
 .street_view_image_container {

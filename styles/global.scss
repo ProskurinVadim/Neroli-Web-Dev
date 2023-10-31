@@ -206,6 +206,17 @@
 }
 
 .reviewsSwiper {
+    .swiper-pagination {
+        bottom: 30px !important;
+        left: calc(-20% + 48px) !important;
+
+        @media (max-width: 480px) {
+            bottom: 50px !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+        }
+    }
+
     & .swiper-button-prev {
         left: 0px;
     }
@@ -269,7 +280,9 @@
 }
 
 .newBuildingSwiper {
-
+    &.swiper {
+        overflow: clip;
+    }
     & .swiper-button-prev {
         left: 50%;
         transform: translateX(-55px);
@@ -304,5 +317,16 @@
     .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
         opacity: 1;
         cursor: pointer;
+    }
+}
+
+.streetViewSwiper {
+    &.swiper {
+        overflow: clip;
+        padding-bottom: 40px;
+    }
+
+    & .swiper-pagination {
+        //bottom: -20px !important;
     }
 }

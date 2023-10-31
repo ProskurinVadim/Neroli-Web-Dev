@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from 'next/link';
 import Container from "../../../../hoc/Container";
 import Toggler from "../../../common/Toggler";  
@@ -18,6 +18,17 @@ const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     id,
 }))
 
+const getToggleButtonsText = (items: Array<any>) => {
+    const arr = [];
+    if(items.find(({category}) => (category === "Residential" || category === "Commercial"))) {
+        arr.push("For sale")
+    }
+    if(items.find(({category}) => category === "Off-plan")) {
+        arr.push("Off-Plan")
+    }
+    return arr;
+}
+
 const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);
@@ -33,11 +44,14 @@ const NewBuildings = () => {
             numerical: false,
         }
     };
+
+    const toggleButtonsText = useMemo(()=> getToggleButtonsText(items), [items]);
+
     return (
         <section className={`${styles.new_buildings} section__padding`}>
             <Container>
                 <h2 className="section_header">New this week</h2>
-                <Toggler array={["For sale", "Off-Plan"]} active={active} setActive={handelSetActive} className={styles.toggler} />
+                <Toggler array={toggleButtonsText} active={active} setActive={handelSetActive} className={styles.toggler} />
                 <div className={styles.sliderContainer}>
                     <SwiperNewBuildingCarousel data={filteredItems} />
                 </div>

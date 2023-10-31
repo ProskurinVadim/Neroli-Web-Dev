@@ -1,6 +1,7 @@
 @import "../../../../styles/varrible";
 @import "../../../../styles/mixin";
 
+
 .main_page {
     background-image: url("../../../../public/main.jpg");
     background-size: cover;
@@ -36,6 +37,14 @@
 
 
 @include xl {
+
+    .search {
+        & input {
+            border-right: none;
+            height: 100%;
+        }
+    }
+
     .main_page {
         padding: 121px 0 105px;
 
@@ -50,6 +59,14 @@
     }
 }
 @include lg {
+
+    .search {
+        & input {
+            border-right: none;
+            height: 100%;
+        }
+    }
+
     .main_page {
         padding: 121px 0 105px;
 

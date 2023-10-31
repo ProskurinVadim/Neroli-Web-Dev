@@ -13,9 +13,9 @@ const Information: React.FC<ICode> = ({ adress, baths, beds, header, size }) => 
         <>
             <h2 className={`section_header ${styles.section_header}`}>{adress}</h2>
             <ul className={styles.post_information_list}>
-                <li className={styles.post_information_list_item}> <Bed /> {!Boolean(bedroomsCount) && "Studio"} {bedroomsCount}</li>
-                <li className={styles.post_information_list_item}> <Bath /> {baths}</li>
-                <li className={styles.post_information_list_item}> <Size /> {size} sqft</li>
+                {Boolean(bedroomsCount) && <li className={styles.post_information_list_item}> <Bed /> {!Boolean(bedroomsCount) && "Studio"} {bedroomsCount}</li>}
+                {Boolean(baths) && <li className={styles.post_information_list_item}> <Bath /> {baths}</li>}
+                {Boolean(size) && <li className={styles.post_information_list_item}> <Size /> {size} sqft</li>}
             </ul>
             <p className="medium_text medium_text__aditional">{header}</p>
         </>
