@@ -32,10 +32,11 @@ const Post: React.FC<IPost> = ({ blog, list }) => {
     const copylink = (e: any) => {
         navigator.clipboard.writeText(url)
     }
+
     return (
         <section>
             <div style={{ backgroundImage: `url(${blog.background_image})` }} className={styles.post_information}>
-                <Container>
+                <Container className={styles.container}>
                     <h2 className={`section_header ${styles.section_header}`}>{blog.header}</h2>
                     <ul className={`medium_text ${styles.post_information_list}`}>
                         <li className={`medium_text medium_text__light ${styles.post_information_list_item}`}><CalendarColored />{blog.date}</li>

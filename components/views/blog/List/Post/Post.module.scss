@@ -1,9 +1,26 @@
 @import "../../../../../styles/varrible";
 @import "../../../../../styles/mixin";
 
+.container {
+    z-index: 3;
+    position: relative;
+}
+
 .post_information {
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(51, 50, 49, 0.8);
+        z-index: 2;
+    }
 
     .section_header {
         padding-top: 120px;
