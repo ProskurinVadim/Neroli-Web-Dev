@@ -7,7 +7,7 @@ import ImageSliderItem from "./ImageSliderItem";
 
 import styles from "./image-slider.module.scss";
 
-const ImageSlider = ({items}) => {
+const ImageSlider = ({initialSlide, items}) => {
 
     const elements = items.map(({src, index}) => <SwiperSlide key={index}><ImageSliderItem src={src} /></SwiperSlide>);
 
@@ -16,6 +16,8 @@ const ImageSlider = ({items}) => {
             pagination={{
                 clickable: true,
             }}
+            navigation={true}
+            initialSlide={initialSlide}
             modules={[Navigation, Pagination]}
             className="imagesSwiper">
                 {elements}
