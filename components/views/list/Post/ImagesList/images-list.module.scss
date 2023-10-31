@@ -1,0 +1,70 @@
+.wrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: calc(48% - 20px) calc(52% - 20px);
+    gap: 40px;
+
+    @media (max-width: 1024px) {
+        gap: 30px;
+        grid-template-columns: calc(48% - 15px) calc(52% - 15px);
+    }
+
+    @media (max-width: 768px) {
+        gap: 20px;
+        grid-template-columns: calc(48% - 10px) calc(52% - 10px);
+    }
+}
+
+.mainImgWrapper {
+    position: relative;
+    height: 492px;
+
+    @media (max-width: 1024px) {
+        height: 400px;
+    }
+
+    @media (max-width: 768px) {
+        height: 250px;
+    }
+}
+
+.mainImage {
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.subImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: 1024px) {
+        gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 20px;
+    }
+}
+
+.subImageWrapper {
+    position: relative;
+    height: 226px;
+
+    @media (max-width: 1024px) {
+        height: 185px;
+    }
+
+    @media (max-width: 768px) {
+        height: 115px;
+    }
+}
+
+.subImage {
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}

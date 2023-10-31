@@ -243,7 +243,17 @@
     }
 }
 
+.postMainSwiper {
+    &.swiper {
+        overflow: clip;
+    }
+}
+
 .postMainThumbSwiper {
+    &.swiper {
+        overflow: clip;
+    }
+
     .swiper-wrapper {
         margin-bottom: 20px;
     }

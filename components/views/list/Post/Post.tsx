@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import Container from "../../../../hoc/Container";
 import CarouselGallery from "../../../shared/Carousel/CarouselGallery";
 import Carousel from "../../../shared/Carousel";
+import ImagesList from "./ImagesList";
 import { Toggler } from "../../../common";
 import PersonCard from "./PersonCard";
 import ApartmentMap from "./ApartmentMap";
@@ -60,13 +61,14 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
         <section className={`section__padding ${styles.post}`}>
             <Container className="t_l">
                 <h2 className={`section_header`}> {information.header}</h2>
-                {adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <CarouselGallery
-                    config={config}
-                    data={carousel}
-                    Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}
-                    galleryClassName={styles.post_small_images}
-                    GalleryItem={(props: any) => <Image className={styles.cursorPointer} src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}
-                />}
+                {adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <ImagesList items={carousel.slice(0, 5)} />}
+                {/*{adaptive === "mobile" ? <SwiperMobilePostCarousel data={carousel} /> : <CarouselGallery*/}
+                {/*    config={config}*/}
+                {/*    data={carousel}*/}
+                {/*    Item={(props: any) => <div className={styles.postImg}> <Image fill={true} src={props.src} alt="appartment image" className={styles.street_view_image} /></div>}*/}
+                {/*    galleryClassName={styles.post_small_images}*/}
+                {/*    GalleryItem={(props: any) => <Image className={styles.cursorPointer} src={props.src} onClick={props.onClick} alt="gallery image" height={100} width={100} />}*/}
+                {/*/>}*/}
 
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
