@@ -32,6 +32,7 @@ export default function SwiperCommentsCarousel({data}) {
                 pagination={{
                     clickable: true,
                 }}
+                centeredSlides={true}
                 breakpoints={{
                     440: {
                         slidesPerView: 1,
@@ -42,7 +43,7 @@ export default function SwiperCommentsCarousel({data}) {
                         spaceBetween: 30,
                     },
                     1024: {
-                        slidesPerView: 2.5,
+                        slidesPerView: 'auto',
                         spaceBetween: 40,
                     },
                 }}

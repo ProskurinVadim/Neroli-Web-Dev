@@ -7,13 +7,30 @@
   position: relative;
 }
 
+//.carousel_wrapper {
+//  width: calc(100vw - 20% - 48px);
+//  max-width: 1463px;
+//  height: 335px;
+//  margin-top: 40px;
+//  position: absolute;
+//  left: 20%;
+//  overflow: hidden;
+//
+//  @media (max-width: 480px) {
+//    width: 100%;
+//    margin: 0 auto;
+//    position: static;
+//    margin-top: 40px;
+//  }
+//}
+
 .carousel_wrapper {
-  width: calc(100vw - 20% - 48px);
-  max-width: 1463px;
+  width: 100%;
+  //max-width: 1463px;
   height: 335px;
   margin-top: 40px;
-  position: absolute;
-  left: 20%;
+  //position: absolute;
+  //left: 20%;
   overflow: hidden;
 
   @media (max-width: 480px) {
@@ -23,6 +40,7 @@
     margin-top: 40px;
   }
 }
+
 .swiper_slide {
     width: fit-content !important;
     margin-right: 0 !important;

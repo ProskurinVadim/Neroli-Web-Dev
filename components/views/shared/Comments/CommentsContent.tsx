@@ -1,4 +1,5 @@
 "use client";
+
 import {useContext} from "react";
 import CommentsCarousel, { carouselStyles } from "./CommentsCarousel/CommentsCarousel";
 import SwiperCommentsCarousel from "./SwiperCommentsCarousel/SwiperCommentsCarousel";
@@ -21,12 +22,15 @@ const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
         <section className={`section__padding owerflow_hidden ${styles.section}`}>
             <Container className={`${containerStyles.container__overflow_initial} ${styles.container}`}>
                 <h2 className="section_header"> Why people love Neroli Properties </h2>
-                <div className={styles.carousel_wrapper}>
-                    <SwiperCommentsCarousel data={data} />
-                </div>
+                {/*<div className={styles.carousel_wrapper}>*/}
+                {/*    <SwiperCommentsCarousel data={data} />*/}
+                {/*</div>*/}
 
                 {/*{<CommentsCarousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}*/}
             </Container>
+            <div className={styles.carousel_wrapper}>
+                <SwiperCommentsCarousel data={data} />
+            </div>
         </section>
     )
 };
