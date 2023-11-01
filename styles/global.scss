@@ -206,6 +206,12 @@
 }
 
 .reviewsSwiper {
+
+    & .swiper-wrapper {
+        //transition-duration: 0ms;
+        //transform: translate3d(539.005px, 0px, 0px) !important;
+    }
+
     .swiper-pagination {
         bottom: 30px !important;
         left: calc(-20% + 48px) !important;
