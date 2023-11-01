@@ -391,6 +391,7 @@
 
         @include sm {
             max-width: calc(100vw - 56px);
+            overflow: hidden;
         }
     }
     //.swiper-slide {
