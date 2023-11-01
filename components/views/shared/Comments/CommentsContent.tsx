@@ -27,6 +27,7 @@ const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
                 {/*</div>*/}
 
                 {/*{<CommentsCarousel config={config} className={carouselStyles.carousel__center} Item={(props: any) => <Person {...props} className={personStyles.person_comments} />} data={data} />}*/}
+
             </Container>
             <div className={styles.carousel_wrapper}>
                 <SwiperCommentsCarousel data={data} />

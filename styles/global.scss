@@ -381,3 +381,20 @@
         cursor: pointer;
     }
 }
+.mySwiper {
+    &.swiper {
+        width: 962px;
+
+        @include md {
+            max-width: 780px;
+        }
+
+        @include sm {
+            max-width: calc(100vw - 56px);
+        }
+    }
+    //.swiper-slide {
+    //    width: 400px;
+    //    background-color: #000;
+    //}
+}

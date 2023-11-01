@@ -33,15 +33,24 @@
   //left: 20%;
   overflow: hidden;
 
+  @include md {
+    //height: 405px;
+
+    & div[class^="Person"] {
+      margin-top: 0;
+    }
+  }
+
   @media (max-width: 480px) {
     width: 100%;
     margin: 0 auto;
     position: static;
     margin-top: 40px;
+    height: 290px;
   }
 }
 
-.swiper_slide {
-    width: fit-content !important;
-    margin-right: 0 !important;
-}
+//.swiper_slide {
+//    width: fit-content !important;
+//    margin-right: 0 !important;
+//}
