@@ -19,6 +19,7 @@ import Whatsapp from "./SocialNetworks/Whatsapp";
 import WhatsappUnfill from "./SocialNetworks/WhatsappUnfill";
 import Linkedin from "./SocialNetworks/Linkedin";
 import Twitter from "./SocialNetworks/Twitter";
+import X from "./SocialNetworks/X";
 import Viber from "./SocialNetworks/Viber";
 import Threads from "./SocialNetworks/Threads";
 import Uaddme from "./SocialNetworks/Uaddme";
@@ -57,7 +58,7 @@ export {
     Star,
     Logo, LogoShort, LogoShortUnfill, LogoLargeUnfill, LogoLarge,
     Minus, Plus, ArrowTop, ArrowBottom,
-    Facebook, Instagram, Whatsapp, Linkedin, Viber, Threads, Phone, WhatsappUnfill, Twitter, Uaddme, CopyLink,
+    Facebook, Instagram, Whatsapp, Linkedin, Viber, Threads, Phone, WhatsappUnfill, Twitter, X, Uaddme, CopyLink,
     Key, Eye, Size, Bath, Bed, Calendar, Time,
     CommercialAt, Mark, MarkSmal,
     RightArrow, LeftArrow, DownArrow, TopArrow,

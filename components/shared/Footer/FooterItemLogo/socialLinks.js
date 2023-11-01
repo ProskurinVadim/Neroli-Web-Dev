@@ -1,4 +1,4 @@
-import { Whatsapp, Facebook, Instagram, Linkedin, Viber, Threads, Twitter, Uaddme } from "../../../icons";
+import { Whatsapp, Facebook, Instagram, Linkedin, Viber, Threads, Twitter, X, Uaddme } from "../../../icons";
 
 const socialLinks = [
     {
@@ -14,7 +14,7 @@ const socialLinks = [
     {
         id: "3",
         icon: <Linkedin />,
-        link: ""
+        link: "#"
     },
     {
         id: "4",
@@ -24,20 +24,25 @@ const socialLinks = [
     {
         id: "5",
         icon: <Twitter />,
-        link: "https://wa.me/message/UOVF673LBPCKO1"
+        link: ""
     },
     {
         id: "6",
-        icon: <Viber />,
+        icon: <X />,
         link: ""
     },
     {
         id: "7",
+        icon: <Viber />,
+        link: ""
+    },
+    {
+        id: "8",
         icon: <Threads />,
         link: "https://www.threads.net/@neroli.uae?igshid=NTc4MTIwNjQ2YQ=="
     },
     {
-        id: "8",
+        id: "9",
         icon: <Uaddme />,
         link: "https://uadd.me/neroliproperties"
     },

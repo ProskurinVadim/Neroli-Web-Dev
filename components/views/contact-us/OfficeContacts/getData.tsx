@@ -44,7 +44,7 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     {
         key: "subject",
         render: (value: string, onChange: (newValue: string) => void, error: string) =>
-            (<Select value={value} label="" onChange={onChange} open={open === "subject"} options={options} setOpen={setOpen} defaultValue="Subject 1" />)
+            (<Select value={value} label="subject" onChange={onChange} open={open === "subject"} options={options} setOpen={setOpen} defaultValue="Subject 1" />)
 
     },
     {

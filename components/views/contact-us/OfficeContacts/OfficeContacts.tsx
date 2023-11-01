@@ -11,6 +11,9 @@ import Button from "../../../common/Button/Button";
 import styles from "./OfficeContacts.module.scss";
 import Map from "../../../shared/Map";
 import Marker from "./Marker.svg";
+import EmailIcon from "@/components/views/contact-us/OfficeContacts/icons/EmailIcon";
+import PhoneIcon from "@/components/views/contact-us/OfficeContacts/icons/PhoneIcon";
+import MapIcon from "@/components/views/contact-us/OfficeContacts/icons/MapIcon";
 import MobileMarker from "./MobileMarker.svg";
 import { defaultCenter, mobileContainerStyle, containerStyle, defaultData, getFormData } from "./getData";
 import Form, { formStyles } from "./FormContacts/Form"
@@ -92,12 +95,12 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                 <h2 className={`section_header ${styles.section_header}`}>Contact Us</h2>
                 <div className={`${styles.contact_us_info_content}`}>
                     <p className={`${styles.contact_us_info_text} medium_text`}>
-                        <Link href={`mailto: ${email}`}><CommercialAt /><span>{email}</span></Link>
+                        <Link href={`mailto: ${email}`}><EmailIcon />{email}</Link>
                     </p>
                     <p className={`${styles.contact_us_info_text} medium_text icon_fill`}>
-                        <Link href={`tel: ${phone}`}><PhoneColored /><span>{phone}</span></Link>
+                        <Link href={`tel: ${phone}`}><PhoneIcon />{phone}</Link>
                     </p>
-                    <p className={`${styles.contact_us_info_text} medium_text`}><MarkSmal />{address}</p>
+                    <p className={`${styles.contact_us_info_text} medium_text`}><MapIcon />{address}</p>
                 </div>
                 <div className={styles.contact_us_social_links}>
                     {socialLinkElements}

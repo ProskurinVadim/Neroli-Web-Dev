@@ -292,6 +292,10 @@
 .newBuildingSwiper {
     &.swiper {
         overflow: clip;
+
+        @include mobile {
+            padding-bottom: 20px;
+        }
     }
 
     & .swiper-button-prev {
@@ -301,7 +305,8 @@
         z-index: 99;
 
         @include mobile {
-            top: 328px;
+            top: 348px;
+            left: calc(50% - 10px);
         }
     }
 
@@ -317,7 +322,8 @@
         z-index: 99;
 
         @include mobile {
-            top: 328px;
+            top: 348px;
+            left: calc(50% + 10px);
         }
     }
 

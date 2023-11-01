@@ -3,6 +3,8 @@
 import {useState, useRef, useEffect} from "react";
 import {createPortal} from "react-dom";
 
+import CloseIcon from "./CloseIcon";
+
 import styles from "./modal.module.scss";
 
 const Modal = ({close, style = {}, children}) => {
@@ -29,7 +31,7 @@ const Modal = ({close, style = {}, children}) => {
     return mounted ? createPortal(
         <div onClick={closeModal} className={styles.backdrop}>
             <div style={style} className={styles.modal}>
-                <div onClick={close} className={styles.close}>Close</div>
+                <span className={styles.close} onClick={close}><CloseIcon  /></span>
                 {children}
             </div>
         </div>,
