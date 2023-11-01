@@ -16,6 +16,7 @@ const ImageSlider = ({initialSlide, items}) => {
             pagination={{
                 clickable: true,
             }}
+            autoHeight={true}
             navigation={true}
             initialSlide={initialSlide}
             slidesPerView={1}

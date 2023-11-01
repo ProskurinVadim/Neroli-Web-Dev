@@ -25,10 +25,10 @@ export default function SwiperCommentsCarousel({data}) {
     const offsetValue = useRef(0);
 
     useEffect(()=> {
-        // console.log(window.innerWidth)
+        console.log(window.innerWidth)
         const containerWidth = document.querySelector(`div.${containerStyles.container}`).offsetWidth;
         const slideWidth = document.querySelector(`div.${personStyles.person_comments}`).offsetWidth;
-        const offset = (window.innerWidth - containerWidth) / 2 + (containerWidth / 2 - slideWidth - 27);
+        const offset = (window.innerWidth - containerWidth) / 2 + (containerWidth / 2 - slideWidth - 20) - 10;
         offsetValue.current = offset;
         console.log(offset)
     }, [])

@@ -1,7 +1,10 @@
 .imgWrapper {
   position: relative;
-  height: 492px;
+  //height: 492px;
+  height: auto;
   width: 100%;
+  overflow: hidden;
+  max-height: 80vh;
 }
 
 .img {

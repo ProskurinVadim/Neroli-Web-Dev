@@ -5,7 +5,11 @@ import styles from "./image-slider-item.module.scss";
 const ImageSliderItem = ({src}) => {
     return (
         <div className={styles.imgWrapper}>
-            <Image fill={true} src={src} alt="appartment image" className={styles.img} />
+            <Image width={700}
+                   height={475} src={src} style={{
+                width: '100%',
+                height: 'auto',
+            }} alt="appartment image" className={styles.img} />
         </div>
     )
 }
