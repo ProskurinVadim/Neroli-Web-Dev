@@ -384,6 +384,7 @@
 .mySwiper {
     &.swiper {
         width: 962px;
+        overflow: visible;
 
         @include md {
             max-width: 780px;
