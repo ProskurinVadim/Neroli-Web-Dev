@@ -16,6 +16,7 @@ const ItemsProvider:React.FC<IContainer> = ({children}) => {
     useEffect(()=> {
         const fetchItems = async()=> {
                 const {data} = await getItems();
+            console.log(data);
                 setItems(data);
         }
 

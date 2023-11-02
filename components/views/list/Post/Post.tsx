@@ -73,7 +73,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                 <div className={styles.post_content}>
                     <div className={styles.text_block}>
                         <Information {...information} />
-                        <Toggler active={active} setActive={setActive} array={["Description", "Street View"]} className={styles.post_toggler} />
+                        <Toggler active={active} setActive={setActive} array={street_view.length ? ["Description", "Street View"] : ["Description"]} className={styles.post_toggler} />
                         <Condition condition={active === "Description"}>
                             <If>
                                 <div className={`medium_text`} dangerouslySetInnerHTML={{ __html: description }}/>

@@ -15,6 +15,7 @@ const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     image: attributes.Photos.data?.length ? attributes.Photos.data[0].attributes.formats.medium.url : [],
     header: attributes.Title,
     category: attributes.Category,
+    OnMainPage: attributes.OnMainPage,
     id,
 }))
 
@@ -33,17 +34,18 @@ const NewBuildings = () => {
     const [active, setActive] = useState("For sale");
     const handelSetActive = (active: string) => setActive(_ => active);
 
-    const items = formatData(useItems()).slice(0, 4);
-    const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")) : items.filter(({category}) => category === "Off-plan")
-    const config = {
-        time: 5000,
-        itemsCount: 4,
-        pagination: {
-            withArrows: true,
-            maxPages: Math.ceil(filteredItems.length / 4),
-            numerical: false,
-        }
-    };
+    const items = formatData(useItems());
+
+    const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")).filter(({OnMainPage}) => OnMainPage).slice(0, 4) : items.filter(({category}) => category === "Off-plan").filter(({OnMainPage}) => OnMainPage).slice(0, 4)
+    // const config = {
+    //     time: 5000,
+    //     itemsCount: 4,
+    //     pagination: {
+    //         withArrows: true,
+    //         maxPages: Math.ceil(filteredItems.length / 4),
+    //         numerical: false,
+    //     }
+    // };
 
     const toggleButtonsText = useMemo(()=> getToggleButtonsText(items), [items]);
 
