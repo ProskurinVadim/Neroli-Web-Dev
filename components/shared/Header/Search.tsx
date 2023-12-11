@@ -60,9 +60,9 @@ const SearchInput = () => {
     };
     return (
         <>
-            {open && <input onKeyDown={handleKeyDown} ref={inputRef} value={value} onChange={handelChange} className={`${inputStyles.input} ${styles.navbar_search_input} `} />}
+            {open && <input autoFocus placeholder="Search by..." onKeyDown={handleKeyDown} ref={inputRef} value={value} onChange={handelChange} className={`${inputStyles.input} ${styles.navbar_search_input} `} />}
             <span  ref={iconRef} onClick={toogleOpen} className={styles.navbar_search_icon}>
-                <Search />
+                <Search open={open} />
             </span>
         </>
     )

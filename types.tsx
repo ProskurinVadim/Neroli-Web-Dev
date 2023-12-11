@@ -28,6 +28,14 @@ interface ISVG {
     viewBox?: string,
 }
 
+interface ISVGSearch {
+    width?: string,
+    height?: string,
+    fill?: string,
+    viewBox?: string,
+    open: boolean,
+}
+
 interface IAvatar {
     image: string,
     name: string,
@@ -59,4 +67,4 @@ interface IContacts {
     address: string;
 }
 
-export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords, INewsCard, IContacts}
+export type { IChildren, ILink, ICondition, IFormFields, IIcon, ISVG, IAvatar, ICoords, INewsCard, IContacts, ISVGSearch }

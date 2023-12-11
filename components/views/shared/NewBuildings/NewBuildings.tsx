@@ -37,15 +37,6 @@ const NewBuildings = () => {
     const items = formatData(useItems());
 
     const filteredItems = (active === "For sale") ? items.filter(({category}) => (category === "Residential" || category === "Commercial")).filter(({OnMainPage}) => OnMainPage).slice(0, 4) : items.filter(({category}) => category === "Off-plan").filter(({OnMainPage}) => OnMainPage).slice(0, 4)
-    // const config = {
-    //     time: 5000,
-    //     itemsCount: 4,
-    //     pagination: {
-    //         withArrows: true,
-    //         maxPages: Math.ceil(filteredItems.length / 4),
-    //         numerical: false,
-    //     }
-    // };
 
     const toggleButtonsText = useMemo(()=> getToggleButtonsText(items), [items]);
 

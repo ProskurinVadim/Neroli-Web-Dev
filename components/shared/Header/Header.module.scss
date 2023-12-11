@@ -123,32 +123,54 @@
     }
 
 
-    &::before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 25px;
-        margin-right: 40px;
-        background: $color-border;
-
-        @include desktop {
-            display: none;
-        }
-    }
+    //&::before {
+    //    content: "";
+    //    display: block;
+    //    width: 1px;
+    //    height: 25px;
+    //    margin-right: 40px;
+    //    background: $color-border;
+    //
+    //    @include desktop {
+    //        display: none;
+    //    }
+    //}
 
     &_input {
         max-width: unset !important;
         position: absolute !important;
-        top: -5px;
-        height: 35px;
-        width: 230px !important;
+        top: -14px;
+        height: 47px;
+        width: 800px !important;
+        max-width: 800px !important;
         //left: -186px;
-        right: -8px;
+        right: -16px;
         box-shadow: 0 2px 5px rgba(0,0,0,.12) !important;
-        animation: anim 1s ease-in;
+        border: 1px solid #E5E5E5 !important;
+        border-radius: 4px !important;
+        padding: 10px 20px !important;
+        //animation: anim 1s ease-in;
+        color: #3B4248 !important;
 
         @include desktop {
-            top: -8px;
+            top: -14px;
+            width: 760px !important;
+            max-width: 760px !important;
+            //top: -8px;
+        }
+
+        @include tablet {
+            top: -11px;
+            width: calc(100vw - 114px) !important;
+            max-width: calc(100vw - 114px) !important;
+            right: 7px;
+        }
+
+        @include mobile {
+            top: -11px;
+            width: calc(100vw - 86px) !important;
+            max-width: calc(100vw - 86px) !important;
+            right: 7px;
         }
     }
 }
@@ -247,7 +269,7 @@
             display: block;
             width: 1px;
             height: 25px;
-            margin-left: 40px;
+            margin-left: 28px;
             background: $color-border;
         }
     }
