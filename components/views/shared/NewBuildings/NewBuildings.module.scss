@@ -1,5 +1,5 @@
 .new_buildings {
-    padding-bottom: 32px;
+    padding-bottom: 84px;
 
     @include mobile {
         padding-bottom: 52px;
@@ -40,10 +40,10 @@
 
 .sliderContainer {
     margin-top: 40px;
-    height: 460px;
+    height: 490px;
 
     @include mobile {
-        height: 350px;
+        height: 370px;
         margin-bottom: 8px;
     }
 

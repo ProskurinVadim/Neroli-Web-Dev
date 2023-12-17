@@ -14,12 +14,12 @@ const socialLinks = [
     {
         id: "3",
         icon: <Linkedin />,
-        link: "#"
+        link: "https://www.linkedin.com/company/neroli-properties/"
     },
     {
         id: "4",
         icon: <Whatsapp />,
-        link: ""
+        link: "https://wa.me/+971585233352"
     },
     {
         id: "5",

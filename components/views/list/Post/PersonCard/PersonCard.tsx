@@ -29,6 +29,7 @@ const PersonCard: React.FC<IAvatar> = ({ image,  name, job, id, onClick, whatsap
             }
             <Button onClick={onClick} text="Book a Viewing" className={styles.button} />
             <a href={`https://pdf-presentation.onrender.com/api/presentation/${id}`}><Button onClick={()=>{}} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>
+            {/*<a href={`http://localhost:4000/api/presentation/${id}`}><Button onClick={()=>{}} className={`${buttonStyles.button__transparent} ${styles.button}`} text="Download presentation" /></a>*/}
         </div>
     )
 }

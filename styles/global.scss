@@ -307,11 +307,11 @@
     & .swiper-button-prev {
         left: 50%;
         transform: translateX(-55px);
-        top: 438px;
+        top: 467px;
         z-index: 99;
 
         @include mobile {
-            top: 348px;
+            top: 368px;
             left: calc(50% - 10px);
         }
     }
@@ -322,13 +322,13 @@
 
     & .swiper-button-next {
         right: 100px;
-        top: 438px;
+        top: 467px;
         left: 50%;
         transform: translateX(30px);
         z-index: 99;
 
         @include mobile {
-            top: 348px;
+            top: 368px;
             left: calc(50% + 10px);
         }
     }

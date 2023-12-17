@@ -53,7 +53,7 @@ const HeaderMobile: React.FC<IHeader> = ({ isActive }) => {
                                         </Link>
                                     </li>
                                 )}
-                                <Link href="/book" onClick={toggleOpen} className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Enquire now</Link>
+                                <Link href="/book" onClick={toggleOpen} className={`${buttonStyles.button} ${buttonStyles.button__link}`}>list with us</Link>
                             </ul>
 
                         </nav> 

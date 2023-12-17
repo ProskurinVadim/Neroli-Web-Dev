@@ -65,7 +65,7 @@ const DrawingMap: React.FC<IMap> = ({ visible = false, onDraw, children, marks, 
             {buttonsVisible && <div className={styles.map_buttons}>
                     {
                         drawing ?
-                            <Button text="Delete Shapee" onClick={deletePolygons} className={`${styles.map_button} ${buttonStyles.button_dangeres}`} />
+                            <Button text="Delete Shape" onClick={deletePolygons} className={`${styles.map_button} ${buttonStyles.button_dangeres}`} />
                             : <Button text="Draw a frame" onClick={draw} className={`${styles.map_button} ${buttonStyles.button_submit}`} />
                     }
                 </div>

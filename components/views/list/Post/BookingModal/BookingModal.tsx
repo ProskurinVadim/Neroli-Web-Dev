@@ -5,7 +5,7 @@ import Link from "next/link";
 import Form, { formStyles } from "../../.../../../../shared/Form/Form";
 import { defaultData, getFormData } from "./getData";
 import styles from "../Post.module.scss";
-import { isEmail, isFull, isPhone, containError, emailError, phoneError } from "../../../../../utils/validation";
+import { isEmail, isFull, isPhone, containError, emailError, phoneError, containFullNameError, containEmailError, containPhonelError } from "../../../../../utils/validation";
 
 import CloseIcon from "./CloseIcon";
 
@@ -18,36 +18,54 @@ interface IForm {
 
 interface IModal {
     onSubmit: (value: IForm) => void
-    onClose: () => void
+    onClose: () => void,
+    adress: string
 }
-const BookingModal: React.FC<IModal> = ({ onSubmit, onClose }) => {
-    const [value, setValue] = useState<IForm>({ ...defaultData })
+const BookingModal: React.FC<IModal> = ({ onSubmit, onClose, adress }) => {
+    const [value, setValue] = useState<IForm>({ ...defaultData, adress })
     const fields: any = getFormData();
     const handelSubmit = () => validate(value);
     const { push } = useRouter();
 
     const validate = (value: IForm) => {
-        const containPhone = isFull(value.phone);
+        const containFullName = isFull(value.name);
         const containEmail = isFull(value.email);
-        const containOne = containPhone || containEmail;
-        const containBoth = containPhone && containEmail;
+        const containPhone = isFull(value.phone);
+
         const emailErr = !isEmail(value.email);
         const phoneErr = !isPhone(value.phone);
 
-        if (!containOne) {
-            return ["", containError, containError, ""]
-        } else if (emailErr && phoneErr && containBoth) {
-            return ["", emailError, phoneError, ""]
-        } else if (containEmail && emailErr) {
-            return ["", emailError, "", ""]
-        } else if (containPhone && phoneErr) {
-            return ["", "", phoneError, ""]
+        const errorArr = [];
+
+        if(!containFullName) {
+            errorArr.push(containFullNameError);
         } else {
-            push("/thank-you");
-            onClose();
-            onSubmit(value)
-            return ["", "", "", ""]
+            errorArr.push("");
         }
+        if(!containEmail) {
+            errorArr.push(containEmailError);
+        } else if(emailErr) {
+            errorArr.push(emailError);
+        } else {
+            errorArr.push("");
+        }
+
+        if(!containPhone) {
+            errorArr.push(containPhonelError);
+        } else if(phoneErr) {
+            errorArr.push(phoneError);
+        }else {
+            errorArr.push("");
+        }
+
+        errorArr.push("");
+
+        if(errorArr.join("")) {
+            return errorArr;
+        }
+
+        push("/thank-you");
+        return ["", "", "" , ""];
     }
 
     const ref = useRef<any>(null);

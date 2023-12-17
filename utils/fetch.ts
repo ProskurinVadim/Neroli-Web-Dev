@@ -78,6 +78,7 @@ export const getAppartments = ({ type, price_min, price_max, property_type, buil
     if (beds) {
         query += `&filters[Bedrooms][$eq]=${beds}`;
     }
+
     return instance(`/items?populate=*${query}`,);
 }
 

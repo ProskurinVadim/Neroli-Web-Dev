@@ -2,8 +2,8 @@ import { Input } from "../../../common";
 export const getFormData = () => [
     {
         key: "name",
-        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onChange={onChange} placeholder="Full Name" />)
+        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
+            (<Input value={value} onChange={onChange} placeholder="Full Name" error={error} />)
     },
     {
         key: "email",

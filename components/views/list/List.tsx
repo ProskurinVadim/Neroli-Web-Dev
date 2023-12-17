@@ -4,6 +4,7 @@ import ListContent from "./ListContent";
 import Search from "./Search";
 import { getAppartments, getMapAppartments } from "@/utils/fetch";
 import { formatListData, formatListMapData } from "@/utils/formater";
+
 //dublicat
 interface IForm {
     building: string,
@@ -19,6 +20,23 @@ interface IMark {
         lng: number
     },
 }
+
+const sortDataByBedrooms = (data: any[]) => {
+    const formatData = data.map(item => {
+        const {attributes} = item;
+        const {Bedrooms} = attributes;
+        if(Bedrooms === "Studio") {
+            attributes.Bedrooms = 0;
+        } else {
+            const [number] = Bedrooms.match(/(\d+)/);
+            attributes.Bedrooms = Number(number);
+        }
+        return {...item, attributes};
+    });
+    formatData.sort((a, b) => a.attributes.Bedrooms - b.attributes.Bedrooms);
+    return formatData;
+}
+
 const List = () => {
     
     const [data, setData] = useState<any[]>([])
@@ -28,7 +46,15 @@ const List = () => {
 
     const search = async (value: IForm | {}) => {
         const newData = await getAppartments(value);
-        setData([...formatListData(newData.data)]);
+        const values = Object.values(value);
+
+        if(!values.includes("Studio") || !values.includes("Bedrooms")) {
+            const formatData = sortDataByBedrooms(newData.data);
+            const result = formatListData(formatData);
+            setData(result);
+        } else {
+            setData([...formatListData(newData.data)]);
+        }
     }
     const draw = async (body: any,) => {
         const newData = await getMapAppartments(body, {});

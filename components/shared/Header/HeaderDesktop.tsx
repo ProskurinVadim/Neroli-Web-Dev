@@ -32,7 +32,7 @@ const HeaderDesktop: React.FC<IHeader> = ({ href }) => {
                     </li>
                 </ul>
             </nav>
-            <Link href="/book" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>Enquire now</Link>
+            <Link href="/book" className={`${buttonStyles.button} ${buttonStyles.button__link}`}>list with us</Link>
         </>
     )
 }

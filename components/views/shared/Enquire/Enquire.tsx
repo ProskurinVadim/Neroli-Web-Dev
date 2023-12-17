@@ -7,7 +7,7 @@ import Form, { formStyles } from "../.../../../../shared/Form/Form";
 import { defaultData, getFormData } from "./getData";
 import styles from "./Enquire.module.scss";
 import useWidth from "../../../../hooks/useWidth";
-import { isEmail, isFull, isPhone, containError, emailError, phoneError } from "../../../../utils/validation";
+import { isEmail, isFull, isPhone, containError, emailError, phoneError, containFullNameError, containEmailError, containPhonelError, } from "../../../../utils/validation";
 
 interface IForm {
     name: string,
@@ -26,25 +26,45 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
     const { push } = useRouter();
 
     const validate = (value: IForm) => {
-        const containPhone = isFull(value.phone);
+        const containFullName = isFull(value.name);
         const containEmail = isFull(value.email);
-        const containOne = containPhone || containEmail;
-        const containBoth = containPhone && containEmail;
+        const containPhone = isFull(value.phone);
+
         const emailErr = !isEmail(value.email);
         const phoneErr = !isPhone(value.phone);
 
-        if (!containOne) {
-            return ["", containError, containError, ""]
-        } else if (emailErr && phoneErr && containBoth) {
-            return ["", emailError, phoneError, ""]
-        } else if (containEmail && emailErr) {
-            return ["", emailError, "", ""]
-        } else if (containPhone && phoneErr) {
-            return ["", "", phoneError, ""]
+        const errorArr = [];
+
+        if(!containFullName) {
+            errorArr.push(containFullNameError);
         } else {
-            push("/thank-you");
-            return ["", "", "" , ""]
+            errorArr.push("");
         }
+        if(!containEmail) {
+            errorArr.push(containEmailError);
+        } else if(emailErr) {
+            errorArr.push(emailError);
+        } else {
+            errorArr.push("");
+        }
+
+        if(!containPhone) {
+            errorArr.push(containPhonelError);
+        } else if(phoneErr) {
+            errorArr.push(phoneError);
+        }else {
+            errorArr.push("");
+        }
+
+        errorArr.push("");
+
+        if(errorArr.join("")) {
+            return errorArr;
+        }
+
+        push("/thank-you");
+        return ["", "", "" , ""];
+
     }
 
     const width = useWidth()
@@ -53,7 +73,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
         <section className={` ${styles.enquire} ${top ? styles.enquire__top: ""}`}>
             <Container className={`${styles.notebook}`}>
                 <div className={`${styles.notebook_item} section__padding`}>
-                    {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>Enquire now</h2>}
+                    {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>list with us</h2>}
                     <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate} buttonText="Submit details">
                         <p className={formStyles.form_text}>
                             By clicking Submit, you agree to our&nbsp;
@@ -64,7 +84,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                     </Form>
                 </div>
                 <div className={`${styles.notebook_item} section__padding`}>
-                    {width < 1024 && <h2 className="section_header">Enquire now</h2>}
+                    {width < 1024 && <h2 className="section_header">list with us</h2>}
                     <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>We have a waitlist of clients ready to view properties, extensive comparable community data and a trusted reputation. Just three of the reasons why people choose us.</p>
                     <div className={styles.enquire_image} />    
                 </div>

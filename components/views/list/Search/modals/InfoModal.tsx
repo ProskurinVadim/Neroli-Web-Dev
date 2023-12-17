@@ -11,7 +11,7 @@ const InfoModal: React.FC<IInfoModal> = ({ setOpen }) => {
             <p className={styles.modal_info_text}>
                 Click <span className={styles.modal_info_text__bold}>Draw a frame</span> and by clicking on the map, circle the location where you are looking for a property.
             </p>
-            <Button text="Okey!" onClick={handelClose} />
+            <Button text="Draw!" onClick={handelClose} />
         </div>
     )
 }

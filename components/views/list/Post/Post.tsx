@@ -91,7 +91,7 @@ const Post: React.FC<IApartment> = ({ information, person, carousel, street_view
                 </div>
                 {open && <Portal>
                     <div className={styles.booking_modal_container}>
-                        <BookingModal onSubmit={handelSubmit} onClose={() => setOpen(()=> false)} />
+                        <BookingModal adress={information.adress} onSubmit={handelSubmit} onClose={() => setOpen(()=> false)} />
                     </div>
                 </Portal>
                 }

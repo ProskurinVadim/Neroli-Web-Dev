@@ -28,8 +28,8 @@ export const defaultCenter = {
 export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
     {
         key: "name",
-        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onChange={onChange} placeholder="Full Name" />)
+        render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, error: string) =>
+            (<Input value={value} onChange={onChange} placeholder="Full Name" error={error} />)
     },
     {
         key: "email",

@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useContext } from "react";
 import { AdaptiveContext } from "../../../../context/AdaptiveContext";
 import Container from "../../../../hoc/Container";

@@ -18,5 +18,8 @@ export const isEmail = (string: string) => {
 export const isEmptyArr = (arr: string[]) => !!arr.filter(elem => isFull(elem)).length;
 
 export const containError = "Must contain email of phone";
-export const emailError = "Entrer valid email";
-export const phoneError = "Entrer valid phone number";
+export const containFullNameError = "Enter your Full Name";
+export const containEmailError = "Enter your Email";
+export const containPhonelError = " Enter your Phone Number";
+export const emailError = "Enter valid email";
+export const phoneError = "Enter valid phone number";

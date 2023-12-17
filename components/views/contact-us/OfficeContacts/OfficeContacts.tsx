@@ -21,7 +21,16 @@ import { IContacts } from "@/types";
 
 import socialLinks from "@/components/shared/Footer/FooterItemLogo/socialLinks";
 import {useRouter} from "next/navigation";
-import {containError, emailError, isEmail, isFull, isPhone, phoneError} from "@/utils/validation";
+import {
+    containEmailError,
+    containError,
+    containFullNameError, containPhonelError,
+    emailError,
+    isEmail,
+    isFull,
+    isPhone,
+    phoneError
+} from "@/utils/validation";
 
 interface IForm {
     name: string,
@@ -40,25 +49,44 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
     const { push } = useRouter();
 
     const validate = (value: IForm) => {
-        const containPhone = isFull(value.phone);
+        const containFullName = isFull(value.name);
         const containEmail = isFull(value.email);
-        const containOne = containPhone || containEmail;
-        const containBoth = containPhone && containEmail;
+        const containPhone = isFull(value.phone);
+
         const emailErr = !isEmail(value.email);
         const phoneErr = !isPhone(value.phone);
 
-        if (!containOne) {
-            return ["", containError, containError, ""]
-        } else if (emailErr && phoneErr && containBoth) {
-            return ["", emailError, phoneError, ""]
-        } else if (containEmail && emailErr) {
-            return ["", emailError, "", ""]
-        } else if (containPhone && phoneErr) {
-            return ["", "", phoneError, ""]
+        const errorArr = [];
+
+        if(!containFullName) {
+            errorArr.push(containFullNameError);
         } else {
-            push("/thank-you");
-            return ["", "", "" , ""]
+            errorArr.push("");
         }
+        if(!containEmail) {
+            errorArr.push(containEmailError);
+        } else if(emailErr) {
+            errorArr.push(emailError);
+        } else {
+            errorArr.push("");
+        }
+
+        if(!containPhone) {
+            errorArr.push(containPhonelError);
+        } else if(phoneErr) {
+            errorArr.push(phoneError);
+        }else {
+            errorArr.push("");
+        }
+
+        errorArr.push("");
+
+        if(errorArr.join("")) {
+            return errorArr;
+        }
+
+        push("/thank-you");
+        return ["", "", "" , ""];
     }
 
     // const adaptive = useContext(AdaptiveContext);
@@ -85,8 +113,8 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                 <div className={styles.fast_contact}>
                     <p className={styles.fast_contact_question}>Need immediate assistance?</p>
                     <div className={styles.fast_contact_buttons}>
-                        <Link target="_blank" href="https://wa.me/38932843264"><Button onClick={()=> {}} text={<><WhatsappUnfill /> Whatsapp</>} className={buttonStyles.button__whatsapp} /></Link>
-                        <Link target="_blank" href={`tel:+971585233352`}><Button onClick={()=> {}} className={buttonStyles.button__recall} text={<><Phone /> Call us</>} /></Link>
+                        <Link target="_blank" href="https://wa.me/+971585233352"><Button onClick={()=> {}} text={<><WhatsappUnfill /> Whatsapp</>} className={buttonStyles.button__whatsapp} /></Link>
+                        <Link target="_blank" href={`tel:${phone}`}><Button onClick={()=> {}} className={buttonStyles.button__recall} text={<><Phone /> Call us</>} /></Link>
                     </div>
                 </div>
             </div>

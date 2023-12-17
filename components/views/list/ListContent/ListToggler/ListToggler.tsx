@@ -8,7 +8,7 @@ interface IToggler {
 
 const ListToggler: React.FC<IToggler> = ({ active, setActive }) => {
     const handelSetActive = (newActive: "list" | "table") => active !== newActive && setActive(newActive)
-    console.log(active, active === "table" ? "#3B4248" : "")
+
     return (
         <div className={styles.list_toggler}>
             <span className={styles.list_toggler_item} onClick={() => handelSetActive("table")} >

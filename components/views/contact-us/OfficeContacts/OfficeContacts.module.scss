@@ -107,6 +107,10 @@
         text-align: left;
         margin-bottom: 40px;
 
+        & input + p {
+            bottom: -3px;
+        }
+
         @media (max-width: 480px) {
             margin-bottom: 28px;
             padding: 28px;
