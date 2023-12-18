@@ -33,6 +33,58 @@
         width: 290px;
         text-align: center;
     }
+    &_search_container {
+        font-family: 'Marcellus';
+        font-style: normal;
+        position: relative;
+    }
+    &_search_modal {
+        margin-top: 10px;
+        top: 50px;
+        border-radius: 10px;
+        max-height: 130px;
+        overflow-y: scroll;
+        width: 220px;
+        background-color: $color-light;
+        position: absolute;
+        &_item > a {
+            font-family: 'Marcellus';
+            font-style: normal;
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            font-size: 14px; 
+            text-decoration: none;
+            color: $color-primary;
+            height: 28px;
+            line-height: 28px;
+            padding-left: 10px;
+
+            &:hover {
+                background-color: #F6F6F6;
+                font-family: 700;
+            }
+        }
+    }
+    &_search_select_modal {
+        margin-top: 10px;
+        background-color: $color-light;
+        top: 50px;
+        width: 573px;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 16px;
+        li {
+            width: 50%;
+            padding: 0 12px;
+            padding-left: 12px;
+            box-sizing: border-box;
+            div {
+                width: 100%;
+            }
+        }
+    }
 }
 
 
