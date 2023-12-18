@@ -121,7 +121,7 @@ export default function Home() {
                 </div>
                 <div className={styles.main_page_search_container}>
                     <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search">
-                    {(listOpen && list.length) || true && <ul className={styles.main_page_search_modal}>
+                    {(listOpen && list.length) && <ul className={styles.main_page_search_modal}>
                         {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
                             <Link href={"/list/"+elem.id}>{elem.title}</Link>
                         </li>)}
