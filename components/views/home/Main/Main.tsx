@@ -116,22 +116,24 @@ export default function Home() {
                 <div className={`${styles.toggler_container}`} >
                     <Toggler array={["Residential", "Commercial", "Off-plan"]} active={active} setActive={handelSetActive} className={`${styles.toggler} ${togglerStyles.toggler__fill}`} />
                 </div>
-                <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search"/>
-                {(listOpen && list.length) && <ul>
-                    {list.map((elem: any,i) => <li key={"list-item-"+i}>
-                        <Link href={"/list/"+elem.id}>{elem.title}</Link>
-                    </li>)}
-                </ul>}
-                {open && 
-                <div ref={ref}>
-                    {
-                        modlFields.map((elem: any) => <li>
-                            {elem.render(modalValue[elem.key],handelChange(elem.key))}
-                        </li>)
+                <div className={styles.main_page_search_container}>
+                    <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search">
+                    {(listOpen && list.length) || true && <ul className={styles.main_page_search_modal}>
+                        {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
+                            <Link href={"/list/"+elem.id}>{elem.title}</Link>
+                        </li>)}
+                    </ul>}
+                    {open && 
+                    <ul ref={ref} className={styles.main_page_search_select_modal}>
+                        {
+                            modlFields.map((elem: any) => <li>
+                                {elem.render(modalValue[elem.key],handelChange(elem.key))}
+                            </li>)
+                        }
+                    </ul>
                     }
+                    </Form>
                 </div>
-                    
-                }
                 <p className={`medium_text ${styles.medium_text} medium_text__light`}>Prices are always changing, find out the value of your property today</p>
                 <div className={styles.button_wrapper}>
                     <Link href="/contact-us"><Button text="Contact us" onClick={onClick} /></Link>
