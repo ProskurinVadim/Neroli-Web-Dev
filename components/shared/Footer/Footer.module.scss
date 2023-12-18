@@ -74,6 +74,10 @@
             &:last-child {
                 border-right: none;
                 padding-right: 0;
+
+                & p:last-child {
+                    max-width: 193px;
+                }
             }
 
             &:first-child {

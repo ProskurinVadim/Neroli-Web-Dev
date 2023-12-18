@@ -63,6 +63,7 @@ const List = () => {
         setData([...formatListMapData(newData)]);
 
     }
+
     return (
         <>
             <Search onSubmit={search} onDraw={draw} marks={marks} />

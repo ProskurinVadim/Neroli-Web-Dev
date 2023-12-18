@@ -64,6 +64,30 @@
         color: $color-primary;
     }
 
+    &_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_values {
+            display: flex;
+            gap: 20px;
+
+            & p {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+                gap: 10px;
+
+                & svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
     &_adress {
         @include medium-text;
         font-weight: 700;
@@ -293,6 +317,32 @@
             font-size: 15px;
             font-weight: 700;
             line-height: 24px;
+        }
+
+        &_info {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+
+            &_values {
+                & p {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                    gap: 8px;
+                    margin-bottom: 5px;
+
+                    & svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+
+        }
+
+        &_adress {
+            font-size: 12px;
         }
 
         &.news_card {

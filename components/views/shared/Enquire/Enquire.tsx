@@ -73,7 +73,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
         <section className={` ${styles.enquire} ${top ? styles.enquire__top: ""}`}>
             <Container className={`${styles.notebook}`}>
                 <div className={`${styles.notebook_item} section__padding`}>
-                    {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>list with us</h2>}
+                    {width >= 1024 && <h2 className={`section_header ${styles.section_header}`}>List with us</h2>}
                     <Form fields={fields} value={value} setValue={setValue} onSubmit={handelSubmit} className={formStyles.form__card} validate={validate} buttonText="Submit details">
                         <p className={formStyles.form_text}>
                             By clicking Submit, you agree to our&nbsp;
@@ -84,7 +84,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                     </Form>
                 </div>
                 <div className={`${styles.notebook_item} section__padding`}>
-                    {width < 1024 && <h2 className="section_header">list with us</h2>}
+                    {width < 1024 && <h2 className="section_header">List with us</h2>}
                     <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>We have a waitlist of clients ready to view properties, extensive comparable community data and a trusted reputation. Just three of the reasons why people choose us.</p>
                     <div className={styles.enquire_image} />    
                 </div>

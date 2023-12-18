@@ -69,6 +69,9 @@ export const formatListData = (data: any[]) => data.map(({ id, attributes }) => 
     header: attributes.Title,
     category: attributes.Category,
     description: attributes.ShortDescription,
+    price: attributes.Price,
+    square: attributes.Square,
+    bedrooms: attributes.Bedrooms,
     id,
 }))
 
