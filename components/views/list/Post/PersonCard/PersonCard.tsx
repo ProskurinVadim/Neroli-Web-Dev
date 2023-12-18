@@ -28,10 +28,7 @@ const PersonCard: React.FC<IAvatar> = ({ image,  name, job, id, onClick, whatsap
         }
     }, [showPreloader])
 
-    const togglePreloader = (e)=> {
-        // if(e) {
-        //     e.preventDefault();
-        // }
+    const togglePreloader = ()=> {
         setShowPreloader(prevState => !prevState);
     };
 
