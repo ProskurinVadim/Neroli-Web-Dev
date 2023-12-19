@@ -127,10 +127,10 @@ const getDefaultBeds = (beds: queryType) => {
     else return "Bedrooms 7+"
 
 }
-const getDefaultType = (type: queryType) => {
+const getDefaultType = (type: queryType, active: "Residential" | "Commercial" | "Off-plan") => {
     let res = "";
     if (type) {
-        const match = typeOptions.filter(
+        const match = typeOptions[active].filter(
             elem => elem.value.toLowerCase() === type.toLowerCase()
         );
         res = match[0] ? match[0].value : ""
@@ -138,17 +138,17 @@ const getDefaultType = (type: queryType) => {
 
     return res
 }
-const getDefaultPrice = (price: queryType) => {
-    if (price) return typeOptions.filter(
+const getDefaultPrice = (price: queryType, active: "Residential" | "Commercial" | "Off-plan") => {
+    if (price) return typeOptions[active].filter(
         elem => elem.value <= price
     )[0].value;
 
     return ""
 }
-export const getDefaultData = (property_type: queryType, building: queryType, price_min: queryType, beds: queryType) => ({
+export const getDefaultData = (property_type: queryType, building: queryType, price_min: queryType, beds: queryType, active: "Residential" | "Commercial" | "Off-plan") => ({
     building: building || "",
-    property_type: getDefaultType(property_type),
+    property_type: getDefaultType(property_type, active),
     beds: getDefaultBeds(beds),
-    price_min: getDefaultPrice(price_min),
+    price_min: getDefaultPrice(price_min, active),
     price_max: "",
 });
