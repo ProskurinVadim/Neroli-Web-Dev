@@ -136,22 +136,6 @@
             width: 290px
         }
         
-        &_search_modal {
-            width: 306px;
-            top: 42px;
-            border-top-right-radius: 0;
-            border-top-left-radius: 0;
-            margin-top: 0px;
-            margin-left: -4px;
-        }
-        
-        &_search_select_modal {
-            margin-left: -4px;
-            border-top: 0px;
-            border-top-right-radius: 0;
-            border-top-left-radius: 0;
-            top: 70px;
-        }
     }
 }
 .button_wrapper {
@@ -180,6 +164,18 @@
             border-top: 0;
             margin-top: 0px;
             margin-left: -4px;
+        }
+        
+        &_search_select_modal {
+            margin-left: -4px;
+            border-top: 0px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            top: 70px;
+            width: 306px;
+            li {
+                width: 100%;
+            }
         }
     }
 }
@@ -218,10 +214,14 @@
 
         &_search_select_modal {
             margin-left: -4px;
+            border-top: 0px;
             border-top-right-radius: 0;
             border-top-left-radius: 0;
-            top: 72px;
-            width: 385px;
+            top: 70px;
+            width: 306px;
+            li {
+                width: 100%;
+            }
         }
     }
 }
