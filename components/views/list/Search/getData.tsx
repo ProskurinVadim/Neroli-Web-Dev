@@ -44,17 +44,42 @@ const price = [
     { value: "80000000", name: "AED 80, 000, 000" },
 ];
 
-const typeOptions = [
-    { value: "", name: "All" },
-    { value: "Apartment", name: "Apartment" },
-    { value: "Villa", name: "Villa" },
-    { value: "Townhouse", name: "Townhouse" },
 
-    { value: "Penthouse", name: "Penthouse" },
-    { value: "Duplex", name: "Duplex" },
-    { value: "Plot", name: "Plot" },
-    { value: "Land", name: "Land" }
-];
+const typeOptions = {
+    Residential :[
+        { value: "", name: "All" },
+        { value: "Apartment", name: "Apartment" },
+        { value: "Villa", name: "Villa" },
+        { value: "Townhouse", name: "Townhouse" },
+        { value: "Penthouse", name: "Penthouse" },
+        { value: "Duplex", name: "Duplex" },
+        { value: "Plot", name: "Plot" },
+        { value: "Land", name: "Land" }
+    ],
+    Commercial :[
+        { value: "", name: "All" },
+        { value: "Office space", name: "Office space" },
+        { value: "Retail", name: "Retail" },
+        { value: "Whole building", name: "Whole building" },
+        { value: "Full floor", name: "Full floor" },
+        { value: "Plot", name: "Plot" },
+        { value: "Factory", name: "Factory" },
+        { value: "Half floor", name: "Half floor" },
+        { value: "Labor camp", name: "Labor camp" },
+        { value: "Staff accomodation", name: "Staff accomodation" },
+        { value: "Warehouse", name: "Warehouse" }
+    ],
+    "Off-plan" :[
+        { value: "", name: "All" },
+        { value: "Apartment", name: "Apartment" },
+        { value: "Villa", name: "Villa" },
+        { value: "Townhouse", name: "Townhouse" },
+        { value: "Penthouse", name: "Penthouse" },
+        { value: "Duplex", name: "Duplex" },
+        { value: "Plot", name: "Plot" },
+        { value: "Land", name: "Land" }
+    ],
+};
 /*
 
     {
@@ -64,7 +89,7 @@ const typeOptions = [
     },
 
  */
-export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
+export const getFormData = (setOpen: (open: boolean | string) => void,open:string | boolean, active: "Residential" | "Commercial" | "Off-plan") => [
     {
         key: "building",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
@@ -73,7 +98,7 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     {
         key: "property_type",
         render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type" className={`${formStyles.search_large_select} ${styles.select}`} />)
+            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions[active]} defaultValue="Property Type" className={`${formStyles.search_large_select} ${styles.select}`} />)
     },
     {
         key: "beds",
@@ -95,6 +120,7 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
 
 type queryType = string | null;
 
+
 const getDefaultBeds = (beds: queryType) => {
     if (beds === null) return ""
     else if (+beds === 0) return "Studio"
@@ -102,10 +128,10 @@ const getDefaultBeds = (beds: queryType) => {
     else return "Bedrooms 7+"
 
 }
-const getDefaultType = (type: queryType) => {
+const getDefaultType = (type: queryType, active: "Residential" | "Commercial" | "Off-plan") => {
     let res = "";
     if (type) {
-        const match = typeOptions.filter(
+        const match = typeOptions[active].filter(
             elem => elem.value.toLowerCase() === type.toLowerCase()
         );
         res = match[0] ? match[0].value : ""
@@ -113,17 +139,17 @@ const getDefaultType = (type: queryType) => {
 
     return res
 }
-const getDefaultPrice = (price: queryType) => {
-    if (price) return typeOptions.filter(
+const getDefaultPrice = (price: queryType, active: "Residential" | "Commercial" | "Off-plan") => {
+    if (price) return typeOptions[active].filter(
         elem => elem.value <= price
     )[0].value;
 
     return ""
 }
-export const getDefaultData = (property_type: queryType, building: queryType, price_min: queryType, beds: queryType) => ({
+export const getDefaultData = (property_type: queryType, building: queryType, price_min: queryType, beds: queryType, active: "Residential" | "Commercial" | "Off-plan") => ({
     building: building || "",
-    property_type: getDefaultType(property_type),
+    property_type: getDefaultType(property_type, active),
     beds: getDefaultBeds(beds),
-    price_min: getDefaultPrice(price_min),
+    price_min: getDefaultPrice(price_min, active),
     price_max: "",
 });
