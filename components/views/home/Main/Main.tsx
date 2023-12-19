@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Condition, {If} from "@/hoc/Conditional/Condition";
 import { useRouter } from 'next/navigation';
 import { Button } from "../../../common";
 import Toggler, { togglerStyles} from "../../../common/Toggler/Toggler";
@@ -121,20 +122,26 @@ export default function Home() {
                 </div>
                 <div className={styles.main_page_search_container}>
                     <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search">
-                    {(listOpen && list.length) && <ul className={styles.main_page_search_modal}>
-                        {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
-                            <Link href={"/list/"+elem.id}>{elem.title}</Link>
-                        </li>)}
-                    </ul>}
-                    {open && 
-                    <ul ref={ref} className={styles.main_page_search_select_modal}>
-                        {
-                            modlFields.map((elem: any) => <li>
-                                {elem.render(modalValue[elem.key],handelChange(elem.key))}
-                            </li>)
-                        }
-                    </ul>
-                    }
+                        <Condition condition={Boolean(listOpen && list.length)}>
+                            <If>
+                                <ul className={styles.main_page_search_modal}>
+                                    {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
+                                        <Link href={"/list/"+elem.id}>{elem.title}</Link>
+                                    </li>)}
+                                </ul>
+                        </If>
+                        </Condition>
+                        <Condition condition={open}>
+                            <If>
+                                <ul ref={ref} className={styles.main_page_search_select_modal}>
+                                    {
+                                        modlFields.map((elem: any) => <li>
+                                            {elem.render(modalValue[elem.key],handelChange(elem.key))}
+                                        </li>)
+                                    }
+                                </ul>
+                            </If>
+                        </Condition>
                     </Form>
                 </div>
                 <p className={`medium_text ${styles.medium_text} medium_text__light`}>Prices are always changing, find out the value of your property today</p>
