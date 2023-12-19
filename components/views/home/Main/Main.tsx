@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Condition, {If} from "@/hoc/Conditional/Condition";
 import { useRouter } from 'next/navigation';
 import { Button } from "../../../common";
 import Toggler, { togglerStyles} from "../../../common/Toggler/Toggler";
@@ -33,7 +34,8 @@ interface IList {
 
 export default function Home() {
     const ref = useRef<any>(null);
-    const [active, setActive] = useState<string>("Residential");
+    const ref2 = useRef<any>(null);
+    const [active, setActive] = useState<"Residential" | "Commercial" | "Off-plan">("Residential");
     const [value, setValue] = useState<IForm>({ ...defaultData });
     const { push } = useRouter();
     const [modalValue, setmodalValue] = useState<any>({property_type: "", price_min: "", price_max: "", beds:""});
@@ -41,8 +43,8 @@ export default function Home() {
     const [open,setOpen] = useState<boolean>(false);
     const [listOpen,setListOpen] = useState<boolean>(false);
     const [selectOpen,setSelectOpen] = useState<boolean | string>(false);
-    const fields: any = getFormData(()=>setOpen(true), ()=> setListOpen(true), ()=> setListOpen(false));
-    const modlFields: any = getModalFormData(setSelectOpen,selectOpen);
+    const fields: any = getFormData(()=>setOpen(true), ()=> setListOpen(true),);
+    const modlFields: any = getModalFormData(setSelectOpen,selectOpen,active);
     
     useEffect(() => {
         const handleOutSideClick = (event: any) => {
@@ -57,6 +59,19 @@ export default function Home() {
             window.removeEventListener("mousedown", handleOutSideClick);
         };
     }, [ref]);
+    useEffect(() => {
+        const handleOutSideClick = (event: any) => {
+            if (!ref2.current?.contains(event.target)) {
+                setListOpen(()=> false);
+            }
+        };
+
+        window.addEventListener("mousedown", handleOutSideClick);
+
+        return () => {
+            window.removeEventListener("mousedown", handleOutSideClick);
+        };
+    }, [ref2]);
 
     useEffect(()=> {
         if(value.building) {
@@ -69,9 +84,13 @@ export default function Home() {
           return () => clearTimeout(getData)
 
         }
-    },[value.building])
+    },[value])
 
-    const handelSetActive = (active: string) => setActive(_ => active);
+    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan" | any) =>  {
+        setValue({...defaultData});
+        setList([]);
+        setActive(_ => active);
+    };
     const handelSubmit = () => {
         const { building } = value;
         const {property_type, price_min, price_max, beds}  = modalValue;
@@ -88,18 +107,17 @@ export default function Home() {
         if (isNaN(+price_max) && price_max) {
             query += `&price_max=${price_max}`;
         }
-        if (beds)    {
-            query += `&beds=${beds}`;
+        if (beds) {
+            query += `&beds=${beds.replace("Bedrooms ","")}`;
         }
         push(`/list${query}`);
     };
     const onClick = () => false;
-
     const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setmodalValue((prev_value: any) => {
             const newValue = { ...prev_value };
             newValue[key] = e.target.value;
-            const value = Object.values(newValue).filter(elem => elem).join(",");
+            const value = Object.values(newValue).filter(elem => elem).join(", ");
             setValue((prev:any) => {
                 return {
                     ...prev,
@@ -121,20 +139,26 @@ export default function Home() {
                 </div>
                 <div className={styles.main_page_search_container}>
                     <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search">
-                    {(listOpen && list.length) && <ul className={styles.main_page_search_modal}>
-                        {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
-                            <Link href={"/list/"+elem.id}>{elem.title}</Link>
-                        </li>)}
-                    </ul>}
-                    {open && 
-                    <ul ref={ref} className={styles.main_page_search_select_modal}>
-                        {
-                            modlFields.map((elem: any) => <li>
-                                {elem.render(modalValue[elem.key],handelChange(elem.key))}
-                            </li>)
-                        }
-                    </ul>
-                    }
+                        <Condition condition={Boolean(listOpen && list.length)}>
+                            <If>
+                                <ul className={styles.main_page_search_modal} ref={ref2}>
+                                    {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item} >
+                                        <Link href={"/list/"+elem.id}>{elem.title}</Link>
+                                    </li>)}
+                                </ul>
+                        </If>
+                        </Condition>
+                        <Condition condition={open}>
+                            <If>
+                                <ul ref={ref} className={styles.main_page_search_select_modal}>
+                                    {
+                                        modlFields.map((elem: any) => <li>
+                                            {elem.render(modalValue[elem.key],handelChange(elem.key))}
+                                        </li>)
+                                    }
+                                </ul>
+                            </If>
+                        </Condition>
                     </Form>
                 </div>
                 <p className={`medium_text ${styles.medium_text} medium_text__light`}>Prices are always changing, find out the value of your property today</p>

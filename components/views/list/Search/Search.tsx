@@ -42,18 +42,19 @@ const Search: React.FC<ISearch> = ({ onSubmit, onDraw, marks }) => {
     ]
 
     const [value, setValue] = useState<IForm>({ building: "", property_type: "", price_min: "", price_max: "", beds:""});
-
+    //@ts-ignore
+    const active: "Residential" | "Commercial" | "Off-plan"  =  (type && ["Residential","Commercial","Off-plan"].includes(type)) ? type : "Residential" 
     const [open, setOpen] = useState<boolean | string>(false);
     const [modalOpen, setModalOpen] = useState<boolean>(true)
     const [mapOpen, setMapOpen] = useState<boolean>(false);
 
-    const fields: any = getFormData(setOpen, open);
+    const fields: any = getFormData(setOpen, open,active);
 
     const handelOpen = () => setMapOpen((prev) => !prev);
     const handelSubmit = (value: IForm, type: string | null) => type && onSubmit({ ...value, type })
 
     useEffect(() => {
-        const initialData = { ...getDefaultData(property_type, building, price_min, beds) };
+        const initialData = { ...getDefaultData(property_type, building, price_min, beds,active) };
         setValue(initialData)
         handelSubmit(initialData, type)
     }, [type]);
