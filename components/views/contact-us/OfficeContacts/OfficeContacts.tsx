@@ -128,7 +128,9 @@ const OfficeContacts: React.FC<IContacts> = ({ email, address, phone }) => {
                     <p className={`${styles.contact_us_info_text} medium_text icon_fill`}>
                         <Link href={`tel: ${phone}`}><PhoneIcon />{phone}</Link>
                     </p>
-                    <p className={`${styles.contact_us_info_text} medium_text`}><MapIcon />{address}</p>
+                    <p className={`${styles.contact_us_info_text} medium_text`}>
+                        <span><MapIcon /></span>
+                        {address}</p>
                 </div>
                 <div className={styles.contact_us_social_links}>
                     {socialLinkElements}
