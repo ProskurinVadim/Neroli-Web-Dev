@@ -30,8 +30,9 @@ const Select: React.FC<ISelect> = ({ onChange, label, options, value, defaultVal
     }
 
     const handelClose = () => setOpen(false);
-    
-    const name = value ? options.filter(elem => elem.value === value)[0].name : defaultValue;
+
+    const filtered = value ? options.filter(elem => elem.value === value)[0] : null;
+    const name = value && filtered ? filtered.name : defaultValue;
     return (
         <div onClick={toggleOpen} className={`${styles.select} ${className}`}>
             <p className={styles.select_value}>
