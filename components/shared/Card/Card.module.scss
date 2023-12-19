@@ -72,6 +72,31 @@
         padding-top: 8px;
     }
 
+    &_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_values {
+            display: flex;
+            gap: 20px;
+
+            & p {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+                gap: 10px;
+                font-family: 'Montserrat';
+
+                & svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
     &_header {
         margin-top: 8px;
         margin-bottom: 12px;
@@ -286,6 +311,29 @@
         &_image {
             height: 178px;
             width: 178px;
+        }
+
+        &_info {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+
+            &_values {
+                & p {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    gap: 8px;
+                    margin-bottom: 5px;
+
+                    & svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+
         }
 
         &_header {

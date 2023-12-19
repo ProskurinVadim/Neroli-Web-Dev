@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from "./Card.module.scss";
 // import Image from "../../common/Image";
 import Image from "next/image";
+import {Bed} from "@/components/icons";
 
 interface ICard {
     image: string,
@@ -12,9 +13,12 @@ interface ICard {
     link?: string,
     small?: boolean,
     className?: string,
+    bedrooms?: number,
+    price?: number | null,
+    square?: number | null,
 }
 
-const Card: React.FC<ICard> = ({ image, additional, adress, description, link = "", small = false, className = "", header }) => {
+const Card: React.FC<ICard> = ({ bedrooms, price, square, image, additional, adress, description, link = "", small = false, className = "", header }) => {
 
     return (
         <div className={`${styles.card} ${className}`}>
@@ -24,8 +28,14 @@ const Card: React.FC<ICard> = ({ image, additional, adress, description, link = 
 
             <div className={styles.card_text}>
                 {additional}
+                <div className={styles.card_info}>
+                    <p className={styles.card_adress}>AED {price || 0}</p>
+                    <div className={styles.card_info_values}>
+                        <p><Bed /> {bedrooms}</p>
+                    </div>
+                </div>
                 <p className={styles.card_header}>{header}</p>
-                {adress && <p className={styles.card_adress}>{adress}</p>}
+                {/*{adress && <p className={styles.card_adress}>{adress}</p>}*/}
                 {
                     !small &&
                     <>

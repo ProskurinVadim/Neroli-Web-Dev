@@ -16,6 +16,10 @@ const formatData = (data: any[]) => data.map(({ id, attributes }) => ({
     header: attributes.Title,
     category: attributes.Category,
     OnMainPage: attributes.OnMainPage,
+    //beds.replace(/^\D+/g, '')
+    bedrooms: attributes.Bedrooms === "Studio" ? 0 : Number(attributes.Bedrooms.replace(/^\D+/g, '')),
+    price: attributes.Price,
+    square: attributes.Square,
     id,
 }))
 

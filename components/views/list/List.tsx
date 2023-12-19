@@ -57,6 +57,7 @@ const List = () => {
     const search = async (value: IForm | {}) => {
         setCurrentSearchSetting(value);
         const newData = await getAppartments(value);
+        console.log(newData.data)
         const values = Object.values(value);
 
         if(!values.includes("Studio") || !values.includes("Bedrooms")) {
@@ -67,10 +68,9 @@ const List = () => {
             setData([...formatListData(newData.data)]);
         }
     }
-    const draw = async (body: any,) => {
 
+    const draw = async (body: any,) => {
         const newData = await getMapAppartments(body, currentSearchSetting);
-        console.log(newData);
         const newMarks = newData.map((elem: any) => ({ position: { lat: elem.Address.lat, lng: elem.Address.lng}}))
         setMarks([...newMarks])
         setData([...formatListMapData(newData)]);
