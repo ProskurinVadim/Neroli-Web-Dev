@@ -43,13 +43,13 @@
         box-sizing: border-box;
         top: 50px;
         border-radius: 10px;
-        max-height: 130px;
+        max-height: 230px;
         overflow-y: scroll;
-        width: 220px;
+        min-width: 220px;
         background-color: $color-light;
         position: absolute;
         &_item > a {
-            font-family: 'Marcellus';
+            font-family: 'Montserrat';
             font-style: normal;
             box-sizing: border-box;
             display: block;
@@ -63,7 +63,7 @@
 
             &:hover {
                 background-color: #F6F6F6;
-                font-family: 700;
+                font-weight: bold;
             }
         }
     }
