@@ -1,11 +1,11 @@
 import Input,{ inputStyles } from "../../../common/Input/Input";
 import Select from "../../../common/Select/Select";
 
-export const getFormData = (onFocus:any,onBuildingFocus:any,onBuildingBlur: any) => [
+export const getFormData = (onFocus:any,onBuildingFocus:any,) => [
     {
         key: "building",
         render: (value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) =>
-            (<Input value={value} onFocus={onBuildingFocus} onBlur={onBuildingBlur} onChange={onChange} placeholder="Community or building" className={`${inputStyles.input_inline} ${inputStyles.input_inline__rounded}`} containerClassName={inputStyles.input_inline_container} />)
+            (<Input value={value} onFocus={onBuildingFocus} onChange={onChange} placeholder="Community or building" className={`${inputStyles.input_inline} ${inputStyles.input_inline__rounded}`} containerClassName={inputStyles.input_inline_container} />)
     },
     {
         key: "rest",

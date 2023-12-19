@@ -12,7 +12,7 @@ const planOptions = [
 const bedroomsOptions = [
     { value: "", name: "All" },
     { value: "Studio", name: "Studio" },
-    { value: "Bedrooms 1", name: "1 Bedroom" },
+    { value: "Bedroom 1", name: "1 Bedroom" },
     { value: "Bedrooms 2", name: "2 Bedroom" },
     { value: "Bedrooms 3", name: "3 Bedroom" },
     { value: "Bedrooms 4", name: "4 Bedroom" },

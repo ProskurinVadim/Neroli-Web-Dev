@@ -34,6 +34,7 @@ interface IList {
 
 export default function Home() {
     const ref = useRef<any>(null);
+    const ref2 = useRef<any>(null);
     const [active, setActive] = useState<"Residential" | "Commercial" | "Off-plan">("Residential");
     const [value, setValue] = useState<IForm>({ ...defaultData });
     const { push } = useRouter();
@@ -42,7 +43,7 @@ export default function Home() {
     const [open,setOpen] = useState<boolean>(false);
     const [listOpen,setListOpen] = useState<boolean>(false);
     const [selectOpen,setSelectOpen] = useState<boolean | string>(false);
-    const fields: any = getFormData(()=>setOpen(true), ()=> setListOpen(true), ()=> setListOpen(false));
+    const fields: any = getFormData(()=>setOpen(true), ()=> setListOpen(true),);
     const modlFields: any = getModalFormData(setSelectOpen,selectOpen,active);
     
     useEffect(() => {
@@ -58,6 +59,19 @@ export default function Home() {
             window.removeEventListener("mousedown", handleOutSideClick);
         };
     }, [ref]);
+    useEffect(() => {
+        const handleOutSideClick = (event: any) => {
+            if (!ref2.current?.contains(event.target)) {
+                setListOpen(()=> false);
+            }
+        };
+
+        window.addEventListener("mousedown", handleOutSideClick);
+
+        return () => {
+            window.removeEventListener("mousedown", handleOutSideClick);
+        };
+    }, [ref2]);
 
     useEffect(()=> {
         if(value.building) {
@@ -70,9 +84,13 @@ export default function Home() {
           return () => clearTimeout(getData)
 
         }
-    },[value.building])
+    },[value])
 
-    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan" | any) => setActive(_ => active);
+    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan" | any) =>  {
+        setValue({...defaultData});
+        setList([]);
+        setActive(_ => active);
+    };
     const handelSubmit = () => {
         const { building } = value;
         const {property_type, price_min, price_max, beds}  = modalValue;
@@ -95,12 +113,11 @@ export default function Home() {
         push(`/list${query}`);
     };
     const onClick = () => false;
-
     const handelChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setmodalValue((prev_value: any) => {
             const newValue = { ...prev_value };
             newValue[key] = e.target.value;
-            const value = Object.values(newValue).filter(elem => elem).join(",");
+            const value = Object.values(newValue).filter(elem => elem).join(", ");
             setValue((prev:any) => {
                 return {
                     ...prev,
@@ -124,8 +141,8 @@ export default function Home() {
                     <Form className={`${formStyles.form__search} ${styles.search}`} fields={fields} onSubmit={handelSubmit} value={value} setValue={setValue}  buttonText="Search">
                         <Condition condition={Boolean(listOpen && list.length)}>
                             <If>
-                                <ul className={styles.main_page_search_modal}>
-                                    {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item}>
+                                <ul className={styles.main_page_search_modal} ref={ref2}>
+                                    {list.map((elem: any,i) => <li key={"list-item-"+i} className={styles.main_page_search_modal_item} >
                                         <Link href={"/list/"+elem.id}>{elem.title}</Link>
                                     </li>)}
                                 </ul>
