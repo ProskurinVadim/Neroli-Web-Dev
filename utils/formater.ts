@@ -77,7 +77,7 @@ export const formatListData = (data: any[]) => data.map(({ id, attributes }) => 
 
 export const formatListMapData = (data: any[]) => data.map((elem: any) => ({
     adress: elem.Address.description,
-    image: elem.Address.details.photos ? elem.Address.details.photos[0].url : defaultNewsBGImage.src,
+    image: elem.Photos?.length ? elem.Photos[0].formats.small.url : defaultNewsBGImage.src,
     header: elem.Title,
     category: elem.Category,
     description: elem.Description,

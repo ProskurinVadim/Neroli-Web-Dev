@@ -83,7 +83,6 @@ export const getAppartments = ({ type, price_min, price_max, property_type, buil
 }
 
 export const getMapAppartments = async (body: any[],{ type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
-    const [polygons] = body;
     let query = ""
     if (type) {
         query += `&filters[Category][$eq]=${type}`;
@@ -109,7 +108,7 @@ export const getMapAppartments = async (body: any[],{ type, price_min, price_max
             "Content-Type": "application/json",
             ...headers
         },
-        method: "POST", body: JSON.stringify(polygons)
+        method: "POST", body: JSON.stringify(body)
     });
     return response.json()
 }
