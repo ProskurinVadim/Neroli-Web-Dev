@@ -24,6 +24,10 @@
     height: 42px;
     line-height: 42px;
 
+    & svg {
+        height: auto;
+    }
+
     &.load {
         padding: 0;
     }
