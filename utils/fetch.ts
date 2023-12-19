@@ -82,7 +82,8 @@ export const getAppartments = ({ type, price_min, price_max, property_type, buil
     return instance(`/items?populate=*${query}`,);
 }
 
-export const getMapAppartments = async (body: any,{ type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
+export const getMapAppartments = async (body: any[],{ type, price_min, price_max, property_type, building, beds }: IItemQuery) => {
+    const [polygons] = body;
     let query = ""
     if (type) {
         query += `&filters[Category][$eq]=${type}`;
@@ -102,12 +103,13 @@ export const getMapAppartments = async (body: any,{ type, price_min, price_max, 
     if (beds) {
         query += `&filters[Bedrooms][$eq]=${beds}`;
     }
+    console.log(query)
     const response = await fetch(`${baseURL}/items/containsLocation?populate=*${query}`, {
         headers: {
             "Content-Type": "application/json",
             ...headers
         },
-        method: "POST", body: JSON.stringify(body)
+        method: "POST", body: JSON.stringify(polygons)
     });
     return response.json()
 }
