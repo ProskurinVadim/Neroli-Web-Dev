@@ -34,7 +34,7 @@ interface IList {
 
 export default function Home() {
     const ref = useRef<any>(null);
-    const [active, setActive] = useState<string>("Residential");
+    const [active, setActive] = useState<"Residential" | "Commercial" | "Off-plan">("Residential");
     const [value, setValue] = useState<IForm>({ ...defaultData });
     const { push } = useRouter();
     const [modalValue, setmodalValue] = useState<any>({property_type: "", price_min: "", price_max: "", beds:""});
@@ -43,7 +43,7 @@ export default function Home() {
     const [listOpen,setListOpen] = useState<boolean>(false);
     const [selectOpen,setSelectOpen] = useState<boolean | string>(false);
     const fields: any = getFormData(()=>setOpen(true), ()=> setListOpen(true), ()=> setListOpen(false));
-    const modlFields: any = getModalFormData(setSelectOpen,selectOpen);
+    const modlFields: any = getModalFormData(setSelectOpen,selectOpen,active);
     
     useEffect(() => {
         const handleOutSideClick = (event: any) => {
@@ -72,7 +72,7 @@ export default function Home() {
         }
     },[value.building])
 
-    const handelSetActive = (active: string) => setActive(_ => active);
+    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan") => setActive(_ => active);
     const handelSubmit = () => {
         const { building } = value;
         const {property_type, price_min, price_max, beds}  = modalValue;
@@ -89,8 +89,8 @@ export default function Home() {
         if (isNaN(+price_max) && price_max) {
             query += `&price_max=${price_max}`;
         }
-        if (beds)    {
-            query += `&beds=${beds}`;
+        if (beds) {
+            query += `&beds=${beds.replace("Bedrooms ","")}`;
         }
         push(`/list${query}`);
     };

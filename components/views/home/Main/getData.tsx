@@ -55,40 +55,67 @@ const price = [
     { value: "80000000", name: "AED 80, 000, 000" },
 ];
 
-const typeOptions = [
-    { value: "", name: "All" },
-    { value: "Apartment", name: "Apartment" },
-    { value: "Villa", name: "Villa" },
-    { value: "Townhouse", name: "Townhouse" },
+const typeOptions = {
+    Residential :[
+        { value: "", name: "All" },
+        { value: "Apartment", name: "Apartment" },
+        { value: "Villa", name: "Villa" },
+        { value: "Townhouse", name: "Townhouse" },
+        { value: "Penthouse", name: "Penthouse" },
+        { value: "Duplex", name: "Duplex" },
+        { value: "Plot", name: "Plot" },
+        { value: "Land", name: "Land" }
+    ],
+    Commercial :[
+        { value: "", name: "All" },
+        { value: "Office space", name: "Office space" },
+        { value: "Retail", name: "Retail" },
+        { value: "Whole building", name: "Whole building" },
+        { value: "Full floor", name: "Full floor" },
+        { value: "Plot", name: "Plot" },
+        { value: "Factory", name: "Factory" },
+        { value: "Half floor", name: "Half floor" },
+        { value: "Labor camp", name: "Labor camp" },
+        { value: "Staff accomodation", name: "Staff accomodation" },
+        { value: "Warehouse", name: "Warehouse" }
+    ],
+    "Off-plan" :[
+        { value: "", name: "All" },
+        { value: "Apartment", name: "Apartment" },
+        { value: "Villa", name: "Villa" },
+        { value: "Townhouse", name: "Townhouse" },
+        { value: "Penthouse", name: "Penthouse" },
+        { value: "Duplex", name: "Duplex" },
+        { value: "Plot", name: "Plot" },
+        { value: "Land", name: "Land" }
+    ],
+};
 
-    { value: "Penthouse", name: "Penthouse" },
-    { value: "Duplex", name: "Duplex" },
-    { value: "Plot", name: "Plot" },
-    { value: "Land", name: "Land" }
-];
-
-export const getModalFormData = (setOpen: (open: boolean | string) => void,open:string | boolean) => [
-    {
-        key: "property_type",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions} defaultValue="Property Type"/>)
-    },
-    {
-        key: "beds",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds"/>)
-    },
-    {
-        key: "price_min",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" />)
-    },
-    {
-        key: "price_max",
-        render: (value: string, onChange: (newValue: string) => void) =>
-            (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" />)
-    },
-];
+export const getModalFormData = (setOpen: (open: boolean | string) => void,open:string | boolean, active: "Residential" | "Commercial" | "Off-plan") => {
+    console.log(active)
+    return [
+        {
+            key: "property_type",
+            render: (value: string, onChange: (newValue: string) => void) =>
+                (<Select value={value} onChange={onChange} label="type" open={open === "type"} setOpen={setOpen} options={typeOptions[active]} defaultValue="Property Type"/>)
+        },
+        {
+            key: "beds",
+            render: (value: string, onChange: (newValue: string) => void) =>
+                (<Select value={value} onChange={onChange} label="beds" open={open === "beds"} setOpen={setOpen} options={bedroomsOptions} defaultValue="Beds"/>)
+        },
+        {
+            key: "price_min",
+            render: (value: string, onChange: (newValue: string) => void) =>
+                (<Select value={value} onChange={onChange} label="min" open={open === "min"} setOpen={setOpen} options={price} defaultValue="Price Min" />)
+        },
+        {
+            key: "price_max",
+            render: (value: string, onChange: (newValue: string) => void) =>
+                (<Select value={value} onChange={onChange} label="max" open={open === "max"} setOpen={setOpen} options={price} defaultValue="Price Max" />)
+        },
+    ];
+}
 
 
 type queryType = string | null;
