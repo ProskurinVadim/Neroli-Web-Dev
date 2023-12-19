@@ -72,7 +72,7 @@ export default function Home() {
         }
     },[value.building])
 
-    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan") => setActive(_ => active);
+    const handelSetActive = (active: "Residential" | "Commercial" | "Off-plan" | any) => setActive(_ => active);
     const handelSubmit = () => {
         const { building } = value;
         const {property_type, price_min, price_max, beds}  = modalValue;
