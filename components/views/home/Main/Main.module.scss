@@ -82,10 +82,17 @@
             padding: 0 12px;
             padding-left: 12px;
             box-sizing: border-box;
+            p {   
+                width: 100%;
+            }
             div {
                 width: 100%;
                 ul {
                     width: 100%;
+                    li {
+                        padding: 6px 12px;
+                        width: 100%
+                    }
                 }
             }
         }
