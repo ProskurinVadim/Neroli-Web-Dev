@@ -85,7 +85,7 @@ const Enquire: React.FC<IEnquire> = ({top}) => {
                 </div>
                 <div className={`${styles.notebook_item} section__padding`}>
                     {width < 1024 && <h2 className="section_header">List with us</h2>}
-                    <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>We have a waitlist of clients ready to view properties, extensive comparable community data and a trusted reputation. Just three of the reasons why people choose us.</p>
+                    <p className={`medium_text medium_text__aditional ${styles.medium_text}`}>List your property with us to get a comprehensive audience, in-depth market analysis, and a reputation for trustworthiness. These factors, coupled with our expert marketing and personalised service, make us the ideal choice for listing and selling your property professionally and efficiently.</p>
                     <div className={styles.enquire_image} />    
                 </div>
             </Container>

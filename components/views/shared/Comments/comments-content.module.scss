@@ -1,6 +1,10 @@
 .section {
-  height: 430px;
+  height: 470px;
   padding-bottom: 32px;
+
+  @media (max-width: 480px) {
+    height: 430px;
+  }
 }
 
 .container {
@@ -27,7 +31,7 @@
 .carousel_wrapper {
   width: 100%;
   //max-width: 1463px;
-  height: 335px;
+  height: 375px;
   margin-top: 40px;
   //position: absolute;
   //left: 20%;

@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
         <section className={`section__padding ${styles.section}`}>
             <Container>
                 <h1 className={`section_header ${styles.section_header}`}>Privacy Policy</h1>
-                <h2 className={`medium_text medium_text__aditional ${styles.subtitle}`}>Last Update: March 16, 2023</h2>
+                <h2 className={`medium_text medium_text__aditional ${styles.subtitle}`}>Last Update: January 13, 2024</h2>
                 {
                     content.map(({ type, content }, i) =>
                         <Condition condition={type === "header"} key={`terms-item-${i}`}>
