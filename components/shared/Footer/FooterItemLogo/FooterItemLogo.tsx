@@ -24,8 +24,7 @@ const FooterItemLogo: React.FC = () => {
                 </h3>
             </Link>
             <p className={`${styles.footer_description}`}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.
+                Connect with us on social media for the latest updates and insights in luxury real estate. Follow our journey and join our community through the links below.
             </p>
             <div className={styles.footer_social_links}>
                 {socialLinkElements}

@@ -133,7 +133,7 @@ export default function Home() {
         <section className={`${styles.main_page}`}>
             <Container>
                 <h2 className={`small_section_header small_section_header__light ${styles.main_sub_header}`}>Welcome to Form Estate</h2>
-                <h1 className={styles.main_header}>Find your property</h1>
+                <h1 className={styles.main_header}>Discover Architectural Elegance:<br /> Where Exquisite Homes Meet Unparalleled Expertise</h1>
                 <div className={`${styles.toggler_container}`} >
                     <Toggler array={["Residential", "Commercial", "Off-plan"]} active={active} setActive={handelSetActive} className={`${styles.toggler} ${togglerStyles.toggler__fill}`} />
                 </div>

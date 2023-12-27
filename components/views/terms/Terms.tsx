@@ -9,7 +9,7 @@ const Terms = () => {
     return (
         <section className={`section__padding ${styles.section}`}>
             <Container>
-                <h1 className={`section_header ${styles.section_header}`}>Terms and Conditions</h1>
+                <h1 className={`section_header ${styles.section_header}`}>TTerms of Use for Neroli Properties</h1>
                 <h2 className={`medium_text medium_text__aditional ${styles.subtitle}`}>Last Update: March 16, 2023</h2>
                 {
                     content.map(({ type, content }, i) =>

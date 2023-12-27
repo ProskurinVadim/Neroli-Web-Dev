@@ -5,9 +5,11 @@ import styles from "./FormContacts/Form.module.scss";
 import {formStyles} from "@/components/shared/Form/Form";
 
 const options = [
-    { value: 'Subject 1', name: 'Subject 1' },
-    { value: 'Subject 2', name: 'Subject 2' },
-    { value: 'Subject 3', name: 'Subject 3' }
+    { value: 'I\'d like to buy a property', name: 'I\'d like to buy a property' },
+    { value: 'I\'d like to rent a property', name: 'I\'d like to rent a property' },
+    { value: 'I\'d like to list a property for sale', name: 'I\'d like to list a property for sale' },
+    { value: 'I\'d like to list a property for rent', name: 'I\'d like to list a property for rent' },
+    { value: 'I have a general comment', name: 'I have a general comment' },
 ]
 
 export const containerStyle = {
@@ -44,7 +46,7 @@ export const getFormData = (setOpen: (open: boolean | string) => void,open:strin
     {
         key: "subject",
         render: (value: string, onChange: (newValue: string) => void, error: string) =>
-            (<Select value={value} label="subject" onChange={onChange} open={open === "subject"} options={options} setOpen={setOpen} defaultValue="Subject 1" />)
+            (<Select value={value} label="subject" onChange={onChange} open={open === "subject"} options={options} setOpen={setOpen} defaultValue="I'd like to buy a property" />)
 
     },
     {

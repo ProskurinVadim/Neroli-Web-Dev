@@ -15,6 +15,7 @@ interface ICommentsContent {
 }
 
 const CommentsContent: React.FC<ICommentsContent> = ({ comments }) => {
+    console.log(comments)
     const data = getCarouselData(comments);
     const adaptive = useContext(AdaptiveContext);
 
