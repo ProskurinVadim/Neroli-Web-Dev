@@ -1,10 +1,10 @@
 .section {
-  height: 470px;
-  padding-bottom: 32px;
+  //height: 470px;
+  //padding-bottom: 32px;
 
-  @media (max-width: 480px) {
-    height: 430px;
-  }
+  //@media (max-width: 480px) {
+  //  height: 430px;
+  //}
 }
 
 .container {
@@ -31,11 +31,15 @@
 .carousel_wrapper {
   width: 100%;
   //max-width: 1463px;
-  height: 375px;
+  height: 395px;
   margin-top: 40px;
   //position: absolute;
   //left: 20%;
   overflow: hidden;
+
+  @include lg {
+    height: 375px;
+  }
 
   @include md {
     //height: 405px;

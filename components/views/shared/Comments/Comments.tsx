@@ -1,4 +1,5 @@
 "use sever";
+
 import CommentsContent from "./CommentsContent";
 import { getReviews } from "../../../../utils/fetch";
 
