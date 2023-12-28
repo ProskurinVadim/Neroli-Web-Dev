@@ -1,8 +1,10 @@
 "use client";
 
-import {useState} from "react";
+import {useState, useCallback} from "react";
 
 import Avatar from "./Avatar";
+import Portal from "@/hoc/Portal";
+import PersonModal from "@/components/shared/Person/PersonModal";
 
 import Condition, { If } from "../../../hoc/Conditional/Condition";
 import { Facebook, Whatsapp, Instagram, Twitter, Viber, Threads } from "../../icons";
@@ -28,6 +30,7 @@ interface IPerson {
 
 const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, className = "" }) => {
 	const [show, setShow] = useState(false);
+	const toggleShow = useCallback(()=> setShow(prevState => !prevState), []);
 	return (
 		<div className={`${styles.person} ${className}`}>
 			<Avatar {...person} />
@@ -55,7 +58,12 @@ const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, c
 					</ul>
 				</If>
 			</Condition>
-			<p onClick={()=> setShow(prevState => !prevState)} className={`${styles.person_description} ${show ? styles.full : ""}`}>{description}</p>
+			<p onClick={toggleShow} className={`${styles.person_description}`}>{description}</p>
+			{show && <Portal>
+				<div className={styles.person_modal_container}>
+					<PersonModal onClose={toggleShow} person={person} description={description} className={className} />
+				</div>
+			</Portal>}
 		</div>
 	)
 }

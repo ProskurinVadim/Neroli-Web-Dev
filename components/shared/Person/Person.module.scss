@@ -184,3 +184,17 @@
         margin-top: 16px;
     }
 }
+
+.person_modal_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.84);
+    z-index: 1000;
+}
