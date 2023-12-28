@@ -395,6 +395,11 @@
             overflow: hidden;
         }
     }
+
+    & .swiper-pagination {
+        //display: none;
+        //bottom: -20px !important;
+    }
     //.swiper-slide {
     //    width: 400px;
     //    background-color: #000;

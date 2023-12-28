@@ -1,3 +1,7 @@
+"use client";
+
+import {useState} from "react";
+
 import Avatar from "./Avatar";
 
 import Condition, { If } from "../../../hoc/Conditional/Condition";
@@ -23,6 +27,7 @@ interface IPerson {
 }
 
 const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, className = "" }) => {
+	const [show, setShow] = useState(false);
 	return (
 		<div className={`${styles.person} ${className}`}>
 			<Avatar {...person} />
@@ -50,7 +55,7 @@ const Person: React.FC<IPerson> = ({ person, description, socialNetworks = {}, c
 					</ul>
 				</If>
 			</Condition>
-			<p className={styles.person_description}>{description}</p>
+			<p onClick={()=> setShow(prevState => !prevState)} className={`${styles.person_description} ${show ? styles.full : ""}`}>{description}</p>
 		</div>
 	)
 }
