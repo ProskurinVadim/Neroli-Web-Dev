@@ -14,7 +14,7 @@ const AboutUsPage = async () => {
 
     return (
         <>
-            <AboutUs title={content.data.attributes.Title} content={content.data.attributes.Content} />
+            <AboutUs title={content.data.attributes.Title} subTitle={content.data.attributes.Subtitle} mainImage={content.data.attributes.MainImage.data.attributes.formats.large.url} content={content.data.attributes.Content} />
             <OurTeam fullCard={false} team={formatAgentsData(agents.data).slice(0, 3)} />
             <div className={styles.comments_wrapper}>
                 <Comments />

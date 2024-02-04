@@ -119,7 +119,7 @@ export const getContactUs = () => {
 }
 
 export const getAboutUs = async () => {
-    return instance("/about-us");
+    return instance(`/about-us?populate=*`);
 }
 
 export const getAppartment = (id: string) => {

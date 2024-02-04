@@ -3,7 +3,18 @@
 
 .section {
 	padding-bottom: 0;
+	padding-top: 0;
 	margin-bottom: -13px;
+}
+
+.bg_img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 171px 0 196px;
+
+	@include md {
+		padding: 160px 0 180px;
+	}
 }
 
 .about_us_content {
@@ -77,12 +88,35 @@
 }
 
 .section_header {
-	margin-top: 11px;
+	margin-top: 40px;
 	font-size: 50px;
 	line-height: 64px;
+	color: #fff;
 
-	@include mobile {
+	@include md {
+		margin-top: 30px;
+		font-size: 28px;
+		line-height: 41.26;
+	}
+
+	@include sm {
+		margin-top: 20px;
 		font-size: 32px;
+	}
+}
+
+.section_sub_header {
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #fff;
+	max-width: 830px;
+	margin: 40px auto 0;
+	font-family: Montserrat;
+
+	@include sm {
+		margin-top: 36px;
+		max-width: 87%;
 	}
 }
 
